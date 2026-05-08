@@ -1,0 +1,432 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:         #90D50F;
+  --primary-light:   #EFF6E2;
+  --secondary:       #F69A21;
+  --secondary-dark:  #E16500;
+  --black:           #000000;
+  --gray-50:         #686868;
+  --gray-40:         #959595;
+  --gray-30:         #AFAFAF;
+  --gray-20:         #DDDDDD;
+  --gray-10:         #F6F6F6;
+  --white:           #ffffff;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a      { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; border: none; }
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너 430 × 932
+══════════════════════════════════════ */
+.phone {
+  width: 430px;
+  height: 932px;
+  background: var(--white);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════
+   상태바
+══════════════════════════════════════ */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 17px 16px 0;
+  flex-shrink: 0;
+}
+
+.status-time {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.status-bell {
+  width: 17px;
+  height: 17px;
+  color: var(--black);
+}
+
+/* ══════════════════════════════════════
+   페이지 제목
+══════════════════════════════════════ */
+.page-header {
+  padding: 32px 16px 32px;
+  flex-shrink: 0;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   메인 스크롤
+══════════════════════════════════════ */
+.main-scroll {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 0 16px 24px;
+}
+
+.main-scroll::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════
+   오늘의 소비 카드
+══════════════════════════════════════ */
+.today-card {
+  background: #FCFFF6;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  padding: 21px 24px 21px 50px;
+  margin-bottom: 32px;
+  min-height: 182px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.today-label {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+}
+
+.today-amount {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.72px;
+  line-height: 1.5;
+}
+
+.today-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #FFF5E7;
+  color: var(--secondary-dark);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 10px;
+  letter-spacing: -0.32px;
+  width: fit-content;
+}
+
+/* ══════════════════════════════════════
+   소비 올리기 버튼
+══════════════════════════════════════ */
+.upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  height: 70px;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+  margin-bottom: 32px;
+}
+
+/* ══════════════════════════════════════
+   공통 섹션 카드
+══════════════════════════════════════ */
+.section-card {
+  border: 1px solid var(--gray-20);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
+  margin-bottom: 40px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 27px 0 24px;
+  margin-bottom: 0;
+  height: 56px;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.44px;
+  line-height: 1.5;
+}
+
+.more-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-30);
+  letter-spacing: -0.32px;
+}
+
+/* ══════════════════════════════════════
+   소비 통계 카드
+══════════════════════════════════════ */
+.stats-card {
+  background: var(--gray-10);
+  min-height: 429px;
+}
+
+.stats-body {
+  padding: 24px 24px 24px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+
+/* 통계 행 */
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.stat-icon {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-50);
+  letter-spacing: -0.32px;
+}
+
+.stat-percent {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-50);
+  letter-spacing: -0.32px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: var(--gray-20);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--secondary);
+  border-radius: 50px;
+}
+
+/* ══════════════════════════════════════
+   주간 리포트 카드
+══════════════════════════════════════ */
+.weekly-card {
+  height: 412px;
+  padding: 22px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.weekly-card .card-title {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.44px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.weekly-sub {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-50);
+  letter-spacing: -0.32px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+/* 막대 그래프 */
+.chart {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 17px;
+  padding-bottom: 4px;
+  margin-top: 16px;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1;
+  height: 100%;
+}
+
+.bar {
+  width: 35px;
+  background: var(--primary-light);
+  border-radius: 20px 20px 0 0;
+  flex-shrink: 0;
+}
+
+.bar-active {
+  background: var(--primary);
+}
+
+.day-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.32px;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   하단 네비게이션
+══════════════════════════════════════ */
+.bottom-nav {
+  background: var(--white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 72px;
+  border-top: 1px solid var(--gray-20);
+  flex-shrink: 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  color: var(--gray-50);
+}
+
+.nav-icon {
+  width: 25px;
+  height: 25px;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-item span {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  color: var(--gray-50);
+}
+
+.nav-item.active span {
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════
+   iOS 홈 인디케이터
+══════════════════════════════════════ */
+.home-indicator {
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 0 11px;
+  flex-shrink: 0;
+}
+
+.home-indicator::after {
+  content: '';
+  display: block;
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 50px;
+}
+
+/* ══════════════════════════════════════
+   반응형
+══════════════════════════════════════ */
+@media (max-width: 430px) {
+  body {
+    padding: 0;
+    background: var(--white);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

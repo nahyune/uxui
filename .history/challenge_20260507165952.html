@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOTIMO - 챌린지</title>
+  <link rel="stylesheet" href="css/challenge.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+</head>
+<body>
+<div class="phone">
+
+  <!-- 상태바 -->
+  <div class="status-bar">
+    <span class="status-time">9:35</span>
+  </div>
+
+  <!-- 헤더 -->
+  <div class="page-header">
+    <h1 class="page-title">챌린지</h1>
+    <a href="new-challenge.html" class="new-btn" aria-label="새 챌린지 만들기">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+           stroke="#000" stroke-width="2.5" stroke-linecap="round">
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- 탭 -->
+  <div class="tab-bar">
+    <button class="tab active" type="button">나의 챌린지</button>
+    <button class="tab" type="button" onclick="location.href='challenge-detail.html'">탐색</button>
+  </div>
+
+  <!-- 챌린지 리스트 -->
+  <main class="main-scroll">
+
+    <!-- 카드 1 -->
+    <article class="challenge-card" onclick="location.href='challenge-detail-active.html'">
+      <div class="card-top">
+        <div class="card-title-row">
+          <span class="card-name">카페 금지 챌린지 ☕</span>
+          <span class="dday-badge dday-warn">D-3</span>
+        </div>
+        <div class="participant-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="#F69A21" stroke-width="2" stroke-linecap="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <span class="participant-text">83명이 함께하고 있어요!</span>
+        </div>
+      </div>
+      <div class="card-progress">
+        <div class="progress-track">
+          <div class="progress-fill" style="width:70%"></div>
+        </div>
+        <span class="progress-pct">70%</span>
+      </div>
+      <p class="card-date">26.04.06(월) ~ 04.27(월)</p>
+    </article>
+
+    <div class="divider"></div>
+
+    <!-- 카드 2 -->
+    <article class="challenge-card" onclick="location.href='challenge-detail-active.html'">
+      <div class="card-top">
+        <div class="card-title-row">
+          <span class="card-name">무지출 챌린지 💸</span>
+          <span class="dday-badge dday-urgent">D-1</span>
+        </div>
+        <div class="participant-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="#F69A21" stroke-width="2" stroke-linecap="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <span class="participant-text">23명이 함께하고 있어요!</span>
+        </div>
+      </div>
+      <div class="card-progress">
+        <div class="progress-track">
+          <div class="progress-fill" style="width:90%"></div>
+        </div>
+        <span class="progress-pct">90%</span>
+      </div>
+      <p class="card-date">26.04.06(월) ~ 04.27(월)</p>
+    </article>
+
+    <div class="divider"></div>
+
+    <!-- 카드 3 -->
+    <article class="challenge-card" onclick="location.href='challenge-detail-active.html'">
+      <div class="card-top">
+        <div class="card-title-row">
+          <span class="card-name">소비 기록 챌린지 📝</span>
+          <span class="dday-badge dday-normal">D-7</span>
+        </div>
+        <div class="participant-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="#F69A21" stroke-width="2" stroke-linecap="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <span class="participant-text">16명이 함께하고 있어요!</span>
+        </div>
+      </div>
+      <div class="card-progress">
+        <div class="progress-track">
+          <div class="progress-fill" style="width:30%"></div>
+        </div>
+        <span class="progress-pct">30%</span>
+      </div>
+      <p class="card-date">26.04.06(월) ~ 05.06(월)</p>
+    </article>
+
+  </main>
+
+  <!-- 하단 CTA -->
+  <div class="bottom-cta">
+    <a href="challenge-detail.html" class="cta-btn">지금 참여하세요 🔥</a>
+  </div>
+
+  <!-- 하단 네비게이션 -->
+  <nav class="bottom-nav">
+    <a href="home.html" class="nav-item">
+      <img class="nav-icon" src="img/home.JPG" alt="홈">
+      <span>홈</span>
+    </a>
+    <a href="check.html" class="nav-item">
+      <img class="nav-icon" src="img/check.JPG" alt="소비체크">
+      <span>소비체크</span>
+    </a>
+    <a href="challenge.html" class="nav-item active">
+      <img class="nav-icon" src="img/challenge_02.JPG" alt="챌린지">
+      <span>챌린지</span>
+    </a>
+    <a href="chat.html" class="nav-item">
+      <img class="nav-icon" src="img/chatting.JPG" alt="채팅">
+      <span>채팅</span>
+    </a>
+    <a href="my.html" class="nav-item">
+      <img class="nav-icon" src="img/mypage.JPG" alt="마이">
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <div class="home-indicator"></div>
+
+</div>
+</body>
+</html>

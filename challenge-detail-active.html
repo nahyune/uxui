@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOTIMO - 챌린지 참여 중</title>
+  <link rel="stylesheet" href="css/challenge-detail.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+</head>
+<body>
+<div class="phone">
+
+  <!-- 상태바 -->
+  <div class="status-bar">
+    <span class="status-time">9:35</span>
+  </div>
+
+  <!-- 헤더 -->
+  <div class="page-header">
+    <a href="challenge.html" class="back-btn" aria-label="뒤로가기">
+      <svg width="10" height="18" viewBox="0 0 10 18" fill="none"
+           stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 1 1 9 9 17"/>
+      </svg>
+    </a>
+    <h1 class="header-title">챌린지 상세</h1>
+    <a href="#" class="ranking-link">랭킹</a>
+  </div>
+
+  <!-- 메인 스크롤 -->
+  <main class="main-scroll">
+
+    <!-- 챌린지 타이틀 -->
+    <div class="challenge-hero">
+      <div class="hero-emoji">☕</div>
+      <h2 class="challenge-name">카페 금지 챌린지 ☕</h2>
+    </div>
+
+    <!-- 기본 정보 -->
+    <div class="info-card">
+
+      <div class="info-row">
+        <div class="info-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="#90D50F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div class="info-content">
+          <span class="info-label">조건</span>
+          <span class="info-value">1일 1회 소비 체크</span>
+        </div>
+      </div>
+
+      <div class="info-divider"></div>
+
+      <div class="info-row">
+        <div class="info-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="#90D50F" stroke-width="2" stroke-linecap="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <div class="info-content">
+          <span class="info-label">기간</span>
+          <span class="info-value">26.04.06(월) ~ 04.27(월) <span class="info-sub">(10일간)</span></span>
+        </div>
+      </div>
+
+      <div class="info-divider"></div>
+
+      <div class="info-row">
+        <div class="info-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="#90D50F" stroke-width="2" stroke-linecap="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="info-content">
+          <span class="info-label">참여 인원</span>
+          <span class="info-value">총 <strong class="highlight">83명</strong>이 함께하고 있어요!</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 나의 참여도 -->
+    <div class="my-progress-card">
+      <h3 class="desc-title">나의 참여도</h3>
+
+      <!-- 원형 프로그레스 -->
+      <div class="circle-progress-wrap">
+        <svg class="circle-svg" viewBox="0 0 120 120" width="120" height="120">
+          <circle cx="60" cy="60" r="50" fill="none" stroke="#DDDDDD" stroke-width="10"/>
+          <circle cx="60" cy="60" r="50" fill="none" stroke="#90D50F" stroke-width="10"
+                  stroke-linecap="round"
+                  stroke-dasharray="314"
+                  stroke-dashoffset="94"
+                  transform="rotate(-90 60 60)"/>
+        </svg>
+        <div class="circle-label">
+          <span class="circle-pct">70%</span>
+        </div>
+      </div>
+
+      <p class="progress-msg">🔥 오늘 소비 체크하면 <strong>80% 달성!</strong></p>
+
+      <!-- 소비 체크 현황 -->
+      <div class="check-status">
+        <span class="check-label">나의 소비 체크</span>
+        <span class="check-count"><strong>7</strong>/10 완료</span>
+      </div>
+      <div class="check-dots">
+        <span class="dot done"></span>
+        <span class="dot done"></span>
+        <span class="dot done"></span>
+        <span class="dot done"></span>
+        <span class="dot done"></span>
+        <span class="dot done"></span>
+        <span class="dot done"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- 챌린지 소개 -->
+    <div class="desc-card">
+      <h3 class="desc-title">챌린지 소개</h3>
+      <p class="desc-body">
+        출근길, 점심 후… 계속 생각나는 커피<br>
+        오늘만 한 번 안 가보는 건 어때요? ☕<br><br>
+        하루가 쌓이면 습관이 달라져요.
+      </p>
+    </div>
+
+    <div style="height:100px"></div>
+
+  </main>
+
+  <!-- 하단 고정 CTA -->
+  <div class="bottom-cta">
+    <button class="join-btn join-btn-done" type="button" onclick="location.href='check.html'">
+      오늘 소비 체크하기 →
+    </button>
+  </div>
+
+  <div class="home-indicator"></div>
+
+</div>
+</body>
+</html>

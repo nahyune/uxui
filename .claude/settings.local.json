@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__052fddee-2577-4282-84f8-7c15fc47a944__get_metadata",
+      "mcp__052fddee-2577-4282-84f8-7c15fc47a944__get_screenshot",
+      "mcp__052fddee-2577-4282-84f8-7c15fc47a944__get_design_context",
+      "Bash(npm list *)",
+      "Bash(npm install *)",
+      "Bash(node create_prd.js)",
+      "Bash(claude --version)",
+      "Bash(awk '{print $NF}')",
+      "PowerShell(python3 --version)",
+      "PowerShell(python --version)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}

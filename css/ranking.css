@@ -1,0 +1,465 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:   #90D50F;
+  --secondary: #F69A21;
+  --black:     #000000;
+  --gray-50:   #686868;
+  --gray-40:   #959595;
+  --gray-30:   #AFAFAF;
+  --gray-20:   #DDDDDD;
+  --gray-10:   #F6F6F6;
+  --bg:        #F2F2F2;
+  --white:     #ffffff;
+  --fail-bg:   #FFEBEE;
+  --fail-x:    #E53935;
+  --row-divider: #E6E6E6;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a      { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+ul     { list-style: none; }
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너 430 × 932
+══════════════════════════════════════ */
+.phone {
+  width: 430px;
+  height: 932px;
+  background: var(--bg);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════
+   상단 헤더 (흰 배경, 125px)
+══════════════════════════════════════ */
+.top-header {
+  background: var(--white);
+  flex-shrink: 0;
+  height: 125px;
+  padding: 17px 16px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.status-time {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.status-bell {
+  width: 17px;
+  height: 17px;
+  color: var(--black);
+}
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 36px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   스크롤 영역
+══════════════════════════════════════ */
+.scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 16px 16px 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scroll-body::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════
+   공통 카드
+══════════════════════════════════════ */
+.rk-card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 24px 18px 20px;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* ══════════════════════════════════════
+   요일 체크 행
+══════════════════════════════════════ */
+.day-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.day-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.day-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-50);
+  letter-spacing: -0.32px;
+  line-height: 1.5;
+}
+
+.day-label-today {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* 요일 원형 (45×45px) */
+.day-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 완료 (Primary 초록) */
+.day-check {
+  background: var(--primary);
+}
+
+/* 실패 (연빨간) */
+.day-fail {
+  background: var(--fail-bg);
+  border: 2px solid var(--fail-x);
+}
+
+/* 오늘 (Primary 점선 빈 원) */
+.day-today {
+  background: transparent;
+  border: 2.5px dashed var(--primary);
+}
+
+/* 미래 (회색 빈 원) */
+.day-empty {
+  background: var(--gray-10);
+  border: 2px solid var(--gray-20);
+}
+
+/* ══════════════════════════════════════
+   목표 달성률
+══════════════════════════════════════ */
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.progress-label {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--gray-50);
+  letter-spacing: -0.34px;
+}
+
+.progress-pct {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: -0.64px;
+  line-height: 1;
+}
+
+/* 진행바 (Figma: h 17px) */
+.progress-track {
+  width: 100%;
+  height: 17px;
+  background: var(--gray-20);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 50px;
+  transition: width 0.4s ease;
+}
+
+/* 금액 */
+.progress-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-50);
+  letter-spacing: -0.32px;
+}
+
+.detail-left strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.detail-right {
+  color: var(--gray-50);
+}
+
+/* ══════════════════════════════════════
+   전체 랭킹 리스트
+══════════════════════════════════════ */
+.rank-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 랭킹 행 공통 */
+.rank-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 12px;
+  border-bottom: 1px solid var(--row-divider);
+}
+
+.rank-row:last-child {
+  border-bottom: none;
+}
+
+/* 나 행 강조 (옅은 Primary 배경) */
+.rank-me {
+  background: rgba(144, 213, 15, 0.06);
+}
+
+/* 1위 별 뱃지 */
+.rank-badge-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  flex-shrink: 0;
+}
+
+.star-badge {
+  position: relative;
+  width: 46px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star-num {
+  position: absolute;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.48px;
+  line-height: 1;
+  /* 별 중앙에 오도록 미세 조정 */
+  margin-top: -2px;
+  pointer-events: none;
+}
+
+/* 2위 이하 순위 숫자 래퍼 */
+.rank-num-wrap {
+  width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 11px;
+  flex-shrink: 0;
+}
+
+.rank-num {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.48px;
+  line-height: 1;
+}
+
+/* 사용자 정보 영역 */
+.rank-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* 아바타 */
+.rank-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gray-20);
+  flex-shrink: 0;
+}
+
+.rank-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.34px;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 이름 + 나 뱃지 래퍼 */
+.rank-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* "나" 뱃지 */
+.me-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.26px;
+  flex-shrink: 0;
+}
+
+/* ── 전체보기 버튼 ── */
+.view-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 0 4px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--gray-50);
+  letter-spacing: -0.34px;
+  cursor: pointer;
+}
+
+/* ══════════════════════════════════════
+   여백 + 홈 인디케이터
+══════════════════════════════════════ */
+.bottom-spacer { height: 8px; }
+
+.home-indicator {
+  flex-shrink: 0;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 0 11px;
+}
+
+.home-indicator::after {
+  content: '';
+  display: block;
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 50px;
+}
+
+/* ══════════════════════════════════════
+   반응형
+══════════════════════════════════════ */
+@media (max-width: 430px) {
+  body {
+    padding: 0;
+    background: var(--bg);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

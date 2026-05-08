@@ -1,0 +1,548 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:       #90D50F;
+  --primary-bg:    #F6FFE4;
+  --secondary:     #F69A21;
+  --black:         #000000;
+  --gray-50:       #686868;
+  --gray-40:       #959595;
+  --gray-30:       #AFAFAF;
+  --gray-20:       #DDDDDD;
+  --gray-10:       #F6F6F6;
+  --white:         #ffffff;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a      { text-decoration: none; }
+ul     { list-style: none; }
+button { cursor: pointer; font-family: inherit; background: none; border: none; }
+input  { outline: none; font-family: inherit; }
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너
+══════════════════════════════════════ */
+.phone {
+  position: relative;
+  width: 430px;
+  height: 932px;
+  background: var(--white);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════
+   상태바
+══════════════════════════════════════ */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 17px 16px 0;
+  flex-shrink: 0;
+}
+
+.status-time {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.status-bell {
+  width: 17px;
+  height: 17px;
+  color: var(--black);
+}
+
+/* ══════════════════════════════════════
+   헤더
+══════════════════════════════════════ */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 28px 16px 16px;
+  flex-shrink: 0;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--black);
+  width: 27px;
+  height: 34px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   카테고리 슬라이드 탭
+══════════════════════════════════════ */
+.category-scroll {
+  display: flex;
+  gap: 11px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 16px 20px;
+  flex-shrink: 0;
+  cursor: grab;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+.category-scroll::-webkit-scrollbar { display: none; }
+.category-scroll.dragging { cursor: grabbing; }
+
+.cat-btn {
+  flex-shrink: 0;
+  padding: 7px 20px;
+  border-radius: 52px;
+  border: 1.3px solid var(--gray-20);
+  background: var(--white);
+  color: var(--gray-50);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.cat-btn.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+/* ══════════════════════════════════════
+   메인 스크롤
+══════════════════════════════════════ */
+.main-scroll {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 0 16px 8px;
+}
+
+.main-scroll::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════
+   소비 리스트
+══════════════════════════════════════ */
+.spending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ── 아이템 행 ── */
+.spending-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 30px;
+  background: var(--gray-10);
+  border: 1px solid var(--gray-20);
+  border-radius: 10px;
+  transition: border-color 0.15s, background 0.15s;
+  cursor: pointer;
+}
+
+.spending-item.selected {
+  border-color: var(--primary);
+  background: var(--primary-bg);
+}
+
+/* 왼쪽: 이모지 + 이름 */
+.item-left {
+  display: flex;
+  align-items: center;
+}
+
+.item-label {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+}
+
+/* 오른쪽: 금액 + 체크박스 */
+.item-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.item-amount {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   커스텀 체크박스
+══════════════════════════════════════ */
+.check-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.item-check {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.check-custom {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--gray-20);
+  border-radius: 5px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+  position: relative;
+}
+
+.item-check:checked + .check-custom {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.item-check:checked + .check-custom::after {
+  content: '';
+  display: block;
+  width: 11px;
+  height: 7px;
+  border-left: 2.5px solid #fff;
+  border-bottom: 2.5px solid #fff;
+  transform: rotate(-45deg) translate(1px, -2px);
+}
+
+/* ══════════════════════════════════════
+   소비 공유하기 버튼
+══════════════════════════════════════ */
+.share-wrap {
+  padding: 16px 16px 0;
+  flex-shrink: 0;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 58px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+}
+
+/* ══════════════════════════════════════
+   iOS 홈 인디케이터
+══════════════════════════════════════ */
+.home-indicator {
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 0 11px;
+  flex-shrink: 0;
+}
+
+.home-indicator::after {
+  content: '';
+  display: block;
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 50px;
+}
+
+/* ══════════════════════════════════════
+   오버레이 (공유 채팅방 모달)
+══════════════════════════════════════ */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.overlay--open {
+  pointer-events: all;
+}
+
+.overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay--open .overlay-backdrop {
+  opacity: 1;
+}
+
+.overlay-modal {
+  position: relative;
+  z-index: 1;
+  background: var(--white);
+  border-radius: 43px 43px 0 0;
+  padding: 20px 0 32px;
+  transform: translateY(100%);
+  transition: transform 0.36s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.overlay--open .overlay-modal {
+  transform: translateY(0);
+}
+
+/* 모달 헤더 */
+.modal-header {
+  position: relative;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 검색창 */
+.modal-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gray-20);
+  border-radius: 10px;
+  padding: 0 16px;
+  height: 53px;
+  margin: 0 31px 20px;
+}
+
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.search-input::placeholder {
+  color: var(--gray-30);
+  font-size: 18px;
+  letter-spacing: -0.36px;
+}
+
+/* 모달 탭 */
+.modal-tabs {
+  display: flex;
+  gap: 7px;
+  margin: 0 31px 8px;
+}
+
+.modal-tab {
+  padding: 8px 15px;
+  border-radius: 52px;
+  border: 1.3px solid var(--gray-20);
+  background: var(--white);
+  color: var(--gray-50);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  line-height: 1.5;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.modal-tab.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+/* 채팅방 리스트 */
+.chatroom-list {
+  margin: 8px 0 20px;
+}
+
+.chatroom-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 86px;
+  padding: 15px 31px 15px 49px;
+  cursor: pointer;
+}
+
+.chatroom-item:last-child {
+  border-bottom: none;
+}
+
+.room-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 21px;
+  background: #D9D9D9;
+  flex-shrink: 0;
+}
+
+.room-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.room-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.36px;
+  line-height: 1.5;
+}
+
+.room-count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--gray-40);
+  letter-spacing: -0.34px;
+  line-height: 1.5;
+}
+
+.room-check {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray-30);
+  background: var(--white);
+  flex-shrink: 0;
+  position: relative;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.chatroom-item.selected .room-check {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.chatroom-item.selected .room-check::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translate(-55%, -60%) rotate(-45deg);
+}
+
+/* 보내기 버튼 */
+.send-btn {
+  display: block;
+  width: calc(100% - 62px);
+  height: 58px;
+  background: var(--black);
+  color: var(--white);
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════════
+   반응형
+══════════════════════════════════════ */
+@media (max-width: 430px) {
+  body {
+    padding: 0;
+    background: var(--white);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

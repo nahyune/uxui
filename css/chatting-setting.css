@@ -1,0 +1,486 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:       #90D50F;
+  --primary-bg:    #FBFFF3;
+  --secondary:     #F69A21;
+  --black:         #000000;
+  --gray-50:       #686868;
+  --gray-40:       #959595;
+  --gray-30:       #AFAFAF;
+  --gray-20:       #DDDDDD;
+  --gray-10:       #F6F6F6;
+  --bg:            #F2F2F2;
+  --white:         #ffffff;
+  --red:           #D32424;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a      { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+ul     { list-style: none; }
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너 430 × 932
+══════════════════════════════════════ */
+.phone {
+  width: 430px;
+  height: 932px;
+  background: var(--bg);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════
+   헤더 (흰 배경, 125px)
+══════════════════════════════════════ */
+.chat-header {
+  background: var(--white);
+  flex-shrink: 0;
+  padding: 17px 16px 0;
+  height: 125px;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.status-time {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.status-bell {
+  width: 17px;
+  height: 17px;
+  color: var(--black);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  padding-bottom: 12px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 36px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--black);
+}
+
+/* ══════════════════════════════════════
+   스크롤 영역
+══════════════════════════════════════ */
+.scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background: var(--bg);
+}
+
+.scroll-body::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════
+   프로필 섹션
+══════════════════════════════════════ */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 16px 0;
+}
+
+.profile-avatar {
+  width: 85px;
+  height: 85px;
+  border-radius: 30px;
+  background: #D9D9D9;
+}
+
+.profile-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   CTA 버튼
+══════════════════════════════════════ */
+.cta-wrap {
+  padding: 20px 16px 0;
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 70px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+  line-height: 1;
+  transition: opacity 0.15s;
+}
+
+.cta-btn:active { opacity: 0.9; }
+
+/* ══════════════════════════════════════
+   공통 섹션 카드
+══════════════════════════════════════ */
+.section-card {
+  background: var(--white);
+  border-radius: 15px;
+  margin: 16px 16px 0;
+  padding: 19px 14px 20px;
+  overflow: hidden;
+}
+
+/* 섹션 헤더 */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+}
+
+.section-more {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-30);
+  letter-spacing: -0.32px;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════
+   소비 기록 슬라이더
+══════════════════════════════════════ */
+.spending-slider {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* 오른쪽에 다음 카드 살짝 노출 */
+  padding-right: 40px;
+  cursor: grab;
+}
+
+.spending-slider:active { cursor: grabbing; }
+.spending-slider::-webkit-scrollbar { display: none; }
+
+/* ── 소비 기록 카드 ── */
+.spending-card {
+  flex: 0 0 279px;
+  width: 279px;
+  height: 212px;
+  background: var(--primary-bg);
+  border: 1px solid var(--primary);
+  border-radius: 15px;
+  padding: 21px 23px 20px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 카드 헤더 */
+.sc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.sc-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sc-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+}
+
+.sc-count {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-30);
+  letter-spacing: -0.32px;
+  line-height: 1.5;
+}
+
+.sc-more {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-30);
+  letter-spacing: -0.32px;
+  white-space: nowrap;
+}
+
+/* 카드 구분선 */
+.sc-divider {
+  border: none;
+  border-top: 1px solid var(--gray-20);
+  margin-bottom: 16px;
+}
+
+/* 카드 항목 */
+.sc-items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.sc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.34px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   대화 상대 카드
+══════════════════════════════════════ */
+.members-card {
+  padding-bottom: 20px;
+}
+
+.member-count {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--gray-50);
+  letter-spacing: -0.4px;
+}
+
+/* 멤버 리스트 */
+.member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 아바타 */
+.member-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gray-20);
+  flex-shrink: 0;
+}
+
+/* 이름 줄 ("나" 뱃지 포함) */
+.member-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* "나" 뱃지 */
+.me-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.26px;
+  flex-shrink: 0;
+}
+
+.member-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.34px;
+  line-height: 1.5;
+}
+
+/* 초대하기 */
+.invite-item { gap: 14px; }
+
+.invite-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gray-10);
+  border: 1px solid var(--gray-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.invite-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--secondary);
+  letter-spacing: -0.34px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   채팅방 나가기
+══════════════════════════════════════ */
+.leave-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 0 34px;
+  padding-bottom: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--red);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+}
+
+.bottom-spacer { height: 20px; }
+
+/* ══════════════════════════════════════
+   홈 인디케이터
+══════════════════════════════════════ */
+.home-indicator {
+  flex-shrink: 0;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 0 11px;
+}
+
+.home-indicator::after {
+  content: '';
+  display: block;
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 50px;
+}
+
+/* ══════════════════════════════════════
+   반응형
+══════════════════════════════════════ */
+@media (max-width: 430px) {
+  body {
+    padding: 0;
+    background: var(--bg);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .spending-card {
+    flex: 0 0 min(279px, 75vw);
+    width: min(279px, 75vw);
+  }
+}

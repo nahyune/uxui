@@ -1,0 +1,219 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:   #90D50F;
+  --secondary: #F69A21;
+  --black:     #000000;
+  --gray-50:   #686868;
+  --gray-40:   #959595;
+  --gray-30:   #AFAFAF;
+  --gray-20:   #DDDDDD;
+  --gray-10:   #F1F1F1;
+  --white:     #ffffff;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너 430 × 932
+══════════════════════════════════════ */
+.screen {
+  width: 430px;
+  height: 932px;
+  background: var(--gray-10);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════
+   헤더 (상태바 + 페이지 헤더 통합 흰 블록)
+══════════════════════════════════════ */
+.header {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 17px 16px;
+  flex-shrink: 0;
+}
+
+/* 상태바 */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-time {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.status-bell {
+  width: 17px;
+  height: 17px;
+  color: var(--black);
+}
+
+/* 페이지 헤더 행 */
+.page-header {
+  display: flex;
+  align-items: center;
+}
+
+.back-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+/* ══════════════════════════════════════
+   알림 리스트
+══════════════════════════════════════ */
+.noti-list {
+  flex: 1;
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.noti-list::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════
+   알림 카드
+══════════════════════════════════════ */
+.noti-card {
+  background: var(--white);
+  border-radius: 15px;
+  width: 100%;
+  min-height: 114px;
+  padding: 20px 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+/* ══════════════════════════════════════
+   상태 점 (dot)
+══════════════════════════════════════ */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gray-30);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.dot.unread {
+  background: var(--secondary);
+}
+
+/* ══════════════════════════════════════
+   텍스트 영역
+══════════════════════════════════════ */
+.noti-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.noti-msg {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  word-break: keep-all;
+}
+
+.noti-msg strong {
+  font-weight: 600;
+}
+
+.noti-time {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-30);
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+}
+
+/* ══════════════════════════════════════
+   iOS 홈 인디케이터
+══════════════════════════════════════ */
+.home-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 0;
+  background: var(--gray-10);
+  flex-shrink: 0;
+}
+
+.home-indicator::after {
+  content: '';
+  display: block;
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 50px;
+}
+
+/* ══════════════════════════════════════
+   반응형
+══════════════════════════════════════ */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    background: var(--gray-10);
+  }
+  .screen {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

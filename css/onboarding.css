@@ -1,0 +1,210 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:        #90D50F;
+  --primary-dark:   #6BA500;
+  --primary-light:  #EEF9D4;
+  --secondary:      #F69A21;
+  --black:   #000000;
+  --gray-50: #686868;
+  --gray-40: #959595;
+  --gray-30: #AFAFAF;
+  --gray-20: #DDDDDD;
+  --gray-10: #F6F6F6;
+  --white:   #ffffff;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button { cursor: pointer; border: none; background: none; }
+a      { text-decoration: none; }
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너 430 × 932
+══════════════════════════════════════ */
+.phone {
+  width: 430px;
+  height: 932px;
+  background: #ffffff;
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ══════════════════════════════════════
+   상태바
+══════════════════════════════════════ */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 17px 16px 0;
+  flex-shrink: 0;
+}
+
+.status-time {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.bell-off {
+  width: 17px;
+  height: 17px;
+  color: var(--black);
+}
+
+/* ══════════════════════════════════════
+   히어로 영역
+══════════════════════════════════════ */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 16px;
+}
+
+.hero-logo {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -1px;
+}
+
+.hero-sub {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--gray-50);
+  letter-spacing: -0.3px;
+}
+
+/* ══════════════════════════════════════
+   소셜 로그인 버튼
+══════════════════════════════════════ */
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  padding: 0 15px;
+  flex-shrink: 0;
+}
+
+.login-btn {
+  width: 100%;
+  height: 51px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.login-btn span {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.36px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.btn-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* 카카오 */
+.login-btn.kakao {
+  background: #fde500;
+}
+
+.login-btn.kakao span {
+  color: var(--black);
+}
+
+/* 네이버 */
+.login-btn.naver {
+  background: #1ec800;
+}
+
+.login-btn.naver span {
+  color: var(--white);
+}
+
+/* 애플 */
+.login-btn.apple {
+  background: var(--black);
+}
+
+.login-btn.apple span {
+  color: var(--white);
+}
+
+/* ══════════════════════════════════════
+   이메일 링크
+══════════════════════════════════════ */
+.email-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  padding: 23px 0 0;
+  flex-shrink: 0;
+}
+
+.email-links a {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.3px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.email-links .divider {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   홈 인디케이터
+══════════════════════════════════════ */
+.home-indicator {
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 50px;
+  margin: 11px auto;
+  flex-shrink: 0;
+}

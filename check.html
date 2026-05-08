@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOTIMO - 소비체크</title>
+  <link rel="stylesheet" href="css/check.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+</head>
+<body>
+<div class="phone">
+
+  <!-- 상태바 -->
+  <div class="status-bar">
+    <span class="status-time">9:35</span>
+    <svg class="status-bell" width="17" height="17" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+      <path d="M18.63 13A17.89 17.89 0 0 1 18 8"/>
+      <path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"/>
+      <path d="M18 8a6 6 0 0 0-9.33-5"/>
+      <line x1="1" y1="1" x2="23" y2="23"/>
+    </svg>
+  </div>
+
+  <!-- 페이지 제목 -->
+  <div class="page-header">
+    <h1 class="page-title">소비체크</h1>
+  </div>
+
+  <!-- 메인 스크롤 -->
+  <main class="main-scroll">
+
+    <!-- 오늘의 소비 카드 -->
+    <section class="today-card">
+      <p class="today-label">오늘의 소비</p>
+      <p class="today-amount">118,830원</p>
+      <span class="today-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+             stroke="#E16500" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
+          <polyline points="17 18 23 18 23 12"/>
+        </svg>
+        훌륭해요! 예산보다 5% 절약 중
+      </span>
+    </section>
+
+    <!-- 소비 올리기 버튼 -->
+    <a href="add-spending.html" class="upload-btn">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+        <circle cx="13" cy="13" r="12" stroke="white" stroke-width="1.5"/>
+        <line x1="13" y1="7" x2="13" y2="19" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="7" y1="13" x2="19" y2="13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      소비 올리기
+    </a>
+
+    <!-- 소비 통계 카드 -->
+    <section class="section-card stats-card">
+      <div class="card-header">
+        <span class="card-title">소비 통계</span>
+        <a href="#" class="more-link">더보기 ›</a>
+      </div>
+
+      <div class="stats-body">
+
+      <!-- 식비 -->
+      <div class="stat-row">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+               stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+            <path d="M7 2v20"/>
+            <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-name-row">
+            <span class="stat-name">식비</span>
+            <span class="stat-percent">45%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:45%"></div></div>
+        </div>
+      </div>
+
+      <!-- 교통 -->
+      <div class="stat-row">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+               stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="14" rx="2"/>
+            <path d="M3 10h18"/>
+            <path d="M8 3v7M16 3v7"/>
+            <circle cx="7.5" cy="19" r="2"/>
+            <circle cx="16.5" cy="19" r="2"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-name-row">
+            <span class="stat-name">교통</span>
+            <span class="stat-percent">30%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:30%"></div></div>
+        </div>
+      </div>
+
+      <!-- 의료 -->
+      <div class="stat-row">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+               stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="12" y1="8" x2="12" y2="16"/>
+            <line x1="8" y1="12" x2="16" y2="12"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-name-row">
+            <span class="stat-name">의료</span>
+            <span class="stat-percent">25%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div>
+        </div>
+      </div>
+
+      <!-- 쇼핑 -->
+      <div class="stat-row">
+        <div class="stat-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+               stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <div class="stat-body">
+          <div class="stat-name-row">
+            <span class="stat-name">쇼핑</span>
+            <span class="stat-percent">15%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:15%"></div></div>
+        </div>
+      </div>
+
+      </div><!-- /stats-body -->
+    </section>
+
+    <!-- 주간 리포트 카드 -->
+    <section class="section-card weekly-card">
+      <p class="card-title">주간 리포트</p>
+      <p class="weekly-sub">최근 7일 소비 패턴</p>
+
+      <div class="chart">
+        <div class="bar-group">
+          <div class="bar" style="height:80px"></div>
+          <span class="day-label">월</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:106px"></div>
+          <span class="day-label">화</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:145px"></div>
+          <span class="day-label">수</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:125px"></div>
+          <span class="day-label">목</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:158px"></div>
+          <span class="day-label">금</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar bar-active" style="height:195px"></div>
+          <span class="day-label day-label-active">토</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:109px"></div>
+          <span class="day-label">일</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 하단 네비게이션 -->
+  <nav class="bottom-nav">
+    <a href="home.html" class="nav-item">
+      <img class="nav-icon" src="img/home.JPG" alt="홈">
+      <span>홈</span>
+    </a>
+    <a href="check.html" class="nav-item active">
+      <img class="nav-icon" src="img/check_02.JPG" alt="소비체크">
+      <span>소비체크</span>
+    </a>
+    <a href="challenge.html" class="nav-item">
+      <img class="nav-icon" src="img/challenge.JPG" alt="챌린지">
+      <span>챌린지</span>
+    </a>
+    <a href="chat.html" class="nav-item">
+      <img class="nav-icon" src="img/chatting.JPG" alt="채팅">
+      <span>채팅</span>
+    </a>
+    <a href="my.html" class="nav-item">
+      <img class="nav-icon" src="img/mypage.JPG" alt="마이">
+      <span>마이</span>
+    </a>
+  </nav>
+
+  <!-- iOS 홈 인디케이터 -->
+  <div class="home-indicator"></div>
+
+</div>
+</body>
+</html>

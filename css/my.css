@@ -1,0 +1,265 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:   #90D50F;
+  --secondary: #F69A21;
+  --black:     #000000;
+  --gray-50:   #686868;
+  --gray-40:   #959595;
+  --gray-30:   #AFAFAF;
+  --gray-20:   #DDDDDD;
+  --gray-10:   #F1F1F1;
+  --white:     #ffffff;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a { text-decoration: none; }
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #AFAFAF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너 430 × 932
+══════════════════════════════════════ */
+.phone {
+  width: 430px;
+  height: 932px;
+  background: var(--gray-10);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════
+   상태바
+══════════════════════════════════════ */
+.status-bar {
+  background: var(--gray-10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px 6px;
+  flex-shrink: 0;
+}
+
+.status-time {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: 0.2px;
+}
+
+/* ══════════════════════════════════════
+   페이지 제목
+══════════════════════════════════════ */
+.page-title-wrap {
+  background: var(--gray-10);
+  padding: 10px 16px 20px;
+  flex-shrink: 0;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.3px;
+}
+
+/* ══════════════════════════════════════
+   메인 스크롤
+══════════════════════════════════════ */
+.main-scroll {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding-bottom: 16px;
+}
+
+.main-scroll::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════
+   프로필 영역
+══════════════════════════════════════ */
+.profile-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 36px;
+}
+
+.profile-avatar {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: var(--gray-20);
+}
+
+/* ══════════════════════════════════════
+   메뉴 카드
+══════════════════════════════════════ */
+.menu-card {
+  background: var(--white);
+  border-radius: 15px;
+  margin: 0 16px;
+  padding: 4px 0;
+}
+
+/* ── 메뉴 아이템 ── */
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 27px;
+  color: var(--black);
+}
+
+.menu-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* 메뉴 아이콘 (img 태그) */
+.menu-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.menu-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.2px;
+}
+
+/* chevron 화살표 */
+.chevron {
+  width: 7px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* 구분선 */
+.menu-divider {
+  height: 1px;
+  background: var(--gray-10);
+  margin: 0 27px;
+}
+
+/* ══════════════════════════════════════
+   하단 서브 링크
+══════════════════════════════════════ */
+.sub-links {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  margin-top: 30px;
+  padding-left: 16px;
+}
+
+.sub-link {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--gray-50);
+}
+
+/* ══════════════════════════════════════
+   하단 네비게이션
+══════════════════════════════════════ */
+.bottom-nav {
+  background: var(--white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 78px;
+  border-top: 1px solid var(--gray-20);
+  flex-shrink: 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+}
+
+.nav-icon {
+  width: 25px;
+  height: 25px;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-item span {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  color: var(--gray-50);
+}
+
+/* 활성 탭 — 마이 */
+.nav-item.active span {
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════
+   iOS 홈 인디케이터
+══════════════════════════════════════ */
+.home-indicator {
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0 16px;
+  flex-shrink: 0;
+}
+
+.home-indicator::after {
+  content: '';
+  display: block;
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 10px;
+}
+
+/* ══════════════════════════════════════
+   반응형 430px 이하
+══════════════════════════════════════ */
+@media (max-width: 430px) {
+  body {
+    padding: 0;
+    background: var(--gray-10);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

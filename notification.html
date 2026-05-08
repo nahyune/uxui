@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOTIMO - 알림</title>
+  <link rel="stylesheet" href="css/notification.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+</head>
+<body>
+<div class="screen">
+
+  <!-- 헤더 (상태바 + 네비) -->
+  <div class="header">
+
+    <!-- 상태바 -->
+    <div class="status-bar">
+      <span class="status-time">9:35</span>
+      <svg class="status-bell" width="17" height="17" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        <path d="M18.63 13A17.89 17.89 0 0 1 18 8"/>
+        <path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"/>
+        <path d="M18 8a6 6 0 0 0-9.33-5"/>
+        <line x1="1" y1="1" x2="23" y2="23"/>
+      </svg>
+    </div>
+
+    <!-- 페이지 헤더 -->
+    <div class="page-header">
+      <a href="home.html" class="back-row" aria-label="뒤로가기">
+        <svg width="10" height="18" viewBox="0 0 10 18" fill="none"
+             stroke="#000" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 1 1 9 9 17"/>
+        </svg>
+        <span class="page-title">알림</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- 알림 리스트 -->
+  <main class="noti-list">
+
+    <!-- 알림 1 · 미읽음 -->
+    <div class="noti-card">
+      <span class="dot unread"></span>
+      <div class="noti-text">
+        <p class="noti-msg">소비 기록 챌린지 📝 <strong>D-1!</strong><br>내일까지예요, 마지막까지 함께해요 💪</p>
+        <p class="noti-time">5분 전</p>
+      </div>
+    </div>
+
+    <!-- 알림 2 · 미읽음 -->
+    <div class="noti-card">
+      <span class="dot unread"></span>
+      <div class="noti-text">
+        <p class="noti-msg">🔥 순위가 올랐어요!<br>지금 5위예요, 이대로 유지해볼까요?</p>
+        <p class="noti-time">1시간 전</p>
+      </div>
+    </div>
+
+    <!-- 알림 3 · 읽음 -->
+    <div class="noti-card">
+      <span class="dot"></span>
+      <div class="noti-text">
+        <p class="noti-msg">아직 오늘 기록이 없어요 ✍️<br>지금 체크하고 챌린지 이어가요!</p>
+        <p class="noti-time">어제</p>
+      </div>
+    </div>
+
+    <!-- 알림 4 · 읽음 -->
+    <div class="noti-card">
+      <span class="dot"></span>
+      <div class="noti-text">
+        <p class="noti-msg">이번 주 리포트가 도착했어요 📊<br>얼마나 절약했는지 확인해보세요!</p>
+        <p class="noti-time">2일 전</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- iOS 홈 인디케이터 -->
+  <div class="home-indicator"></div>
+
+</div>
+</body>
+</html>

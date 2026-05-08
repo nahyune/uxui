@@ -1,0 +1,334 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:        #90D50F;
+  --primary-dark:   #6BA500;
+  --primary-light:  #EEF9D4;
+  --secondary:      #F69A21;
+  --secondary-light:rgba(246, 154, 33, 0.12);
+  --black:   #000000;
+  --gray-50: #686868;
+  --gray-40: #959595;
+  --gray-30: #AFAFAF;
+  --gray-20: #DDDDDD;
+  --gray-10: #F6F6F6;
+  --white:   #ffffff;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button { cursor: pointer; border: none; }
+a      { text-decoration: none; }
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너 430 × 932
+══════════════════════════════════════ */
+.phone {
+  width: 430px;
+  height: 932px;
+  background: var(--primary);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════
+   스크롤 래퍼
+══════════════════════════════════════ */
+.scroll-wrap {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.scroll-wrap::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════
+   상단 그린 영역
+══════════════════════════════════════ */
+.top-zone {
+  background: var(--primary);
+}
+
+/* 상태바 */
+.status-bar {
+  padding: 17px 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-time {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.status-bell {
+  width: 17px;
+  height: 17px;
+  color: var(--white);
+}
+
+/* 앱 헤더 */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px 36px;
+}
+
+.logo {
+  color: var(--white);
+  font-family: 'Baloo 2', 'Baloo', cursive;
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  line-height: 1;
+}
+
+.bell-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  color: var(--white);
+}
+
+/* ══════════════════════════════════════
+   흰색 메인 영역
+   그린 영역 위에 58px 겹침, 40px 라운드
+══════════════════════════════════════ */
+.main-scroll {
+  background: var(--white);
+  border-radius: 40px 40px 0 0;
+  margin-top: -30px;
+  min-height: 100%;
+}
+
+/* ══════════════════════════════════════
+   절약 금액 섹션
+══════════════════════════════════════ */
+.savings-section {
+  padding: 32px 16px 20px;
+}
+
+.savings-label {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.savings-amount {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.72px;
+  margin-bottom: 10px;
+}
+
+.savings-badge {
+  display: inline-block;
+  background: #EFF6E2;
+  color: #649900;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 16px;
+  border-radius: 10px;
+  letter-spacing: -0.32px;
+}
+
+/* ══════════════════════════════════════
+   CTA 버튼
+══════════════════════════════════════ */
+.cta-wrap {
+  padding: 32px 16px 32px;
+}
+
+.cta-btn {
+  width: 100%;
+  height: 70px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background 0.15s;
+}
+
+.cta-btn:active { background: var(--primary-dark); }
+
+/* ══════════════════════════════════════
+   인기 챌린지 섹션
+══════════════════════════════════════ */
+.challenge-section {
+  padding: 0 16px 40px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.48px;
+  margin-bottom: 8px;
+}
+
+/* ══════════════════════════════════════
+   챌린지 카드
+══════════════════════════════════════ */
+.challenge-card {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  align-items: flex-start;
+  cursor: pointer;
+  min-height: 228px;
+}
+
+.challenge-thumb {
+  width: 147px;
+  height: 192px;
+  background: var(--gray-20);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.challenge-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding-top: 14px;
+}
+
+.challenge-name {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.44px;
+  line-height: 1.5;
+}
+
+.participant-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #FFF5E7;
+  color: #E16500;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 10px;
+  letter-spacing: -0.32px;
+  width: fit-content;
+}
+
+.challenge-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #434343;
+  letter-spacing: -0.32px;
+}
+
+.card-divider {
+  height: 1px;
+  background: #EBEBEB;
+}
+
+/* ══════════════════════════════════════
+   하단 네비게이션
+══════════════════════════════════════ */
+.bottom-nav {
+  background: var(--white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 72px;
+  border-top: 1px solid var(--gray-20);
+  flex-shrink: 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  color: var(--gray-50);
+}
+
+.nav-icon {
+  width: 25px;
+  height: 25px;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-item span {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+}
+
+.nav-item.active span {
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════
+   iOS 홈 인디케이터
+══════════════════════════════════════ */
+.home-indicator {
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 0 11px;
+  flex-shrink: 0;
+}
+
+.home-indicator::after {
+  content: '';
+  display: block;
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 50px;
+}

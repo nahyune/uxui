@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOTIMO - 소비 올리기</title>
+  <link rel="stylesheet" href="css/add-spending.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+</head>
+<body>
+<div class="phone">
+
+  <!-- 상태바 -->
+  <div class="status-bar">
+    <span class="status-time">9:35</span>
+    <svg class="status-bell" width="17" height="17" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+      <path d="M18.63 13A17.89 17.89 0 0 1 18 8"/>
+      <path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"/>
+      <path d="M18 8a6 6 0 0 0-9.33-5"/>
+      <line x1="1" y1="1" x2="23" y2="23"/>
+    </svg>
+  </div>
+
+  <!-- 헤더 -->
+  <div class="page-header">
+    <a href="check.html" class="back-btn" aria-label="뒤로가기">
+      <svg width="10" height="18" viewBox="0 0 10 18" fill="none"
+           stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 1 1 9 9 17"/>
+      </svg>
+    </a>
+    <h1 class="header-title">소비 올리기</h1>
+  </div>
+
+  <!-- 카테고리 슬라이드 탭 -->
+  <div class="category-scroll">
+    <button class="cat-btn active" type="button">전체</button>
+    <button class="cat-btn" type="button">식비</button>
+    <button class="cat-btn" type="button">교통</button>
+    <button class="cat-btn" type="button">의료</button>
+    <button class="cat-btn" type="button">쇼핑</button>
+    <button class="cat-btn" type="button">카페</button>
+    <button class="cat-btn" type="button">여가</button>
+    <button class="cat-btn" type="button">생활</button>
+    <button class="cat-btn" type="button">기타</button>
+  </div>
+
+  <!-- 소비 리스트 -->
+  <main class="main-scroll">
+    <ul class="spending-list">
+
+      <li class="spending-item">
+        <div class="item-left">
+          <span class="item-label">☕ 스타벅스</span>
+        </div>
+        <div class="item-right">
+          <span class="item-amount">6,100원</span>
+          <label class="check-wrap">
+            <input type="checkbox" class="item-check">
+            <span class="check-custom"></span>
+          </label>
+        </div>
+      </li>
+
+      <li class="spending-item selected">
+        <div class="item-left">
+          <span class="item-label">🛍 무신사</span>
+        </div>
+        <div class="item-right">
+          <span class="item-amount">62,280원</span>
+          <label class="check-wrap">
+            <input type="checkbox" class="item-check" checked>
+            <span class="check-custom"></span>
+          </label>
+        </div>
+      </li>
+
+      <li class="spending-item">
+        <div class="item-left">
+          <span class="item-label">🎤 노래방</span>
+        </div>
+        <div class="item-right">
+          <span class="item-amount">10,000원</span>
+          <label class="check-wrap">
+            <input type="checkbox" class="item-check">
+            <span class="check-custom"></span>
+          </label>
+        </div>
+      </li>
+
+      <li class="spending-item">
+        <div class="item-left">
+          <span class="item-label">🍿 CGV</span>
+        </div>
+        <div class="item-right">
+          <span class="item-amount">15,000원</span>
+          <label class="check-wrap">
+            <input type="checkbox" class="item-check">
+            <span class="check-custom"></span>
+          </label>
+        </div>
+      </li>
+
+      <li class="spending-item">
+        <div class="item-left">
+          <span class="item-label">📦 쿠팡</span>
+        </div>
+        <div class="item-right">
+          <span class="item-amount">9,800원</span>
+          <label class="check-wrap">
+            <input type="checkbox" class="item-check">
+            <span class="check-custom"></span>
+          </label>
+        </div>
+      </li>
+
+      <li class="spending-item">
+        <div class="item-left">
+          <span class="item-label">💳 넷플릭스</span>
+        </div>
+        <div class="item-right">
+          <span class="item-amount">6,750원</span>
+          <label class="check-wrap">
+            <input type="checkbox" class="item-check">
+            <span class="check-custom"></span>
+          </label>
+        </div>
+      </li>
+
+      <li class="spending-item">
+        <div class="item-left">
+          <span class="item-label">🎧 애플뮤직</span>
+        </div>
+        <div class="item-right">
+          <span class="item-amount">8,900원</span>
+          <label class="check-wrap">
+            <input type="checkbox" class="item-check">
+            <span class="check-custom"></span>
+          </label>
+        </div>
+      </li>
+
+    </ul>
+  </main>
+
+  <!-- 소비 공유하기 버튼 -->
+  <div class="share-wrap">
+    <button class="share-btn" id="shareBtn" type="button">소비 공유하기</button>
+  </div>
+
+  <!-- iOS 홈 인디케이터 -->
+  <div class="home-indicator"></div>
+
+  <!-- 공유 오버레이 -->
+  <div class="overlay" id="shareOverlay" aria-modal="true" role="dialog">
+    <div class="overlay-backdrop" id="overlayBackdrop"></div>
+    <div class="overlay-modal">
+      <div class="modal-header">
+        <span></span>
+        <h2 class="modal-title">공유할 채팅방</h2>
+        <button class="modal-close" id="closeOverlay" type="button" aria-label="닫기">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="#000" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-search">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="#959595" stroke-width="2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" class="search-input" placeholder="공유하고 싶은 친구, 채팅방 검색">
+      </div>
+      <div class="modal-tabs">
+        <button class="modal-tab active" type="button">전체</button>
+        <button class="modal-tab" type="button">친구</button>
+        <button class="modal-tab" type="button">최근 공유</button>
+      </div>
+      <ul class="chatroom-list">
+        <li class="chatroom-item selected">
+          <div class="room-avatar"></div>
+          <div class="room-info">
+            <span class="room-name">소비 기록 챌린지 📝</span>
+            <span class="room-count">
+              <svg width="11" height="13" viewBox="0 0 24 28" fill="none"
+                   stroke="#959595" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4z"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              16
+            </span>
+          </div>
+          <span class="room-check"></span>
+        </li>
+        <li class="chatroom-item selected">
+          <div class="room-avatar"></div>
+          <div class="room-info">
+            <span class="room-name">통장 지키기 모임</span>
+            <span class="room-count">
+              <svg width="11" height="13" viewBox="0 0 24 28" fill="none"
+                   stroke="#959595" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4z"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              5
+            </span>
+          </div>
+          <span class="room-check"></span>
+        </li>
+        <li class="chatroom-item">
+          <div class="room-avatar"></div>
+          <div class="room-info">
+            <span class="room-name">카페 금지 챌린지 ☕</span>
+            <span class="room-count">
+              <svg width="11" height="13" viewBox="0 0 24 28" fill="none"
+                   stroke="#959595" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4z"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              83
+            </span>
+          </div>
+          <span class="room-check"></span>
+        </li>
+        <li class="chatroom-item">
+          <div class="room-avatar"></div>
+          <div class="room-info">
+            <span class="room-name">텅장 방지 협회</span>
+            <span class="room-count">
+              <svg width="11" height="13" viewBox="0 0 24 28" fill="none"
+                   stroke="#959595" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4z"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              13
+            </span>
+          </div>
+          <span class="room-check"></span>
+        </li>
+      </ul>
+      <button class="send-btn" id="sendBtn" type="button">보내기</button>
+    </div>
+  </div>
+
+</div>
+<script src="add-spending.js"></script>
+</body>
+</html>

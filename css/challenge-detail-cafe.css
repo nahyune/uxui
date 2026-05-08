@@ -1,0 +1,434 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:       #90D50F;
+  --primary-light: #EFF6E2;
+  --primary-dark:  #649900;
+  --secondary:     #F69A21;
+  --black:         #000000;
+  --gray-50:       #686868;
+  --gray-40:       #959595;
+  --gray-30:       #AFAFAF;
+  --gray-20:       #DDDDDD;
+  --gray-10:       #F6F6F6;
+  --bg:            #F2F2F2;
+  --white:         #ffffff;
+  --orange-bg:     #FFF5E7;
+  --orange-text:   #E16500;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a      { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+hr     { border: none; }
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너 430 × 932
+══════════════════════════════════════ */
+.phone {
+  width: 430px;
+  height: 932px;
+  background: var(--bg);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════
+   고정 헤더
+══════════════════════════════════════ */
+.sticky-header {
+  background: var(--white);
+  flex-shrink: 0;
+  padding: 17px 16px 0;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.status-time {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.status-bell {
+  width: 17px;
+  height: 17px;
+  color: var(--black);
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+}
+
+.back-btn,
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 34px;
+  color: var(--black);
+}
+
+/* ══════════════════════════════════════
+   스크롤 영역
+══════════════════════════════════════ */
+.scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-body::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════
+   히어로 이미지
+══════════════════════════════════════ */
+.hero-img {
+  width: 100%;
+  height: 245px;
+  background: #F1F1F1;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   챌린지 정보 카드
+══════════════════════════════════════ */
+.info-card {
+  background: var(--white);
+  border-radius: 20px 20px 0 0;
+  margin-top: -20px;
+  padding: 29px 16px 28px;
+  flex-shrink: 0;
+}
+
+.challenge-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--gray-20);
+  margin-bottom: 19px;
+}
+
+.info-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 19px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.info-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-50);
+  letter-spacing: -0.32px;
+  flex-shrink: 0;
+}
+
+.info-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.32px;
+}
+
+.duration-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 10px;
+  background: var(--orange-bg);
+  color: var(--orange-text);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.participant-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background: var(--primary-light);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  letter-spacing: -0.32px;
+  width: fit-content;
+}
+
+/* ══════════════════════════════════════
+   공통 섹션 블록 (챌린지 소개 / 나의 참여도)
+══════════════════════════════════════ */
+.section-block {
+  background: var(--bg);
+  padding: 28px 16px 0;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.44px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* ══════════════════════════════════════
+   챌린지 소개 카드
+══════════════════════════════════════ */
+.text-card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 36px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  margin-bottom: 0;
+}
+
+.intro-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--black);
+  letter-spacing: -0.36px;
+  line-height: 1.8;
+  word-break: keep-all;
+  text-align: left;
+}
+
+/* ══════════════════════════════════════
+   나의 참여도 카드
+══════════════════════════════════════ */
+.progress-card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 40px 16px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ── 도넛 차트 (SVG 방식) ── */
+.donut-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+/* SVG 자체 */
+.donut-svg {
+  display: block;
+}
+
+/* 중앙 퍼센트 텍스트 — SVG 위에 절대 오버레이 */
+.donut-pct {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.72px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ── 동기부여 문구 ── */
+.motivation-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ── 소비 체크 행 ── */
+.check-row {
+  width: 100%;
+  background: var(--gray-10);
+  border-radius: 10px;
+  padding: 0 20px;
+  height: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.check-row-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* 내부 SVG overflow 방지 */
+  overflow: hidden;
+}
+
+.check-label {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: -0.34px;
+  line-height: 1.5;
+}
+
+.check-row-right {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.check-count {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.48px;
+  line-height: 1;
+}
+
+.count-done {
+  color: var(--secondary);
+}
+
+.count-total {
+  color: var(--gray-50);
+}
+
+.count-suffix {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-50);
+  letter-spacing: -0.32px;
+}
+
+/* ══════════════════════════════════════
+   CTA 고정 하단
+══════════════════════════════════════ */
+.cta-spacer {
+  flex: 1;
+  min-height: 20px;
+  background: var(--bg);
+}
+
+.cta-area {
+  flex-shrink: 0;
+  background: var(--white);
+  box-shadow: 0 -3px 2px rgba(237, 237, 237, 0.8);
+  padding: 18px 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-btn-done {
+  width: 100%;
+  height: 58px;
+  background: var(--gray-10);
+  color: var(--gray-40);
+  border: 1px solid var(--gray-30);
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.home-indicator {
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 50px;
+  margin: 11px 0;
+}
+
+/* ══════════════════════════════════════
+   반응형
+══════════════════════════════════════ */
+@media (max-width: 430px) {
+  body {
+    padding: 0;
+    background: var(--bg);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

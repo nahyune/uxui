@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOTIMO - 통장 지키기 모임</title>
+  <link rel="stylesheet" href="css/chatting.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+</head>
+<body>
+<div class="phone">
+
+  <!-- ── 헤더 ── -->
+  <div class="chat-header">
+
+    <!-- 상태바 -->
+    <div class="status-bar">
+      <span class="status-time">9:35</span>
+      <svg class="status-bell" width="17" height="17" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        <path d="M18.63 13A17.89 17.89 0 0 1 18 8"/>
+        <path d="M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14"/>
+        <path d="M18 8a6 6 0 0 0-9.33-5"/>
+        <line x1="1" y1="1" x2="23" y2="23"/>
+      </svg>
+    </div>
+
+    <!-- 네비 -->
+    <div class="header-nav">
+      <div class="header-left">
+        <a href="chat.html" class="back-btn" aria-label="뒤로가기">
+          <svg width="10" height="18" viewBox="0 0 10 18" fill="none"
+               stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 1 1 9 9 17"/>
+          </svg>
+        </a>
+        <div class="room-info">
+          <span class="room-title">통장 지키기 모임</span>
+          <div class="room-meta">
+            <svg width="10" height="11" viewBox="0 0 10 12" fill="none"
+                 stroke="#AFAFAF" stroke-width="1.5" stroke-linecap="round">
+              <path d="M5 6.5c2.2 0 4 .9 4 2v1H1v-1c0-1.1 1.8-2 4-2z"/>
+              <circle cx="5" cy="3" r="2"/>
+            </svg>
+            <span class="room-count">5</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn" aria-label="검색">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+               stroke="#000" stroke-width="2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <a href="chatting-setting.html" class="icon-btn" aria-label="메뉴">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+               stroke="#000" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /chat-header -->
+
+  <!-- ── 메시지 스크롤 영역 ── -->
+  <div class="messages">
+
+    <!-- 날짜 구분 -->
+    <div class="date-pill">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+           stroke="#959595" stroke-width="2" stroke-linecap="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/>
+        <line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      2026년 04월 17일 금요일
+    </div>
+
+    <!-- ── 1. 주은 ── -->
+    <div class="msg-group msg-left">
+      <div class="avatar"></div>
+      <div class="msg-body">
+        <span class="sender-name">주은</span>
+        <div class="bubble-row">
+          <div class="bubble bubble-left">
+            <p>월급 들어오자마자 왜 이렇게 쓰고 싶을<br>까…</p>
+          </div>
+          <div class="time-col">
+            <span class="msg-time">오후 5:16</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2. 나 ── -->
+    <div class="msg-group msg-right">
+      <div class="bubble-row-right">
+        <div class="time-col time-col-right">
+          <span class="msg-time">오후 5:18</span>
+        </div>
+        <div class="bubble bubble-right">
+          <p>그때가 제일 위험한 타이밍이야</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 3. 수지 ── -->
+    <div class="msg-group msg-left">
+      <div class="avatar"></div>
+      <div class="msg-body">
+        <span class="sender-name">수지</span>
+        <div class="bubble-row">
+          <div class="bubble bubble-left">
+            <p>맞아 월급날 챌린지 따로 만들어야 돼</p>
+          </div>
+          <div class="time-col">
+            <span class="msg-time">오후 5:18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 4. 미주 ── -->
+    <div class="msg-group msg-left">
+      <div class="avatar"></div>
+      <div class="msg-body">
+        <span class="sender-name">미주</span>
+        <div class="bubble-row">
+          <div class="bubble bubble-left">
+            <p>월급 생존 챌린지 웃기다ㅋㅋㅋ</p>
+          </div>
+          <div class="time-col">
+            <span class="msg-time">오후 5:18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 5. 찬희 (반응: 😡 2) ── -->
+    <div class="msg-group msg-left">
+      <div class="avatar"></div>
+      <div class="msg-body">
+        <span class="sender-name">찬희</span>
+        <div class="bubble-row">
+          <div class="bubble bubble-left">
+            <p>오늘 카페 갈 사람?</p>
+          </div>
+          <div class="time-col">
+            <span class="msg-time">오후 5:19</span>
+          </div>
+        </div>
+        <div class="reactions">
+          <span class="reaction-badge">😡 2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 6. 수지 ── -->
+    <div class="msg-group msg-left">
+      <div class="avatar"></div>
+      <div class="msg-body">
+        <span class="sender-name">수지</span>
+        <div class="bubble-row">
+          <div class="bubble bubble-left">
+            <p>안 돼. 우리 방 이름 다시 보고 와</p>
+          </div>
+          <div class="time-col">
+            <span class="msg-time">오후 5:39</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 7. 주은 (반응: ❤️) ── -->
+    <div class="msg-group msg-left">
+      <div class="avatar"></div>
+      <div class="msg-body">
+        <span class="sender-name">주은</span>
+        <div class="bubble-row">
+          <div class="bubble bubble-left">
+            <p>아메리카노 하나는 괜찮지 않나…?</p>
+          </div>
+          <div class="time-col">
+            <span class="msg-time">오후 5:40</span>
+          </div>
+        </div>
+        <div class="reactions">
+          <span class="reaction-badge">❤️</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 8. 미주 (읽음 1, 반응: 👍 2 ❤️ 2) ── -->
+    <div class="msg-group msg-left">
+      <div class="avatar"></div>
+      <div class="msg-body">
+        <span class="sender-name">미주</span>
+        <div class="bubble-row">
+          <div class="bubble bubble-left">
+            <p>월급 3일차 통장 잔액 지키기 시작.</p>
+          </div>
+          <div class="time-col">
+            <span class="read-count">1</span>
+            <span class="msg-time">오후 6:05</span>
+          </div>
+        </div>
+        <div class="reactions">
+          <span class="reaction-badge">👍 2</span>
+          <span class="reaction-badge">❤️ 2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 9. 나 (읽음 1, 반응: 🔥 3 ❤️ 2) ── -->
+    <div class="msg-group msg-right">
+      <div class="bubble-row-right">
+        <div class="time-col time-col-right">
+          <span class="read-count">1</span>
+          <span class="msg-time">오후 6:15</span>
+        </div>
+        <div class="bubble bubble-right">
+          <p>이번 달도 다 같이 살아남아보자 🔥</p>
+        </div>
+      </div>
+      <div class="reactions reactions-right">
+        <span class="reaction-badge">🔥 3</span>
+        <span class="reaction-badge">❤️ 2</span>
+      </div>
+    </div>
+
+  </div><!-- /messages -->
+
+  <!-- ── 하단 입력창 ── -->
+  <div class="input-area">
+    <div class="input-row">
+      <button class="plus-btn" aria-label="파일 첨부">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+             stroke="#686868" stroke-width="2.5" stroke-linecap="round">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+      </button>
+      <div class="input-field">
+        <input type="text" class="msg-input" placeholder="메시지를 입력해주세요" />
+        <button class="send-btn" aria-label="전송">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"/>
+            <polyline points="5 12 12 5 19 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="home-indicator"></div>
+  </div><!-- /input-area -->
+
+</div><!-- /phone -->
+</body>
+</html>
