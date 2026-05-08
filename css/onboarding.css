@@ -2,17 +2,15 @@
    디자인 토큰
 ══════════════════════════════════════ */
 :root {
-  --primary:        #90D50F;
-  --primary-dark:   #6BA500;
-  --primary-light:  #EEF9D4;
-  --secondary:      #F69A21;
-  --black:   #000000;
-  --gray-50: #686868;
-  --gray-40: #959595;
-  --gray-30: #AFAFAF;
-  --gray-20: #DDDDDD;
-  --gray-10: #F6F6F6;
-  --white:   #ffffff;
+  --primary:   #90D50F;
+  --secondary: #F69A21;
+  --black:     #000000;
+  --gray-50:   #686868;
+  --gray-40:   #959595;
+  --gray-30:   #AFAFAF;
+  --gray-20:   #DDDDDD;
+  --gray-10:   #F6F6F6;
+  --white:     #ffffff;
 }
 
 /* ══════════════════════════════════════
@@ -24,8 +22,7 @@
   padding: 0;
 }
 
-button { cursor: pointer; border: none; background: none; }
-a      { text-decoration: none; }
+a { text-decoration: none; color: inherit; }
 
 /* ══════════════════════════════════════
    body
@@ -47,13 +44,12 @@ body {
 .phone {
   width: 430px;
   height: 932px;
-  background: #ffffff;
+  background: var(--white);
   border-radius: 54px;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
   display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 /* ══════════════════════════════════════
@@ -63,148 +59,130 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 17px 16px 0;
+  padding: 17px 24px 0;
+  height: 61px;
   flex-shrink: 0;
 }
 
 .status-time {
   font-size: 18px;
   font-weight: 600;
-  line-height: 1.5;
-  color: var(--black);
-}
-
-.bell-off {
-  width: 17px;
-  height: 17px;
   color: var(--black);
 }
 
 /* ══════════════════════════════════════
-   히어로 영역
+   헤드라인
 ══════════════════════════════════════ */
-.hero {
+.headline {
+  margin-top: 21px;
+  padding: 0 47px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   중앙 여백
+══════════════════════════════════════ */
+.spacer {
   flex: 1;
+}
+
+/* ══════════════════════════════════════
+   SNS 로그인 영역
+══════════════════════════════════════ */
+.social-section {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 16px;
+  gap: 28px;
+  padding: 0 47px 0;
 }
 
-.hero-logo {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--primary);
-  letter-spacing: -1px;
-}
-
-.hero-sub {
+.sns-label {
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
+  color: var(--gray-40);
+  letter-spacing: -0.3px;
+}
+
+.sns-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* 원형 SNS 버튼 65×65 */
+.sns-btn {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sns-btn.kakao  { background: #FDE500; }
+.sns-btn.naver  { background: #1EC800; }
+.sns-btn.apple  { background: #000000; }
+.sns-btn.google { background: #4285F4; }
+
+/* ══════════════════════════════════════
+   로그인 도움말 pill
+══════════════════════════════════════ */
+.login-help {
+  flex-shrink: 0;
+  margin: 28px auto 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 24px;
+  border: 1px solid var(--gray-30);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--gray-50);
-  letter-spacing: -0.3px;
-}
-
-/* ══════════════════════════════════════
-   소셜 로그인 버튼
-══════════════════════════════════════ */
-.login-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 23px;
-  padding: 0 15px;
-  flex-shrink: 0;
-}
-
-.login-btn {
-  width: 100%;
-  height: 51px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.login-btn span {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: -0.36px;
-  line-height: 1.5;
+  letter-spacing: -0.28px;
   white-space: nowrap;
-}
-
-.btn-icon {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
-/* 카카오 */
-.login-btn.kakao {
-  background: #fde500;
-}
-
-.login-btn.kakao span {
-  color: var(--black);
-}
-
-/* 네이버 */
-.login-btn.naver {
-  background: #1ec800;
-}
-
-.login-btn.naver span {
-  color: var(--white);
-}
-
-/* 애플 */
-.login-btn.apple {
-  background: var(--black);
-}
-
-.login-btn.apple span {
-  color: var(--white);
-}
-
-/* ══════════════════════════════════════
-   이메일 링크
-══════════════════════════════════════ */
-.email-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 26px;
-  padding: 23px 0 0;
-  flex-shrink: 0;
-}
-
-.email-links a {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--black);
-  letter-spacing: -0.3px;
-  line-height: 1.5;
-  white-space: nowrap;
-}
-
-.email-links .divider {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--black);
-  line-height: 1.5;
 }
 
 /* ══════════════════════════════════════
    홈 인디케이터
 ══════════════════════════════════════ */
 .home-indicator {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 11px;
+}
+
+.home-indicator::after {
+  content: '';
+  display: block;
   width: 135px;
   height: 5px;
   background: var(--black);
   border-radius: 50px;
-  margin: 11px auto;
-  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   반응형
+══════════════════════════════════════ */
+@media (max-width: 430px) {
+  body {
+    padding: 0;
+    background: var(--white);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
