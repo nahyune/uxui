@@ -317,3 +317,25 @@ body {
   background: var(--black);
   border-radius: 50px;
 }
+
+/* ══════════════════════════════════════
+   반응형
+══════════════════════════════════════ */
+@media (max-width: 430px) {
+  html {
+    overflow: hidden;
+    height: 100%;
+  }
+  body {
+    overflow: hidden;
+    height: 100%;
+    padding: 0;
+    background: var(--primary);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
