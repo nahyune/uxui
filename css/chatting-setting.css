@@ -479,4 +479,6 @@ body {
     flex: 0 0 min(279px, 75vw);
     width: min(279px, 75vw);
   }
+  .home-indicator { display: none; }
+  .status-bar { height: env(safe-area-inset-top, 0px); }
 }

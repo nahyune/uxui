@@ -446,10 +446,14 @@ body {
     padding: 0;
     background: var(--bg);
   }
+
   .phone {
     width: 100%;
     height: 100dvh;
     border-radius: 0;
     box-shadow: none;
   }
+  .home-indicator { display: none; }
+  .status-bar { height: env(safe-area-inset-top, 0px); }
 }
+  
