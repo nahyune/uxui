@@ -59,35 +59,19 @@ body {
 }
 
 /* ══════════════════════════════════════
-   상단 헤더 (흰 배경, 125px)
+   상단 헤더 프레임
 ══════════════════════════════════════ */
 .top-header {
   background: var(--white);
   flex-shrink: 0;
-  height: 125px;
-  padding: 17px 16px 0;
+  padding: 0 16px 14px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
 }
 
 .status-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 28px;
-}
-
-.status-time {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--black);
-}
-
-.status-bell {
-  width: 17px;
-  height: 17px;
-  color: var(--black);
+  height: 44px;
 }
 
 .header-nav {
