@@ -303,7 +303,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 72px;
+  height: 57px;
   border-top: 1px solid var(--gray-20);
   flex-shrink: 0;
 }
