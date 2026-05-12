@@ -541,7 +541,8 @@ body {
     border-radius: 0;
     box-shadow: none;
   }
-  .home-indicator { display: none; }
+  .home-indicator { height: max(env(safe-area-inset-bottom), 20px); flex-shrink: 0; }
+  .home-indicator::after { display: none; }
   .status-bar { height: env(safe-area-inset-top, 0px); }
 }
   

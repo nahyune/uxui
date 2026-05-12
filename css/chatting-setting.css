@@ -479,6 +479,7 @@ body {
     flex: 0 0 min(279px, 75vw);
     width: min(279px, 75vw);
   }
-  .home-indicator { display: none; }
+  .home-indicator { height: max(env(safe-area-inset-bottom), 20px); flex-shrink: 0; }
+  .home-indicator::after { display: none; }
   .status-bar { height: env(safe-area-inset-top, 0px); }
 }

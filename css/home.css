@@ -110,6 +110,10 @@ body {
    흰색 메인 영역
    그린 영역 위에 58px 겹침, 40px 라운드
 ══════════════════════════════════════ */
+.scroll-wrap {
+  background: var(--white);
+}
+
 .main-scroll {
   background: var(--white);
   border-radius: 40px 40px 0 0;
@@ -339,6 +343,7 @@ body {
     border-radius: 0;
     box-shadow: none;
   }
-  .home-indicator { display: none; }
+  .home-indicator { height: max(env(safe-area-inset-bottom), 20px); flex-shrink: 0; }
+  .home-indicator::after { display: none; }
 }
   

@@ -160,7 +160,7 @@ body {
   flex: 1;
   overflow-y: auto;
   scrollbar-width: none;
-  padding: 16px 16px 8px;
+  padding: 16px 16px 16px;
   display: flex;
   flex-direction: column;
   background: var(--bg);
@@ -438,7 +438,8 @@ body {
     border-radius: 0;
     box-shadow: none;
   }
-  .home-indicator { display: none; }
+  .home-indicator { height: max(env(safe-area-inset-bottom), 20px); flex-shrink: 0; }
+  .home-indicator::after { display: none; }
   .status-bar { height: env(safe-area-inset-top, 0px); }
 }
   
