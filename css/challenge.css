@@ -142,14 +142,14 @@ body {
 .my-card {
   flex-shrink:0;
   width:361px;
-  height:235px;
+  min-height:235px;
   background:var(--white);
   border:1px solid #CECECE;
   border-radius:15px;
   overflow:hidden;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  gap:0;
   padding:34px 23px 22px;
   scroll-snap-align:start;
   cursor:pointer;
@@ -160,6 +160,7 @@ body {
   align-items:flex-start;
   gap:16px;
   flex:1;
+  margin-bottom:16px;
 }
 
 .my-card-left {
@@ -392,7 +393,7 @@ body {
 .coming-slide {
   flex-shrink:0;
   width:396px;
-  background:var(--gray-20);
+  background:var(--gray-10);
   border-radius:10px;
   padding:21px 11px;
   scroll-snap-align:start;
@@ -401,16 +402,15 @@ body {
 .coming-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:8px 8px;
-  row-gap:19px;
+  gap:19px 8px;
 }
 
 /* 미니 카드 */
 .mini-card {
   display:flex;
   flex-direction:column;
-  gap:12px;
-  width:177px;
+  gap:10px;
+  min-width:0;
 }
 
 .mini-thumb {
@@ -421,20 +421,20 @@ body {
 }
 
 .mini-sub {
-  font-size:16px;
+  font-size:14px;
   font-weight:500;
   color:var(--gray-50);
-  letter-spacing:-0.32px;
-  line-height:1;
-  margin-bottom:-8px;
+  letter-spacing:-0.28px;
+  line-height:1.4;
 }
 
 .mini-name {
-  font-size:20px;
+  font-size:18px;
   font-weight:500;
   color:var(--black);
-  letter-spacing:-0.4px;
-  line-height:1.5;
+  letter-spacing:-0.36px;
+  line-height:1.4;
+  word-break:keep-all;
 }
 
 .mini-count {
@@ -570,5 +570,7 @@ body {
   /* 카드 너비 반응형 */
   .my-card  { width: calc(100vw - 70px); }
   .join-card { width: calc(100vw - 70px); }
+  /* 곧 시작해요 슬라이드 반응형 */
+  .coming-slide { width: calc(100vw - 32px); }
 }
   
