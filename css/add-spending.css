@@ -263,6 +263,7 @@ body {
 .share-wrap {
   padding: 16px 16px 0;
   flex-shrink: 0;
+  box-shadow: 0 -3px 1.9px #ededed;
 }
 
 .share-btn {

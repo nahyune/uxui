@@ -38,8 +38,17 @@ document.addEventListener('mousemove', e => {
 });
 
 /* ════════════════════════════════════════
-   소비 리스트 체크박스 → 해당 row selected 클래스 toggle
+   소비 아이템 행 전체 클릭 → selected 토글
 ════════════════════════════════════════ */
+document.querySelectorAll('.spending-item').forEach(item => {
+  item.addEventListener('click', e => {
+    const checkbox = item.querySelector('.item-check');
+    if (e.target === checkbox) return; // 체크박스 직접 클릭은 별도 처리
+    checkbox.checked = !checkbox.checked;
+    item.classList.toggle('selected', checkbox.checked);
+  });
+});
+
 document.querySelectorAll('.item-check').forEach(checkbox => {
   checkbox.addEventListener('change', () => {
     checkbox.closest('.spending-item').classList.toggle('selected', checkbox.checked);

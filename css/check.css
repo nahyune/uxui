@@ -351,6 +351,7 @@ body {
   align-items: center;
   height: 57px;
   border-top: 1px solid var(--gray-20);
+  box-shadow: 0 -3px 1.9px #ededed;
   flex-shrink: 0;
 }
 
