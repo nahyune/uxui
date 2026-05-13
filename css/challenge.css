@@ -540,17 +540,14 @@ body {
   background:var(--white);
   display:flex;
   justify-content:center;
-  align-items:center;
-  padding:9px 0 11px;
+  align-items:flex-start;
+  padding-top:10px;
+  height:24px;
   flex-shrink:0;
 }
 
 .home-indicator::after {
-  content:'';
-  display:block;
-  width:135px;
-  height:5px;
-  background:var(--black);
+  display:none;
   border-radius:50px;
 }
 
