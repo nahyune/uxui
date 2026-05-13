@@ -157,8 +157,8 @@ body {
 
 .my-card-inner {
   display:flex;
-  justify-content:space-between;
   align-items:flex-start;
+  gap:16px;
   flex:1;
 }
 
@@ -166,7 +166,8 @@ body {
   display:flex;
   flex-direction:column;
   gap:8px;
-  width:159px;
+  flex:1;
+  min-width:0;
 }
 
 /* D-day 뱃지 */
@@ -208,6 +209,7 @@ body {
   color:var(--gray-50);
   letter-spacing:-0.32px;
   line-height:1.5;
+  white-space:nowrap;
 }
 
 /* 썸네일 */
@@ -564,5 +566,9 @@ body {
   .home-indicator { height: max(env(safe-area-inset-bottom), 20px); flex-shrink: 0; }
   .home-indicator::after { display: none; }
   .status-bar { height: env(safe-area-inset-top, 0px); }
+
+  /* 카드 너비 반응형 */
+  .my-card  { width: calc(100vw - 70px); }
+  .join-card { width: calc(100vw - 70px); }
 }
   

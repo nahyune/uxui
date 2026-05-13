@@ -139,7 +139,7 @@
   document.querySelectorAll('.hscroll:not(.coming-hscroll)').forEach(function (el) {
     if (el.children.length < 1) return;
     initDrag(el);
-    initDots(el, null);
+    /* 나의 챌린지 / 지금 참여하세요는 점 없음 */
   });
 
   /* ═══════════════════════════════════════
