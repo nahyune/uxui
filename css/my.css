@@ -185,8 +185,9 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 57px;
-  border-top: 1px solid var(--gray-20);
-  box-shadow: 0 -3px 1.9px #ededed;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+  position: relative;
+  z-index: 10;
   flex-shrink: 0;
 }
 
