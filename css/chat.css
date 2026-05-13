@@ -327,7 +327,7 @@ body {
   flex-shrink: 0;
 }
 
-.nav-icon-home      { width: 24px; height: 24px; object-fit: contain; display: block; }
+.nav-icon-home      { width: 25px; height: 24px; object-fit: contain; display: block; }
 .nav-icon-check     { width: 22px; height: 22px; object-fit: contain; display: block; }
 .nav-icon-challenge { width: 17px; height: 22px; object-fit: contain; display: block; }
 .nav-icon-chat      { width: 23px; height: 23px; object-fit: contain; display: block; }
