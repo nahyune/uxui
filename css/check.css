@@ -406,7 +406,7 @@ body {
 }
 
 /* 피그마 아이콘 크기 (각 아이콘별 개별 지정) */
-.nav-icon-home      { width:25px; height:24px; object-fit:contain; display:block; }
+.nav-icon-home      { width:26px; height:24px; object-fit:contain; display:block; }
 .nav-icon-check     { width:22px; height:22px; object-fit:contain; display:block; }
 .nav-icon-challenge { width:17px; height:22px; object-fit:contain; display:block; }
 .nav-icon-chat      { width:23px; height:23px; object-fit:contain; display:block; }
