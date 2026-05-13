@@ -212,11 +212,18 @@ body {
 
 /* 썸네일 */
 .my-thumb {
-  width:123px;
-  height:123px;
-  background:var(--gray-20);
+  width:128px;
+  height:128px;
   border-radius:10px;
   flex-shrink:0;
+  overflow:hidden;
+}
+
+.my-thumb img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
 }
 
 /* 프로그레스 */
@@ -271,6 +278,14 @@ body {
   background:var(--gray-20);
   position:relative;
   flex-shrink:0;
+  overflow:hidden;
+}
+
+.join-img-bg {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 .join-overlay {
