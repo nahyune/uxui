@@ -2,431 +2,466 @@
    디자인 토큰
 ══════════════════════════════════════ */
 :root {
-  --primary:         #90D50F;
-  --primary-light:   #EFF6E2;
-  --secondary:       #F69A21;
-  --secondary-dark:  #E16500;
-  --black:           #000000;
-  --gray-50:         #686868;
-  --gray-40:         #959595;
-  --gray-30:         #AFAFAF;
-  --gray-20:         #DDDDDD;
-  --gray-10:         #F6F6F6;
-  --white:           #ffffff;
+  --primary:        #90D50F;
+  --primary-light:  #EFF6E2;
+  --secondary:      #F69A21;
+  --secondary-dark: #E16500;
+  --black:          #000000;
+  --gray-50:        #686868;
+  --gray-40:        #959595;
+  --gray-30:        #AFAFAF;
+  --gray-20:        #E0E0E0;
+  --gray-10:        #F6F6F6;
+  --white:          #ffffff;
 }
 
-/* ══════════════════════════════════════
-   리셋
-══════════════════════════════════════ */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-a      { text-decoration: none; color: inherit; }
-button { cursor: pointer; font-family: inherit; border: none; }
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+a      { text-decoration:none; color:inherit; }
+button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ══════════════════════════════════════
    body
 ══════════════════════════════════════ */
 body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
-               'Apple SD Gothic Neo', sans-serif;
-  background: #c0c0c0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 36px 0;
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+  background:#c0c0c0;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+  padding:36px 0;
 }
 
 /* ══════════════════════════════════════
-   폰 컨테이너 430 × 932
+   폰 컨테이너
 ══════════════════════════════════════ */
 .phone {
-  width: 430px;
-  height: 932px;
-  background: var(--white);
-  border-radius: 54px;
-  overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
-  display: flex;
-  flex-direction: column;
+  width:430px;
+  height:932px;
+  background:var(--white);
+  border-radius:54px;
+  overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.28);
+  display:flex;
+  flex-direction:column;
 }
 
 /* ══════════════════════════════════════
    헤더 프레임
 ══════════════════════════════════════ */
 .top-frame {
-  background: var(--white);
-  flex-shrink: 0;
+  background:var(--white);
+  flex-shrink:0;
 }
 
 .status-bar {
-  height: 44px;
+  height:44px;
 }
 
+/* 피그마: 타이틀 top-59px (inner top-17px 기준) */
 .page-header {
-  padding: 12px 16px 32px;
+  padding:12px 16px 32px;
 }
 
 .page-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--black);
-  letter-spacing: -0.48px;
-  line-height: 1.5;
+  font-size:24px;
+  font-weight:600;
+  color:var(--black);
+  letter-spacing:-0.48px;
+  line-height:1.5;
 }
 
 /* ══════════════════════════════════════
-   메인 스크롤
+   메인 스크롤  (피그마 gap-24px 대응)
 ══════════════════════════════════════ */
 .main-scroll {
-  flex: 1;
-  overflow-y: auto;
-  scrollbar-width: none;
-  padding: 0 16px 24px;
+  flex:1;
+  overflow-y:auto;
+  scrollbar-width:none;
+  padding:0 16px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
 }
 
-.main-scroll::-webkit-scrollbar { display: none; }
+.main-scroll::-webkit-scrollbar { display:none; }
 
 /* ══════════════════════════════════════
-   오늘의 소비 카드
+   오늘의 소비 카드  (피그마 checkBox1)
+   px-55 py-24 bg-#fcfff6 border-#90d50f
 ══════════════════════════════════════ */
 .today-card {
-  background: #FCFFF6;
-  border: 1px solid var(--primary);
-  border-radius: 10px;
-  padding: 21px 24px 21px 50px;
-  margin-bottom: 32px;
-  min-height: 182px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
+  background:#FCFFF6;
+  border:1px solid var(--primary);
+  border-radius:10px;
+  padding:24px 55px;
+  display:flex;
+  flex-direction:column;
+  flex-shrink:0;
 }
 
+/* 피그마: 17px Medium */
 .today-label {
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--black);
-  letter-spacing: -0.4px;
-  line-height: 1.5;
+  font-size:17px;
+  font-weight:500;
+  color:var(--black);
+  letter-spacing:-0.34px;
+  line-height:1.5;
 }
 
+/* 피그마: gap-10px between amount & badge */
+.today-content {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* 피그마: 36px SemiBold */
 .today-amount {
-  font-size: 36px;
-  font-weight: 600;
-  color: var(--black);
-  letter-spacing: -0.72px;
-  line-height: 1.5;
+  font-size:36px;
+  font-weight:600;
+  color:var(--black);
+  letter-spacing:-0.72px;
+  line-height:1.5;
 }
 
+/* 피그마: h-36px px-10px bg-#fff5e7 rounded-10px */
 .today-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: #FFF5E7;
-  color: var(--secondary-dark);
-  font-size: 16px;
-  font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 10px;
-  letter-spacing: -0.32px;
-  width: fit-content;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  height:36px;
+  padding:0 10px;
+  background:#FFF5E7;
+  color:var(--secondary-dark);
+  font-size:16px;
+  font-weight:500;
+  letter-spacing:-0.32px;
+  border-radius:10px;
+  width:fit-content;
+  white-space:nowrap;
 }
 
 /* ══════════════════════════════════════
-   소비 올리기 버튼
+   소비 올리기 버튼  (피그마 checkbtn)
+   h-70px bg-black rounded-10px
+   font-22px SemiBold gap-18px
 ══════════════════════════════════════ */
 .upload-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  width: 100%;
-  height: 70px;
-  background: var(--black);
-  color: var(--white);
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -0.48px;
-  margin-bottom: 32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  width:100%;
+  height:70px;
+  background:var(--black);
+  color:var(--white);
+  border-radius:10px;
+  font-size:22px;
+  font-weight:600;
+  letter-spacing:-0.44px;
+  flex-shrink:0;
 }
 
 /* ══════════════════════════════════════
-   공통 섹션 카드
-══════════════════════════════════════ */
-.section-card {
-  border: 1px solid var(--gray-20);
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--white);
-  margin-bottom: 40px;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 23px 27px 0 24px;
-  margin-bottom: 0;
-  height: 56px;
-}
-
-.card-title {
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--black);
-  letter-spacing: -0.44px;
-  line-height: 1.5;
-}
-
-.more-link {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--gray-30);
-  letter-spacing: -0.32px;
-}
-
-/* ══════════════════════════════════════
-   소비 통계 카드
+   소비 통계 카드  (피그마 checkBox2)
+   bg-#f6f6f6 border-#e0e0e0 p-24px
+   gap-41px between header & rows
 ══════════════════════════════════════ */
 .stats-card {
-  background: var(--gray-10);
-  min-height: 429px;
+  background:var(--gray-10);
+  border:1px solid var(--gray-20);
+  border-radius:10px;
+  padding:24px;
+  display:flex;
+  flex-direction:column;
+  flex-shrink:0;
 }
 
+/* 피그마: header h-33px, margin-bottom=41px (gap-41px) */
+.card-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:41px;
+  flex-shrink:0;
+}
+
+/* 피그마: 22px Medium */
+.card-title {
+  font-size:22px;
+  font-weight:500;
+  color:var(--black);
+  letter-spacing:-0.44px;
+  line-height:1.5;
+}
+
+/* 피그마: 16px SemiBold #afafaf gap-9px */
+.more-link {
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:16px;
+  font-weight:600;
+  color:var(--gray-30);
+  letter-spacing:-0.32px;
+}
+
+/* 피그마: gap-31px between stat rows */
 .stats-body {
-  padding: 24px 24px 24px 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 31px;
+  display:flex;
+  flex-direction:column;
+  gap:31px;
 }
 
-/* 통계 행 */
+/* 피그마: gap-28px between icon & bar */
 .stat-row {
-  display: flex;
-  align-items: center;
-  gap: 28px;
+  display:flex;
+  align-items:center;
+  gap:28px;
 }
 
+/* 피그마: 49×49px icon */
 .stat-icon {
-  width: 49px;
-  height: 49px;
-  flex-shrink: 0;
-}
-
-.stat-icon img {
-  width: 49px;
-  height: 49px;
-  object-fit: contain;
+  width:49px;
+  height:49px;
+  flex-shrink:0;
+  object-fit:contain;
 }
 
 .stat-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:0;
 }
 
 .stat-name-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
+/* 피그마: 16px SemiBold #686868 */
 .stat-name {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--gray-50);
-  letter-spacing: -0.32px;
+  font-size:16px;
+  font-weight:600;
+  color:var(--gray-50);
+  letter-spacing:-0.32px;
+  line-height:1.5;
 }
 
+/* 피그마: 16px Medium #686868 */
 .stat-percent {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--gray-50);
-  letter-spacing: -0.32px;
+  font-size:16px;
+  font-weight:500;
+  color:var(--gray-50);
+  letter-spacing:-0.32px;
+  line-height:1.5;
 }
 
+/* 피그마: h-10.393px bg-#e0e0e0 */
 .progress-bar {
-  width: 100%;
-  height: 10px;
-  background: var(--gray-20);
-  border-radius: 50px;
-  overflow: hidden;
+  width:100%;
+  height:10px;
+  background:var(--gray-20);
+  border-radius:50px;
+  overflow:hidden;
 }
 
+/* 피그마: bg-#f69a21 */
 .progress-fill {
-  height: 100%;
-  background: var(--secondary);
-  border-radius: 50px;
+  height:100%;
+  background:var(--secondary);
+  border-radius:50px;
 }
 
 /* ══════════════════════════════════════
-   주간 리포트 카드
+   주간 리포트 카드  (피그마 checkBox3)
+   bg-white border-#e0e0e0 p-24px
+   gap-102px between header & chart
 ══════════════════════════════════════ */
 .weekly-card {
-  height: 412px;
-  padding: 22px 24px 24px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 0;
+  background:var(--white);
+  border:1px solid var(--gray-20);
+  border-radius:10px;
+  padding:24px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  flex-shrink:0;
 }
 
-.weekly-card .card-title {
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: -0.44px;
-  margin-bottom: 4px;
-  flex-shrink: 0;
+/* header text group — margin-bottom=102px (피그마 gap-102px) */
+.weekly-header {
+  display:flex;
+  flex-direction:column;
+  margin-bottom:102px;
+  flex-shrink:0;
 }
 
+/* 피그마: 22px Medium */
+.weekly-title {
+  font-size:22px;
+  font-weight:500;
+  color:var(--black);
+  letter-spacing:-0.44px;
+  line-height:1.5;
+}
+
+/* 피그마: 16px Medium #686868 */
 .weekly-sub {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--gray-50);
-  letter-spacing: -0.32px;
-  margin-bottom: 0;
-  flex-shrink: 0;
+  font-size:16px;
+  font-weight:500;
+  color:var(--gray-50);
+  letter-spacing:-0.32px;
+  line-height:1.5;
 }
 
-/* 막대 그래프 */
+/* 막대 차트 컨테이너  (피그마: h-192px gap-16px) */
 .chart {
-  flex: 1;
-  display: flex;
-  align-items: flex-end;
-  gap: clamp(6px, 2.5vw, 17px);
-  padding-bottom: 4px;
-  margin-top: 16px;
-  overflow: hidden;
+  height:192px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:16px;
+  overflow:hidden;
+  flex-shrink:0;
 }
 
+/* 피그마: w-32px h-192px per column */
 .bar-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-  flex: 1;
-  min-width: 0;
-  height: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  gap:8px;
+  width:32px;
+  flex-shrink:0;
+  height:100%;
 }
 
+/* 피그마: rounded-tl-[19.5px] rounded-tr-[19.5px] bg-#eff6e2 */
 .bar {
-  width: 100%;
-  max-width: 35px;
-  background: var(--primary-light);
-  border-radius: 20px 20px 0 0;
-  flex-shrink: 0;
+  width:32px;
+  background:var(--primary-light);
+  border-radius:19.5px 19.5px 0 0;
+  flex-shrink:0;
 }
 
+/* 피그마: bg-#90d50f (active bar = 토) */
 .bar-active {
-  background: var(--primary);
+  background:var(--primary);
 }
 
+/* 피그마: 16px Medium */
 .day-label {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--black);
-  letter-spacing: -0.28px;
-  line-height: 1.5;
-  flex-shrink: 0;
+  font-size:16px;
+  font-weight:500;
+  color:var(--black);
+  letter-spacing:-0.32px;
+  line-height:1.5;
+  text-align:center;
+  flex-shrink:0;
 }
 
 /* ══════════════════════════════════════
-   하단 네비게이션
+   하단 네비게이션  (피그마 bottom nav)
+   h-104px 분리: nav-80px + indicator-24px
+   drop-shadow 0px -3px 0.8px rgba(237,237,237,0.84)
 ══════════════════════════════════════ */
 .bottom-nav {
-  background: var(--white);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 57px;
-  border-top: 1px solid var(--gray-20);
-  box-shadow: 0 -3px 1.9px #ededed;
-  flex-shrink: 0;
+  background:var(--white);
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:17px 16px 0;
+  height:80px;
+  box-shadow:0 -3px 0.8px rgba(237,237,237,0.84);
+  flex-shrink:0;
 }
 
+/* 피그마: w-52px flex-col items-center gap-4px */
 .nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
-  color: var(--gray-50);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  width:52px;
+  color:var(--gray-50);
 }
 
-.nav-icon {
-  width: 25px;
-  height: 25px;
-  display: block;
-  object-fit: contain;
-}
+/* 피그마 아이콘 크기 (각 아이콘별 개별 지정) */
+.nav-icon-home      { width:24px; height:28px; object-fit:contain; display:block; }
+.nav-icon-check     { width:21px; height:21px; object-fit:contain; display:block; }
+.nav-icon-challenge { width:17px; height:22px; object-fit:contain; display:block; }
+.nav-icon-chat      { width:23px; height:23px; object-fit:contain; display:block; }
+.nav-icon-my        { width:22px; height:24px; object-fit:contain; display:block; }
 
+/* 피그마: 15px Medium letter-spacing -0.3px */
 .nav-item span {
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: -0.32px;
-  color: var(--gray-50);
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:-0.3px;
+  color:var(--gray-50);
+  text-align:center;
+  width:100%;
 }
 
+/* active: text-black, weight 유지 */
 .nav-item.active span {
-  color: var(--black);
-  font-weight: 600;
+  color:var(--black);
 }
 
 /* ══════════════════════════════════════
    iOS 홈 인디케이터
+   피그마: top-90px (from nav start) → nav(80px)+pad(10px)
 ══════════════════════════════════════ */
 .home-indicator {
-  background: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 9px 0 11px;
-  flex-shrink: 0;
+  background:var(--white);
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding-top:10px;
+  height:24px;
+  flex-shrink:0;
 }
 
 .home-indicator::after {
-  content: '';
-  display: block;
-  width: 135px;
-  height: 5px;
-  background: var(--black);
-  border-radius: 50px;
+  content:'';
+  display:block;
+  width:135px;
+  height:5px;
+  background:var(--black);
+  border-radius:50px;
 }
 
 /* ══════════════════════════════════════
    반응형
 ══════════════════════════════════════ */
 @media (max-width: 430px) {
-  html {
-    overflow: hidden;
-    height: 100%;
-  }
-  body {
-    overflow: hidden;
-    height: 100%;
-    padding: 0;
-    background: var(--white);
-  }
+  html { overflow:hidden; height:100%; }
+  body { overflow:hidden; height:100%; padding:0; background:var(--white); }
 
   .phone {
-    width: 100%;
-    height: 100dvh;
-    border-radius: 0;
-    box-shadow: none;
+    width:100%;
+    height:100dvh;
+    border-radius:0;
+    box-shadow:none;
   }
-  .home-indicator { height: max(env(safe-area-inset-bottom), 20px); flex-shrink: 0; }
-  .home-indicator::after { display: none; }
-  .status-bar { height: env(safe-area-inset-top, 0px); }
+
+  /* 상태바 safe-area */
+  .status-bar { height:env(safe-area-inset-top, 0px); }
+
+  /* 홈 인디케이터 safe-area */
+  .home-indicator {
+    height:max(env(safe-area-inset-bottom), 20px);
+    padding-top:0;
+    align-items:center;
+  }
+  .home-indicator::after { display:none; }
+
+  /* 소형 폰에서 today-card 패딩 조정 */
+  .today-card { padding:24px 24px; }
 }
-  

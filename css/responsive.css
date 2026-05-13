@@ -1,0 +1,91 @@
+/* ═══════════════════════════════════════════
+   responsive.css — 소형 폰 공통 반응형 보정
+   모든 페이지에서 페이지별 CSS 뒤에 로드
+═══════════════════════════════════════════ */
+
+/* ──────────────────────────────────────────
+   소형 폰 너비 보정  (≤ 390px)
+   iPhone SE 1~3세대(375px), Pixel 6a 등 대응
+────────────────────────────────────────── */
+@media (max-width: 390px) {
+
+  /* 공통 헤더 타이틀 */
+  .page-title,
+  .section-title,
+  .card-title {
+    font-size: 20px !important;
+    letter-spacing: -0.4px !important;
+  }
+
+  /* 공통 섹션 패딩 축소 */
+  .section-header { padding-left: 14px !important; padding-right: 14px !important; }
+  .page-header    { padding-left: 14px !important; padding-right: 14px !important; }
+
+  /* 수평 스크롤 시작 여백 */
+  .hscroll { padding-left: 14px !important; }
+
+  /* ── 나의 챌린지 카드 ───────────────── */
+  .my-card      { height: 220px !important; }
+  .my-thumb     { width: 100px !important; height: 100px !important; }
+  .my-card-name { font-size: 17px !important; letter-spacing: -0.34px !important; }
+  .my-card-meta { gap: 4px !important; }
+  .dday-badge   { height: 30px !important; font-size: 14px !important; padding: 0 8px !important; }
+  .meta-row     { font-size: 14px !important; letter-spacing: -0.28px !important; }
+  .progress-pct { font-size: 14px !important; }
+
+  /* ── 지금 참여하세요 카드 ─────────── */
+  .join-img  { height: 170px !important; }
+  .join-name { font-size: 18px !important; letter-spacing: -0.36px !important; }
+  .join-body { padding: 16px 18px 20px !important; gap: 14px !important; }
+  .join-btn  { height: 46px !important; font-size: 17px !important; }
+  .join-meta { font-size: 14px !important; }
+
+  /* ── 곧 시작해요 미니카드 ────────── */
+  .mini-thumb { height: 90px !important; }
+  .mini-name  { font-size: 16px !important; }
+  .mini-sub   { font-size: 13px !important; }
+  .mini-count { font-size: 14px !important; }
+
+  /* ── 랭킹 ──────────────────────────── */
+  .rank-name  { font-size: 15px !important; }
+  .rank-num   { font-size: 15px !important; }
+  .progress-label,
+  .progress-pct,
+  .detail-left,
+  .detail-right { font-size: 14px !important; }
+
+  /* ── 대화 상대 / 멤버 ──────────────── */
+  .member-name  { font-size: 15px !important; }
+  .section-more { font-size: 13px !important; }
+  .more-link    { font-size: 14px !important; }
+
+  /* ── 채팅 버블 ─────────────────────── */
+  .msg-text     { font-size: 15px !important; }
+  .msg-time     { font-size: 12px !important; }
+
+  /* ── 공통 버튼 ─────────────────────── */
+  .cta-btn { font-size: 17px !important; }
+}
+
+/* ──────────────────────────────────────────
+   짧은 폰 높이 보정  (≤ 700px 높이)
+   iPhone SE 세로(667px) 등 대응
+────────────────────────────────────────── */
+@media (max-width: 430px) and (max-height: 700px) {
+
+  /* 섹션 상단 간격 축소 */
+  .section        { padding-top: 14px !important; }
+  .section-header { margin-bottom: 10px !important; }
+  .page-header    { padding-bottom: 12px !important; }
+}
+
+/* ──────────────────────────────────────────
+   상태바 safe-area 공통 보정
+   status-bar가 있는 모든 페이지에 적용
+────────────────────────────────────────── */
+@media (max-width: 430px) {
+  .status-bar {
+    height: env(safe-area-inset-top, 0px) !important;
+    min-height: 0 !important;
+  }
+}

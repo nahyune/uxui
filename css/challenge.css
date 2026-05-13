@@ -142,7 +142,7 @@ body {
 .my-card {
   flex-shrink:0;
   width:361px;
-  min-height:235px;
+  height:235px;
   background:var(--white);
   border:1px solid #CECECE;
   border-radius:15px;
@@ -160,7 +160,7 @@ body {
   align-items:flex-start;
   gap:16px;
   flex:1;
-  margin-bottom:16px;
+  min-height:0;
 }
 
 .my-card-left {
