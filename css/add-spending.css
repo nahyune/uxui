@@ -386,6 +386,11 @@ body {
   margin: 0 31px 28px;
 }
 
+.search-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
 .search-input {
   flex: 1;
   background: none;
