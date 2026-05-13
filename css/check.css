@@ -441,12 +441,7 @@ body {
 }
 
 .home-indicator::after {
-  content:'';
-  display:block;
-  width:135px;
-  height:5px;
-  background:var(--black);
-  border-radius:50px;
+  display:none;
 }
 
 /* ══════════════════════════════════════
