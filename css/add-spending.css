@@ -76,7 +76,7 @@ body {
   display: flex;
   align-items: center;
   gap: 13px;
-  padding: 12px 16px 16px;
+  padding: 12px 16px 45px;
   flex-shrink: 0;
 }
 
@@ -106,8 +106,7 @@ body {
   gap: 11px;
   overflow-x: auto;
   scrollbar-width: none;
-  padding: 0 16px 20px;
-  flex-shrink: 0;
+  padding: 0 0 32px;
   cursor: grab;
   user-select: none;
   scroll-behavior: smooth;
@@ -145,6 +144,10 @@ body {
   overflow-y: auto;
   scrollbar-width: none;
   padding: 0 16px 8px;
+}
+
+.spending-list {
+  padding: 0;
 }
 
 .main-scroll::-webkit-scrollbar { display: none; }
