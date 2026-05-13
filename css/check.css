@@ -214,10 +214,10 @@ body {
   gap:31px;
 }
 
-/* 피그마: gap-28px between icon & bar */
+/* 피그마: items-start (top-aligned), gap-28px between icon & bar */
 .stat-row {
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   gap:28px;
 }
 
@@ -319,14 +319,15 @@ body {
   line-height:1.5;
 }
 
-/* 막대 차트 컨테이너  (피그마: h-192px gap-16px) */
+/* 막대 차트 컨테이너  (피그마: h-192px gap-16px)
+   overflow 제거 → 바의 rounded-top이 margin 공간으로 자연스럽게 노출
+   weekly-card { overflow:hidden } 이 외곽 클리핑 담당 */
 .chart {
   height:192px;
   display:flex;
   align-items:flex-end;
   justify-content:center;
   gap:16px;
-  overflow:hidden;
   flex-shrink:0;
 }
 
@@ -392,6 +393,16 @@ body {
   color:var(--gray-50);
 }
 
+/* 아이콘 래퍼: 고정 높이(28px = 가장 큰 아이콘)로
+   모든 아이콘이 같은 baseline에 정렬 → 라벨 y위치 통일 */
+.nav-icon-wrap {
+  height:28px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  flex-shrink:0;
+}
+
 /* 피그마 아이콘 크기 (각 아이콘별 개별 지정) */
 .nav-icon-home      { width:24px; height:28px; object-fit:contain; display:block; }
 .nav-icon-check     { width:21px; height:21px; object-fit:contain; display:block; }
@@ -400,17 +411,18 @@ body {
 .nav-icon-my        { width:22px; height:24px; object-fit:contain; display:block; }
 
 /* 피그마: 15px Medium letter-spacing -0.3px */
-.nav-item span {
+.nav-label {
   font-size:15px;
   font-weight:500;
   letter-spacing:-0.3px;
   color:var(--gray-50);
   text-align:center;
   width:100%;
+  white-space:nowrap;
 }
 
-/* active: text-black, weight 유지 */
-.nav-item.active span {
+/* active: text-black */
+.nav-item.active .nav-label {
   color:var(--black);
 }
 
