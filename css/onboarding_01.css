@@ -1,0 +1,144 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --black:  #000000;
+  --white:  #ffffff;
+  --gray-20: #DDDDDD;
+  --gray-40: #959595;
+}
+
+/* ══════════════════════════════════════
+   리셋
+══════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ══════════════════════════════════════
+   body
+══════════════════════════════════════ */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   폰 컨테이너 430 × 932
+══════════════════════════════════════ */
+.phone {
+  width: 430px;
+  height: 932px;
+  background: var(--white);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════
+   상태 여백
+══════════════════════════════════════ */
+.status-bar {
+  height: 44px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   헤드라인
+══════════════════════════════════════ */
+.headline {
+  padding: 0 47px;
+  margin-top: 38px;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.64px;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   고양이 이미지 영역
+══════════════════════════════════════ */
+.cat-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+/* 이미지 플레이스홀더 (228×334px) */
+.cat-placeholder {
+  width: 228px;
+  height: 334px;
+  background: var(--gray-20);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-40);
+  font-size: 14px;
+}
+
+/* 실제 이미지 사용 시 */
+.cat-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ══════════════════════════════════════
+   홈 인디케이터
+══════════════════════════════════════ */
+.home-indicator {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 0 11px;
+}
+
+.home-indicator::after {
+  content: '';
+  display: block;
+  width: 135px;
+  height: 5px;
+  background: var(--black);
+  border-radius: 50px;
+}
+
+/* ══════════════════════════════════════
+   반응형
+══════════════════════════════════════ */
+@media (max-width: 430px) {
+  html {
+    overflow: hidden;
+    height: 100%;
+  }
+  body {
+    overflow: hidden;
+    height: 100%;
+    padding: 0;
+    background: var(--white);
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .status-bar { height: env(safe-area-inset-top, 0px); }
+  .home-indicator { height: max(env(safe-area-inset-bottom), 20px); flex-shrink: 0; }
+  .home-indicator::after { display: none; }
+}
