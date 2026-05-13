@@ -148,17 +148,21 @@
   <div class="overlay" id="shareOverlay" aria-modal="true" role="dialog">
     <div class="overlay-backdrop" id="overlayBackdrop"></div>
     <div class="overlay-modal">
-      <div class="modal-header">
-        <span></span>
-        <h2 class="modal-title">공유할 채팅방</h2>
-        <button class="modal-close" id="closeOverlay" type="button" aria-label="닫기">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-               stroke="#000" stroke-width="2.5" stroke-linecap="round">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
+
+      <!-- 닫기 버튼 (연회색 원 + X) -->
+      <button class="modal-close" id="closeOverlay" type="button" aria-label="닫기">
+        <div class="modal-close-circle">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+               stroke="#686868" stroke-width="2" stroke-linecap="round">
+            <line x1="1" y1="1" x2="13" y2="13"/>
+            <line x1="13" y1="1" x2="1" y2="13"/>
           </svg>
-        </button>
-      </div>
+        </div>
+      </button>
+
+      <h2 class="modal-title">공유할 채팅방</h2>
+
+      <!-- 검색창 -->
       <div class="modal-search">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
              stroke="#959595" stroke-width="2" stroke-linecap="round">
@@ -167,73 +171,85 @@
         </svg>
         <input type="text" class="search-input" placeholder="공유하고 싶은 친구, 채팅방 검색">
       </div>
+
+      <!-- 탭 -->
       <div class="modal-tabs">
         <button class="modal-tab active" type="button">전체</button>
         <button class="modal-tab" type="button">친구</button>
         <button class="modal-tab" type="button">최근 공유</button>
       </div>
+
+      <!-- 채팅방 목록 -->
       <ul class="chatroom-list">
+
         <li class="chatroom-item selected">
-          <div class="room-avatar"></div>
-          <div class="room-info">
-            <span class="room-name">소비 기록 챌린지 📝</span>
-            <span class="room-count">
-              <svg width="11" height="13" viewBox="0 0 24 28" fill="none"
-                   stroke="#959595" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4z"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              16
-            </span>
+          <div class="room-avatar">
+            <img src="img/chat_receipt.png" alt="소비 기록 챌린지">
           </div>
-          <span class="room-check"></span>
+          <div class="room-info">
+            <div class="room-name-row">
+              <img src="img/icon_fire.png" class="room-fire" alt="">
+              <span class="room-name">소비 기록 챌린지 📝</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="room-person" alt="">
+              <span>16</span>
+            </div>
+          </div>
+          <div class="room-check"></div>
         </li>
+
         <li class="chatroom-item selected">
-          <div class="room-avatar"></div>
-          <div class="room-info">
-            <span class="room-name">통장 지키기 모임</span>
-            <span class="room-count">
-              <svg width="11" height="13" viewBox="0 0 24 28" fill="none"
-                   stroke="#959595" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4z"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              5
-            </span>
+          <div class="room-avatar">
+            <img src="img/chat_wallet.png" alt="통장 지키기 모임">
           </div>
-          <span class="room-check"></span>
+          <div class="room-info">
+            <div class="room-name-row">
+              <span class="room-name">통장 지키기 모임</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="room-person" alt="">
+              <span>5</span>
+            </div>
+          </div>
+          <div class="room-check"></div>
         </li>
+
         <li class="chatroom-item">
-          <div class="room-avatar"></div>
-          <div class="room-info">
-            <span class="room-name">카페 금지 챌린지 ☕</span>
-            <span class="room-count">
-              <svg width="11" height="13" viewBox="0 0 24 28" fill="none"
-                   stroke="#959595" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4z"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              83
-            </span>
+          <div class="room-avatar">
+            <img src="img/chat_coffee.png" alt="카페 금지 챌린지">
           </div>
-          <span class="room-check"></span>
+          <div class="room-info">
+            <div class="room-name-row">
+              <img src="img/icon_fire.png" class="room-fire" alt="">
+              <span class="room-name">카페 금지 챌린지 ☕</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="room-person" alt="">
+              <span>83</span>
+            </div>
+          </div>
+          <div class="room-check"></div>
         </li>
+
         <li class="chatroom-item">
-          <div class="room-avatar"></div>
-          <div class="room-info">
-            <span class="room-name">텅장 방지 협회</span>
-            <span class="room-count">
-              <svg width="11" height="13" viewBox="0 0 24 28" fill="none"
-                   stroke="#959595" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4z"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              13
-            </span>
+          <div class="room-avatar">
+            <img src="img/chat_book.png" alt="텅장 방지 협회">
           </div>
-          <span class="room-check"></span>
+          <div class="room-info">
+            <div class="room-name-row">
+              <span class="room-name">텅장 방지 협회</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="room-person" alt="">
+              <span>13</span>
+            </div>
+          </div>
+          <div class="room-check"></div>
         </li>
+
       </ul>
+
       <button class="send-btn" id="sendBtn" type="button">보내기</button>
     </div>
   </div>
