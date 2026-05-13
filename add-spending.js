@@ -42,8 +42,9 @@ document.addEventListener('mousemove', e => {
 ════════════════════════════════════════ */
 document.querySelectorAll('.spending-item').forEach(item => {
   item.addEventListener('click', e => {
+    // check-wrap(label) 영역 클릭은 change 이벤트에 맡김 (중복 방지)
+    if (e.target.closest('.check-wrap')) return;
     const checkbox = item.querySelector('.item-check');
-    if (e.target === checkbox) return; // 체크박스 직접 클릭은 별도 처리
     checkbox.checked = !checkbox.checked;
     item.classList.toggle('selected', checkbox.checked);
   });
