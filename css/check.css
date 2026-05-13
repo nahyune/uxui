@@ -470,6 +470,4 @@ body {
   }
   .home-indicator::after { display:none; }
 
-  /* 소형 폰에서 today-card 패딩 조정 */
-  .today-card { padding:24px 24px; }
 }
