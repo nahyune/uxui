@@ -353,8 +353,8 @@ body {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: #EBEBEB;
-  border: none;
+  background: #fff;
+  border: 1.5px solid #F6F6F6;
   cursor: pointer;
   display: flex;
   align-items: center;
