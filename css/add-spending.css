@@ -118,7 +118,7 @@ body {
 .cat-btn {
   flex-shrink: 0;
   height: 35px;
-  padding: 0 15px;
+  padding: 0 17px;
   display: inline-flex;
   align-items: center;
   border-radius: 52px;
@@ -416,14 +416,14 @@ body {
 /* 피그마: h-35px px-15px */
 .modal-tab {
   height: 35px;
-  padding: 0 15px;
+  padding: 0 17px;
   display: inline-flex;
   align-items: center;
   border-radius: 52px;
   border: 1.3px solid var(--gray-20);
   background: var(--white);
   color: var(--gray-50);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: -0.32px;
   line-height: 1.5;
