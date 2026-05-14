@@ -379,7 +379,7 @@ body {
   gap: 7px;
   background: var(--gray-10);
   border-radius: 10px;
-  padding: 0 16px;
+  padding: 0 16px 0 22px;
   height: 53px;
   margin: 0 31px 25px;
 }
@@ -425,7 +425,7 @@ body {
   color: var(--gray-50);
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: -0.32px;
+  letter-spacing: -0.28px;
   line-height: 1.5;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
@@ -477,7 +477,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0;
 }
 
 /* 방 이름 행 (불 아이콘 + 이름) */
