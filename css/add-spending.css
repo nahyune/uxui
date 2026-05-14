@@ -543,9 +543,9 @@ body {
   background: var(--black);
   color: var(--white);
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.4px;
   margin: 0 23px 0 31px;
 }
 
