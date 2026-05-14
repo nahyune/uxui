@@ -201,10 +201,10 @@ body {
   display:flex;
   align-items:center;
   gap:9px;
-  font-size:16px;
+  font-size:15px;
   font-weight:600;
   color:var(--gray-30);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.30px;
 }
 
 /* 피그마: gap-31px between stat rows */

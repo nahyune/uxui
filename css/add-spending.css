@@ -387,6 +387,8 @@ body {
 .search-icon {
   flex-shrink: 0;
   display: block;
+  stroke: var(--gray-40);
+  color: var(--gray-40);
 }
 
 .search-input {
@@ -486,8 +488,8 @@ body {
 }
 
 .room-fire {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
 }
 
@@ -523,7 +525,7 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  border: 1.5px solid var(--gray-30);
+  border: 2px solid var(--gray-30);
   background: transparent;
   flex-shrink: 0;
 }
@@ -536,7 +538,7 @@ body {
 /* 보내기 버튼  피그마: h-55px left-31 right-23 24px SemiBold */
 .send-btn {
   display: block;
-  width: auto;
+  width: calc(100% - 54px);
   height: 55px;
   background: var(--black);
   color: var(--white);
