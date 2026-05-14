@@ -118,7 +118,7 @@ body {
 .cat-btn {
   flex-shrink: 0;
   height: 35px;
-  padding: 0 20px;
+  padding: 0 19px;
   display: inline-flex;
   align-items: center;
   border-radius: 52px;
