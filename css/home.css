@@ -21,7 +21,7 @@ a      { text-decoration:none; color:inherit; }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ══════════════════════════════════════
-   body
+   body — 데스크탑 페이지 스크롤 방지 (폰 고정)
 ══════════════════════════════════════ */
 body {
   font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
@@ -48,19 +48,31 @@ body {
 }
 
 /* ══════════════════════════════════════
-   상단 그린 헤더 프레임 (고정, 스크롤 안됨)
-   총 높이: status-bar(44) + app-header(16+72+29=117) = 161px
+   스크롤 래퍼 — 헤더 포함 전체 스크롤
+   background=green → main-scroll 둥근 모서리 뒤로 노출
 ══════════════════════════════════════ */
-.top-frame {
+.scroll-wrap {
+  flex:1;
+  overflow-y:auto;
+  scrollbar-width:none;
   background:var(--primary);
-  flex-shrink:0;
+}
+.scroll-wrap::-webkit-scrollbar { display:none; }
+
+/* ══════════════════════════════════════
+   상단 그린 영역
+   총 높이: status-bar(44) + app-header(16+72+29=117) = 161px
+   → 피그마 white panel top:161px 정확히 일치
+══════════════════════════════════════ */
+.top-zone {
+  background:var(--primary);
 }
 
 .status-bar {
   height:44px;
 }
 
-/* 피그마: MOTIMO 좌측, Alerts 우측, padding 16+72+29=117px */
+/* 피그마: padding 16+72(logo)+29=117px */
 .app-header {
   display:flex;
   align-items:center;
@@ -68,7 +80,8 @@ body {
   padding:16px 20px 29px;
 }
 
-/* 피그마: Baloo 2 48px white tracking-0.96px leading-1.5 → top-frame 총 161px */
+/* 피그마: Baloo 2 48px white tracking-0.96px leading-1.5
+   line-height:1.5 → 렌더 높이 72px → top-zone=161px */
 .logo {
   font-family:'Baloo 2','Baloo',cursive;
   font-size:48px;
@@ -89,21 +102,20 @@ body {
 }
 
 /* ══════════════════════════════════════
-   흰색 메인 스크롤
-   rounded-tl-40 rounded-tr-40 → 뒤 phone green bg 노출
+   흰색 메인 콘텐츠 (스크롤 X, scroll-wrap이 스크롤)
+   margin-top 없음 → top-zone(161px) 바로 아래 시작
+   → 피그마 white panel top:161px 정확히 일치
 ══════════════════════════════════════ */
 .main-scroll {
-  flex:1;
-  overflow-y:auto;
-  scrollbar-width:none;
   background:var(--white);
   border-radius:40px 40px 0 0;
+  padding-bottom:40px;
 }
-.main-scroll::-webkit-scrollbar { display:none; }
 
 /* ══════════════════════════════════════
-   히어로 섹션 (절대좌표 배치)
-   height = CTA 하단(524) + 챌린지 타이틀까지 gap(47) = 571px
+   히어로 섹션
+   좌표 기준: 흰색 패널 top (= phone top 161px)
+   height = CTA 하단(454+70=524) + 챌린지 gap(47) = 571px
 ══════════════════════════════════════ */
 .hero {
   position:relative;
@@ -141,7 +153,9 @@ body {
 /* ══════════════════════════════════════
    이번 주 절약 금액 버블
    피그마: left-209 top-298→137 w-222 h-156
-   items-end justify-center (content 우측 정렬)
+   bg-#fff5e7 rounded-tl-68 rounded-bl-68
+   outer: items-end justify-center
+   inner: px-20 w-full
 ══════════════════════════════════════ */
 .money-bubble {
   position:absolute;
@@ -157,11 +171,9 @@ body {
   justify-content:center;
 }
 
-/* 피그마 inner wrapper: items-end leading-1.5 px-20 */
 .money-content {
   display:flex;
   flex-direction:column;
-  line-height:1.5;
   padding:0 20px;
   width:100%;
 }
@@ -172,6 +184,7 @@ body {
   font-weight:500;
   color:var(--orange-text);
   letter-spacing:-0.34px;
+  line-height:1.5;
   margin-bottom:-5px;
   width:100%;
 }
@@ -182,6 +195,7 @@ body {
   font-weight:600;
   color:var(--black);
   letter-spacing:-0.72px;
+  line-height:1.5;
   text-align:right;
   width:100%;
 }
@@ -215,7 +229,7 @@ body {
 /* ══════════════════════════════════════
    CTA 버튼
    피그마: left-15 top-615→454 w-399 h-70
-   bg-#90d50f rounded-10 gap-5 20px SemiBold white
+   bg-#90d50f rounded-10 gap-5 20px SemiBold
 ══════════════════════════════════════ */
 .cta-btn {
   position:absolute;
@@ -237,12 +251,11 @@ body {
   text-decoration:none;
 }
 
-/* 피그마: plus icon 29×29px 흰색 */
+/* 피그마: plus icon size-29px → 24px로 조정 */
 .cta-plus {
-  width:29px;
-  height:29px;
+  width:24px;
+  height:24px;
   flex-shrink:0;
-  filter:brightness(0) invert(1);
   object-fit:contain;
   display:block;
 }
@@ -254,7 +267,6 @@ body {
   padding:0 0 40px;
 }
 
-/* 피그마: centered 20px SemiBold black tracking-[-0.4px] */
 .section-title-wrap {
   display:flex;
   align-items:center;
@@ -263,6 +275,7 @@ body {
   margin-bottom:16px;
 }
 
+/* 피그마: 20px SemiBold black tracking-[-0.4px] centered */
 .section-title {
   font-size:20px;
   font-weight:600;
@@ -289,7 +302,7 @@ body {
   cursor:pointer;
 }
 
-/* 피그마: w-130 h-180 bg-#9e9e9e rounded-10 overflow-clip */
+/* 피그마: w-130 h-180 bg-#9e9e9e rounded-10 */
 .challenge-thumb {
   width:130px;
   height:180px;
@@ -305,7 +318,6 @@ body {
   display:block;
 }
 
-/* 피그마: flex-col gap-7 */
 .challenge-info {
   flex:1;
   display:flex;
@@ -323,7 +335,6 @@ body {
   line-height:1.5;
 }
 
-/* 피그마: flex-col gap-7 */
 .challenge-inner {
   display:flex;
   flex-direction:column;
@@ -351,7 +362,6 @@ body {
   white-space:nowrap;
 }
 
-/* 피그마: flex-col gap-2 */
 .challenge-meta-list {
   display:flex;
   flex-direction:column;
@@ -371,7 +381,6 @@ body {
   white-space:nowrap;
 }
 
-/* 카드 구분선 */
 .card-divider {
   width:100%;
   height:1px;
@@ -380,7 +389,7 @@ body {
 }
 
 /* ══════════════════════════════════════
-   하단 네비게이션 (고정)
+   하단 네비게이션 (고정, scroll-wrap 밖)
 ══════════════════════════════════════ */
 .bottom-nav {
   background:var(--white);
@@ -430,7 +439,7 @@ body {
 .nav-item.active .nav-label { color:var(--black); }
 
 /* ══════════════════════════════════════
-   홈 인디케이터
+   홈 인디케이터 (고정)
 ══════════════════════════════════════ */
 .home-indicator {
   background:var(--white);
