@@ -334,7 +334,7 @@ body {
   z-index: 1;
   background: var(--white);
   border-radius: 43px 43px 0 0;
-  padding: 0 0 32px;
+  padding: 0 0 62px;
   transform: translateY(100%);
   transition: transform 0.36s cubic-bezier(0.32, 0.72, 0, 1);
 }
@@ -343,13 +343,13 @@ body {
   transform: translateY(0);
 }
 
-/* 닫기 버튼 */
+/* 닫기 버튼  피그마: 58×58px top-20 right-27 */
 .modal-close {
   position: absolute;
   top: 20px;
   right: 27px;
-  width: 46px;
-  height: 46px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: #fff;
   border: 1.5px solid #F6F6F6;
@@ -360,7 +360,7 @@ body {
   padding: 0;
 }
 
-/* 타이틀 */
+/* 타이틀  피그마: top-90px → padding-top: 90px */
 .modal-title {
   font-size: 20px;
   font-weight: 500;
@@ -368,11 +368,11 @@ body {
   letter-spacing: -0.4px;
   line-height: 1.5;
   text-align: center;
-  padding-top: 56px;
+  padding-top: 90px;
   margin-bottom: 22px;
 }
 
-/* 검색창 */
+/* 검색창  피그마: h-53px margin-bottom 30px */
 .modal-search {
   display: flex;
   align-items: center;
@@ -381,7 +381,7 @@ body {
   border-radius: 10px;
   padding: 0 16px;
   height: 53px;
-  margin: 0 31px 28px;
+  margin: 0 31px 30px;
 }
 
 .search-icon {
@@ -393,15 +393,15 @@ body {
   flex: 1;
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--black);
 }
 
 .search-input::placeholder {
   color: var(--gray-30);
-  font-size: 18px;
-  letter-spacing: -0.36px;
+  font-size: 16px;
+  letter-spacing: -0.32px;
 }
 
 /* 모달 탭 */
@@ -411,8 +411,12 @@ body {
   margin: 0 31px 0;
 }
 
+/* 피그마: h-35px px-15px */
 .modal-tab {
-  padding: 8px 15px;
+  height: 35px;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
   border-radius: 52px;
   border: 1.3px solid var(--gray-20);
   background: var(--white);
@@ -430,9 +434,9 @@ body {
   border-color: var(--black);
 }
 
-/* 채팅방 리스트 */
+/* 채팅방 리스트  피그마: top-276 (탭 하단 260 → gap 16px), 보내기 전 gap 22px */
 .chatroom-list {
-  margin: 40px 0 20px;
+  margin: 16px 0 22px;
 }
 
 .chatroom-item {
@@ -487,23 +491,24 @@ body {
   flex-shrink: 0;
 }
 
+/* 피그마: 17px Medium tracking-[-0.34px] */
 .room-name {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   color: var(--black);
-  letter-spacing: -0.36px;
+  letter-spacing: -0.34px;
   line-height: 1.5;
 }
 
-/* 인원 수 행 */
+/* 인원 수 행  피그마: 14px Regular #959595 tracking-[-0.28px] */
 .room-count {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   color: var(--gray-40);
-  letter-spacing: -0.34px;
+  letter-spacing: -0.28px;
   line-height: 1.5;
 }
 
@@ -528,18 +533,18 @@ body {
   background: url('../img/checkbox_check.png') no-repeat center/contain;
 }
 
-/* 보내기 버튼 */
+/* 보내기 버튼  피그마: h-55px left-31 right-23 24px SemiBold */
 .send-btn {
   display: block;
-  width: calc(100% - 62px);
-  height: 58px;
+  width: auto;
+  height: 55px;
   background: var(--black);
   color: var(--white);
   border-radius: 10px;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.48px;
-  margin: 0 auto;
+  margin: 0 23px 0 31px;
 }
 
 /* ══════════════════════════════════════
