@@ -495,10 +495,10 @@ body {
 
 /* 피그마: 17px Medium tracking-[-0.34px] */
 .room-name {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--black);
-  letter-spacing: -0.34px;
+  letter-spacing: -0.32px;
   line-height: 1.5;
 }
 
