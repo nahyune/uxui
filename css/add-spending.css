@@ -334,7 +334,7 @@ body {
   z-index: 1;
   background: var(--white);
   border-radius: 43px 43px 0 0;
-  padding: 0 0 14px;
+  padding: 0 0 26px;
   transform: translateY(100%);
   transition: transform 0.36s cubic-bezier(0.32, 0.72, 0, 1);
 }
@@ -368,7 +368,7 @@ body {
   letter-spacing: -0.4px;
   line-height: 1.5;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 82px;
   margin-bottom: 22px;
 }
 
@@ -438,7 +438,7 @@ body {
 
 /* 채팅방 리스트  피그마: top-276 (탭 하단 260 → gap 16px), 보내기 전 gap 22px */
 .chatroom-list {
-  margin: 16px 0 16px;
+  margin: -4px 0 36px;
 }
 
 .chatroom-item {
