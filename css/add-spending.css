@@ -118,16 +118,16 @@ body {
 .cat-btn {
   flex-shrink: 0;
   height: 35px;
-  padding: 0 20px;
+  padding: 0 15px;
   display: inline-flex;
   align-items: center;
   border-radius: 52px;
   border: 1.3px solid var(--gray-20);
   background: var(--white);
   color: var(--gray-50);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: -0.32px;
+  letter-spacing: -0.28px;
   line-height: 1.5;
   white-space: nowrap;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
@@ -334,7 +334,7 @@ body {
   z-index: 1;
   background: var(--white);
   border-radius: 43px 43px 0 0;
-  padding: 0 0 42px;
+  padding: 0 0 28px;
   transform: translateY(100%);
   transition: transform 0.36s cubic-bezier(0.32, 0.72, 0, 1);
 }
@@ -368,7 +368,7 @@ body {
   letter-spacing: -0.4px;
   line-height: 1.5;
   text-align: center;
-  padding-top: 82px;
+  padding-top: 60px;
   margin-bottom: 22px;
 }
 
@@ -381,7 +381,7 @@ body {
   border-radius: 10px;
   padding: 0 16px;
   height: 53px;
-  margin: 0 31px 30px;
+  margin: 0 31px 22px;
 }
 
 .search-icon {
@@ -438,14 +438,14 @@ body {
 
 /* 채팅방 리스트  피그마: top-276 (탭 하단 260 → gap 16px), 보내기 전 gap 22px */
 .chatroom-list {
-  margin: 16px 0 22px;
+  margin: 10px 0 15px;
 }
 
 .chatroom-item {
   display: flex;
   align-items: center;
   gap: 18px;
-  height: 86px;
+  height: 74px;
   padding: 0 31px;
   cursor: pointer;
   border-bottom: 1px solid var(--gray-10);
