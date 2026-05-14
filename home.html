@@ -22,10 +22,10 @@
     <div class="app-header">
       <span class="logo">MOTIMO</span>
       <button class="bell-btn" aria-label="알림">
-        <!-- 피그마: Alerts 24×27px 흰색 벨 -->
-        <svg width="22" height="24" viewBox="0 0 22 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11 0C10.2 0 9.5 0.6 9.5 1.4C6.5 2.2 5 4.8 5 8v9H3v2h16v-2h-2V8C17 4.8 15.5 2.2 12.5 1.4C12.5 0.6 11.8 0 11 0z"/>
-          <ellipse cx="11" cy="22" rx="2.5" ry="2"/>
+        <!-- 피그마: Alerts w-24 h-27 -->
+        <svg width="24" height="27" viewBox="0 0 24 27" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C11.1 0 10.5 0.7 10.5 1.6C7.2 2.5 5.5 5.2 5.5 8.5V20H3V22H21V20H18.5V8.5C18.5 5.2 16.8 2.5 13.5 1.6C13.5 0.7 12.9 0 12 0Z"/>
+          <ellipse cx="12" cy="25" rx="2.8" ry="2"/>
         </svg>
       </button>
     </div>
@@ -42,13 +42,15 @@
         <img src="img/home_cat.png" alt="">
       </div>
 
-      <!-- 절약 말풍선: left-182 right-16 top-64 h-57 -->
-      <div class="savings-tag">저번 주보다 12% 더 아꼈어요!</div>
+      <!-- 말풍선 이미지: left-182 top-64 w-232 -->
+      <img src="img/home_talk.png" class="savings-talk" alt="">
 
       <!-- 이번 주 절약 금액 버블: left-209 top-137 w-222 h-156 -->
       <div class="money-bubble">
-        <p class="money-label">이번 주 절약 금액</p>
-        <p class="money-amount">54,300원</p>
+        <div class="money-content">
+          <p class="money-label">이번 주 절약 금액</p>
+          <p class="money-amount">54,300원</p>
+        </div>
       </div>
 
       <!-- 소비 체크 녹색 필: left-0 top-335 w-226 h-103 -->
@@ -59,7 +61,7 @@
 
       <!-- CTA 버튼: left-15 top-454 w-399 h-70 -->
       <a href="check.html" class="cta-btn">
-        <img src="img/chat_plus.png" class="cta-plus" alt="">
+        <img src="img/check_plus.png" class="cta-plus" alt="">
         오늘 소비 체크하기
       </a>
 

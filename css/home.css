@@ -28,9 +28,9 @@ body {
   background:#c0c0c0;
   display:flex;
   justify-content:center;
-  align-items:flex-start;
-  min-height:100vh;
-  padding:36px 0;
+  align-items:center;
+  height:100vh;
+  overflow:hidden;
 }
 
 /* ══════════════════════════════════════
@@ -68,23 +68,23 @@ body {
   padding:16px 20px 29px;
 }
 
-/* 피그마: Baloo 2 48px white tracking-0.96px */
+/* 피그마: Baloo 2 48px white tracking-0.96px leading-1.5 → top-frame 총 161px */
 .logo {
   font-family:'Baloo 2','Baloo',cursive;
   font-size:48px;
   font-weight:800;
   color:var(--white);
   letter-spacing:0.96px;
-  line-height:1;
+  line-height:1.5;
 }
 
-/* 피그마: Alerts 24×27px 흰색 */
+/* 피그마: Alerts w-24 h-27 */
 .bell-btn {
   display:flex;
   align-items:center;
   justify-content:center;
-  width:22px;
-  height:24px;
+  width:24px;
+  height:27px;
   flex-shrink:0;
 }
 
@@ -126,47 +126,22 @@ body {
 }
 
 /* ══════════════════════════════════════
-   말풍선: 저번 주보다 12% 더 아꼈어요!
-   피그마: left-182 right-16 top-225→64 h-57
-   bg-#eff6e2 rounded-10 16px Medium #649900
+   말풍선 이미지: home_talk.png
+   피그마: left-182 right-16 top-225→64 w-232
 ══════════════════════════════════════ */
-.savings-tag {
+.savings-talk {
   position:absolute;
   left:182px;
-  right:16px;
   top:64px;
-  height:57px;
-  background:var(--primary-light);
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:16px;
-  font-weight:500;
-  color:var(--green-text);
-  letter-spacing:-0.32px;
-  line-height:1.5;
-  text-align:center;
-  padding:0 12px;
-}
-
-/* 말풍선 꼬리 (하단 좌측) */
-.savings-tag::after {
-  content:'';
-  position:absolute;
-  bottom:-11px;
-  left:18px;
-  width:0;
-  height:0;
-  border-left:5px solid transparent;
-  border-right:10px solid transparent;
-  border-top:11px solid var(--primary-light);
+  width:232px;
+  height:auto;
+  display:block;
 }
 
 /* ══════════════════════════════════════
    이번 주 절약 금액 버블
    피그마: left-209 top-298→137 w-222 h-156
-   bg-#fff5e7 rounded-tl-68 rounded-bl-68
+   items-end justify-center (content 우측 정렬)
 ══════════════════════════════════════ */
 .money-bubble {
   position:absolute;
@@ -178,28 +153,37 @@ body {
   border-radius:68px 0 0 68px;
   display:flex;
   flex-direction:column;
+  align-items:flex-end;
   justify-content:center;
-  padding:0 20px;
 }
 
-/* 피그마: 17px Medium #e16500 tracking-[-0.34px] mb-[-5px] */
+/* 피그마 inner wrapper: items-end leading-1.5 px-20 */
+.money-content {
+  display:flex;
+  flex-direction:column;
+  line-height:1.5;
+  padding:0 20px;
+  width:100%;
+}
+
+/* 피그마: 17px Medium #e16500 tracking-[-0.34px] mb-[-5px] w-full */
 .money-label {
   font-size:17px;
   font-weight:500;
   color:var(--orange-text);
   letter-spacing:-0.34px;
-  line-height:1.5;
   margin-bottom:-5px;
+  width:100%;
 }
 
-/* 피그마: 36px SemiBold black text-right tracking-[-0.72px] */
+/* 피그마: 36px SemiBold black text-right tracking-[-0.72px] w-full */
 .money-amount {
   font-size:36px;
   font-weight:600;
   color:var(--black);
   letter-spacing:-0.72px;
-  line-height:1.5;
   text-align:right;
+  width:100%;
 }
 
 /* ══════════════════════════════════════
@@ -464,7 +448,7 @@ body {
 ══════════════════════════════════════ */
 @media (max-width:430px) {
   html { overflow:hidden; height:100%; }
-  body { overflow:hidden; height:100%; padding:0; background:var(--primary); }
+  body { overflow:hidden; height:100%; align-items:flex-start; background:var(--primary); }
   .phone {
     width:100%;
     height:100dvh;
