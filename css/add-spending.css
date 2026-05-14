@@ -190,10 +190,10 @@ body {
 }
 
 .item-label {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--black);
-  letter-spacing: -0.34px;
+  letter-spacing: -0.36px;
   line-height: 1.5;
 }
 
@@ -205,10 +205,10 @@ body {
 }
 
 .item-amount {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--black);
-  letter-spacing: -0.34px;
+  letter-spacing: -0.36px;
   line-height: 1.5;
   flex-shrink: 0;
 }
