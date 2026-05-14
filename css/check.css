@@ -134,9 +134,9 @@ body {
   padding:0 10px;
   background:#FFF5E7;
   color:var(--secondary-dark);
-  font-size:16px;
+  font-size:14px;
   font-weight:500;
-  letter-spacing:-0.32px;
+  letter-spacing:-0.28px;
   border-radius:10px;
   width:fit-content;
   white-space:nowrap;
@@ -157,9 +157,9 @@ body {
   background:var(--black);
   color:var(--white);
   border-radius:10px;
-  font-size:22px;
+  font-size:20px;
   font-weight:600;
-  letter-spacing:-0.44px;
+  letter-spacing:-0.4px;
   flex-shrink:0;
 }
 
@@ -201,10 +201,10 @@ body {
   display:flex;
   align-items:center;
   gap:9px;
-  font-size:16px;
+  font-size:15px;
   font-weight:600;
   color:var(--gray-30);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.30px;
 }
 
 /* 피그마: gap-31px between stat rows */
@@ -310,12 +310,12 @@ body {
   line-height:1.5;
 }
 
-/* 피그마: 16px Medium #686868 */
+/* 피그마: 15px Medium #686868 */
 .weekly-sub {
-  font-size:16px;
+  font-size:15px;
   font-weight:500;
   color:var(--gray-50);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.30px;
   line-height:1.5;
 }
 
