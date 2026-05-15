@@ -108,7 +108,7 @@ body {
    right:12px → 텍스트와 고양이 분리, 모바일 대응 */
 .today-cat {
   position:absolute;
-  right:35px;
+  right:25px;
   top:30px;
   width:91px;
   height:auto;
