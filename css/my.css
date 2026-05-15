@@ -130,7 +130,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 85px;
+  height: 65px;
   padding: 0 27px;
   color: var(--black);
 }
