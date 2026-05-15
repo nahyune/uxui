@@ -98,6 +98,20 @@ body {
   display:flex;
   flex-direction:column;
   flex-shrink:0;
+  position:relative;
+  overflow:hidden;
+}
+
+/* 피그마: left-260 top-43 w-91 h-107 */
+.today-cat {
+  position:absolute;
+  left:260px;
+  top:43px;
+  width:91px;
+  height:107px;
+  object-fit:contain;
+  display:block;
+  pointer-events:none;
 }
 
 /* 피그마: 17px Medium */
