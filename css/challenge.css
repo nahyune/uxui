@@ -163,12 +163,12 @@ body {
   gap:8px;
 }
 
-/* D-day 뱃지: px-8 py-3 rounded-10 14px SemiBold */
+/* D-day 뱃지: px-8 py-3 rounded-5 14px SemiBold */
 .dday-badge {
   display:inline-flex;
   align-items:center;
   padding:3px 8px;
-  border-radius:10px;
+  border-radius:5px;
   background:var(--badge-bg);
   color:var(--badge-text);
   font-size:14px;
@@ -313,18 +313,34 @@ body {
   letter-spacing:-0.32px;
 }
 
-/* 카드 본문 */
+/* 카드 본문 — 피그마: top-229 → padding-top:20px */
 .join-body {
-  padding:21px 24px 27px;
+  flex:1;
+  padding:20px 23px 27px;
   display:flex;
   flex-direction:column;
-  gap:21px;
 }
 
+/* 피그마: gap-10px between top-group & meta-list */
 .join-info {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* 피그마: gap-12px between name & badge */
+.join-info-top {
   display:flex;
   flex-direction:column;
   gap:12px;
+}
+
+/* 피그마: gap-6px between meta rows */
+.join-meta-list {
+  display:flex;
+  flex-direction:column;
+  gap:6px;
 }
 
 .join-name {
@@ -361,8 +377,9 @@ body {
   letter-spacing:-0.32px;
 }
 
-/* 참여 버튼 (span 요소 기준) */
+/* 참여 버튼 — 피그마: top-405 → info 끝나고 margin-top:21px */
 .join-btn {
+  margin-top:21px;
   display:flex;
   align-items:center;
   justify-content:center;
