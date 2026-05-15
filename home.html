@@ -40,24 +40,43 @@
       <!-- 히어로 섹션 -->
       <div class="hero">
 
-        <div class="hero-cat">
-          <img src="img/home_cat.png" alt="">
-        </div>
+        <!-- 절약 현황 카드 -->
+        <div class="hero-card">
+          <div class="hero-top">
+            <div class="hero-greeting-wrap">
+              <p class="hero-sub">이번 주 절약 현황</p>
+              <p class="hero-greeting">냥이님, 잘하고 있어요! 💪</p>
+            </div>
+            <img src="img/home_cat.png" class="hero-cat-sm" alt="">
+          </div>
 
-        <img src="img/home_talk2.png" class="savings-talk" alt="">
+          <div class="hero-savings">
+            <p class="hero-amount">54,300원</p>
+            <div class="hero-progress-wrap">
+              <div class="hero-progress-bar">
+                <div class="hero-progress-fill" style="width:68%"></div>
+              </div>
+              <div class="hero-progress-info">
+                <span class="hero-progress-pct">68% 달성</span>
+                <span class="hero-progress-rem">목표까지 <strong>25,700원</strong></span>
+              </div>
+            </div>
+          </div>
 
-        <div class="money-bubble">
-          <div class="money-content">
-            <p class="money-label">이번 주 절약 금액</p>
-            <p class="money-amount">54,300원</p>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-emoji">🔥</span>
+              <span class="hero-stat-text">7일 연속 절약</span>
+            </div>
+            <div class="hero-stat-div"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-emoji">⭐</span>
+              <span class="hero-stat-text">챌린지 3개 참여 중</span>
+            </div>
           </div>
         </div>
 
-        <a href="check.html" class="check-pill">
-          <p class="check-pill-title">오늘 지출은 어땠나요?</p>
-          <p class="check-pill-sub">소비 체크하러 가기!</p>
-        </a>
-
+        <!-- CTA 버튼 -->
         <a href="add-spending.html" class="cta-btn">
           <img src="img/check_plus.png" class="cta-plus" alt="">
           오늘 소비 체크하기
