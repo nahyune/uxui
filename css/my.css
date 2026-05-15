@@ -183,6 +183,7 @@ body {
   flex-direction: column;
   gap: 16px;
   margin-top: 16px;
+  margin-bottom: 32px;
   padding-left: 19px;
 }
 
