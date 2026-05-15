@@ -166,13 +166,13 @@ body {
 }
 
 /* ══════════════════════════════════════
-   채팅 정보 (flex-col gap:8)
+   채팅 정보 (피그마: flex-col gap-[2px])
 ══════════════════════════════════════ */
 .chat-info {
   flex:1;
   display:flex;
   flex-direction:column;
-  gap:8px;
+  gap:2px;
   min-width:0;
 }
 
@@ -218,7 +218,7 @@ body {
   white-space:nowrap;
 }
 
-/* 피그마: person_icon 8×9 + count 15px Medium #afafaf gap:3 */
+/* 피그마: person_icon 8×9 + count 14px Medium #afafaf gap:3 */
 .room-count {
   display:flex;
   align-items:center;
@@ -234,12 +234,12 @@ body {
   flex-shrink:0;
 }
 
-/* 피그마: 15px Medium #afafaf tracking:-0.3px */
+/* 피그마: 14px Medium #afafaf tracking:-0.28px */
 .count-text {
-  font-size:15px;
+  font-size:14px;
   font-weight:500;
   color:var(--gray-30);
-  letter-spacing:-0.3px;
+  letter-spacing:-0.28px;
   line-height:1.5;
 }
 
@@ -275,19 +275,19 @@ body {
   min-width:0;
 }
 
-/* 피그마: 22×22px circle primary, 15px Medium white tracking:-0.3px */
+/* 피그마: 19×19px circle primary, 13px Medium white tracking:-0.26px */
 .unread-badge {
-  width:22px;
-  height:22px;
+  width:19px;
+  height:19px;
   border-radius:50%;
   background:var(--primary);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:15px;
+  font-size:13px;
   font-weight:500;
   color:var(--white);
-  letter-spacing:-0.3px;
+  letter-spacing:-0.26px;
   line-height:1;
   flex-shrink:0;
 }
