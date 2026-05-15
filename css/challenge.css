@@ -116,11 +116,6 @@ body {
   letter-spacing:-0.28px;
 }
 
-/* 지금 참여하세요 섹션: 피그마 16px */
-.more-link-lg {
-  font-size:16px;
-  letter-spacing:-0.32px;
-}
 
 /* ══════════════════════════════════════
    공통 수평 스크롤
@@ -270,12 +265,12 @@ body {
 }
 
 /* ══════════════════════════════════════
-   지금 참여하세요 카드
+   지금 참여하세요 카드  (피그마: 321×434px)
 ══════════════════════════════════════ */
 .join-card {
   flex-shrink:0;
-  width:361px;
-  height:488px;
+  width:321px;
+  height:434px;
   background:var(--white);
   border:1px solid #E0E0E0;
   border-radius:15px;
@@ -286,10 +281,10 @@ body {
   cursor:pointer;
 }
 
-/* 이미지 영역 — 피그마: rounded-tl-15 rounded-tr-15 */
+/* 이미지 영역 — 피그마: h-193px rounded-tl-15 rounded-tr-15 */
 .join-img {
   width:100%;
-  height:209px;
+  height:193px;
   background:var(--gray-20);
   border-radius:15px 15px 0 0;
   position:relative;
@@ -304,6 +299,7 @@ body {
   display:block;
 }
 
+/* 피그마: h-38 px-30 top-154 text-14px */
 .join-overlay {
   position:absolute;
   bottom:0;
@@ -315,88 +311,88 @@ body {
   align-items:center;
   gap:6px;
   padding:0 30px;
-  font-size:16px;
+  font-size:14px;
   font-weight:500;
   color:var(--white);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.28px;
 }
 
-/* 카드 본문 — 피그마: top-229 → padding-top:20px */
+/* 피그마: left-29.58 top-213.02 → padding-left:30 top:20 */
 .join-body {
   flex:1;
-  padding:20px 23px 27px;
+  padding:20px 31px 34px 30px;
   display:flex;
   flex-direction:column;
 }
 
-/* 피그마: gap-10px between top-group & meta-list */
+/* 피그마: gap-16px between top-group & meta-list */
 .join-info {
-  flex:1;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:16px;
 }
 
-/* 피그마: gap-12px between name & badge */
+/* 피그마: gap-5px between name & badge */
 .join-info-top {
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:5px;
 }
 
-/* 피그마: gap-6px between meta rows */
+/* 피그마: gap-px(1px) between meta rows */
 .join-meta-list {
   display:flex;
   flex-direction:column;
-  gap:6px;
+  gap:1px;
 }
 
+/* 피그마: 18px Medium */
 .join-name {
-  font-size:22px;
+  font-size:18px;
   font-weight:500;
   color:var(--black);
-  letter-spacing:-0.44px;
+  letter-spacing:-0.36px;
   line-height:1.5;
 }
 
-/* 참여자 뱃지 */
+/* 피그마: px-10 py-4 rounded-5 text-14px */
 .participant-badge {
   display:inline-flex;
   align-items:center;
   gap:8px;
-  height:36px;
-  padding:0 10px;
+  padding:4px 10px;
   background:var(--badge-bg);
-  border-radius:10px;
-  font-size:16px;
+  border-radius:5px;
+  font-size:14px;
   font-weight:500;
   color:var(--badge-text);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.28px;
   width:fit-content;
 }
 
+/* 피그마: text-14px gap-6px icon-10px */
 .join-meta {
   display:flex;
   align-items:center;
   gap:6px;
-  font-size:16px;
+  font-size:14px;
   font-weight:500;
   color:var(--gray-50);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.28px;
 }
 
-/* 참여 버튼 — 피그마: top-405 → info 끝나고 margin-top:21px */
+/* 피그마: top-353 → margin-top:20px, h-47 w-260(=100%) 18px SemiBold */
 .join-btn {
-  margin-top:21px;
+  margin-top:20px;
   display:flex;
   align-items:center;
   justify-content:center;
   width:100%;
-  height:54px;
+  height:47px;
   border-radius:10px;
-  font-size:20px;
+  font-size:18px;
   font-weight:600;
-  letter-spacing:-0.4px;
+  letter-spacing:-0.36px;
   line-height:1;
   background:var(--primary);
   color:var(--white);
@@ -408,9 +404,10 @@ body {
 
 .join-btn:hover { opacity:0.9; }
 
+/* 피그마: bg-#F6F6F6 border-#E0E0E0 text-#959595 */
 .join-btn.done {
   background:var(--gray-10);
-  border:1px solid var(--gray-30);
+  border:1px solid #E0E0E0;
   color:var(--gray-40);
   cursor:default;
 }
