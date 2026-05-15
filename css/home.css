@@ -135,79 +135,114 @@ body {
    히어로 섹션
 ══════════════════════════════════════ */
 .hero {
-  padding:20px 16px 0;
-  display:flex;
-  flex-direction:column;
-  gap:16px;
+  position:relative;
+  height:571px;
 }
 
-.hero-card {
-  background:#F8FFF0;
-  border:1.5px solid #D4EFA0;
-  border-radius:20px;
-  padding:20px 20px 20px 24px;
+.hero-cat {
+  position:absolute;
+  left:17px;
+  top:99px;
+  width:166px;
+  height:210px;
 }
-
-.hero-top {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.hero-greeting-wrap {
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-}
-
-.hero-sub {
-  font-size:14px;
-  font-weight:500;
-  color:var(--gray-40);
-  letter-spacing:-0.28px;
-  line-height:1.5;
-}
-
-.hero-amount {
-  font-size:34px;
-  font-weight:700;
-  color:var(--black);
-  letter-spacing:-0.68px;
-  line-height:1.2;
-}
-
-.hero-streak {
-  font-size:13px;
-  font-weight:500;
-  color:var(--gray-50);
-  letter-spacing:-0.26px;
-  margin-top:6px;
+.hero-cat img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
   display:block;
 }
 
-.hero-cat-sm {
-  width:80px;
-  height:80px;
-  object-fit:contain;
-  flex-shrink:0;
+.savings-talk {
+  position:absolute;
+  left:182px;
+  top:64px;
+  width:232px;
+  height:auto;
+  display:block;
 }
 
+.money-bubble {
+  position:absolute;
+  left:209px;
+  top:137px;
+  width:222px;
+  height:156px;
+  background:var(--orange-bg);
+  border-radius:68px 0 0 68px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.money-content {
+  display:flex;
+  flex-direction:column;
+  padding:0 20px;
+  width:100%;
+}
+
+.money-label {
+  font-size:17px;
+  font-weight:500;
+  color:var(--orange-text);
+  letter-spacing:-0.34px;
+  line-height:1.5;
+  margin-bottom:-5px;
+  width:100%;
+  text-align:right;
+}
+
+.money-amount {
+  font-size:36px;
+  font-weight:600;
+  color:var(--black);
+  letter-spacing:-0.72px;
+  line-height:1.5;
+  text-align:right;
+  width:100%;
+}
+
+.check-pill {
+  position:absolute;
+  left:0;
+  top:335px;
+  width:226px;
+  height:103px;
+  background:var(--primary-light);
+  border-radius:0 57.5px 57.5px 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 20px;
+  font-size:18px;
+  font-weight:500;
+  letter-spacing:-0.36px;
+  line-height:1.5;
+  cursor:pointer;
+}
+.check-pill-title { color:var(--black); }
+.check-pill-sub   { color:var(--green-text); }
+
 .cta-btn {
+  position:absolute;
+  left:15px;
+  top:454px;
+  width:399px;
+  height:70px;
+  background:var(--primary);
+  border-radius:10px;
   display:flex;
   align-items:center;
   justify-content:center;
   gap:5px;
-  width:100%;
-  height:70px;
-  background:var(--primary);
-  border-radius:10px;
   font-size:22px;
   font-weight:600;
   color:var(--white);
   letter-spacing:-0.44px;
   cursor:pointer;
   text-decoration:none;
-  flex-shrink:0;
 }
 
 .cta-plus {
@@ -432,5 +467,27 @@ body {
   }
   .home-indicator::after { display:none; }
 
-  /* 히어로: flex 레이아웃이므로 별도 vw 스케일 불필요 */
+  /* ── 히어로 vw 스케일 (430px 기준 비례) ── */
+  .hero         { height:132.79vw; }
+  .hero-cat     { left:3.95vw; top:23.02vw; width:38.60vw; height:48.84vw; }
+  .savings-talk { left:42.33vw; top:14.88vw; width:53.95vw; }
+  .money-bubble {
+    left:48.60vw; top:31.86vw;
+    width:51.63vw; height:36.28vw;
+    border-radius:15.81vw 0 0 15.81vw;
+  }
+  .money-content  { padding:0 4.65vw; }
+  .money-label    { font-size:3.95vw; }
+  .money-amount   { font-size:8.37vw; }
+  .check-pill {
+    top:77.91vw; width:52.56vw; height:23.95vw;
+    border-radius:0 13.37vw 13.37vw 0;
+    font-size:4.19vw; padding:0 4.65vw;
+  }
+  .cta-btn {
+    left:3.49vw; top:105.58vw;
+    width:92.79vw; height:16.28vw;
+    border-radius:2.33vw; font-size:5.12vw; gap:1.16vw;
+  }
+  .cta-plus { width:5.58vw; height:5.58vw; }
 }
