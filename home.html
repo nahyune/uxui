@@ -16,26 +16,22 @@
 <body>
 <div class="phone">
 
-  <!-- 스크롤 래퍼: 헤더+콘텐츠 함께 스크롤, 하단 네비는 밖에 고정 -->
-  <div class="scroll-wrap">
-
-    <!-- 상단 그린 영역 (스크롤과 함께 올라감) -->
-    <div class="top-zone">
-      <div class="status-bar"></div>
-      <div class="app-header">
-        <span class="logo">MOTIMO</span>
-        <button class="bell-btn" aria-label="알림">
-          <!-- 피그마: Alerts w-24 h-27 -->
-          <svg width="24" height="27" viewBox="0 0 24 27" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 0C11.1 0 10.5 0.7 10.5 1.6C7.2 2.5 5.5 5.2 5.5 8.5V20H3V22H21V20H18.5V8.5C18.5 5.2 16.8 2.5 13.5 1.6C13.5 0.7 12.9 0 12 0Z"/>
-            <ellipse cx="12" cy="25" rx="2.8" ry="2"/>
-          </svg>
-        </button>
-      </div>
+  <!-- 헤더 프레임 (고정, flex-shrink:0) — 소비체크와 동일 패턴 -->
+  <div class="top-frame">
+    <div class="status-bar"></div>
+    <div class="app-header">
+      <span class="logo">MOTIMO</span>
+      <button class="bell-btn" aria-label="알림">
+        <svg width="24" height="27" viewBox="0 0 24 27" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C11.1 0 10.5 0.7 10.5 1.6C7.2 2.5 5.5 5.2 5.5 8.5V20H3V22H21V20H18.5V8.5C18.5 5.2 16.8 2.5 13.5 1.6C13.5 0.7 12.9 0 12 0Z"/>
+          <ellipse cx="12" cy="25" rx="2.8" ry="2"/>
+        </svg>
+      </button>
     </div>
+  </div>
 
-    <!-- 흰색 메인 콘텐츠 (margin-top 없음, top-zone 161px 바로 아래 시작) -->
-    <div class="main-scroll">
+  <!-- 메인 스크롤 (flex:1, 내부만 스크롤) — 소비체크와 동일 패턴 -->
+  <div class="main-scroll">
 
       <!-- 히어로 섹션: 절대좌표 배치 (흰색 패널 top 기준) -->
       <div class="hero">
@@ -204,9 +200,7 @@
 
     </div><!-- /main-scroll -->
 
-  </div><!-- /scroll-wrap -->
-
-  <!-- 하단 네비게이션 (scroll-wrap 밖, 항상 고정) -->
+  <!-- 하단 네비게이션 (항상 고정) -->
   <nav class="bottom-nav">
     <a href="home.html" class="nav-item active">
       <span class="nav-icon-wrap">
