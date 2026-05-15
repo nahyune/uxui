@@ -64,8 +64,9 @@ body {
   height: 44px;
 }
 
+/* 피그마: title top-76px → padding-top = 76-44(status) = 32px */
 .page-title-wrap {
-  padding: 12px 16px 20px;
+  padding: 32px 16px 0;
   flex-shrink: 0;
 }
 
@@ -90,17 +91,17 @@ body {
 .main-scroll::-webkit-scrollbar { display: none; }
 
 /* ══════════════════════════════════════
-   프로필 영역  피그마: top-184 left-111 size-203 rounded-219px
+   프로필 영역  피그마: top-159 left-129 size-156 rounded-219px
 ══════════════════════════════════════ */
 .profile-wrap {
   display: flex;
   justify-content: center;
-  padding: 28px 0 32px;
+  padding: 47px 0 32px;
 }
 
 .profile-avatar {
-  width: 203px;
-  height: 203px;
+  width: 156px;
+  height: 156px;
   border-radius: 50%;
   overflow: hidden;
   background: var(--gray-20);
@@ -134,10 +135,11 @@ body {
   color: var(--black);
 }
 
+/* 피그마: gap-16px */
 .menu-left {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
 }
 
 /* 메뉴 아이콘 */
@@ -174,12 +176,13 @@ body {
 /* ══════════════════════════════════════
    하단 서브 링크
 ══════════════════════════════════════ */
+/* 피그마: top-798 → 메뉴카드 bottom(347+435=782)에서 16px 아래, gap 39px */
 .sub-links {
   display: flex;
   flex-direction: column;
-  gap: 27px;
-  margin-top: 30px;
-  padding-left: 16px;
+  gap: 37px;
+  margin-top: 16px;
+  padding-left: 19px;
 }
 
 /* 피그마: 15px Medium #686868 tracking-[-0.3px] */
