@@ -191,6 +191,7 @@ body {
   line-height:1.5;
   margin-bottom:-5px;
   width:100%;
+  text-align:right;
 }
 
 .money-amount {
@@ -238,10 +239,10 @@ body {
   align-items:center;
   justify-content:center;
   gap:5px;
-  font-size:20px;
+  font-size:22px;
   font-weight:600;
   color:var(--white);
-  letter-spacing:-0.4px;
+  letter-spacing:-0.44px;
   cursor:pointer;
   text-decoration:none;
 }
@@ -466,7 +467,7 @@ body {
   .cta-btn {
     left:3.49vw; top:105.58vw;
     width:92.79vw; height:16.28vw;
-    border-radius:2.33vw; font-size:4.65vw; gap:1.16vw;
+    border-radius:2.33vw; font-size:5.12vw; gap:1.16vw;
   }
   .cta-plus { width:5.58vw; height:5.58vw; }
 }
