@@ -109,7 +109,7 @@ body {
 .today-cat {
   position:absolute;
   right:25px;
-  top:30px;
+  top:43px;
   width:91px;
   height:auto;
   display:block;
@@ -135,13 +135,13 @@ body {
   gap:19px;
 }
 
-/* 피그마: 36px SemiBold */
+/* 피그마: 36px SemiBold, h-[43px] 컨테이너 → line-height:1.2 (36×1.2=43px) */
 .today-amount {
   font-size:36px;
   font-weight:600;
   color:var(--black);
   letter-spacing:-0.72px;
-  line-height:1.5;
+  line-height:1.2;
 }
 
 /* 피그마: h-36px px-10px bg-#fff5e7 rounded-10px */
