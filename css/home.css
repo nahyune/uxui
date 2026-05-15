@@ -54,6 +54,10 @@ body {
 .status-frame {
   background:var(--primary);
   flex-shrink:0;
+  transition:background 0.25s ease;
+}
+.status-frame.is-white {
+  background:var(--white);
 }
 
 .status-bar {

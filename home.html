@@ -228,6 +228,25 @@
 
 </div>
 <script>
+/* 상태바 색상: 스크롤 위치에 따라 green ↔ white */
+(function () {
+  var statusFrame = document.querySelector('.status-frame');
+  var topZone     = document.querySelector('.top-zone');
+  var mainScroll  = document.querySelector('.main-scroll');
+  if (!statusFrame || !topZone || !mainScroll) return;
+
+  function updateStatusColor() {
+    if (mainScroll.scrollTop >= topZone.offsetHeight) {
+      statusFrame.classList.add('is-white');
+    } else {
+      statusFrame.classList.remove('is-white');
+    }
+  }
+
+  mainScroll.addEventListener('scroll', updateStatusColor, { passive: true });
+  updateStatusColor(); /* 초기 상태 */
+})();
+
 /* iOS 오버스크롤 바운스 완전 차단 */
 (function () {
   var el = document.querySelector('.main-scroll');
