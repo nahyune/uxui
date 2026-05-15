@@ -280,11 +280,12 @@ body {
   cursor:pointer;
 }
 
-/* 이미지 영역 */
+/* 이미지 영역 — 피그마: rounded-tl-15 rounded-tr-15 */
 .join-img {
   width:100%;
   height:209px;
   background:var(--gray-20);
+  border-radius:15px 15px 0 0;
   position:relative;
   flex-shrink:0;
   overflow:hidden;
