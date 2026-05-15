@@ -227,5 +227,38 @@
   <div class="home-indicator"></div>
 
 </div>
+<script>
+/* iOS 오버스크롤 바운스 완전 차단 */
+(function () {
+  var el = document.querySelector('.main-scroll');
+  if (!el) return;
+  var startY = 0;
+
+  el.addEventListener('touchstart', function (e) {
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+
+  el.addEventListener('touchmove', function (e) {
+    var curY   = e.touches[0].clientY;
+    var top    = el.scrollTop;
+    var max    = el.scrollHeight - el.clientHeight;
+    var goingDown = curY > startY;   /* 손가락이 아래로 → 위 방향 당김 */
+    var goingUp   = curY < startY;   /* 손가락이 위로  → 아래 방향 당김 */
+
+    /* 맨 위에서 아래로 당기거나 맨 아래에서 위로 당길 때 막음 */
+    if ((top <= 0 && goingDown) || (top >= max && goingUp)) {
+      e.preventDefault();
+    }
+    startY = curY;
+  }, { passive: false });
+
+  /* phone 전체의 기본 touch 스크롤 방지 (main-scroll 밖 영역) */
+  document.querySelector('.phone').addEventListener('touchmove', function (e) {
+    if (!e.target.closest('.main-scroll')) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+})();
+</script>
 </body>
 </html>

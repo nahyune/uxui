@@ -68,10 +68,11 @@ body {
 ══════════════════════════════════════ */
 .main-scroll {
   flex:1;
-  overflow-y:auto;
+  overflow-y:scroll;
+  overflow-x:hidden;
   scrollbar-width:none;
   background:var(--primary);
-  overscroll-behavior:contain;
+  overscroll-behavior:none;
 }
 .main-scroll::-webkit-scrollbar { display:none; }
 
@@ -120,6 +121,8 @@ body {
   background:var(--white);
   border-radius:40px 40px 0 0;
   padding-bottom:40px;
+  overflow-x:hidden;
+  min-height:100%;
 }
 
 /* ══════════════════════════════════════
