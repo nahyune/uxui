@@ -96,12 +96,12 @@ body {
 .profile-wrap {
   display: flex;
   justify-content: center;
-  padding: 47px 0 32px;
+  padding: 24px 0 20px;
 }
 
 .profile-avatar {
-  width: 156px;
-  height: 156px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   overflow: hidden;
   background: var(--gray-20);
