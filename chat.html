@@ -1,9 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <!-- PWA: 홈 화면 추가 시 전체화면 실행 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="MOA">
@@ -16,63 +15,66 @@
 <body>
 <div class="phone">
 
-  <!-- 헤더 프레임 -->
+  <!-- 헤더 프레임 (고정) -->
   <div class="top-frame">
     <div class="status-bar"></div>
+
+    <!-- 피그마: 채팅 타이틀 + 아이콘 3개 (search, bubble, settings) gap:25px -->
     <div class="app-header">
-    <h1 class="page-title">채팅</h1>
-    <div class="header-icons">
-      <!-- 검색 -->
-      <button class="icon-btn" aria-label="검색">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-      <!-- 채팅 추가 -->
-      <button class="icon-btn" aria-label="채팅 추가">
-        <svg width="23" height="23" viewBox="0 0 24 24" fill="none"
-             stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          <line x1="12" y1="9" x2="12" y2="15"/>
-          <line x1="9" y1="12" x2="15" y2="12"/>
-        </svg>
-      </button>
-      <!-- 설정 -->
-      <button class="icon-btn" aria-label="설정">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-             stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="3"/>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-        </svg>
-      </button>
+      <h1 class="page-title">채팅</h1>
+      <div class="header-icons">
+        <button class="icon-btn" aria-label="검색">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="채팅 추가">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="none"
+               stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            <line x1="12" y1="9" x2="12" y2="15"/>
+            <line x1="9" y1="12" x2="15" y2="12"/>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="설정">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+      </div>
     </div>
+
+    <!-- 피그마: 카테고리 탭 14px Medium, rounded-52, px:17 py:7, gap:8 -->
+    <div class="cat-tabs">
+      <button class="cat-tab active">전체</button>
+      <button class="cat-tab">안읽음</button>
+      <button class="cat-tab">챌린지</button>
     </div>
   </div><!-- /top-frame -->
 
-  <!-- 카테고리 탭 -->
-  <div class="cat-tabs">
-    <button class="cat-tab active">전체</button>
-    <button class="cat-tab">안읽음</button>
-    <button class="cat-tab">챌린지</button>
-  </div>
-
-  <!-- 채팅 목록 -->
+  <!-- 채팅 목록 (피그마: gap:16px, 아이템 pl:15 py:5 gap:11) -->
   <main class="chat-list">
 
     <!-- 1. 소비 기록 챌린지 📝 (챌린지방, 미읽음 2) -->
     <a href="chatting-challenge.html" class="chat-item">
-      <div class="avatar"></div>
+      <div class="avatar">
+        <img src="img/chat_receipt.png" alt="소비 기록 챌린지">
+      </div>
       <div class="chat-info">
         <div class="info-top">
           <div class="room-name-wrap">
-            <span class="challenge-dot"></span>
-            <span class="room-name">소비 기록 챌린지 📝</span>
-            <span class="room-count">
-              <svg width="10" height="11" viewBox="0 0 10 12" fill="none" stroke="#AFAFAF" stroke-width="1.5" stroke-linecap="round"><path d="M5 6.5c2.2 0 4 .9 4 2v1H1v-1c0-1.1 1.8-2 4-2z"/><circle cx="5" cy="3" r="2"/></svg>
-              16
-            </span>
+            <div class="room-title">
+              <img src="img/icon_fire.png" class="fire-icon" alt="">
+              <span class="room-name">소비 기록 챌린지 📝</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="person-icon" alt="">
+              <span class="count-text">16</span>
+            </div>
           </div>
           <span class="chat-time">오후 8:45</span>
         </div>
@@ -85,17 +87,21 @@
 
     <!-- 2. 통장 지키기 모임 (일반방) -->
     <a href="chatting.html" class="chat-item">
-      <div class="avatar"></div>
+      <div class="avatar">
+        <img src="img/chat_wallet.png" alt="통장 지키기 모임">
+      </div>
       <div class="chat-info">
         <div class="info-top">
           <div class="room-name-wrap">
-            <span class="room-name">통장 지키기 모임</span>
-            <span class="room-count">
-              <svg width="10" height="11" viewBox="0 0 10 12" fill="none" stroke="#AFAFAF" stroke-width="1.5" stroke-linecap="round"><path d="M5 6.5c2.2 0 4 .9 4 2v1H1v-1c0-1.1 1.8-2 4-2z"/><circle cx="5" cy="3" r="2"/></svg>
-              5
-            </span>
+            <div class="room-title">
+              <span class="room-name">통장 지키기 모임</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="person-icon" alt="">
+              <span class="count-text">5</span>
+            </div>
           </div>
-          <span class="chat-time">오후 6:15</span>
+          <span class="chat-time">오후 8:45</span>
         </div>
         <div class="info-bottom">
           <p class="last-msg">이번 달도 다 같이 살아남아보자 🔥</p>
@@ -105,18 +111,22 @@
 
     <!-- 3. 카페 금지 챌린지 ☕ (챌린지방) -->
     <a href="chatting-challenge.html" class="chat-item">
-      <div class="avatar"></div>
+      <div class="avatar">
+        <img src="img/chat_coffee.png" alt="카페 금지 챌린지">
+      </div>
       <div class="chat-info">
         <div class="info-top">
           <div class="room-name-wrap">
-            <span class="challenge-dot"></span>
-            <span class="room-name">카페 금지 챌린지 ☕</span>
-            <span class="room-count">
-              <svg width="10" height="11" viewBox="0 0 10 12" fill="none" stroke="#AFAFAF" stroke-width="1.5" stroke-linecap="round"><path d="M5 6.5c2.2 0 4 .9 4 2v1H1v-1c0-1.1 1.8-2 4-2z"/><circle cx="5" cy="3" r="2"/></svg>
-              83
-            </span>
+            <div class="room-title">
+              <img src="img/icon_fire.png" class="fire-icon" alt="">
+              <span class="room-name">카페 금지 챌린지 ☕</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="person-icon" alt="">
+              <span class="count-text">83</span>
+            </div>
           </div>
-          <span class="chat-time">오후 5:07</span>
+          <span class="chat-time">오후 8:45</span>
         </div>
         <div class="info-bottom">
           <p class="last-msg">오늘 카페 안 가신 분??</p>
@@ -126,20 +136,24 @@
 
     <!-- 4. 텅장 방지 협회 (일반방, 미읽음 5) -->
     <a href="chatting.html" class="chat-item">
-      <div class="avatar"></div>
+      <div class="avatar">
+        <img src="img/chat_book.png" alt="텅장 방지 협회">
+      </div>
       <div class="chat-info">
         <div class="info-top">
           <div class="room-name-wrap">
-            <span class="room-name">텅장 방지 협회</span>
-            <span class="room-count">
-              <svg width="10" height="11" viewBox="0 0 10 12" fill="none" stroke="#AFAFAF" stroke-width="1.5" stroke-linecap="round"><path d="M5 6.5c2.2 0 4 .9 4 2v1H1v-1c0-1.1 1.8-2 4-2z"/><circle cx="5" cy="3" r="2"/></svg>
-              13
-            </span>
+            <div class="room-title">
+              <span class="room-name">텅장 방지 협회</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="person-icon" alt="">
+              <span class="count-text">13</span>
+            </div>
           </div>
-          <span class="chat-time">오전 10:45</span>
+          <span class="chat-time">오후 8:45</span>
         </div>
         <div class="info-bottom">
-          <p class="last-msg">택시 대신 버스 탔다ㅎㅎ</p>
+          <p class="last-msg">택시 대신 버스 탔다 ㅎㅎ</p>
           <span class="unread-badge">5</span>
         </div>
       </div>
@@ -147,20 +161,24 @@
 
     <!-- 5. 절약 못하면 벌금방 💸 (일반방, 미읽음 2) -->
     <a href="chatting.html" class="chat-item">
-      <div class="avatar"></div>
+      <div class="avatar">
+        <img src="img/chat_coin.png" alt="절약 못하면 벌금방">
+      </div>
       <div class="chat-info">
         <div class="info-top">
           <div class="room-name-wrap">
-            <span class="room-name">💸 절약 못하면 벌금방</span>
-            <span class="room-count">
-              <svg width="10" height="11" viewBox="0 0 10 12" fill="none" stroke="#AFAFAF" stroke-width="1.5" stroke-linecap="round"><path d="M5 6.5c2.2 0 4 .9 4 2v1H1v-1c0-1.1 1.8-2 4-2z"/><circle cx="5" cy="3" r="2"/></svg>
-              8
-            </span>
+            <div class="room-title">
+              <span class="room-name">💸 절약 못하면 벌금방</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="person-icon" alt="">
+              <span class="count-text">8</span>
+            </div>
           </div>
-          <span class="chat-time">오전 10:23</span>
+          <span class="chat-time">오후 8:45</span>
         </div>
         <div class="info-bottom">
-          <p class="last-msg">걸리면 벌금 5000원임</p>
+          <p class="last-msg">걸리면 벌금 5000원이야</p>
           <span class="unread-badge">2</span>
         </div>
       </div>
@@ -168,21 +186,25 @@
 
     <!-- 6. 쇼핑 금지 챌린지 🛍 (챌린지방, 미읽음 8) -->
     <a href="chatting-challenge.html" class="chat-item">
-      <div class="avatar"></div>
+      <div class="avatar">
+        <img src="img/chat_shopping.png" alt="쇼핑 금지 챌린지">
+      </div>
       <div class="chat-info">
         <div class="info-top">
           <div class="room-name-wrap">
-            <span class="challenge-dot"></span>
-            <span class="room-name">쇼핑 금지 챌린지 🛍</span>
-            <span class="room-count">
-              <svg width="10" height="11" viewBox="0 0 10 12" fill="none" stroke="#AFAFAF" stroke-width="1.5" stroke-linecap="round"><path d="M5 6.5c2.2 0 4 .9 4 2v1H1v-1c0-1.1 1.8-2 4-2z"/><circle cx="5" cy="3" r="2"/></svg>
-              52
-            </span>
+            <div class="room-title">
+              <img src="img/icon_fire.png" class="fire-icon" alt="">
+              <span class="room-name">쇼핑 금지 챌린지 🛍</span>
+            </div>
+            <div class="room-count">
+              <img src="img/person_01.png" class="person-icon" alt="">
+              <span class="count-text">52</span>
+            </div>
           </div>
-          <span class="chat-time">오전 9:30</span>
+          <span class="chat-time">오후 8:45</span>
         </div>
         <div class="info-bottom">
-          <p class="last-msg">저 지금 장바구니에 넣고 10분째 고민하...</p>
+          <p class="last-msg">저 지금 장바구니에 넣고 10분째 고민하고 있는...</p>
           <span class="unread-badge">8</span>
         </div>
       </div>
@@ -193,38 +215,27 @@
   <!-- 하단 네비게이션 -->
   <nav class="bottom-nav">
     <a href="home.html" class="nav-item">
-      <span class="nav-icon-wrap">
-        <img src="img/home.png" class="nav-icon-home" alt="홈">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/home.png" class="nav-icon-home" alt="홈"></span>
       <span class="nav-label">홈</span>
     </a>
     <a href="check.html" class="nav-item">
-      <span class="nav-icon-wrap">
-        <img src="img/check.png" class="nav-icon-check" alt="소비체크">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/check.png" class="nav-icon-check" alt="소비체크"></span>
       <span class="nav-label">소비체크</span>
     </a>
     <a href="challenge.html" class="nav-item">
-      <span class="nav-icon-wrap">
-        <img src="img/challenge.png" class="nav-icon-challenge" alt="챌린지">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/challenge.png" class="nav-icon-challenge" alt="챌린지"></span>
       <span class="nav-label">챌린지</span>
     </a>
     <a href="chat.html" class="nav-item active">
-      <span class="nav-icon-wrap">
-        <img src="img/chatting_02.png" class="nav-icon-chat" alt="채팅">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/chatting_02.png" class="nav-icon-chat" alt="채팅"></span>
       <span class="nav-label">채팅</span>
     </a>
     <a href="my.html" class="nav-item">
-      <span class="nav-icon-wrap">
-        <img src="img/mypage.png" class="nav-icon-my" alt="마이">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/mypage.png" class="nav-icon-my" alt="마이"></span>
       <span class="nav-label">마이</span>
     </a>
   </nav>
 
-  <!-- iOS 홈 인디케이터 -->
   <div class="home-indicator"></div>
 
 </div>
