@@ -21,7 +21,7 @@ a      { text-decoration:none; color:inherit; }
 button { cursor:pointer; font-family:inherit; border:none; background:none; }
 
 /* ══════════════════════════════════════
-   body — 소비체크와 동일 구조
+   body
 ══════════════════════════════════════ */
 body {
   font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
@@ -34,7 +34,7 @@ body {
 }
 
 /* ══════════════════════════════════════
-   폰 컨테이너 — 소비체크와 동일
+   폰 컨테이너
 ══════════════════════════════════════ */
 .phone {
   width:430px;
@@ -48,17 +48,40 @@ body {
 }
 
 /* ══════════════════════════════════════
-   헤더 프레임 (고정, flex-shrink:0)
-   소비체크의 top-frame과 동일 패턴
-   status-bar(44) + app-header(16+72+29=117) = 161px
+   ① 상태바 고정 프레임 (flex-shrink:0)
+   MOTIMO 없음 — 순수 상태바만
 ══════════════════════════════════════ */
-.top-frame {
+.status-frame {
   background:var(--primary);
   flex-shrink:0;
 }
 
 .status-bar {
   height:44px;
+}
+
+/* ══════════════════════════════════════
+   ② 메인 스크롤 (flex:1)
+   MOTIMO + 흰색 콘텐츠 전체를 감쌈
+   phone 높이에서 status-frame + nav + indicator 빼고 정확히 채움
+   overscroll-behavior:contain → 바운스 방지
+══════════════════════════════════════ */
+.main-scroll {
+  flex:1;
+  overflow-y:auto;
+  scrollbar-width:none;
+  background:var(--primary);
+  overscroll-behavior:contain;
+}
+.main-scroll::-webkit-scrollbar { display:none; }
+
+/* ══════════════════════════════════════
+   MOTIMO 헤더 영역 (main-scroll 안, 스크롤 시 올라감)
+   피그마: app-header 16+72+29=117px
+   status-frame(44) + top-zone(117) = 161px → 흰색 패널 시작
+══════════════════════════════════════ */
+.top-zone {
+  background:var(--primary);
 }
 
 .app-header {
@@ -68,7 +91,7 @@ body {
   padding:16px 20px 29px;
 }
 
-/* 피그마: Baloo 2 48px leading-1.5 → 72px → top-frame 161px */
+/* 피그마: Baloo 2 48px leading-1.5 → 72px */
 .logo {
   font-family:'Baloo 2','Baloo',cursive;
   font-size:48px;
@@ -89,22 +112,20 @@ body {
 }
 
 /* ══════════════════════════════════════
-   메인 스크롤 — 소비체크의 main-scroll과 동일 패턴
-   flex:1 → phone 남은 높이 정확히 채움
-   overflow-y:auto → 내부만 스크롤
+   흰색 영역 래퍼 (main-scroll 안)
+   rounded-tl-40 rounded-tr-40
+   phone bg(green)이 둥근 모서리 뒤로 노출
 ══════════════════════════════════════ */
-.main-scroll {
-  flex:1;
-  overflow-y:auto;
-  scrollbar-width:none;
+.white-wrap {
   background:var(--white);
   border-radius:40px 40px 0 0;
+  padding-bottom:40px;
 }
-.main-scroll::-webkit-scrollbar { display:none; }
 
 /* ══════════════════════════════════════
-   히어로 섹션 (px 기준, 모바일은 vw로 오버라이드)
-   좌표 기준: 흰색 패널 top = hero top
+   히어로 섹션
+   좌표 기준: white-wrap top = 흰색 패널 top
+   status-frame(44) + top-zone(117) = 161px 이후
 ══════════════════════════════════════ */
 .hero {
   position:relative;
@@ -136,8 +157,7 @@ body {
   display:block;
 }
 
-/* 피그마: left-209 top-298→137 w-222 h-156
-   rounded-tl-68 rounded-bl-68 / items-end justify-center */
+/* 피그마: left-209 top-298→137 w-222 h-156 */
 .money-bubble {
   position:absolute;
   left:209px;
@@ -159,7 +179,6 @@ body {
   width:100%;
 }
 
-/* 피그마: 17px Medium #e16500 mb-[-5px] */
 .money-label {
   font-size:17px;
   font-weight:500;
@@ -170,7 +189,6 @@ body {
   width:100%;
 }
 
-/* 피그마: 36px SemiBold black text-right */
 .money-amount {
   font-size:36px;
   font-weight:600;
@@ -181,8 +199,7 @@ body {
   width:100%;
 }
 
-/* 피그마: left-0 top-496→335 w-226 h-103
-   rounded-tr-57.5 rounded-br-57.5 */
+/* 피그마: left-0 top-496→335 w-226 h-103 */
 .check-pill {
   position:absolute;
   left:0;
@@ -234,9 +251,9 @@ body {
 }
 
 /* ══════════════════════════════════════
-   인기 챌린지 섹션
+   챌린지 섹션
 ══════════════════════════════════════ */
-.challenge-section { padding:0 0 40px; }
+.challenge-section { padding:0 0 0; }
 
 .section-title-wrap {
   display:flex;
@@ -301,11 +318,7 @@ body {
   line-height:1.5;
 }
 
-.challenge-inner {
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-}
+.challenge-inner { display:flex; flex-direction:column; gap:7px; }
 
 .participant-badge {
   display:inline-flex;
@@ -326,11 +339,7 @@ body {
   white-space:nowrap;
 }
 
-.challenge-meta-list {
-  display:flex;
-  flex-direction:column;
-  gap:2px;
-}
+.challenge-meta-list { display:flex; flex-direction:column; gap:2px; }
 
 .challenge-meta {
   display:flex;
@@ -344,15 +353,10 @@ body {
   white-space:nowrap;
 }
 
-.card-divider {
-  width:100%;
-  height:1px;
-  background:#EBEBEB;
-  flex-shrink:0;
-}
+.card-divider { width:100%; height:1px; background:#EBEBEB; flex-shrink:0; }
 
 /* ══════════════════════════════════════
-   하단 네비게이션 (고정)
+   하단 네비게이션 (flex-shrink:0 고정)
 ══════════════════════════════════════ */
 .bottom-nav {
   background:var(--white);
@@ -402,7 +406,7 @@ body {
 .nav-item.active .nav-label { color:var(--black); }
 
 /* ══════════════════════════════════════
-   홈 인디케이터 (고정)
+   홈 인디케이터 (flex-shrink:0 고정)
 ══════════════════════════════════════ */
 .home-indicator {
   background:var(--white);
@@ -416,8 +420,7 @@ body {
 .home-indicator::after { display:none; }
 
 /* ══════════════════════════════════════
-   반응형 — 소비체크와 동일 기본 패턴 +
-   히어로 vw 스케일 (430px 기준 비례)
+   반응형
 ══════════════════════════════════════ */
 @media (max-width:430px) {
   html { overflow:hidden; height:100%; }
@@ -430,6 +433,7 @@ body {
     box-shadow:none;
   }
 
+  /* 모바일 상태바: safe-area 높이 */
   .status-bar { height:env(safe-area-inset-top,0px); }
 
   .home-indicator {
@@ -438,13 +442,10 @@ body {
   }
   .home-indicator::after { display:none; }
 
-  /* ── 히어로 vw 스케일: 공식 X/430*100vw ── */
+  /* ── 히어로 vw 스케일 (430px 기준 비례) ── */
   .hero         { height:132.79vw; }
-
   .hero-cat     { left:3.95vw; top:23.02vw; width:38.60vw; height:48.84vw; }
-
   .savings-talk { left:42.33vw; top:14.88vw; width:53.95vw; }
-
   .money-bubble {
     left:48.60vw; top:31.86vw;
     width:51.63vw; height:36.28vw;
@@ -453,13 +454,11 @@ body {
   .money-content  { padding:0 4.65vw; }
   .money-label    { font-size:3.95vw; }
   .money-amount   { font-size:8.37vw; }
-
   .check-pill {
     top:77.91vw; width:52.56vw; height:23.95vw;
     border-radius:0 13.37vw 13.37vw 0;
     font-size:4.19vw; padding:0 4.65vw;
   }
-
   .cta-btn {
     left:3.49vw; top:105.58vw;
     width:92.79vw; height:16.28vw;

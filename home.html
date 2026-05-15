@@ -16,35 +16,39 @@
 <body>
 <div class="phone">
 
-  <!-- 헤더 프레임 (고정, flex-shrink:0) — 소비체크와 동일 패턴 -->
-  <div class="top-frame">
+  <!-- ① 상태바 고정 (flex-shrink:0) — MOTIMO 없음 -->
+  <div class="status-frame">
     <div class="status-bar"></div>
-    <div class="app-header">
-      <span class="logo">MOTIMO</span>
-      <button class="bell-btn" aria-label="알림">
-        <svg width="24" height="27" viewBox="0 0 24 27" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C11.1 0 10.5 0.7 10.5 1.6C7.2 2.5 5.5 5.2 5.5 8.5V20H3V22H21V20H18.5V8.5C18.5 5.2 16.8 2.5 13.5 1.6C13.5 0.7 12.9 0 12 0Z"/>
-          <ellipse cx="12" cy="25" rx="2.8" ry="2"/>
-        </svg>
-      </button>
-    </div>
   </div>
 
-  <!-- 메인 스크롤 (flex:1, 내부만 스크롤) — 소비체크와 동일 패턴 -->
+  <!-- ② 메인 스크롤 (flex:1) — MOTIMO + 흰색 콘텐츠 함께 스크롤 -->
   <div class="main-scroll">
 
-      <!-- 히어로 섹션: 절대좌표 배치 (흰색 패널 top 기준) -->
+    <!-- MOTIMO 헤더 — 스크롤 시 위로 올라감 -->
+    <div class="top-zone">
+      <div class="app-header">
+        <span class="logo">MOTIMO</span>
+        <button class="bell-btn" aria-label="알림">
+          <svg width="24" height="27" viewBox="0 0 24 27" fill="white">
+            <path d="M12 0C11.1 0 10.5 0.7 10.5 1.6C7.2 2.5 5.5 5.2 5.5 8.5V20H3V22H21V20H18.5V8.5C18.5 5.2 16.8 2.5 13.5 1.6C13.5 0.7 12.9 0 12 0Z"/>
+            <ellipse cx="12" cy="25" rx="2.8" ry="2"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 흰색 영역 (라운드 상단) -->
+    <div class="white-wrap">
+
+      <!-- 히어로 섹션 -->
       <div class="hero">
 
-        <!-- 피그마: left-17 top-260→99 w-166 h-210 -->
         <div class="hero-cat">
           <img src="img/home_cat.png" alt="">
         </div>
 
-        <!-- 피그마: left-182 right-16 top-225→64 w-232 -->
         <img src="img/home_talk.png" class="savings-talk" alt="">
 
-        <!-- 피그마: left-209 top-298→137 w-222 h-156 -->
         <div class="money-bubble">
           <div class="money-content">
             <p class="money-label">이번 주 절약 금액</p>
@@ -52,13 +56,11 @@
           </div>
         </div>
 
-        <!-- 피그마: left-0 top-496→335 w-226 h-103 -->
         <a href="check.html" class="check-pill">
           <p class="check-pill-title">오늘 지출은 어땠나요?</p>
           <p class="check-pill-sub">소비 체크하러 가기!</p>
         </a>
 
-        <!-- 피그마: left-15 top-615→454 w-399 h-70 -->
         <a href="check.html" class="cta-btn">
           <img src="img/check_plus.png" class="cta-plus" alt="">
           오늘 소비 체크하기
@@ -74,7 +76,6 @@
 
         <div class="challenge-list">
 
-          <!-- 챌린지 1: 쇼핑 금지 -->
           <article class="challenge-card" onclick="location.href='challenge-detail.html'">
             <div class="challenge-thumb">
               <img src="img/home_shopping.png" alt="쇼핑 금지 챌린지">
@@ -115,7 +116,6 @@
 
           <div class="card-divider"></div>
 
-          <!-- 챌린지 2: 하루 만원 -->
           <article class="challenge-card" onclick="location.href='challenge-detail.html'">
             <div class="challenge-thumb">
               <img src="img/home_money.png" alt="하루 만원 챌린지">
@@ -156,7 +156,6 @@
 
           <div class="card-divider"></div>
 
-          <!-- 챌린지 3: 집밥 -->
           <article class="challenge-card" onclick="location.href='challenge-detail.html'">
             <div class="challenge-thumb">
               <img src="img/home_rice.png" alt="집밥 챌린지">
@@ -195,46 +194,36 @@
             </div>
           </article>
 
-        </div><!-- /challenge-list -->
+        </div>
       </section>
 
-    </div><!-- /main-scroll -->
+    </div><!-- /white-wrap -->
+  </div><!-- /main-scroll -->
 
-  <!-- 하단 네비게이션 (항상 고정) -->
+  <!-- ③ 하단 네비게이션 (고정) -->
   <nav class="bottom-nav">
     <a href="home.html" class="nav-item active">
-      <span class="nav-icon-wrap">
-        <img src="img/home_02.png" class="nav-icon-home" alt="홈">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/home_02.png" class="nav-icon-home" alt="홈"></span>
       <span class="nav-label">홈</span>
     </a>
     <a href="check.html" class="nav-item">
-      <span class="nav-icon-wrap">
-        <img src="img/check.png" class="nav-icon-check" alt="소비체크">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/check.png" class="nav-icon-check" alt="소비체크"></span>
       <span class="nav-label">소비체크</span>
     </a>
     <a href="challenge.html" class="nav-item">
-      <span class="nav-icon-wrap">
-        <img src="img/challenge.png" class="nav-icon-challenge" alt="챌린지">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/challenge.png" class="nav-icon-challenge" alt="챌린지"></span>
       <span class="nav-label">챌린지</span>
     </a>
     <a href="chat.html" class="nav-item">
-      <span class="nav-icon-wrap">
-        <img src="img/chatting.png" class="nav-icon-chat" alt="채팅">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/chatting.png" class="nav-icon-chat" alt="채팅"></span>
       <span class="nav-label">채팅</span>
     </a>
     <a href="my.html" class="nav-item">
-      <span class="nav-icon-wrap">
-        <img src="img/mypage.png" class="nav-icon-my" alt="마이">
-      </span>
+      <span class="nav-icon-wrap"><img src="img/mypage.png" class="nav-icon-my" alt="마이"></span>
       <span class="nav-label">마이</span>
     </a>
   </nav>
 
-  <!-- iOS 홈 인디케이터 -->
   <div class="home-indicator"></div>
 
 </div>
