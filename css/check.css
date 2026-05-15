@@ -90,19 +90,21 @@ body {
    오늘의 소비 카드  (피그마 checkBox1)
    px-55 py-24 bg-#fcfff6 border-#90d50f
 ══════════════════════════════════════ */
+/* 피그마: h-174px, 텍스트 left:41 top:26 */
 .today-card {
   background:#FCFFF6;
   border:1px solid var(--primary);
   border-radius:10px;
-  padding:24px 55px;
+  padding:26px 16px 24px 41px;
   display:flex;
   flex-direction:column;
   flex-shrink:0;
   position:relative;
   overflow:hidden;
+  min-height:174px;
 }
 
-/* 피그마: left-260 top-43 w-91 h-107 */
+/* 피그마: absolute left-260 top-43 w-91 h-107 */
 .today-cat {
   position:absolute;
   left:260px;
