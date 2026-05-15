@@ -359,6 +359,14 @@ body {
 
 .challenge-meta-list { display:flex; flex-direction:column; gap:2px; }
 
+.meta-icon {
+  width:15px;
+  height:15px;
+  object-fit:contain;
+  display:block;
+  flex-shrink:0;
+}
+
 .challenge-meta {
   display:flex;
   align-items:center;
