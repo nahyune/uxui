@@ -176,11 +176,12 @@ body {
 /* ══════════════════════════════════════
    하단 서브 링크
 ══════════════════════════════════════ */
-/* 피그마: top-798 → 메뉴카드 bottom(347+435=782)에서 16px 아래, gap 39px */
+/* 피그마: 신고하기 top-798, 로그아웃 top-837
+   top간격 39px - 텍스트높이(15×1.5=22.5px) = gap ≈ 16px */
 .sub-links {
   display: flex;
   flex-direction: column;
-  gap: 37px;
+  gap: 16px;
   margin-top: 16px;
   padding-left: 19px;
 }
