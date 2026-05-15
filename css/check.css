@@ -104,13 +104,15 @@ body {
   min-height:174px;
 }
 
-/* 피그마: absolute left-260 top-43 w-91 h-107 */
+/* 피그마 실제 렌더: 120×180px, left:240 top:10
+   %단위 → 카드 너비에 비례 (모바일 대응)
+   right:10% ≈ 40px(399px카드), width:30% ≈ 120px */
 .today-cat {
   position:absolute;
-  left:260px;
-  top:43px;
-  width:91px;
-  height:107px;
+  right:10%;
+  top:10px;
+  width:30%;
+  height:auto;
   object-fit:contain;
   display:block;
   pointer-events:none;
