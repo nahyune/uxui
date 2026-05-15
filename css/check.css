@@ -95,7 +95,7 @@ body {
   background:#FCFFF6;
   border:1px solid var(--primary);
   border-radius:10px;
-  padding:26px 16px 24px 41px;
+  padding:26px 41px 24px 41px;
   display:flex;
   flex-direction:column;
   flex-shrink:0;
@@ -116,7 +116,7 @@ body {
   pointer-events:none;
 }
 
-/* 피그마: 17px Medium, 텍스트 컨테이너 w-222px */
+/* 피그마: 17px Medium, mb-[-4px] → 숫자와 간격 최소화 */
 .today-label {
   font-size:17px;
   font-weight:500;
@@ -124,14 +124,15 @@ body {
   letter-spacing:-0.34px;
   line-height:1.5;
   max-width:222px;
+  margin-bottom:-4px;
 }
 
-/* 피그마: gap-10px between amount & badge */
+/* 피그마: gap-[19px] between amount & badge */
 .today-content {
   display:flex;
   flex-direction:column;
   max-width:222px;
-  gap:10px;
+  gap:19px;
 }
 
 /* 피그마: 36px SemiBold */
