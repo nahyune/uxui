@@ -121,7 +121,7 @@ body {
 ══════════════════════════════════════ */
 .hscroll {
   display:flex;
-  gap:14px;
+  gap:16px;
   overflow-x:auto;
   overflow-y:hidden;
   scrollbar-width:none;
