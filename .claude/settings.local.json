@@ -11,7 +11,19 @@
       "Bash(awk '{print $NF}')",
       "PowerShell(python3 --version)",
       "PowerShell(python --version)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m '공유할채팅방 모달 피그마 수치 전면 재작성 *)",
+      "Bash(git push *)",
+      "Bash(git commit -m '공유할채팅방/소비체크 세부 수정 5건 *)",
+      "mcp__claude_ai_Figma__get_design_context",
+      "Bash(git commit -m '공유할채팅방 피그마 재반영 + 세부 수정 *)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(mkdir -p d:/uxui/.claude)"
+    ],
+    "additionalDirectories": [
+      "d:\\uxui\\.claude"
     ]
   }
 }

@@ -1,4 +1,4 @@
-/* ══════════════════════════════════════
+﻿/* ══════════════════════════════════════
    디자인 토큰
 ══════════════════════════════════════ */
 :root {
@@ -49,7 +49,7 @@ body {
 
 /* ══════════════════════════════════════
    ① 상태바 고정 프레임 (flex-shrink:0)
-   MOTIMO 없음 — 순수 상태바만
+   MOA 없음 — 순수 상태바만
 ══════════════════════════════════════ */
 .status-frame {
   background:var(--primary);
@@ -63,7 +63,7 @@ body {
 
 /* ══════════════════════════════════════
    ② 메인 스크롤 (flex:1)
-   MOTIMO + 흰색 콘텐츠 전체를 감쌈
+   MOA + 흰색 콘텐츠 전체를 감쌈
    phone 높이에서 status-frame + nav + indicator 빼고 정확히 채움
    overscroll-behavior:contain → 바운스 방지
 ══════════════════════════════════════ */
@@ -78,7 +78,7 @@ body {
 .main-scroll::-webkit-scrollbar { display:none; }
 
 /* ══════════════════════════════════════
-   MOTIMO 헤더 영역 (main-scroll 안, 스크롤 시 올라감)
+   MOA 헤더 영역 (main-scroll 안, 스크롤 시 올라감)
    피그마: app-header 16+72+29=117px
    status-frame(44) + top-zone(117) = 161px → 흰색 패널 시작
 ══════════════════════════════════════ */
@@ -93,14 +93,13 @@ body {
   padding:16px 20px 29px;
 }
 
-/* 피그마: Baloo 2 48px leading-1.5 → 72px */
-.logo {
-  font-family:'Baloo 2','Baloo',cursive;
-  font-size:48px;
-  font-weight:800;
-  color:var(--white);
-  letter-spacing:0.96px;
-  line-height:1.5;
+/* 로고 이미지: app-header 내 동일 높이 유지 */
+.logo-img {
+  height:72px;
+  width:auto;
+  display:block;
+  flex-shrink:0;
+  object-fit:contain;
 }
 
 /* 피그마: Alerts w-24 h-27 */

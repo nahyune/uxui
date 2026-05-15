@@ -1,4 +1,4 @@
-const {
+﻿const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
   Header, Footer, AlignmentType, HeadingLevel, BorderStyle, WidthType,
   ShadingType, VerticalAlign, PageNumber, PageBreak, LevelFormat,
@@ -6,7 +6,7 @@ const {
 } = require('docx');
 const fs = require('fs');
 
-const ACCENT = "5CB85C";    // MOTIMO 그린
+const ACCENT = "5CB85C";    // MOA 그린
 const DARK   = "1A1A1A";
 const GRAY   = "666666";
 const LIGHT_GREEN = "E8F5E9";
@@ -166,7 +166,7 @@ const doc = new Document({
         children: [new Paragraph({
           border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: ACCENT, space: 4 } },
           children: [
-            new TextRun({ text: "MOTIMO  ", font: "Malgun Gothic", size: 20, bold: true, color: ACCENT }),
+            new TextRun({ text: "MOA  ", font: "Malgun Gothic", size: 20, bold: true, color: ACCENT }),
             new TextRun({ text: "Product Requirements Document", font: "Malgun Gothic", size: 20, color: GRAY }),
           ]
         })]
@@ -178,7 +178,7 @@ const doc = new Document({
           alignment: AlignmentType.CENTER,
           border: { top: { style: BorderStyle.SINGLE, size: 2, color: "CCCCCC", space: 4 } },
           children: [
-            new TextRun({ text: "Confidential | MOTIMO v1.0 | ", font: "Malgun Gothic", size: 18, color: GRAY }),
+            new TextRun({ text: "Confidential | MOA v1.0 | ", font: "Malgun Gothic", size: 18, color: GRAY }),
             new TextRun({ children: [PageNumber.CURRENT], font: "Malgun Gothic", size: 18, color: GRAY }),
             new TextRun({ text: " / ", font: "Malgun Gothic", size: 18, color: GRAY }),
             new TextRun({ children: [PageNumber.TOTAL_PAGES], font: "Malgun Gothic", size: 18, color: GRAY }),
@@ -191,7 +191,7 @@ const doc = new Document({
       new Paragraph({
         spacing: { before: 1200, after: 0 },
         alignment: AlignmentType.CENTER,
-        children: [new TextRun({ text: "MOTIMO", font: "Malgun Gothic", size: 72, bold: true, color: ACCENT })]
+        children: [new TextRun({ text: "MOA", font: "Malgun Gothic", size: 72, bold: true, color: ACCENT })]
       }),
       new Paragraph({
         spacing: { before: 160, after: 0 },
@@ -229,7 +229,7 @@ const doc = new Document({
       h1("1. 제품 개요"),
 
       h2("1.1 제품 비전"),
-      body("MOTIMO는 개인 투자와 저축을 소셜 챌린지 형태로 즐길 수 있는 모바일 핀테크 앱입니다."),
+      body("MOA는 개인 투자와 저축을 소셜 챌린지 형태로 즐길 수 있는 모바일 핀테크 앱입니다."),
       body("사용자는 투자 목표를 설정하고, 친구들과 함께 챌린지에 참여하며, 실시간 수익률을 추적할 수 있습니다."),
       body('"함께하면 더 쉬워지는 투자 습관" — 재미와 동기부여를 통해 건강한 재테크 문화를 만든다.'),
       spacer(),
@@ -239,7 +239,7 @@ const doc = new Document({
         width: { size: 9360, type: WidthType.DXA },
         columnWidths: [2500, 6860],
         rows: [
-          labeledRow("앱 이름", "MOTIMO (모티모)"),
+          labeledRow("앱 이름", "MOA (모티모)"),
           labeledRow("플랫폼", "iOS / Android (모바일 네이티브)", true),
           labeledRow("주요 컬러", "라임 그린 (#5CB85C) + 화이트"),
           labeledRow("타겟 사용자", "20~40대 투자 입문자 및 소셜 활동을 즐기는 직장인", true),
@@ -606,6 +606,6 @@ const doc = new Document({
 });
 
 Packer.toBuffer(doc).then(buffer => {
-  fs.writeFileSync("D:\\uxui\\MOTIMO_PRD_v1.0.docx", buffer);
-  console.log("PRD 문서 생성 완료: D:\\uxui\\MOTIMO_PRD_v1.0.docx");
+  fs.writeFileSync("D:\\uxui\\MOA_PRD_v1.0.docx", buffer);
+  console.log("PRD 문서 생성 완료: D:\\uxui\\MOA_PRD_v1.0.docx");
 });
