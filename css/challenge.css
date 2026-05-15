@@ -110,10 +110,10 @@ body {
   display:flex;
   align-items:center;
   gap:6px;
-  font-size:16px;
+  font-size:14px;
   font-weight:500;
   color:var(--gray-30);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.28px;
 }
 
 /* ══════════════════════════════════════
@@ -269,8 +269,9 @@ body {
 .join-card {
   flex-shrink:0;
   width:361px;
+  height:488px;
   background:var(--white);
-  border:1px solid var(--gray-20);
+  border:1px solid #E0E0E0;
   border-radius:15px;
   overflow:hidden;
   display:flex;
@@ -453,19 +454,19 @@ body {
 }
 
 .mini-sub {
-  font-size:14px;
+  font-size:16px;
   font-weight:500;
   color:var(--gray-50);
-  letter-spacing:-0.28px;
-  line-height:1.4;
+  letter-spacing:-0.32px;
+  line-height:1.5;
 }
 
 .mini-name {
-  font-size:18px;
+  font-size:20px;
   font-weight:500;
   color:var(--black);
-  letter-spacing:-0.36px;
-  line-height:1.4;
+  letter-spacing:-0.4px;
+  line-height:1.5;
   word-break:keep-all;
 }
 
