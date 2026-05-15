@@ -104,33 +104,33 @@ body {
   min-height:174px;
 }
 
-/* 피그마 실제 렌더: 120×180px, left:240 top:10
-   %단위 → 카드 너비에 비례 (모바일 대응)
-   right:10% ≈ 40px(399px카드), width:30% ≈ 120px */
+/* 피그마: 카드 399px, 텍스트 right=263px, 고양이 left=260px
+   right:12px → 텍스트와 고양이 분리, 모바일 대응 */
 .today-cat {
   position:absolute;
-  right:10%;
-  top:10px;
-  width:30%;
+  right:12px;
+  top:30px;
+  width:91px;
   height:auto;
-  object-fit:contain;
   display:block;
   pointer-events:none;
 }
 
-/* 피그마: 17px Medium */
+/* 피그마: 17px Medium, 텍스트 컨테이너 w-222px */
 .today-label {
   font-size:17px;
   font-weight:500;
   color:var(--black);
   letter-spacing:-0.34px;
   line-height:1.5;
+  max-width:222px;
 }
 
 /* 피그마: gap-10px between amount & badge */
 .today-content {
   display:flex;
   flex-direction:column;
+  max-width:222px;
   gap:10px;
 }
 
