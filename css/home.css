@@ -102,16 +102,20 @@ body {
   object-fit:contain;
 }
 
-/* 피그마: Alerts w-24 h-27, anchor 태그 → notification.html */
+/* 피그마: Alerts w-24 h-27, anchor → notification.html */
 .bell-btn {
   display:flex;
   align-items:center;
   justify-content:center;
-  width:24px;
-  height:27px;
   flex-shrink:0;
   cursor:pointer;
   text-decoration:none;
+}
+.bell-icon {
+  width:24px;
+  height:27px;
+  object-fit:contain;
+  display:block;
 }
 
 /* ══════════════════════════════════════
