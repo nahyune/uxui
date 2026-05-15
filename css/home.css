@@ -327,7 +327,7 @@ body {
   line-height:1.5;
 }
 
-.challenge-inner { display:flex; flex-direction:column; gap:7px; }
+.challenge-inner { display:flex; flex-direction:column; gap:13px; }
 
 .participant-badge {
   display:inline-flex;
