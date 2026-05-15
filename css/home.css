@@ -374,7 +374,7 @@ body {
 /* 피그마: w-398px(=430-32), 16px 양쪽 margin */
 .card-divider {
   height:1px;
-  background:#DDDDDD;
+  background:var(--gray-10);
   flex-shrink:0;
   margin:0 16px;
 }
