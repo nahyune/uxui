@@ -9,19 +9,11 @@
   --gray-40:   #959595;
   --gray-30:   #AFAFAF;
   --gray-20:   #DDDDDD;
-  --gray-10:   #F1F1F1;
+  --gray-10:   #F6F6F6;
   --white:     #ffffff;
 }
 
-/* ══════════════════════════════════════
-   리셋
-══════════════════════════════════════ */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 a { text-decoration: none; color: inherit; }
 
 /* ══════════════════════════════════════
@@ -39,12 +31,13 @@ body {
 }
 
 /* ══════════════════════════════════════
-   폰 컨테이너 430 × 932
+   폰 컨테이너
+   screen 전체 배경 = white (헤더와 연결)
 ══════════════════════════════════════ */
 .screen {
   width: 430px;
   height: 932px;
-  background: var(--gray-10);
+  background: var(--white);
   border-radius: 54px;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
@@ -53,7 +46,7 @@ body {
 }
 
 /* ══════════════════════════════════════
-   헤더 프레임
+   헤더 (상태바 + 타이틀) — 흰색
 ══════════════════════════════════════ */
 .header {
   background: var(--white);
@@ -67,13 +60,6 @@ body {
   height: 44px;
 }
 
-.status-bell {
-  width: 17px;
-  height: 17px;
-  color: var(--black);
-}
-
-/* 페이지 헤더 행 */
 .page-header {
   display: flex;
   align-items: center;
@@ -86,6 +72,7 @@ body {
   cursor: pointer;
 }
 
+/* 피그마: 24px SemiBold */
 .page-title {
   font-size: 24px;
   font-weight: 600;
@@ -95,44 +82,43 @@ body {
 }
 
 /* ══════════════════════════════════════
-   알림 리스트
+   알림 리스트 — 회색 배경
 ══════════════════════════════════════ */
 .noti-list {
   flex: 1;
+  background: var(--gray-10);
   padding: 16px 16px 24px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   overflow-y: auto;
   scrollbar-width: none;
 }
-
 .noti-list::-webkit-scrollbar { display: none; }
 
 /* ══════════════════════════════════════
-   알림 카드
+   알림 카드 — 흰색 라운드
 ══════════════════════════════════════ */
 .noti-card {
   background: var(--white);
   border-radius: 15px;
   width: 100%;
-  min-height: 114px;
-  padding: 20px 15px;
+  padding: 20px 16px;
   display: flex;
   align-items: flex-start;
-  gap: 22px;
+  gap: 16px;
 }
 
 /* ══════════════════════════════════════
    상태 점 (dot)
 ══════════════════════════════════════ */
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--gray-30);
+  background: var(--gray-20);
   flex-shrink: 0;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .dot.unread {
@@ -146,9 +132,10 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
+/* 피그마: 16px Medium black */
 .noti-msg {
   font-size: 16px;
   font-weight: 500;
@@ -159,15 +146,16 @@ body {
 }
 
 .noti-msg strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
+/* 피그마: 14px Medium #AFAFAF tracking-[-0.28px] */
 .noti-time {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   color: var(--gray-30);
   line-height: 1.5;
-  letter-spacing: -0.32px;
+  letter-spacing: -0.28px;
 }
 
 /* ══════════════════════════════════════
@@ -195,15 +183,12 @@ body {
    반응형
 ══════════════════════════════════════ */
 @media (max-width: 480px) {
-  html {
-    overflow: hidden;
-    height: 100%;
-  }
+  html { overflow: hidden; height: 100%; }
   body {
     overflow: hidden;
     height: 100%;
     padding: 0;
-    background: var(--gray-10);
+    background: var(--white);  /* 최상단 흰색 */
   }
   .screen {
     width: 100%;
@@ -211,7 +196,7 @@ body {
     border-radius: 0;
     box-shadow: none;
   }
+  .status-bar { height: env(safe-area-inset-top, 0px); }
   .home-indicator { height: max(env(safe-area-inset-bottom), 20px); flex-shrink: 0; }
   .home-indicator::after { display: none; }
-  .status-bar { height: env(safe-area-inset-top, 0px); }
 }
