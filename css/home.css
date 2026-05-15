@@ -145,10 +145,7 @@ body {
   background:#F8FFF0;
   border:1.5px solid #D4EFA0;
   border-radius:20px;
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  gap:16px;
+  padding:20px 20px 20px 24px;
 }
 
 .hero-top {
@@ -160,119 +157,38 @@ body {
 .hero-greeting-wrap {
   display:flex;
   flex-direction:column;
-  gap:3px;
+  gap:4px;
 }
 
 .hero-sub {
-  font-size:13px;
+  font-size:14px;
   font-weight:500;
   color:var(--gray-40);
-  letter-spacing:-0.26px;
+  letter-spacing:-0.28px;
   line-height:1.5;
 }
 
-.hero-greeting {
-  font-size:18px;
-  font-weight:700;
-  color:var(--black);
-  letter-spacing:-0.36px;
-  line-height:1.4;
-}
-
-.hero-cat-sm {
-  width:72px;
-  height:72px;
-  object-fit:contain;
-  flex-shrink:0;
-}
-
-.hero-savings {
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
 .hero-amount {
-  font-size:36px;
+  font-size:34px;
   font-weight:700;
   color:var(--black);
-  letter-spacing:-0.72px;
+  letter-spacing:-0.68px;
   line-height:1.2;
 }
 
-.hero-progress-wrap {
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.hero-progress-bar {
-  width:100%;
-  height:8px;
-  background:rgba(144,213,15,0.2);
-  border-radius:50px;
-  overflow:hidden;
-}
-
-.hero-progress-fill {
-  height:100%;
-  background:var(--primary);
-  border-radius:50px;
-}
-
-.hero-progress-info {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.hero-progress-pct {
-  font-size:13px;
-  font-weight:700;
-  color:var(--primary);
-  letter-spacing:-0.26px;
-}
-
-.hero-progress-rem {
-  font-size:13px;
-  font-weight:500;
-  color:var(--gray-40);
-  letter-spacing:-0.26px;
-}
-
-.hero-progress-rem strong {
-  color:var(--black);
-  font-weight:700;
-}
-
-.hero-stats {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding-top:12px;
-  border-top:1px solid rgba(144,213,15,0.3);
-}
-
-.hero-stat {
-  display:flex;
-  align-items:center;
-  gap:5px;
-}
-
-.hero-stat-emoji { font-size:16px; line-height:1; }
-
-.hero-stat-text {
+.hero-streak {
   font-size:13px;
   font-weight:500;
   color:var(--gray-50);
   letter-spacing:-0.26px;
-  white-space:nowrap;
+  margin-top:6px;
+  display:block;
 }
 
-.hero-stat-div {
-  width:1px;
-  height:14px;
-  background:var(--gray-20);
+.hero-cat-sm {
+  width:80px;
+  height:80px;
+  object-fit:contain;
   flex-shrink:0;
 }
 
