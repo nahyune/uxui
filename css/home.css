@@ -357,7 +357,7 @@ body {
   white-space:nowrap;
 }
 
-.challenge-meta-list { display:flex; flex-direction:column; gap:2px; }
+.challenge-meta-list { display:flex; flex-direction:column; gap:0; }
 
 .meta-icon {
   width:15px;
