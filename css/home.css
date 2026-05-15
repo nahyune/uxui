@@ -158,8 +158,30 @@ body {
   left:182px;
   top:64px;
   width:232px;
-  height:auto;
-  display:block;
+  background:var(--primary-light);
+  border-radius:10px;
+  padding:10px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.savings-talk::after {
+  content:'';
+  position:absolute;
+  bottom:-9px;
+  left:18px;
+  border:9px solid transparent;
+  border-top-color:var(--primary-light);
+  border-bottom:0;
+}
+.savings-talk-text {
+  font-size:16px;
+  font-weight:500;
+  color:var(--green-text);
+  letter-spacing:-0.32px;
+  line-height:1.5;
+  text-align:center;
+  white-space:nowrap;
 }
 
 .money-bubble {
@@ -195,10 +217,10 @@ body {
 }
 
 .money-amount {
-  font-size:36px;
+  font-size:26px;
   font-weight:600;
   color:var(--black);
-  letter-spacing:-0.72px;
+  letter-spacing:-0.52px;
   line-height:1.5;
   text-align:right;
   width:100%;
@@ -470,7 +492,9 @@ body {
   /* ── 히어로 vw 스케일 (430px 기준 비례) ── */
   .hero         { height:132.79vw; }
   .hero-cat     { left:3.95vw; top:23.02vw; width:38.60vw; height:48.84vw; }
-  .savings-talk { left:42.33vw; top:14.88vw; width:53.95vw; }
+  .savings-talk { left:42.33vw; top:14.88vw; width:53.95vw; padding:2.33vw 3.72vw; }
+  .savings-talk-text { font-size:3.72vw; }
+  .savings-talk::after { bottom:-2.09vw; left:4.19vw; border-width:2.09vw; }
   .money-bubble {
     left:48.60vw; top:31.86vw;
     width:51.63vw; height:36.28vw;
@@ -478,7 +502,7 @@ body {
   }
   .money-content  { padding:0 4.65vw; }
   .money-label    { font-size:3.95vw; }
-  .money-amount   { font-size:8.37vw; }
+  .money-amount   { font-size:6.05vw; }
   .check-pill {
     top:77.91vw; width:52.56vw; height:23.95vw;
     border-radius:0 13.37vw 13.37vw 0;
