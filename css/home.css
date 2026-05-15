@@ -456,6 +456,8 @@ body {
 
 /* ══════════════════════════════════════
    반응형
+   히어로 좌표: 430px 기준 → vw 단위로 비례 변환
+   공식: X_vw = X / 430 * 100vw
 ══════════════════════════════════════ */
 @media (max-width:430px) {
   html {
@@ -463,7 +465,7 @@ body {
     height:100%;
   }
   body {
-    position:fixed;
+    /* position:fixed 제거 → iOS 내부 스크롤 방해 방지 */
     width:100%;
     height:100%;
     overflow:hidden;
@@ -476,13 +478,72 @@ body {
     border-radius:0;
     box-shadow:none;
   }
-  /* 모바일에서 스크롤 강화 */
+
+  /* 스크롤 강화 */
   .scroll-wrap {
-    height:100%;
     overflow-y:scroll;
     -webkit-overflow-scrolling:touch;
     overscroll-behavior:contain;
   }
+
+  /* ── 히어로: 430px 기준 vw 비례 스케일 ── */
+  /* 571/430 = 132.79vw */
+  .hero { height:132.79vw; }
+
+  /* 17/430=3.95, 99/430=23.02, 166/430=38.60, 210/430=48.84 */
+  .hero-cat {
+    left:3.95vw;
+    top:23.02vw;
+    width:38.60vw;
+    height:48.84vw;
+  }
+
+  /* 182/430=42.33, 64/430=14.88, 232/430=53.95 */
+  .savings-talk {
+    left:42.33vw;
+    top:14.88vw;
+    width:53.95vw;
+  }
+
+  /* 209/430=48.60, 137/430=31.86, 222/430=51.63, 156/430=36.28
+     border-radius 68/430=15.81vw */
+  .money-bubble {
+    left:48.60vw;
+    top:31.86vw;
+    width:51.63vw;
+    height:36.28vw;
+    border-radius:15.81vw 0 0 15.81vw;
+  }
+  .money-content { padding:0 4.65vw; }
+  /* 17/430=3.95vw, 36/430=8.37vw */
+  .money-label { font-size:3.95vw; }
+  .money-amount { font-size:8.37vw; }
+
+  /* 335/430=77.91, 226/430=52.56, 103/430=23.95
+     border-radius 57.5/430=13.37vw, font 18/430=4.19vw */
+  .check-pill {
+    top:77.91vw;
+    width:52.56vw;
+    height:23.95vw;
+    border-radius:0 13.37vw 13.37vw 0;
+    font-size:4.19vw;
+    padding:0 4.65vw;
+  }
+
+  /* 15/430=3.49, 454/430=105.58, 399/430=92.79, 70/430=16.28
+     border-radius 10/430=2.33vw, font 20/430=4.65vw, gap 5/430=1.16vw */
+  .cta-btn {
+    left:3.49vw;
+    top:105.58vw;
+    width:92.79vw;
+    height:16.28vw;
+    border-radius:2.33vw;
+    font-size:4.65vw;
+    gap:1.16vw;
+  }
+  /* 24/430=5.58vw */
+  .cta-plus { width:5.58vw; height:5.58vw; }
+
   .home-indicator { height:max(env(safe-area-inset-bottom),20px); flex-shrink:0; }
   .home-indicator::after { display:none; }
   .status-bar { height:env(safe-area-inset-top,0px); }
