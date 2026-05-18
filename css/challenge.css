@@ -429,12 +429,12 @@ body {
   overflow:hidden;
 }
 
-/* 피그마: 2×2 grid, 177px cols, space-between, row-gap 30px */
+/* 이미지 사이 여백 확보: row-gap 50px */
 .coming-grid {
   display:grid;
   grid-template-columns:177px 177px;
   justify-content:space-between;
-  gap:30px 0;
+  gap:50px 0;
 }
 
 /* 피그마: 미니 카드 gap-15px (thumb↔text) */
