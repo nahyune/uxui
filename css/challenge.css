@@ -496,7 +496,6 @@ body {
   color:var(--black);
   letter-spacing:-0.4px;
   line-height:1.5;
-  word-break:keep-all;
 }
 
 .mini-count {
@@ -515,6 +514,7 @@ body {
   font-weight:500;
   color:var(--black);
   letter-spacing:-0.32px;
+  line-height:1.5;
 }
 
 /* ══════════════════════════════════════
