@@ -417,25 +417,24 @@ body {
 /* ══════════════════════════════════════
    곧 시작해요 슬라이드  (피그마: 396×551px, gap-8px)
 ══════════════════════════════════════ */
-.coming-hscroll { gap:8px; }
+.coming-hscroll { gap:16px; }
 
 .coming-slide {
   flex-shrink:0;
   width:396px;
-  height:551px;
   background:var(--gray-10);
   border-radius:10px;
-  padding:21px 11px;
+  padding:25px 11px;
   scroll-snap-align:start;
   overflow:hidden;
 }
 
-/* 피그마: 2×2 grid, 177px cols, space-between, row-gap 19px */
+/* 피그마: 2×2 grid, 177px cols, space-between, row-gap 30px */
 .coming-grid {
   display:grid;
   grid-template-columns:177px 177px;
   justify-content:space-between;
-  gap:19px 0;
+  gap:30px 0;
 }
 
 /* 피그마: 미니 카드 gap-15px (thumb↔text) */
@@ -468,52 +467,56 @@ body {
   gap:12px;
 }
 
-/* 피그마: gap-1px between sub & name */
+/* 피그마: gap-0 between sub & name */
 .mini-title-group {
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+/* 피그마: gap-px(1px) between count & duration */
+.mini-stats {
   display:flex;
   flex-direction:column;
   gap:1px;
 }
 
-/* 피그마: gap-6px between count & duration */
-.mini-stats {
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
+/* 피그마: 14px Medium #686868 tracking-[-0.28px] */
 .mini-sub {
-  font-size:16px;
+  font-size:14px;
   font-weight:500;
   color:var(--gray-50);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.28px;
   line-height:1.5;
 }
 
+/* 피그마: 18px Medium black tracking-[-0.36px] */
 .mini-name {
-  font-size:20px;
+  font-size:18px;
   font-weight:500;
   color:var(--black);
-  letter-spacing:-0.4px;
+  letter-spacing:-0.36px;
   line-height:1.5;
 }
 
+/* 피그마: 14px Medium black tracking-[-0.28px] */
 .mini-count {
-  font-size:16px;
+  font-size:14px;
   font-weight:500;
   color:var(--black);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.28px;
   line-height:1.5;
 }
 
+/* 피그마: 14px Medium black, clock 15px, gap-7px */
 .mini-duration {
   display:flex;
   align-items:center;
   gap:7px;
-  font-size:16px;
+  font-size:14px;
   font-weight:500;
   color:var(--black);
-  letter-spacing:-0.32px;
+  letter-spacing:-0.28px;
   line-height:1.5;
 }
 
