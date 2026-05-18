@@ -53,12 +53,13 @@ body {
 
 .status-bar { height:44px; }
 
-/* 피그마: title top:76 → padding-top = 76-44 = 32px */
+/* 타이틀이 스크롤 영역으로 이동 → padding-top 유지 */
 .app-header {
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:32px 16px 22px;
+  flex-shrink:0;
 }
 
 /* 피그마: 24px SemiBold tracking:-0.48px */
