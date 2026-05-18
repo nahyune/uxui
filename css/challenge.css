@@ -182,7 +182,7 @@ body {
 .my-card-content {
   display:flex;
   flex-direction:column;
-  gap:16px;
+  gap:10px;
 }
 
 /* 피그마: 18px Medium */
@@ -215,6 +215,7 @@ body {
 }
 
 .meta-row svg { flex-shrink:0; display:block; }
+.meta-row img { flex-shrink:0; display:block; object-fit:contain; object-position:left center; }
 
 /* 피그마: left-189.58 top-23.45 size-115 rounded-10 */
 .my-thumb {
@@ -488,13 +489,16 @@ body {
   line-height:1.5;
 }
 
-/* 피그마: 18px Medium black tracking-[-0.36px] */
+/* 피그마: 18px Medium black tracking-[-0.36px], 넘치면 말줄임 */
 .mini-name {
   font-size:18px;
   font-weight:500;
   color:var(--black);
   letter-spacing:-0.36px;
   line-height:1.5;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
 
 /* 피그마: 14px Medium #686868 tracking-[-0.28px] */
