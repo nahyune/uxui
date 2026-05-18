@@ -381,9 +381,9 @@ body {
   letter-spacing:-0.28px;
 }
 
-/* 피그마: top-353 → margin-top:20px, h-47 w-260(=100%) 18px SemiBold */
+/* 피그마: top-358 → margin-top:28px, h-47 w-260(=100%) 18px SemiBold */
 .join-btn {
-  margin-top:20px;
+  margin-top:28px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -479,11 +479,11 @@ body {
   gap:1px;
 }
 
-/* 피그마: 14px Medium #686868 tracking-[-0.28px] */
+/* 피그마: 14px Medium #959595 tracking-[-0.28px] */
 .mini-sub {
   font-size:14px;
   font-weight:500;
-  color:var(--gray-50);
+  color:var(--gray-40);
   letter-spacing:-0.28px;
   line-height:1.5;
 }
@@ -497,23 +497,23 @@ body {
   line-height:1.5;
 }
 
-/* 피그마: 14px Medium black tracking-[-0.28px] */
+/* 피그마: 14px Medium #686868 tracking-[-0.28px] */
 .mini-count {
   font-size:14px;
   font-weight:500;
-  color:var(--black);
+  color:var(--gray-50);
   letter-spacing:-0.28px;
   line-height:1.5;
 }
 
-/* 피그마: 14px Medium black, clock 15px, gap-7px */
+/* 피그마: 14px Medium #686868, clock 15px, gap-7px */
 .mini-duration {
   display:flex;
   align-items:center;
   gap:7px;
   font-size:14px;
   font-weight:500;
-  color:var(--black);
+  color:var(--gray-50);
   letter-spacing:-0.28px;
   line-height:1.5;
 }
