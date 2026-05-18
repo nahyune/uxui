@@ -234,11 +234,11 @@ body {
   display:block;
 }
 
-/* 피그마: left-24.58 top-162.47 w-244 h-10 bg-#D9D9D9 */
+/* 피그마: left-24.58 top-162.97 w-244 h-8 bg-#D9D9D9 */
 .my-progress-track {
   position:absolute;
   left:25px;
-  top:162px;
+  top:163px;
   width:244px;
   height:8px;
   background:#D9D9D9;
@@ -415,38 +415,43 @@ body {
 .join-btn.done:hover { opacity:1; }
 
 /* ══════════════════════════════════════
-   곧 시작해요 슬라이드
+   곧 시작해요 슬라이드  (피그마: 396×551px, gap-8px)
 ══════════════════════════════════════ */
+.coming-hscroll { gap:8px; }
+
 .coming-slide {
   flex-shrink:0;
   width:396px;
+  height:551px;
   background:var(--gray-10);
   border-radius:10px;
   padding:21px 11px;
   scroll-snap-align:start;
+  overflow:hidden;
 }
 
+/* 피그마: 2×2 grid, 177px cols, space-between, row-gap 19px */
 .coming-grid {
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:19px 8px;
+  grid-template-columns:177px 177px;
+  justify-content:space-between;
+  gap:19px 0;
 }
 
-/* 미니 카드 */
+/* 피그마: 미니 카드 gap-15px (thumb↔text) */
 .mini-card {
   display:flex;
   flex-direction:column;
-  gap:10px;
-  min-width:0;
+  gap:15px;
+  width:177px;
 }
 
 .mini-thumb {
-  width:100%;
+  width:177px;
   height:109px;
   background:#E2E2E2;
   border-radius:15px;
   overflow:hidden;
-  position:relative;
 }
 
 .mini-thumb img {
@@ -454,7 +459,27 @@ body {
   height:100%;
   object-fit:cover;
   display:block;
-  border-radius:15px;
+}
+
+/* 피그마: gap-12px between title-group & stats */
+.mini-text {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* 피그마: gap-1px between sub & name */
+.mini-title-group {
+  display:flex;
+  flex-direction:column;
+  gap:1px;
+}
+
+/* 피그마: gap-6px between count & duration */
+.mini-stats {
+  display:flex;
+  flex-direction:column;
+  gap:6px;
 }
 
 .mini-sub {
