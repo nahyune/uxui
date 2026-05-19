@@ -15,12 +15,10 @@ export default function MyPage() {
     <div className="phone">
       <div className="top-frame">
         <div className="status-bar" />
-        <div className="pg-header">
-          <h1 className="pg-title">마이페이지</h1>
-        </div>
       </div>
 
       <div className="main-scroll my-scroll">
+        <h1 className="scroll-title">마이페이지</h1>
         <div className="my-profile">
           <div className="my-avatar">
             <img src="/img/my_cat.png" alt="프로필" />

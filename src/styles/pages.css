@@ -95,10 +95,10 @@
   letter-spacing: -0.28px; width: fit-content;
   margin-top: 19px;
 }
-/* 고양이 — 피그마 left:258px top:41px, 116×103px */
+/* 고양이 — 피그마 116×103px, right:25px top:41px */
 .check-today-cat {
-  position: absolute; left: 258px; top: 41px;
-  width: 116px; height: 103px; object-fit: contain;
+  position: absolute; right: 0; top: 16px;
+  width: 130px; height: 116px; object-fit: contain;
 }
 
 /* 소비 올리기 버튼 — 피그마 height:70px, green, 20px SemiBold */
@@ -338,7 +338,7 @@
 ══════════════════════════════════════ */
 .chat-pg-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; }
 .chat-pg-scroll::-webkit-scrollbar { display: none; }
-.chat-pg-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 10px; flex-shrink: 0; }
+.chat-pg-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 16px 10px; flex-shrink: 0; }
 .chat-pg-icons { display: flex; align-items: center; gap: 6px; }
 .chat-pg-tabs { display: flex; gap: 8px; padding: 0 16px 12px; flex-shrink: 0; }
 .chat-pg-tab { padding: 7px 16px; border-radius: 20px; font-size: 14px; font-weight: 500; color: #686868; background: #F6F6F6; border: 1px solid #E0E0E0; cursor: pointer; }

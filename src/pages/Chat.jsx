@@ -22,8 +22,11 @@ export default function Chat() {
     <div className="phone">
       <div className="top-frame">
         <div className="status-bar" />
+      </div>
+
+      <div className="main-scroll chat-pg-scroll">
         <div className="chat-pg-header">
-          <h1 className="pg-title">채팅</h1>
+          <h1 className="scroll-title" style={{ padding: 0 }}>채팅</h1>
           <div className="chat-pg-icons">
             <button className="pg-icon-btn">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -41,9 +44,6 @@ export default function Chat() {
             <button key={t} className={`chat-pg-tab${tab === i ? ' active' : ''}`} onClick={() => setTab(i)}>{t}</button>
           ))}
         </div>
-      </div>
-
-      <div className="main-scroll chat-pg-scroll">
         {rooms.map((r, i) => {
           const inner = (
             <>

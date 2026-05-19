@@ -20,12 +20,10 @@ export default function Check() {
     <div className="phone">
       <div className="top-frame">
         <div className="status-bar" />
-        <div className="pg-header">
-          <h1 className="pg-title">소비체크</h1>
-        </div>
       </div>
 
       <div className="main-scroll check-scroll">
+        <h1 className="scroll-title">Check</h1>
         {/* 오늘의 소비 카드 */}
         <div className="check-today-card">
           <p className="check-today-label">오늘의 소비</p>

@@ -56,12 +56,10 @@ export default function Challenge() {
     <div className="phone">
       <div className="top-frame">
         <div className="status-bar" />
-        <div className="pg-header">
-          <h1 className="pg-title">챌린지</h1>
-        </div>
       </div>
 
       <div className="main-scroll chal-scroll">
+        <h1 className="scroll-title">챌린지</h1>
 
         {/* 나의 챌린지 */}
         <div className="chal-section">
