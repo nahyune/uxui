@@ -1,26 +1,26 @@
 /* ══════════════════════════════════════
-   온보딩 01 — Figma 기준
+   온보딩 01 — Figma 기준 (flexbox 반응형)
 ══════════════════════════════════════ */
 
 .ob1-phone {
   width: 430px;
   height: 932px;
   background: #ffffff;
-  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
   position: relative;
   cursor: pointer;
-  display: block;
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
-/* 헤드라인 텍스트 — left:15.58px, top:129px */
+/* 헤드라인 — 피그마 top:129px, left:15.58px */
 .ob1-text {
-  position: absolute;
-  left: 16px;
-  top: 129px;
+  flex-shrink: 0;
+  padding: 129px 0 0 16px;
   font-family: 'Pretendard', -apple-system, sans-serif;
   font-weight: 600;
   font-size: 30px;
@@ -29,26 +29,26 @@
   line-height: 1.5;
   white-space: nowrap;
 }
+.ob1-text p { margin: 0; }
 
 .ob1-accent { color: #f69a21; }
 
-/* 고양이 이미지 — left:114.58px, top:356px, 199×292px */
+/* 고양이 — 남은 공간 중앙 배치 (OB01: 199px) */
 .ob1-cat {
-  position: absolute;
-  left: 115px;
-  top: 356px;
-  width: 199px;
-  height: 292px;
-  overflow: hidden;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 24px;
 }
 .ob1-cat img {
-  width: 100%;
-  height: 100%;
+  width: 199px;
+  height: auto;
   object-fit: contain;
   display: block;
 }
 
-/* 홈 인디케이터 — 하단 중앙, 135px 검정 바 */
+/* 홈 인디케이터 */
 .ob1-indicator {
   position: absolute;
   bottom: 11px;
@@ -61,16 +61,18 @@
 }
 
 @media screen and (max-width: 768px) {
-  .ob1-text {
-    left: 3.7vw;
-    top: 15vh;
-    font-size: min(7vw, 28px);
+  html, body { overflow: hidden; height: 100%; margin: 0; padding: 0; background: #fff; }
+  .ob1-phone {
+    width: 100vw;
+    height: 100dvh;
+    box-shadow: none;
   }
-  .ob1-cat {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 38vh;
-    width: 50vw;
-    height: auto;
+  .ob1-text {
+    padding-top: 14vh;
+    padding-left: 4vw;
+    font-size: 30px;
+  }
+  .ob1-cat img {
+    width: clamp(150px, 46vw, 199px);
   }
 }

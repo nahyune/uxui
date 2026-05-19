@@ -1,28 +1,33 @@
 /* ══════════════════════════════════════
-   온보딩 03 — flexbox 레이아웃 (모바일 대응)
+   온보딩 03 — Figma 기준 (flexbox 레이아웃)
 ══════════════════════════════════════ */
 
 .ob3-phone {
   width: 430px;
   height: 932px;
   background: #ffffff;
-  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0,0,0,0.28);
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
-/* MOA 로고 */
+/* MOA 로고 — 피그마 top:135px, left:19.58px, 170×64px */
 .ob3-logo-wrap {
-  padding: 133px 0 0 22px;
+  padding: 135px 0 0 20px;
   flex-shrink: 0;
 }
-.ob3-logo { width: 170px; height: 75px; object-fit: contain; display: block; }
+.ob3-logo {
+  width: 170px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
+}
 
-/* 헤드라인 */
+/* 헤드라인 — 피그마 top:263px (로고 끝 199px 기준, gap=64px) */
 .ob3-text {
-  padding: 55px 0 0 23px;
+  padding: 64px 0 0 23px;
   flex-shrink: 0;
   font-family: 'Pretendard', -apple-system, sans-serif;
   font-weight: 600;
@@ -32,13 +37,14 @@
   line-height: 1.5;
   white-space: pre;
 }
+.ob3-text p { margin: 0; }
 .ob3-accent-green  { color: #90d50f; }
 .ob3-accent-orange { color: #f69a21; }
 
 /* 스페이서 — SNS를 하단으로 밀어냄 */
 .ob3-spacer { flex: 1; }
 
-/* SNS 섹션 */
+/* SNS 섹션 — 피그마 top:597px, gap-33px (라벨↔아이콘) */
 .ob3-sns-section {
   flex-shrink: 0;
   display: flex;
@@ -86,12 +92,12 @@
   display: block;
 }
 
-/* 로그인 도움말 */
+/* 로그인 도움말 — 피그마 gap:88px (아이콘 아래에서 88px) */
 .ob3-login-area {
   flex-shrink: 0;
   display: flex;
   justify-content: center;
-  padding: 24px 0 40px;
+  padding: 88px 0 40px;
 }
 
 .ob3-login-help {
@@ -112,7 +118,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .ob3-logo-wrap  { padding-top: 14vw; }
-  .ob3-text       { padding-top: 6vw; font-size: 7vw; }
-  .ob3-login-area { padding-bottom: max(env(safe-area-inset-bottom), 24px); }
+  html, body { overflow: hidden; height: 100%; margin: 0; padding: 0; background: #fff; }
+  .ob3-phone {
+    width: 100vw;
+    height: 100dvh;
+    box-shadow: none;
+  }
+  .ob3-logo-wrap  { padding-top: 14vh; }
+  .ob3-text       { padding-top: 6.5vh; font-size: clamp(24px, 7vw, 30px); }
+  .ob3-login-area { padding-top: 60px; padding-bottom: max(env(safe-area-inset-bottom), 30px); }
 }
