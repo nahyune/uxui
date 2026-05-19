@@ -11,9 +11,9 @@ const ChevRight = () => (
 )
 
 const myCards = [
-  { to: '/challenge-detail/cafe', dday: 'D-3', name: '카페 금지 챌린지 ☕', count: 83, date: '04.06 ~ 04.10', img: '/img/challenge1_01.png', pct: 70 },
-  { to: '#', dday: 'D-1', name: '소비 기록 챌린지 📝', count: 16, date: '04.06 ~ 04.10', img: '/img/challenge1_02.png', pct: 90 },
-  { to: '#', dday: 'D-3', name: '쇼핑 금지 챌린지 🛍', count: 52, date: '04.06 ~ 04.10', img: '/img/challenge1_03.png', pct: 30 },
+  { to: '/challenge-detail/cafe', dday: 'D-3', name: '카페 금지 챌린지 ☕', count: 83, date: '04.06(월) ~ 04.10(금)', img: '/img/challenge1_01.png', pct: 70 },
+  { to: '#', dday: 'D-1', name: '소비 기록 챌린지 📝', count: 16, date: '04.06(월) ~ 04.10(금)', img: '/img/challenge1_02.png', pct: 90 },
+  { to: '#', dday: 'D-3', name: '쇼핑 금지 챌린지 🛍', count: 52, date: '04.06(월) ~ 04.10(금)', img: '/img/challenge1_03.png', pct: 30 },
 ]
 const joinCards = [
   { to: '/challenge-detail', img: '/img/challenge2_01.png', name: '무지출 챌린지 💸', count: 23, date: '26.04.06(월) ~ 04.27(월)', done: false },
@@ -81,8 +81,11 @@ export default function Challenge() {
                   </div>
                 </div>
                 <div className="chal-my-thumb"><img src={c.img} alt={c.name} /></div>
-                <div className="chal-my-progress-track">
-                  <div className="chal-my-progress-fill" style={{ width: `${c.pct}%` }} />
+                <div className="chal-my-progress-area">
+                  <span className="chal-my-progress-pct">{c.pct}%</span>
+                  <div className="chal-my-progress-track">
+                    <div className="chal-my-progress-fill" style={{ width: `${c.pct}%` }} />
+                  </div>
                 </div>
               </Link>
             ))}
