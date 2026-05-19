@@ -55,7 +55,7 @@ body {
 .scroll-title {
   font-size: 26px; font-weight: 600; color: var(--black);
   letter-spacing: -0.52px; line-height: 1.5;
-  padding: 8px 16px 20px;
+  padding: 8px 0 20px;
   flex-shrink: 0;
 }
 
