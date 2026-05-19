@@ -541,7 +541,7 @@
 .chat-pg-list { display: flex; flex-direction: column; gap: 16px; }
 
 /* 채팅 아이템 — 피그마 py:5px pl:15px gap:11px */
-.chat-pg-item { display: flex; align-items: center; padding: 5px 0 5px 15px; gap: 11px; cursor: pointer; text-decoration: none; color: inherit; background: #fff; }
+.chat-pg-item { display: flex; align-items: center; padding: 5px 16px 5px 15px; gap: 11px; cursor: pointer; text-decoration: none; color: inherit; background: #fff; width: 100%; box-sizing: border-box; }
 /* 아바타 — 피그마 65×65px, radius:24px, bg:#9E9E9E */
 .chat-pg-avatar { width: 65px; height: 65px; border-radius: 24px; background: #9E9E9E; flex-shrink: 0; overflow: hidden; }
 .chat-pg-avatar img { width: 100%; height: 100%; object-fit: cover; }
