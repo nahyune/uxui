@@ -42,10 +42,10 @@ export default function Check() {
 
         {/* 소비 올리기 */}
         <Link to="/add-spending" className="check-upload-btn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="12" fill="white"/>
-            <line x1="12" y1="7" x2="12" y2="17" stroke="black" strokeWidth="2" strokeLinecap="round"/>
-            <line x1="7" y1="12" x2="17" y2="12" stroke="black" strokeWidth="2" strokeLinecap="round"/>
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <circle cx="13" cy="13" r="13" fill="rgba(255,255,255,0.35)"/>
+            <line x1="13" y1="8" x2="13" y2="18" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
+            <line x1="8" y1="13" x2="18" y2="13" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
           </svg>
           소비 올리기
         </Link>

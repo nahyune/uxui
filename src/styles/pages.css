@@ -53,7 +53,7 @@
 .pg-more-link { font-size: 14px; font-weight: 500; color: #AFAFAF; display: flex; align-items: center; gap: 4px; }
 
 /* ══════════════════════════════════════
-   소비체크 (Check)
+   소비체크 (Check) — 피그마 기준
 ══════════════════════════════════════ */
 .check-scroll {
   flex: 1; overflow-y: auto; scrollbar-width: none;
@@ -62,75 +62,97 @@
 }
 .check-scroll::-webkit-scrollbar { display: none; }
 
+/* 오늘의 소비 카드 — 피그마 height:174px, border-radius:10px */
 .check-today-card {
   background: #FCFFF6;
-  border: 1.5px solid #90D50F;
-  border-radius: 15px;
-  padding: 24px 20px;
+  border: 1px solid #90D50F;
+  border-radius: 10px;
+  padding: 26px 20px 26px 41px;
   position: relative;
   overflow: hidden;
-  min-height: 160px;
+  min-height: 174px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
   flex-shrink: 0;
 }
-.check-today-label { font-size: 16px; font-weight: 500; color: #000; letter-spacing: -0.32px; }
-.check-today-amount { font-size: 34px; font-weight: 700; color: #000; letter-spacing: -0.68px; line-height: 1.2; }
-.check-today-badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: #FFF5E7; border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 13px; font-weight: 500; color: #E16500;
-  width: fit-content;
+/* 오늘의 소비 — 17px Medium */
+.check-today-label {
+  font-size: 17px; font-weight: 500; color: #000;
+  letter-spacing: -0.34px; line-height: 1.5;
+  margin-bottom: -4px;
 }
+/* 118,830원 — 36px SemiBold, 높이 43px */
+.check-today-amount {
+  font-size: 36px; font-weight: 600; color: #000;
+  letter-spacing: -0.72px; line-height: 1.5;
+}
+/* 훌륭해요 배지 — height:36px, border-radius:10px, 14px */
+.check-today-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: #FFF5E7; border-radius: 10px;
+  padding: 7px 10px; height: 36px; box-sizing: border-box;
+  font-size: 14px; font-weight: 500; color: #E16500;
+  letter-spacing: -0.28px; width: fit-content;
+  margin-top: 19px;
+}
+/* 고양이 — 피그마 left:258px top:41px, 116×103px */
 .check-today-cat {
-  position: absolute; right: 20px; bottom: 16px;
-  width: 80px; height: auto; object-fit: contain;
+  position: absolute; left: 258px; top: 41px;
+  width: 116px; height: 103px; object-fit: contain;
 }
 
+/* 소비 올리기 버튼 — 피그마 height:70px, green, 20px SemiBold */
 .check-upload-btn {
   display: flex; align-items: center; justify-content: center; gap: 10px;
-  width: 100%; height: 60px;
-  background: #000; color: #fff;
-  border-radius: 12px;
-  font-size: 18px; font-weight: 600; letter-spacing: -0.36px;
+  width: 100%; height: 70px;
+  background: #90D50F; color: #fff;
+  border-radius: 10px;
+  font-size: 20px; font-weight: 600; letter-spacing: -0.4px;
   text-decoration: none; flex-shrink: 0;
 }
 
+/* 소비 통계 카드 — 피그마 padding:24px, gap:41px */
 .check-stats-card {
   background: #F6F6F6;
   border: 1px solid #E0E0E0;
-  border-radius: 15px;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 24px;
   flex-shrink: 0;
 }
-.check-card-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-.check-card-title { font-size: 20px; font-weight: 600; color: #000; letter-spacing: -0.4px; }
+.check-card-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 41px; }
+/* 소비 통계 — 22px Medium */
+.check-card-title { font-size: 22px; font-weight: 500; color: #000; letter-spacing: -0.44px; line-height: 1.5; }
 
-.check-stat-row { display: flex; align-items: center; gap: 16px; }
-.check-stat-rows { display: flex; flex-direction: column; gap: 20px; }
-.check-stat-icon { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
-.check-stat-body { flex: 1; display: flex; flex-direction: column; gap: 6px; }
-.check-stat-meta { display: flex; justify-content: space-between; }
-.check-stat-name { font-size: 15px; font-weight: 600; color: #686868; }
-.check-stat-pct  { font-size: 15px; font-weight: 500; color: #686868; }
+/* 통계 행 — 피그마 gap:31px */
+.check-stat-rows { display: flex; flex-direction: column; gap: 31px; }
+.check-stat-row { display: flex; align-items: center; gap: 28px; }
+/* 아이콘 — 피그마 49px 원형 */
+.check-stat-icon { width: 49px; height: 49px; object-fit: contain; flex-shrink: 0; }
+.check-stat-body { flex: 1; display: flex; flex-direction: column; gap: 0; }
+.check-stat-meta { display: flex; justify-content: space-between; margin-bottom: 8px; }
+/* 이름/퍼센트 — 16px */
+.check-stat-name { font-size: 16px; font-weight: 600; color: #686868; letter-spacing: -0.32px; line-height: 1.5; }
+.check-stat-pct  { font-size: 16px; font-weight: 500; color: #686868; letter-spacing: -0.32px; line-height: 1.5; }
 .check-progress-bar { height: 10px; background: #E0E0E0; border-radius: 50px; overflow: hidden; }
 .check-progress-fill { height: 100%; background: #F69A21; border-radius: 50px; }
 
+/* 주간 리포트 — 피그마 height:379px, gap:85px */
 .check-weekly-card {
   background: #fff; border: 1px solid #E0E0E0;
-  border-radius: 15px; padding: 20px; flex-shrink: 0;
+  border-radius: 10px; padding: 24px; flex-shrink: 0;
 }
-.check-weekly-header { margin-bottom: 60px; }
-.check-weekly-title { font-size: 20px; font-weight: 600; color: #000; letter-spacing: -0.4px; }
-.check-weekly-sub   { font-size: 14px; font-weight: 500; color: #686868; margin-top: 2px; }
+.check-weekly-header { margin-bottom: 85px; }
+/* 주간 리포트 — 22px Medium */
+.check-weekly-title { font-size: 22px; font-weight: 500; color: #000; letter-spacing: -0.44px; line-height: 1.5; }
+.check-weekly-sub   { font-size: 15px; font-weight: 500; color: #686868; letter-spacing: -0.3px; line-height: 1.5; }
 
-.check-chart { display: flex; align-items: flex-end; justify-content: center; gap: 12px; height: 160px; }
-.check-bar-group { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; width: 30px; height: 100%; flex-shrink: 0; }
-.check-bar { width: 30px; background: #EFF6E2; border-radius: 15px 15px 0 0; flex-shrink: 0; }
+/* 차트 — 피그마 height:192px, gap:16px, bar-width:32px */
+.check-chart { display: flex; align-items: flex-end; justify-content: center; gap: 16px; height: 192px; }
+.check-bar-group { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 10px; width: 32px; height: 100%; flex-shrink: 0; }
+.check-bar { width: 32px; background: #EFF6E2; border-radius: 19.5px 19.5px 0 0; flex-shrink: 0; }
 .check-bar.active { background: #90D50F; }
-.check-day-label { font-size: 13px; font-weight: 500; color: #000; text-align: center; }
+/* 요일 라벨 — 16px Medium */
+.check-day-label { font-size: 16px; font-weight: 500; color: #000; text-align: center; letter-spacing: -0.32px; }
 
 /* ══════════════════════════════════════
    소비 올리기 (AddSpending)
