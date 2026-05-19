@@ -1,22 +1,29 @@
 /* ══════════════════════════════════════
-   온보딩 웰컴 — Figma 기준
+   온보딩 웰컴 — Figma 기준 (flexbox 반응형)
 ══════════════════════════════════════ */
 
 .ob-welcome-phone {
   width: 430px;
   height: 932px;
   background: #ffffff;
-  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0,0,0,0.28);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
-/* 제목 — left:15.58px, top:129px */
+/* 상단 여백 — 피그마 title top:129px / 932px ≈ 13.8% */
+.ob-welcome-top {
+  flex: 0 0 auto;
+  padding-top: 129px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* 제목 */
 .ob-welcome-title {
-  position: absolute;
-  left: 16px;
-  top: 129px;
   font-family: 'Pretendard', -apple-system, sans-serif;
   font-weight: 600;
   font-size: 30px;
@@ -24,37 +31,41 @@
   letter-spacing: -0.6px;
   line-height: 1.5;
   white-space: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
-/* 고양이 + 컨페티 (welcome_cat.png 단일 이미지)
-   피그마 전체 영역: left≈31px, top≈353px, 약 370×390px */
+/* 고양이 + 컨페티 — 남은 공간 채우며 중앙 정렬 */
 .ob-welcome-cat {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 350px;
-  width: 370px;
-  height: 390px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 }
+
 .ob-welcome-cat img {
   width: 100%;
-  height: 100%;
+  max-width: 362px;
   object-fit: contain;
   display: block;
 }
 
-/* 홈으로 버튼 — left:15.58px, top:787px, 398×51px */
+/* 버튼 영역 — 항상 하단 고정 */
+.ob-welcome-bottom {
+  flex: 0 0 auto;
+  padding: 0 16px 20px;
+}
+
+/* 홈으로 버튼 */
 .ob-welcome-btn {
-  position: absolute;
-  left: 16px;
-  top: 787px;
-  width: 398px;
-  height: 51px;
-  background: #90D50F;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 51px;
+  background: #90D50F;
+  border-radius: 10px;
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -63,7 +74,7 @@
 
 .ob-welcome-btn-text {
   font-family: 'Pretendard', -apple-system, sans-serif;
-  font-weight: 500;          /* Medium */
+  font-weight: 500;
   font-size: 18px;
   color: #ffffff;
   letter-spacing: -0.36px;
@@ -72,8 +83,18 @@
   white-space: nowrap;
 }
 
-@media (max-width: 430px) {
-  html { overflow: hidden; height: 100%; }
-  body { overflow: hidden; height: 100%; padding: 0; background: #fff; }
-  .ob-welcome-phone { width: 100%; height: 100dvh; box-shadow: none; }
+/* 모바일 */
+@media (max-width: 768px) {
+  html, body { overflow: hidden; height: 100%; margin: 0; padding: 0; background: #fff; }
+  .ob-welcome-phone {
+    width: 100vw;
+    height: 100dvh;
+    box-shadow: none;
+  }
+  .ob-welcome-top {
+    padding-top: 14vh;
+  }
+  .ob-welcome-bottom {
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
 }

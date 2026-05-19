@@ -5,18 +5,19 @@ export default function OnboardingWelcome() {
   return (
     <div className="ob-welcome-phone">
 
-      {/* 제목 */}
-      <p className="ob-welcome-title">가입을 환영합니다!</p>
+      <div className="ob-welcome-top">
+        <p className="ob-welcome-title">가입을 환영합니다!</p>
+      </div>
 
-      {/* 고양이 + 컨페티 이미지 */}
       <div className="ob-welcome-cat">
         <img src="/img/welcome_cat.png" alt="" />
       </div>
 
-      {/* 홈으로 버튼 */}
-      <Link to="/home" className="ob-welcome-btn">
-        <span className="ob-welcome-btn-text">홈으로</span>
-      </Link>
+      <div className="ob-welcome-bottom">
+        <Link to="/home" className="ob-welcome-btn">
+          <span className="ob-welcome-btn-text">홈으로</span>
+        </Link>
+      </div>
 
     </div>
   )
