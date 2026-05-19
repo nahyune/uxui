@@ -1,5 +1,6 @@
 /* ══════════════════════════════════════
    온보딩 01 — Figma 기준 (flexbox 반응형)
+   텍스트 top:100px, 고양이 top:315px
 ══════════════════════════════════════ */
 
 .ob1-phone {
@@ -17,10 +18,10 @@
   box-sizing: border-box;
 }
 
-/* 헤드라인 — 피그마 top:129px, left:15.58px */
+/* 헤드라인 — 피그마 top:100px, left:15.58px */
 .ob1-text {
   flex-shrink: 0;
-  padding: 129px 0 0 16px;
+  padding: 100px 0 0 16px;
   font-family: 'Pretendard', -apple-system, sans-serif;
   font-weight: 600;
   font-size: 30px;
@@ -68,7 +69,7 @@
     box-shadow: none;
   }
   .ob1-text {
-    padding-top: 14vh;
+    padding-top: 10.7vh;
     padding-left: 4vw;
     font-size: 30px;
   }

@@ -1,5 +1,6 @@
 /* ══════════════════════════════════════
    온보딩 03 — Figma 기준 (flexbox 레이아웃)
+   로고 top:106px, 텍스트 top:206px, SNS top:563px
 ══════════════════════════════════════ */
 
 .ob3-phone {
@@ -13,9 +14,9 @@
   box-sizing: border-box;
 }
 
-/* MOA 로고 — 피그마 top:135px, left:19.58px, 170×64px */
+/* MOA 로고 — 피그마 top:106px, left:19.58px, 170×64px */
 .ob3-logo-wrap {
-  padding: 135px 0 0 20px;
+  padding: 106px 0 0 20px;
   flex-shrink: 0;
 }
 .ob3-logo {
@@ -25,9 +26,9 @@
   display: block;
 }
 
-/* 헤드라인 — 피그마 top:263px (로고 끝 199px 기준, gap=64px) */
+/* 헤드라인 — 피그마 top:206px (로고끝 170px 기준, gap=36px) */
 .ob3-text {
-  padding: 64px 0 0 23px;
+  padding: 36px 0 0 23px;
   flex-shrink: 0;
   font-family: 'Pretendard', -apple-system, sans-serif;
   font-weight: 600;
@@ -41,10 +42,10 @@
 .ob3-accent-green  { color: #90d50f; }
 .ob3-accent-orange { color: #f69a21; }
 
-/* 스페이서 — SNS를 하단으로 밀어냄 */
+/* 스페이서 — SNS를 하단으로 밀어냄 (SNS top:563px) */
 .ob3-spacer { flex: 1; }
 
-/* SNS 섹션 — 피그마 top:597px, gap-33px (라벨↔아이콘) */
+/* SNS 섹션 — 피그마 gap:33px (라벨↔아이콘) */
 .ob3-sns-section {
   flex-shrink: 0;
   display: flex;
@@ -124,7 +125,7 @@
     height: 100dvh;
     box-shadow: none;
   }
-  .ob3-logo-wrap  { padding-top: 14vh; }
-  .ob3-text       { padding-top: 6.5vh; font-size: clamp(24px, 7vw, 30px); }
+  .ob3-logo-wrap  { padding-top: 11.4vh; }
+  .ob3-text       { padding-top: 3.9vh; font-size: clamp(24px, 7vw, 30px); }
   .ob3-login-area { padding-top: 60px; padding-bottom: max(env(safe-area-inset-bottom), 30px); }
 }
