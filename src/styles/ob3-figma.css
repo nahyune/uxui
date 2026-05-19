@@ -45,7 +45,7 @@
 /* 스페이서 — 피그마 SNS top:563px, 텍스트끝 386px → 간격 177px */
 .ob3-spacer {
   flex: 1;
-  max-height: 177px;
+  max-height: 80px;
 }
 
 /* SNS 섹션 — 피그마 gap:33px (라벨↔아이콘) */
