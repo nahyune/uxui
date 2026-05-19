@@ -1,0 +1,24 @@
+/* ══════════════════════════════════════
+   온보딩 02 — Figma 기준
+   (ob1-figma.css의 공통 스타일 재사용)
+══════════════════════════════════════ */
+
+/* 고양이 이미지 — left:108.58px, top:383px, 211×278px */
+.ob2-cat {
+  position: absolute;
+  left: 109px;
+  top: 383px;
+  width: 211px;
+  height: 278px;
+  overflow: hidden;
+}
+.ob2-cat img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 430px) {
+  .ob2-cat { left: 25.35vw; top: 41.07vw; width: 49.07vw; height: 29.84vw; }
+}

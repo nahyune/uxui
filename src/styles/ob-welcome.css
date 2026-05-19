@@ -1,0 +1,79 @@
+/* ══════════════════════════════════════
+   온보딩 웰컴 — Figma 기준
+══════════════════════════════════════ */
+
+.ob-welcome-phone {
+  width: 430px;
+  height: 932px;
+  background: #ffffff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.28);
+  position: relative;
+}
+
+/* 제목 — left:15.58px, top:129px */
+.ob-welcome-title {
+  position: absolute;
+  left: 16px;
+  top: 129px;
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000000;
+  letter-spacing: -0.6px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* 고양이 + 컨페티 (welcome_cat.png 단일 이미지)
+   피그마 전체 영역: left≈31px, top≈353px, 약 370×390px */
+.ob-welcome-cat {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 350px;
+  width: 370px;
+  height: 390px;
+}
+.ob-welcome-cat img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 홈으로 버튼 — left:15.58px, top:787px, 398×51px */
+.ob-welcome-btn {
+  position: absolute;
+  left: 16px;
+  top: 787px;
+  width: 398px;
+  height: 51px;
+  background: #90D50F;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.ob-welcome-btn-text {
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-weight: 500;          /* Medium */
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: -0.36px;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 430px) {
+  html { overflow: hidden; height: 100%; }
+  body { overflow: hidden; height: 100%; padding: 0; background: #fff; }
+  .ob-welcome-phone { width: 100%; height: 100dvh; box-shadow: none; }
+}

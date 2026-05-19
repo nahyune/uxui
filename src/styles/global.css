@@ -1,0 +1,130 @@
+/* ══════════════════════════════════════
+   디자인 토큰
+══════════════════════════════════════ */
+:root {
+  --primary:        #90D50F;
+  --primary-light:  #EFF6E2;
+  --secondary:      #F69A21;
+  --secondary-dark: #E16500;
+  --orange-bg:      #FFF5E7;
+  --green-text:     #649900;
+  --black:          #000000;
+  --gray-50:        #686868;
+  --gray-40:        #959595;
+  --gray-30:        #AFAFAF;
+  --gray-20:        #DDDDDD;
+  --gray-10:        #F6F6F6;
+  --white:          #ffffff;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+a      { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+input  { font-family: inherit; }
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+               'Apple SD Gothic Neo', sans-serif;
+  background: #c0c0c0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 36px 0;
+}
+
+/* ── 폰 컨테이너 ── */
+.phone {
+  width: 430px;
+  height: 932px;
+  background: var(--white);
+  border-radius: 54px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.28);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.status-bar { height: 44px; flex-shrink: 0; }
+
+.top-frame { background: var(--white); flex-shrink: 0; }
+
+.page-header { padding: 12px 16px 20px; }
+
+.page-title {
+  font-size: 24px; font-weight: 600; color: var(--black);
+  letter-spacing: -0.48px; line-height: 1.5;
+}
+
+.main-scroll {
+  flex: 1; overflow-y: auto; overflow-x: hidden; scrollbar-width: none;
+}
+.main-scroll::-webkit-scrollbar { display: none; }
+
+/* ── 하단 네비게이션 ── */
+.bottom-nav {
+  background: var(--white);
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 12px 16px 0;
+  height: 68px;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+  position: relative; z-index: 10; flex-shrink: 0;
+}
+.nav-item {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 7px; width: 52px; color: var(--gray-50);
+}
+.nav-icon-wrap {
+  height: 28px; display: flex; align-items: flex-end;
+  justify-content: center; flex-shrink: 0;
+}
+.nav-icon-home      { width: 26px; height: 24px; object-fit: contain; display: block; }
+.nav-icon-check     { width: 22px; height: 22px; object-fit: contain; display: block; }
+.nav-icon-challenge { width: 17px; height: 22px; object-fit: contain; display: block; }
+.nav-icon-chat      { width: 23px; height: 23px; object-fit: contain; display: block; }
+.nav-icon-my        { width: 22px; height: 24px; object-fit: contain; display: block; }
+.nav-label {
+  font-size: 13px; font-weight: 500; letter-spacing: -0.26px;
+  color: var(--gray-50); text-align: center; width: 100%; white-space: nowrap;
+}
+.nav-item.active .nav-label { color: var(--black); }
+
+/* ── 홈 인디케이터 ── */
+.home-indicator {
+  background: var(--white);
+  display: flex; justify-content: center; align-items: flex-start;
+  padding-top: 10px; height: 24px; flex-shrink: 0;
+}
+.home-indicator::after { display: none; }
+
+/* ── 모서리 전체 제거 ── */
+.phone,
+.home-phone,
+.screen,
+.noti-screen {
+  border-radius: 0 !important;
+}
+
+/* ── 하단 검정 바 전체 제거 ── */
+.home-indicator,
+.home-indicator-ob,
+.ob1-indicator,
+.ob3-indicator {
+  display: none !important;
+}
+.home-indicator-ob::after,
+.home-indicator::after {
+  display: none !important;
+}
+
+@media (max-width: 430px) {
+  html { overflow: hidden; height: 100%; }
+  body { overflow: hidden; height: 100%; padding: 0; background: var(--white); }
+  .phone { width: 100%; height: 100dvh; border-radius: 0; box-shadow: none; }
+  .status-bar { height: env(safe-area-inset-top, 0px); }
+  .home-indicator {
+    height: max(env(safe-area-inset-bottom), 20px);
+    padding-top: 0; align-items: center;
+  }
+}

@@ -1,0 +1,142 @@
+/* ══════════════════════════════════════
+   온보딩 03 — Figma 기준
+══════════════════════════════════════ */
+
+.ob3-phone {
+  width: 430px;
+  height: 932px;
+  background: #ffffff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.28);
+  position: relative;
+}
+
+/* MOA 로고 — left:21.58px, top:133px, 170×75px */
+.ob3-logo {
+  position: absolute;
+  left: 22px;
+  top: 133px;
+  width: 170px;
+  height: 75px;
+  overflow: hidden;
+}
+.ob3-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 헤드라인 — left:22.58px, top:263px */
+.ob3-text {
+  position: absolute;
+  left: 23px;
+  top: 263px;
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: #000000;
+  letter-spacing: -0.6px;
+  line-height: 1.5;
+  white-space: pre;
+}
+.ob3-accent-green  { color: #90d50f; }
+.ob3-accent-orange { color: #f69a21; }
+
+/* SNS 섹션 — left:55px, top:597px, w:320px */
+.ob3-sns-section {
+  position: absolute;
+  left: 55px;
+  top: 597px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 88px;
+}
+
+/* SNS 그룹 (라벨 + 버튼들) */
+.ob3-sns-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 33px;
+  width: 100%;
+}
+
+.ob3-sns-label {
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #686868;
+  letter-spacing: -0.28px;
+  line-height: 1.5;
+  text-align: center;
+  width: 100%;
+}
+
+/* 소셜 버튼 행 */
+.ob3-btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* 소셜 버튼 공통 */
+.ob3-sns-btn {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: none;
+  background: none;
+  text-decoration: none;
+  padding: 0;
+}
+.ob3-sns-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 로그인 도움말 버튼 */
+.ob3-login-help {
+  border: 1px solid #afafaf;
+  border-radius: 50px;
+  padding: 5px 18px;
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #959595;
+  letter-spacing: -0.28px;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 홈 인디케이터 */
+.ob3-indicator {
+  position: absolute;
+  bottom: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 135px;
+  height: 5px;
+  background: #000000;
+  border-radius: 50px;
+}
+
+@media (max-width: 430px) {
+  html { overflow: hidden; height: 100%; }
+  body { overflow: hidden; height: 100%; padding: 0; background: #fff; }
+  .ob3-phone { width: 100%; height: 100dvh; box-shadow: none; }
+}

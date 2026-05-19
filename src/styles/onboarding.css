@@ -1,0 +1,106 @@
+/* ── 온보딩 01, 02 ── */
+.phone-ob { background: var(--white); cursor: pointer; }
+
+.headline {
+  padding: 0 47px; margin-top: 38px;
+  font-size: 32px; font-weight: 600; color: var(--black);
+  letter-spacing: -0.64px; line-height: 1.5; flex-shrink: 0;
+}
+
+.cat-area {
+  flex: 1; display: flex; align-items: center;
+  justify-content: center; padding: 20px 0;
+}
+
+.cat-placeholder {
+  width: 228px; height: 334px;
+  background: var(--gray-20); border-radius: 16px;
+}
+.cat-placeholder img { width: 100%; height: 100%; object-fit: contain; }
+
+.home-indicator-ob {
+  flex-shrink: 0; display: flex;
+  justify-content: center; align-items: center; padding: 9px 0 11px;
+}
+.home-indicator-ob::after {
+  content: ''; display: block; width: 135px; height: 5px;
+  background: var(--black); border-radius: 50px;
+}
+
+/* ── 온보딩 03 (로그인) ── */
+.phone-login { background: var(--primary); }
+
+.headline-login {
+  padding: 0 47px; margin-top: 60px;
+  font-size: 36px; font-weight: 700; color: var(--white);
+  letter-spacing: -0.72px; line-height: 1.4; flex-shrink: 0;
+}
+
+.login-spacer { flex: 1; }
+
+.social-section { padding: 0 30px 24px; flex-shrink: 0; }
+
+.sns-label {
+  font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.8);
+  text-align: center; margin-bottom: 20px; letter-spacing: -0.30px;
+}
+
+.sns-icons { display: flex; justify-content: center; gap: 16px; }
+
+.sns-btn {
+  width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0;
+}
+.sns-btn.kakao  { background: #FEE500; }
+.sns-btn.naver  { background: #03C75A; }
+.sns-btn.apple  { background: #000000; }
+.sns-btn.google { background: #4285F4; }
+
+.login-help {
+  display: block; text-align: center;
+  font-size: 14px; color: rgba(255,255,255,0.7);
+  letter-spacing: -0.28px; padding-bottom: 16px; flex-shrink: 0;
+}
+
+/* ── 웰컴 ── */
+.phone-welcome { background: var(--primary-light); }
+
+.headline-welcome {
+  padding: 0 47px; margin-top: 60px;
+  font-size: 32px; font-weight: 700; color: var(--black);
+  letter-spacing: -0.64px; line-height: 1.5;
+  flex-shrink: 0; text-align: center;
+}
+
+.image-area {
+  flex: 1; display: flex; align-items: center;
+  justify-content: center; position: relative;
+}
+
+.confetti-bg {
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, #c8e870 0%, #90D50F 60%, transparent 70%);
+  opacity: 0.3; position: absolute;
+}
+
+.cat-welcome {
+  width: 200px; height: 200px;
+  background: var(--gray-20); border-radius: 50%;
+  position: relative; z-index: 1;
+}
+
+.cta-area-welcome { padding: 0 30px 16px; flex-shrink: 0; }
+
+.cta-btn-welcome {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 60px;
+  background: var(--primary); color: var(--white);
+  border-radius: 15px; font-size: 20px; font-weight: 600;
+  letter-spacing: -0.40px; cursor: pointer;
+}
+
+@media (max-width: 430px) {
+  .home-indicator-ob { height: max(env(safe-area-inset-bottom), 20px); }
+  .home-indicator-ob::after { display: none; }
+}

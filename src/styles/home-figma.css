@@ -1,0 +1,241 @@
+/* ══════════════════════════════════════
+   홈 화면 — Figma 기준
+══════════════════════════════════════ */
+
+/* ── 폰 컨테이너 ── */
+.home-phone {
+  width: 430px;
+  height: 932px;
+  background: #ffffff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.28);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── 스크롤 영역 (로고 포함 전체 스크롤) ── */
+.home-scroll {
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  position: relative;
+}
+.home-scroll::-webkit-scrollbar { display: none; }
+
+/* 초록 배경 데코 — 로고도 스크롤 안에 있으므로 전체 261px */
+.home-green-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 430px;
+  height: 261px;
+  background: #90D50F;
+  border-radius: 0 0 85px 85px;
+  z-index: 0;
+}
+
+/* 콘텐츠 래퍼 */
+.home-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+/* ── 로고 헤더 (스크롤과 함께 올라감) ── */
+.home-app-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+  padding: 8px 16px;
+  flex-shrink: 0;
+}
+
+.home-logo { width: 145px; height: 62px; object-fit: contain; display: block; }
+
+.home-alert-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 24px; height: 27px; cursor: pointer; text-decoration: none;
+}
+.home-alert-img { width: 24px; height: 27px; object-fit: contain; display: block; }
+
+/* ── 히어로 카드 ── */
+.home-hero-card {
+  position: relative;
+  width: 398px;
+  height: 297px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  margin: 16px 16px 0;   /* 로고 바로 아래에서 시작 */
+  flex-shrink: 0;
+}
+
+/* 상단 회색 태그 */
+.hero-badge-gray {
+  position: absolute;
+  left: 24px; top: 59px;
+  background: #eff6e2;
+  border-radius: 7px;
+  padding: 8px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #686868;
+  letter-spacing: -0.32px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* 고양이 이미지 */
+.hero-cat-wrap {
+  position: absolute;
+  left: 10px; top: 116px;
+  width: 131px; height: 166px;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-cat-img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  transform: scaleX(-1);
+}
+
+/* 절약 금액 */
+.hero-savings {
+  position: absolute;
+  left: 208px; top: 149px;
+  right: 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.hero-savings-label {
+  font-size: 17px; font-weight: 500; color: #649900;
+  letter-spacing: -0.34px; line-height: 1.5;
+  margin-bottom: -5px; width: 100%; text-align: right;
+}
+.hero-savings-amount {
+  font-size: 36px; font-weight: 600; color: #000000;
+  letter-spacing: -0.72px; line-height: 1.5;
+  text-align: right; width: 100%;
+}
+
+/* 하단 초록 태그 */
+.hero-badge-green {
+  position: absolute;
+  left: 176px; top: 224px;
+  background: #eff6e2;
+  border-radius: 7px;
+  padding: 8px 10px;
+  font-size: 16px; font-weight: 500; color: #649900;
+  letter-spacing: -0.32px; line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* ── 소비 체크 필 ── */
+.home-check-pill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 226px;
+  height: 103px;
+  background: #eff6e2;
+  border-radius: 0 57.5px 57.5px 0;
+  padding: 0 20px;
+  margin-top: 126px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.home-check-pill-title { font-size: 18px; font-weight: 500; color: #000000; letter-spacing: -0.36px; line-height: 1.5; }
+.home-check-pill-sub   { font-size: 18px; font-weight: 500; color: #649900;  letter-spacing: -0.36px; line-height: 1.5; }
+
+/* ── CTA 버튼 ── */
+.home-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 70px;
+  background: #90D50F;
+  border-radius: 10px;
+  margin: 16px 17px 0 15px;
+  font-size: 22px; font-weight: 600; color: #ffffff;
+  letter-spacing: -0.44px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.home-cta-plus { width: 29px; height: 29px; object-fit: contain; display: block; }
+
+/* ── 챌린지 섹션 ── */
+.home-challenge-section { margin-top: 64px; }
+
+.home-section-title-wrap {
+  display: flex; align-items: center;
+  padding: 0 16px; margin-bottom: 16px;
+}
+.home-section-title {
+  font-size: 20px; font-weight: 600; color: #000000;
+  letter-spacing: -0.4px; line-height: 1.5;
+}
+
+.home-challenge-list { display: flex; flex-direction: column; gap: 11px; }
+
+.home-challenge-card {
+  display: flex; gap: 16px; align-items: center;
+  padding: 0 16px; background: #ffffff;
+}
+
+.home-thumb {
+  width: 130px; height: 180px;
+  background: #9e9e9e;
+  border-radius: 10px;
+  flex-shrink: 0; overflow: hidden;
+}
+.home-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.home-info {
+  flex: 1; display: flex; flex-direction: column;
+  gap: 7px; min-width: 0;
+}
+.home-challenge-name {
+  font-size: 18px; font-weight: 500; color: #000000;
+  letter-spacing: -0.36px; line-height: 1.5;
+}
+
+.home-challenge-inner { display: flex; flex-direction: column; gap: 13px; height: 104px; }
+
+.home-p-badge {
+  display: inline-flex; align-items: center; gap: 2px;
+  background: #fff5e7; border-radius: 5px;
+  padding: 4px 10px; width: fit-content;
+}
+.home-p-badge-person { width: 10px; height: 9px; object-fit: contain; flex-shrink: 0; }
+.home-p-badge-text {
+  font-size: 13px; font-weight: 500; color: #e16500;
+  letter-spacing: -0.26px; line-height: 1.5; white-space: nowrap;
+}
+
+.home-meta-list { display: flex; flex-direction: column; gap: 1px; }
+.home-meta {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 500; color: #686868;
+  letter-spacing: -0.28px; line-height: 1.5; white-space: nowrap;
+}
+.home-meta-icon { width: 15px; height: 15px; object-fit: contain; flex-shrink: 0; }
+
+.home-divider { height: 1px; background: #F6F6F6; margin: 0 16px; flex-shrink: 0; }
+
+/* ── 반응형 ── */
+@media (max-width: 430px) {
+  html { overflow: hidden; height: 100%; }
+  body { overflow: hidden; height: 100%; padding: 0; background: #90D50F; }
+  .home-phone {
+    width: 100%; height: 100dvh;
+    border-radius: 0; box-shadow: none;
+  }
+}
