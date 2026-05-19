@@ -49,10 +49,10 @@
   display: block;
 }
 
-/* 버튼 영역 — 피그마 top:712px → 하단 고정 */
+/* 버튼 영역 — 피그마 top:712px, 버튼 아래 여백 169px */
 .ob-welcome-bottom {
   flex: 0 0 auto;
-  padding: 0 16px 20px;
+  padding: 0 16px 169px;
 }
 
 /* 홈으로 버튼 — 398×51px */
@@ -93,6 +93,7 @@
     padding-top: 10.7vh;
   }
   .ob-welcome-bottom {
-    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    padding: 0 16px;
+    padding-bottom: max(18dvh, env(safe-area-inset-bottom, 20px));
   }
 }
