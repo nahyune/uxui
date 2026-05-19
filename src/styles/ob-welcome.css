@@ -53,61 +53,32 @@
   justify-content: center;
 }
 
-/* 컨페티 이미지 — 고양이보다 크게, 뒤에서 터지는 애니메이션 */
+/* 컨페티 이미지 — 팡! 터지는 애니메이션만 */
 .ob-welcome-confetti-img {
   position: absolute;
   width: 140%;
   max-width: 480px;
   object-fit: contain;
   z-index: 1;
-  animation: confetti-burst 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation: confetti-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   transform-origin: center center;
 }
 
-/* 고양이 이미지 — 정적, 컨페티 위에 */
+/* 고양이 이미지 — 완전 정적, 움직임 없음 */
 .ob-welcome-cat-img {
   position: relative;
   width: 75%;
   max-width: 260px;
   object-fit: contain;
   z-index: 2;
-  animation: cat-appear 0.4s ease-out 0.15s both;
 }
 
-/* 컨페티 터지는 키프레임 */
-@keyframes confetti-burst {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  40% {
-    transform: scale(1.18);
-    opacity: 1;
-  }
-  65% {
-    transform: scale(0.95);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* 고양이 등장 — 컨페티 직후 살짝 튀어오르는 느낌 */
-@keyframes cat-appear {
-  0% {
-    transform: scale(0.7) translateY(12px);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.06) translateY(-4px);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
+/* 컨페티 팡! 키프레임 — 0에서 순간 확 터짐 */
+@keyframes confetti-pop {
+  0%   { transform: scale(0);    opacity: 0; }
+  60%  { transform: scale(1.15); opacity: 1; }
+  80%  { transform: scale(0.97); opacity: 1; }
+  100% { transform: scale(1);    opacity: 1; }
 }
 
 /* 버튼 영역 */
