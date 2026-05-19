@@ -397,9 +397,15 @@
 .chal-section { padding: 0 0 24px; }
 .chal-hscroll {
   display: flex; gap: 16px; overflow-x: auto; scrollbar-width: none;
-  padding: 4px 16px 8px; -webkit-overflow-scrolling: touch;
+  padding: 4px 16px 8px;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  touch-action: pan-x;
 }
 .chal-hscroll::-webkit-scrollbar { display: none; }
+/* 카드 스냅 */
+.chal-my-card, .chal-join-card { scroll-snap-align: start; }
+.chal-coming-slide { scroll-snap-align: start; }
 
 /* 나의 챌린지 카드 — 피그마 320×195px, radius:15px */
 .chal-my-card {
