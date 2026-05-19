@@ -579,7 +579,7 @@
 .ct-header-right { display: flex; align-items: center; gap: 20px; }
 .ct-room-info { display: flex; flex-direction: column; gap: 2px; }
 /* 방 이름 — 피그마 20px SemiBold */
-.ct-room-title { font-size: 20px; font-weight: 600; color: #000; letter-spacing: -0.4px; line-height: 1.5; }
+.ct-room-title { font-size: 18px; font-weight: 600; color: #000; letter-spacing: -0.36px; line-height: 1.5; }
 /* 인원수 — 피그마 17px Medium #AFAFAF */
 .ct-room-meta { display: flex; align-items: center; gap: 4px; font-size: 17px; font-weight: 500; color: #AFAFAF; letter-spacing: -0.34px; }
 
@@ -608,7 +608,7 @@
 .ct-bubble-row.right { justify-content: flex-end; }
 
 /* 말풍선 — 피그마 px:14px py:10px, radius:10px, 17px Medium */
-.ct-bubble { padding: 10px 14px; border-radius: 10px; font-size: 17px; font-weight: 500; color: #000; line-height: 1.5; letter-spacing: -0.34px; }
+.ct-bubble { padding: 10px 14px; border-radius: 10px; font-size: 14px; font-weight: 500; color: #000; line-height: 1.5; letter-spacing: -0.28px; }
 .ct-bubble p { margin: 0; }
 .ct-bubble.left  { background: #fff; }
 .ct-bubble.right { background: #90D50F; color: #fff; }
