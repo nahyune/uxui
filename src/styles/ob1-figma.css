@@ -60,15 +60,17 @@
   border-radius: 50px;
 }
 
-@media (max-width: 430px) {
-  html { overflow: hidden; height: 100%; }
-  body { overflow: hidden; height: 100%; padding: 0; background: #fff; }
-  .ob1-phone {
-    width: 100%;
-    height: 100dvh;
-    box-shadow: none;
+@media screen and (max-width: 768px) {
+  .ob1-text {
+    left: 3.7vw;
+    top: 15vh;
+    font-size: min(7vw, 28px);
   }
-  /* vw 스케일 */
-  .ob1-text { left: 3.62vw; top: 13.84vw; font-size: 6.98vw; }
-  .ob1-cat  { left: 26.65vw; top: 38.2vw; width: 46.28vw; height: 31.33vw; }
+  .ob1-cat {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 38vh;
+    width: 50vw;
+    height: auto;
+  }
 }

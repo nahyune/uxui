@@ -19,6 +19,12 @@
   display: block;
 }
 
-@media (max-width: 430px) {
-  .ob2-cat { left: 25.35vw; top: 41.07vw; width: 49.07vw; height: 29.84vw; }
+@media screen and (max-width: 768px) {
+  .ob2-cat {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 38vh;
+    width: 50vw;
+    height: auto;
+  }
 }

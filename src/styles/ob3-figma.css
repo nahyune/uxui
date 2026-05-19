@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════
-   온보딩 03 — Figma 기준
+   온보딩 03 — flexbox 레이아웃 (모바일 대응)
 ══════════════════════════════════════ */
 
 .ob3-phone {
@@ -9,30 +9,21 @@
   border-radius: 0;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0,0,0,0.28);
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-/* MOA 로고 — left:21.58px, top:133px, 170×75px */
-.ob3-logo {
-  position: absolute;
-  left: 22px;
-  top: 133px;
-  width: 170px;
-  height: 75px;
-  overflow: hidden;
+/* MOA 로고 */
+.ob3-logo-wrap {
+  padding: 133px 0 0 22px;
+  flex-shrink: 0;
 }
-.ob3-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
+.ob3-logo { width: 170px; height: 75px; object-fit: contain; display: block; }
 
-/* 헤드라인 — left:22.58px, top:263px */
+/* 헤드라인 */
 .ob3-text {
-  position: absolute;
-  left: 23px;
-  top: 263px;
+  padding: 55px 0 0 23px;
+  flex-shrink: 0;
   font-family: 'Pretendard', -apple-system, sans-serif;
   font-weight: 600;
   font-size: 30px;
@@ -44,25 +35,17 @@
 .ob3-accent-green  { color: #90d50f; }
 .ob3-accent-orange { color: #f69a21; }
 
-/* SNS 섹션 — left:55px, top:597px, w:320px */
-.ob3-sns-section {
-  position: absolute;
-  left: 55px;
-  top: 597px;
-  width: 320px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 88px;
-}
+/* 스페이서 — SNS를 하단으로 밀어냄 */
+.ob3-spacer { flex: 1; }
 
-/* SNS 그룹 (라벨 + 버튼들) */
-.ob3-sns-group {
+/* SNS 섹션 */
+.ob3-sns-section {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 33px;
-  width: 100%;
+  padding: 0 55px;
 }
 
 .ob3-sns-label {
@@ -76,7 +59,6 @@
   width: 100%;
 }
 
-/* 소셜 버튼 행 */
 .ob3-btn-row {
   display: flex;
   align-items: center;
@@ -84,7 +66,6 @@
   gap: 20px;
 }
 
-/* 소셜 버튼 공통 */
 .ob3-sns-btn {
   width: 65px;
   height: 65px;
@@ -105,7 +86,14 @@
   display: block;
 }
 
-/* 로그인 도움말 버튼 */
+/* 로그인 도움말 */
+.ob3-login-area {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0 40px;
+}
+
 .ob3-login-help {
   border: 1px solid #afafaf;
   border-radius: 50px;
@@ -123,20 +111,8 @@
   cursor: pointer;
 }
 
-/* 홈 인디케이터 */
-.ob3-indicator {
-  position: absolute;
-  bottom: 11px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 135px;
-  height: 5px;
-  background: #000000;
-  border-radius: 50px;
-}
-
-@media (max-width: 430px) {
-  html { overflow: hidden; height: 100%; }
-  body { overflow: hidden; height: 100%; padding: 0; background: #fff; }
-  .ob3-phone { width: 100%; height: 100dvh; box-shadow: none; }
+@media screen and (max-width: 768px) {
+  .ob3-logo-wrap  { padding-top: 14vw; }
+  .ob3-text       { padding-top: 6vw; font-size: 7vw; }
+  .ob3-login-area { padding-bottom: max(env(safe-area-inset-bottom), 24px); }
 }
