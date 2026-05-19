@@ -10,9 +10,13 @@ const stats = [
   { img: '/img/check_shop.png', name: '쇼핑', pct: 15 },
 ]
 const bars = [
-  { h: 70, day: '월' }, { h: 90, day: '화' }, { h: 120, day: '수' },
-  { h: 105, day: '목' }, { h: 135, day: '금' },
-  { h: 160, day: '토', active: true }, { h: 95, day: '일' },
+  { h: 80,  day: '월' },
+  { h: 106, day: '화' },
+  { h: 145, day: '수' },
+  { h: 125, day: '목' },
+  { h: 158, day: '금' },
+  { h: 208, day: '토', active: true },
+  { h: 109, day: '일' },
 ]
 
 export default function Check() {

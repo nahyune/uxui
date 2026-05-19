@@ -98,8 +98,8 @@
 }
 /* 고양이 — 피그마 116×103px, right:25px top:41px */
 .check-today-cat {
-  position: absolute; right: 0; top: 16px;
-  width: 130px; height: 116px; object-fit: contain;
+  position: absolute; right: 12px; top: 36px;
+  width: 116px; height: 103px; object-fit: contain;
 }
 
 /* 소비 올리기 버튼 — 피그마 height:70px, green, 20px SemiBold */
@@ -147,13 +147,13 @@
 .check-weekly-title { font-size: 22px; font-weight: 500; color: #000; letter-spacing: -0.44px; line-height: 1.5; }
 .check-weekly-sub   { font-size: 15px; font-weight: 500; color: #686868; letter-spacing: -0.3px; line-height: 1.5; }
 
-/* 차트 — 피그마 height:192px, gap:16px, bar-width:32px */
-.check-chart { display: flex; align-items: flex-end; justify-content: center; gap: 16px; height: 192px; }
-.check-bar-group { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 10px; width: 32px; height: 100%; flex-shrink: 0; }
+/* 차트 — 피그마 gap:16px, bar-width:32px, 자연높이(토 208px 기준) */
+.check-chart { display: flex; align-items: flex-end; justify-content: center; gap: 16px; }
+.check-bar-group { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 10px; width: 32px; flex-shrink: 0; }
 .check-bar { width: 32px; background: #EFF6E2; border-radius: 19.5px 19.5px 0 0; flex-shrink: 0; }
 .check-bar.active { background: #90D50F; }
 /* 요일 라벨 — 16px Medium */
-.check-day-label { font-size: 16px; font-weight: 500; color: #000; text-align: center; letter-spacing: -0.32px; }
+.check-day-label { font-size: 16px; font-weight: 500; color: #000; text-align: center; letter-spacing: -0.32px; line-height: 1.5; }
 
 /* ══════════════════════════════════════
    소비 올리기 (AddSpending)
