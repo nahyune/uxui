@@ -59,7 +59,7 @@ export default function Challenge() {
       </div>
 
       <div className="main-scroll chal-scroll">
-        <h1 className="scroll-title">Challenge</h1>
+        <h1 className="scroll-title" style={{ paddingLeft: 16 }}>Challenge</h1>
 
         {/* 나의 챌린지 */}
         <div className="chal-section">
@@ -101,25 +101,30 @@ export default function Challenge() {
           <div className="chal-hscroll">
             {joinCards.map(c => (
               <Link to={c.to} className="chal-join-card" key={c.name}>
+                {/* 이미지 영역 — 피그마 193px */}
                 <div className="chal-join-img">
                   <img src={c.img} alt={c.name} />
                   <div className="chal-join-overlay">
-                    <svg width="10" height="10" viewBox="0 0 10 11" fill="none"><rect x="1" y="1.67" width="8" height="7.33" rx="1" stroke="white" strokeWidth="1.1"/><line x1="1" y1="4.33" x2="9" y2="4.33" stroke="white" strokeWidth="1.1"/><line x1="3.33" y1="1" x2="3.33" y2="2.67" stroke="white" strokeWidth="1.1" strokeLinecap="round"/><line x1="6.67" y1="1" x2="6.67" y2="2.67" stroke="white" strokeWidth="1.1" strokeLinecap="round"/></svg>
+                    <svg width="11" height="11" viewBox="0 0 10 11" fill="none"><rect x="1" y="1.67" width="8" height="7.33" rx="1" stroke="white" strokeWidth="1.1"/><line x1="1" y1="4.33" x2="9" y2="4.33" stroke="white" strokeWidth="1.1"/><line x1="3.33" y1="1" x2="3.33" y2="2.67" stroke="white" strokeWidth="1.1" strokeLinecap="round"/><line x1="6.67" y1="1" x2="6.67" y2="2.67" stroke="white" strokeWidth="1.1" strokeLinecap="round"/></svg>
                     챌린지 모집 중
                   </div>
                 </div>
+                {/* 콘텐츠 영역 — 피그마 left:29.58px, top:213px */}
                 <div className="chal-join-body">
-                  <div className="chal-join-info">
+                  {/* 이름+배지 — gap:5px */}
+                  <div className="chal-join-top">
                     <p className="chal-join-name">{c.name}</p>
                     <span className="chal-p-badge">
-                      <img src="/img/person_02.png" width="10" alt="" />
+                      <img src="/img/person_02.png" width="15" alt="" />
                       {c.count}명이 함께하고 있어요!
                     </span>
-                    <div className="chal-join-meta-list">
-                      <p className="chal-join-meta"><img src="/img/icon_check01.png" width="13" alt="" />1일 1회 소비 체크</p>
-                      <p className="chal-join-meta"><CalImg />{c.date}</p>
-                    </div>
                   </div>
+                  {/* 메타 행 — gap:1px */}
+                  <div className="chal-join-meta-list">
+                    <p className="chal-join-meta"><img src="/img/challenge_check.png" width="11" alt="" />1일 1회 소비 체크</p>
+                    <p className="chal-join-meta"><CalImg />{c.date}</p>
+                  </div>
+                  {/* CTA 버튼 */}
                   <div className={`chal-join-btn${c.done ? ' done' : ''}`}>
                     {c.done ? '챌린지 참여 완료' : '챌린지 참여하기'}
                   </div>

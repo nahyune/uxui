@@ -432,23 +432,32 @@
 .chal-my-progress-track { width: 100%; height: 8px; background: #D9D9D9; border-radius: 50px; overflow: hidden; }
 .chal-my-progress-fill { height: 100%; background: #90D50F; border-radius: 50px; }
 
-/* 참여 카드 */
+/* 지금 참여하세요 카드 — 피그마 321×434px, radius:15px */
 .chal-join-card {
-  flex-shrink: 0; width: 300px; height: 410px;
-  background: #fff; border: 1.5px solid #E0E0E0;
+  flex-shrink: 0; width: 321px; height: 434px;
+  background: #fff; border: 1px solid #E0E0E0;
   border-radius: 15px; overflow: hidden; display: flex; flex-direction: column;
   cursor: pointer; text-decoration: none; color: inherit;
 }
-.chal-join-img { width: 100%; height: 175px; background: #E0E0E0; position: relative; overflow: hidden; flex-shrink: 0; }
+/* 이미지 영역 — 피그마 193px */
+.chal-join-img { width: 100%; height: 193px; background: #D6D6D6; position: relative; overflow: hidden; flex-shrink: 0; }
 .chal-join-img img { width: 100%; height: 100%; object-fit: cover; }
-.chal-join-overlay { position: absolute; bottom: 0; left: 0; right: 0; height: 36px; background: rgba(53,53,53,0.5); display: flex; align-items: center; gap: 6px; padding: 0 16px; font-size: 13px; font-weight: 500; color: #fff; }
-.chal-join-body { flex: 1; padding: 16px 18px 20px; display: flex; flex-direction: column; }
-.chal-join-info { display: flex; flex-direction: column; gap: 12px; }
-.chal-join-name { font-size: 17px; font-weight: 500; color: #000; letter-spacing: -0.34px; }
-.chal-p-badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; background: #FFF5E7; border-radius: 5px; font-size: 13px; font-weight: 500; color: #E16500; width: fit-content; }
-.chal-join-meta-list { display: flex; flex-direction: column; gap: 2px; }
-.chal-join-meta { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #686868; }
-.chal-join-btn { margin-top: auto; padding-top: 16px; display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 10px; font-size: 17px; font-weight: 600; background: #90D50F; color: #fff; }
+/* 상태 배너 — 피그마 height:38px */
+.chal-join-overlay { position: absolute; bottom: 0; left: 0; right: 0; height: 38px; background: rgba(53,53,53,0.5); display: flex; align-items: center; gap: 6px; padding: 0 30px; font-size: 14px; font-weight: 500; color: #fff; letter-spacing: -0.28px; }
+/* 콘텐츠 — 피그마 padding left:30px, gap:13px */
+.chal-join-body { flex: 1; padding: 20px 30px 24px; display: flex; flex-direction: column; gap: 13px; }
+/* 이름+배지 — 피그마 gap:5px */
+.chal-join-top { display: flex; flex-direction: column; gap: 5px; }
+/* 이름 — 피그마 18px Medium */
+.chal-join-name { font-size: 18px; font-weight: 500; color: #000; letter-spacing: -0.36px; line-height: 1.5; }
+/* 참여자 배지 — 피그마 14px Medium #E16500 */
+.chal-p-badge { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; background: #FFF5E7; border-radius: 5px; font-size: 14px; font-weight: 500; color: #E16500; letter-spacing: -0.28px; width: fit-content; }
+/* 메타 행 — 피그마 gap:1px */
+.chal-join-meta-list { display: flex; flex-direction: column; gap: 1px; }
+/* 메타 — 피그마 14px Medium #686868 */
+.chal-join-meta { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: #686868; letter-spacing: -0.28px; }
+/* 참여 버튼 — 피그마 height:47px, 18px SemiBold */
+.chal-join-btn { margin-top: auto; display: flex; align-items: center; justify-content: center; height: 47px; border-radius: 10px; font-size: 18px; font-weight: 600; letter-spacing: -0.36px; background: #90D50F; color: #fff; }
 .chal-join-btn.done { background: #F6F6F6; border: 1px solid #E0E0E0; color: #959595; }
 
 /* 미니 카드 */
