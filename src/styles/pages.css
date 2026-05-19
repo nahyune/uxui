@@ -526,7 +526,7 @@
 /* ══════════════════════════════════════
    채팅 목록 (Chat)
 ══════════════════════════════════════ */
-.chat-pg-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; }
+.chat-pg-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: #fff; display: flex; flex-direction: column; }
 .chat-pg-scroll::-webkit-scrollbar { display: none; }
 /* 채팅 헤더 — 피그마 "Chatting" 24px SemiBold, 아이콘 gap:25px */
 .chat-pg-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 16px 12px; flex-shrink: 0; }
@@ -536,6 +536,9 @@
 .chat-pg-tabs { display: flex; gap: 8px; padding: 0 18px 12px; flex-shrink: 0; }
 .chat-pg-tab { padding: 7px 17px; border-radius: 52px; font-size: 14px; font-weight: 500; color: #686868; background: #fff; border: 1.3px solid #E0E0E0; cursor: pointer; letter-spacing: -0.28px; white-space: nowrap; }
 .chat-pg-tab.active { background: #000; color: #fff; border-color: #000; }
+
+/* 채팅 목록 래퍼 — 피그마 gap:16px */
+.chat-pg-list { display: flex; flex-direction: column; gap: 16px; }
 
 /* 채팅 아이템 — 피그마 py:5px pl:15px gap:11px */
 .chat-pg-item { display: flex; align-items: center; padding: 5px 0 5px 15px; gap: 11px; cursor: pointer; text-decoration: none; color: inherit; background: #fff; }

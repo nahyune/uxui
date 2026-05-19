@@ -49,7 +49,8 @@ export default function Chat() {
           ))}
         </div>
 
-        {/* 채팅 목록 */}
+        {/* 채팅 목록 — 피그마 gap:16px */}
+        <div className="chat-pg-list">
         {rooms.map((r, i) => {
           const inner = (
             <>
@@ -86,6 +87,7 @@ export default function Chat() {
             ? <Link to={r.to} className="chat-pg-item" key={i}>{inner}</Link>
             : <div className="chat-pg-item" key={i}>{inner}</div>
         })}
+        </div>
       </div>
 
       <BottomNav />
