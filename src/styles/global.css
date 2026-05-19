@@ -118,13 +118,35 @@ body {
   display: none !important;
 }
 
+/* ── 실제 모바일 기기 대응 ── */
 @media (max-width: 430px) {
   html { overflow: hidden; height: 100%; }
   body { overflow: hidden; height: 100%; padding: 0; background: var(--white); }
   .phone { width: 100%; height: 100dvh; border-radius: 0; box-shadow: none; }
   .status-bar { height: env(safe-area-inset-top, 0px); }
-  .home-indicator {
-    height: max(env(safe-area-inset-bottom), 20px);
-    padding-top: 0; align-items: center;
+  .home-indicator { height: max(env(safe-area-inset-bottom), 20px); padding-top: 0; align-items: center; }
+}
+
+/* 실제 스마트폰 전체화면 대응 (iPhone, Android) */
+@media screen and (max-width: 768px) {
+  html, body { height: 100%; overflow: hidden; margin: 0; padding: 0; }
+  body { background: var(--white); display: block; }
+  .phone,
+  .home-phone,
+  .ob1-phone,
+  .ob3-phone,
+  .ob-welcome-phone {
+    width: 100% !important;
+    height: 100dvh !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+  }
+  .screen, .noti-screen {
+    width: 100% !important;
+    height: 100dvh !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 }
