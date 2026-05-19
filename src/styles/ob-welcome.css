@@ -94,6 +94,6 @@
   }
   .ob-welcome-bottom {
     padding: 0 16px;
-    padding-bottom: max(18dvh, env(safe-area-inset-bottom, 20px));
+    padding-bottom: max(80px, env(safe-area-inset-bottom, 20px));
   }
 }
