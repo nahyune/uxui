@@ -59,6 +59,7 @@
   flex: 1; overflow-y: auto; scrollbar-width: none;
   padding: 0 16px 24px;
   display: flex; flex-direction: column; gap: 16px;
+  background: #ffffff;
 }
 .check-scroll::-webkit-scrollbar { display: none; }
 
