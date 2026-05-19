@@ -15,15 +15,6 @@
   box-sizing: border-box;
 }
 
-/* 컨페티 캔버스 — 전체 오버레이, 고양이 위 */
-.ob-welcome-confetti {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 10;
-}
-
 /* 제목 — 피그마 top:100px, left:15.58px */
 .ob-welcome-top {
   flex: 0 0 auto;
@@ -42,7 +33,7 @@
   padding: 0;
 }
 
-/* 고양이 + 컨페티 — 피그마 top:235px, 362px 영역 / 남은 공간 중앙 */
+/* 고양이 영역 — 남은 공간 중앙 */
 .ob-welcome-cat {
   flex: 1;
   display: flex;
@@ -51,20 +42,81 @@
   padding: 16px;
 }
 
-.ob-welcome-cat img {
+/* 이미지 겹침 컨테이너 */
+.ob-welcome-cat-wrap {
+  position: relative;
   width: 100%;
-  max-width: 362px;
-  object-fit: contain;
-  display: block;
+  max-width: 340px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 버튼 영역 — 피그마 top:712px, 버튼 아래 여백 169px */
+/* 컨페티 이미지 — 고양이보다 크게, 뒤에서 터지는 애니메이션 */
+.ob-welcome-confetti-img {
+  position: absolute;
+  width: 140%;
+  max-width: 480px;
+  object-fit: contain;
+  z-index: 1;
+  animation: confetti-burst 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  transform-origin: center center;
+}
+
+/* 고양이 이미지 — 정적, 컨페티 위에 */
+.ob-welcome-cat-img {
+  position: relative;
+  width: 75%;
+  max-width: 260px;
+  object-fit: contain;
+  z-index: 2;
+  animation: cat-appear 0.4s ease-out 0.15s both;
+}
+
+/* 컨페티 터지는 키프레임 */
+@keyframes confetti-burst {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+  65% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 고양이 등장 — 컨페티 직후 살짝 튀어오르는 느낌 */
+@keyframes cat-appear {
+  0% {
+    transform: scale(0.7) translateY(12px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.06) translateY(-4px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 버튼 영역 */
 .ob-welcome-bottom {
   flex: 0 0 auto;
   padding: 0 16px 169px;
 }
 
-/* 홈으로 버튼 — 398×51px */
+/* 홈으로 버튼 */
 .ob-welcome-btn {
   display: flex;
   align-items: center;
