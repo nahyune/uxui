@@ -139,7 +139,7 @@ body {
   .status-bar { height: env(safe-area-inset-top, 0px); }
 
   .bottom-nav {
-    height: calc(78px + env(safe-area-inset-bottom, 0px));
+    height: calc(65px + env(safe-area-inset-bottom, 0px));
     padding-top: 12px;
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
