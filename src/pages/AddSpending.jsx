@@ -27,6 +27,7 @@ export default function AddSpending() {
   const [checked, setChecked] = useState({})
   const [overlay, setOverlay] = useState(false)
   const [modalTab, setModalTab] = useState(0)
+  const [roomChecked, setRoomChecked] = useState({})
 
   return (
     <div className="phone">
@@ -70,40 +71,53 @@ export default function AddSpending() {
         <div className="add-overlay open">
           <div className="add-overlay-bg" onClick={() => setOverlay(false)} />
           <div className="add-overlay-modal">
+
+            {/* 닫기 버튼 */}
             <button className="add-modal-close" onClick={() => setOverlay(false)}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round">
-                <line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#333" strokeWidth="2" strokeLinecap="round">
+                <line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/>
               </svg>
             </button>
+
+            {/* 제목 */}
             <p className="add-modal-title">공유할 채팅방</p>
+
+            {/* 검색 */}
             <div className="add-modal-search">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#686868" strokeWidth="2" strokeLinecap="round">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" strokeWidth="2" strokeLinecap="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
-              <input type="text" className="add-modal-input" placeholder="채팅방 검색" />
+              <input type="text" className="add-modal-input" placeholder="공유하고 싶은 친구, 채팅방 검색" />
             </div>
+
+            {/* 탭 */}
             <div className="add-modal-tabs">
               {['전체', '친구', '최근 공유'].map((t, i) => (
                 <button key={t} className={`add-modal-tab${modalTab === i ? ' active' : ''}`} onClick={() => setModalTab(i)}>{t}</button>
               ))}
             </div>
+
+            {/* 방 목록 */}
             <ul className="add-room-list">
-              {rooms.map(r => (
-                <li className="add-room-item" key={r.name}>
+              {rooms.map((r, i) => (
+                <li className="add-room-item" key={r.name} onClick={() => setRoomChecked(p => ({ ...p, [i]: !p[i] }))}>
                   <div className="add-room-avatar"><img src={r.avatar} alt="" /></div>
                   <div className="add-room-info">
                     <div className="add-room-name-row">
-                      {r.fire && <img src="/img/icon_fire.png" width="14" alt="" />}
+                      {r.fire && <img src="/img/icon_fire.png" width="16" alt="" />}
                       <span className="add-room-name">{r.name}</span>
                     </div>
                     <div className="add-room-count">
-                      <img src="/img/person_01.png" width="11" alt="" /> {r.count}
+                      <svg width="7" height="9" viewBox="0 0 8 10" fill="none"><path d="M4 5C5.38 5 6.5 3.88 6.5 2.5S5.38 0 4 0 1.5 1.12 1.5 2.5 2.62 5 4 5zm0 1C2.33 6 -1 6.83 -1 8.5V10h10V8.5C9 6.83 5.67 6 4 6z" fill="#959595"/></svg>
+                      {r.count}
                     </div>
                   </div>
-                  <div className="add-room-check" />
+                  <div className={`add-room-check${roomChecked[i] ? ' checked' : ''}`} />
                 </li>
               ))}
             </ul>
+
+            {/* 보내기 버튼 */}
             <button className="add-modal-send" onClick={() => setOverlay(false)}>보내기</button>
           </div>
         </div>
