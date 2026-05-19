@@ -98,8 +98,8 @@
 }
 /* 고양이 — 피그마 116×103px, right:25px top:41px */
 .check-today-cat {
-  position: absolute; right: 4px; top: 20px;
-  width: 148px; height: 132px; object-fit: contain;
+  position: absolute; right: 0px; top: 4px;
+  width: 178px; height: 170px; object-fit: contain;
 }
 
 /* 소비 올리기 버튼 — 피그마 height:70px, green, 20px SemiBold */
