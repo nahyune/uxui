@@ -42,8 +42,11 @@
 .ob3-accent-green  { color: #90d50f; }
 .ob3-accent-orange { color: #f69a21; }
 
-/* 스페이서 — SNS를 하단으로 밀어냄 (SNS top:563px) */
-.ob3-spacer { flex: 1; }
+/* 스페이서 — 피그마 SNS top:563px, 텍스트끝 386px → 간격 177px */
+.ob3-spacer {
+  flex: 1;
+  max-height: 177px;
+}
 
 /* SNS 섹션 — 피그마 gap:33px (라벨↔아이콘) */
 .ob3-sns-section {
