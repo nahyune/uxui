@@ -168,15 +168,23 @@ export default function Challenge() {
             {slideData.map((cards, si) => (
               <div className="chal-coming-slide" key={si}>
                 <div className="chal-coming-grid">
-                  {cards.map(m => (
-                    <div className="chal-mini-card" key={m.name}>
-                      <div className="chal-mini-thumb"><img src={m.img} alt={m.name} /></div>
-                      <div className="chal-mini-text">
-                        <p className="chal-mini-sub">{m.sub}</p>
-                        <p className="chal-mini-name">{m.name}</p>
-                        <p className="chal-mini-count">🔥 {m.count}명</p>
-                        <p className="chal-mini-dur"><TimeImg />{m.dur} 챌린지</p>
-                      </div>
+                  {[0, 2].map(ri => (
+                    <div className="chal-coming-row" key={ri}>
+                      {cards.slice(ri, ri + 2).map(m => (
+                        <div className="chal-mini-card" key={m.name}>
+                          <div className="chal-mini-thumb"><img src={m.img} alt={m.name} /></div>
+                          <div className="chal-mini-text">
+                            <div className="chal-mini-name-group">
+                              <p className="chal-mini-sub">{m.sub}</p>
+                              <p className="chal-mini-name">{m.name}</p>
+                            </div>
+                            <div className="chal-mini-meta">
+                              <p className="chal-mini-count">🔥 {m.count}명 참여 중</p>
+                              <p className="chal-mini-dur"><TimeImg />{m.dur} 챌린지</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   ))}
                 </div>

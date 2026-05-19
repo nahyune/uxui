@@ -466,17 +466,31 @@
 .chal-join-btn { margin-top: auto; display: flex; align-items: center; justify-content: center; height: 47px; border-radius: 10px; font-size: 18px; font-weight: 600; letter-spacing: -0.36px; background: #90D50F; color: #fff; }
 .chal-join-btn.done { background: #F6F6F6; border: 1px solid #E0E0E0; color: #959595; }
 
-/* 미니 카드 */
-.chal-coming-slide { flex-shrink: 0; width: 380px; background: #F6F6F6; border-radius: 12px; padding: 20px 12px; }
-.chal-coming-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px 14px; }
-.chal-mini-card { display: flex; flex-direction: column; gap: 12px; }
-.chal-mini-thumb { width: 100%; height: 100px; background: #E0E0E0; border-radius: 12px; overflow: hidden; }
+/* 곧 시작해요 슬라이드 — 피그마 396px, radius:10px, padding:25px 11px */
+.chal-coming-slide { flex-shrink: 0; width: 396px; background: #F6F6F6; border-radius: 10px; padding: 25px 11px; scroll-snap-align: start; }
+/* 2행 flex-col, 행간 30px */
+.chal-coming-grid { display: flex; flex-direction: column; gap: 30px; }
+/* 각 행: 2카드 justify-between */
+.chal-coming-row { display: flex; justify-content: space-between; }
+/* 미니 카드 — 177px, image→text gap:15px */
+.chal-mini-card { display: flex; flex-direction: column; gap: 15px; width: 177px; }
+/* 이미지 — 177×109px, radius:15px, bg:#E2E2E2 */
+.chal-mini-thumb { width: 177px; height: 109px; background: #E2E2E2; border-radius: 15px; overflow: hidden; flex-shrink: 0; }
 .chal-mini-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.chal-mini-text { display: flex; flex-direction: column; gap: 8px; }
-.chal-mini-sub  { font-size: 12px; font-weight: 500; color: #959595; }
-.chal-mini-name { font-size: 15px; font-weight: 500; color: #000; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.chal-mini-count { font-size: 13px; font-weight: 500; color: #686868; }
-.chal-mini-dur  { display: flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 500; color: #686868; }
+/* 텍스트 블록 — gap:12px between name-group and meta-group */
+.chal-mini-text { display: flex; flex-direction: column; gap: 12px; }
+/* 이름 그룹: sub + name (no gap) */
+.chal-mini-name-group { display: flex; flex-direction: column; }
+/* Sub — 피그마 14px Medium #686868 */
+.chal-mini-sub  { font-size: 14px; font-weight: 500; color: #686868; letter-spacing: -0.28px; line-height: 1.5; }
+/* Name — 피그마 18px Medium black */
+.chal-mini-name { font-size: 18px; font-weight: 500; color: #000; letter-spacing: -0.36px; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* 메타 그룹 — gap:1px */
+.chal-mini-meta { display: flex; flex-direction: column; gap: 1px; }
+/* Count — 피그마 14px Medium black */
+.chal-mini-count { font-size: 14px; font-weight: 500; color: #000; letter-spacing: -0.28px; line-height: 1.5; }
+/* Duration — 피그마 14px Medium black + clock */
+.chal-mini-dur  { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 500; color: #000; letter-spacing: -0.28px; line-height: 1.5; }
 
 /* 슬라이드 인디케이터 */
 .chal-dots { display: flex; justify-content: center; gap: 6px; padding: 12px 0 8px; }
