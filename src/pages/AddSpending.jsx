@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/global.css'
-import '../../css/add-spending.css'
+import '../styles/pages.css'
 
-const categories = ['전체', '식비', '교통', '의료', '쇼핑', '카페', '여가', '생활', '기타']
-
+const cats = ['전체', '식비', '교통', '의료', '쇼핑', '카페', '여가', '생활', '기타']
 const items = [
   { label: '☕ 스타벅스', amount: '6,100원' },
   { label: '🛍 무신사',   amount: '62,280원' },
@@ -16,16 +15,15 @@ const items = [
   { label: '🛒 마켓컬리', amount: '34,500원' },
   { label: '🚕 카카오택시', amount: '12,400원' },
 ]
-
 const rooms = [
   { avatar: '/img/chat_receipt.png', fire: true,  name: '소비 기록 챌린지 📝', count: 16 },
-  { avatar: '/img/chat_wallet.png',  fire: false, name: '통장 지키기 모임',     count: 5 },
+  { avatar: '/img/chat_wallet.png',  fire: false, name: '통장 지키기 모임',     count: 5  },
   { avatar: '/img/chat_coffee.png',  fire: true,  name: '카페 금지 챌린지 ☕',  count: 83 },
   { avatar: '/img/chat_book.png',    fire: false, name: '텅장 방지 협회',       count: 13 },
 ]
 
 export default function AddSpending() {
-  const [activeCat, setActiveCat] = useState(0)
+  const [cat, setCat] = useState(0)
   const [checked, setChecked] = useState({})
   const [overlay, setOverlay] = useState(false)
   const [modalTab, setModalTab] = useState(0)
@@ -34,94 +32,79 @@ export default function AddSpending() {
     <div className="phone">
       <div className="top-frame">
         <div className="status-bar" />
-        <div className="page-header" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px' }}>
-          <Link to="/check" style={{ display: 'flex', alignItems: 'center' }} aria-label="뒤로가기">
-            <svg width="11" height="20" viewBox="0 0 11 20" fill="none"
-              stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="10 1 1 10 10 19"/>
+        <div className="add-header">
+          <Link to="/check" className="pg-back">
+            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 1 1 9 9 17"/>
             </svg>
           </Link>
-          <h1 className="header-title">소비 올리기</h1>
+          <span className="add-header-title">소비 올리기</span>
+        </div>
+        <div className="add-cat-scroll">
+          {cats.map((c, i) => (
+            <button key={c} className={`add-cat-btn${cat === i ? ' active' : ''}`} onClick={() => setCat(i)}>{c}</button>
+          ))}
         </div>
       </div>
 
-      <main className="main-scroll">
-        <div className="category-scroll">
-          {categories.map((c, i) => (
-            <button key={c} className={`cat-btn${activeCat === i ? ' active' : ''}`}
-              onClick={() => setActiveCat(i)}>{c}</button>
-          ))}
-        </div>
+      <ul className="main-scroll add-list">
+        {items.map((item, i) => (
+          <li className="add-item" key={item.label}>
+            <span className="add-item-label">{item.label}</span>
+            <div className="add-item-right">
+              <span className="add-item-amount">{item.amount}</span>
+              <label className="add-check-wrap">
+                <input type="checkbox" className="add-check-input" checked={!!checked[i]} onChange={() => setChecked(p => ({ ...p, [i]: !p[i] }))} />
+                <span className="add-check-box" />
+              </label>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-        <ul className="spending-list">
-          {items.map((item, i) => (
-            <li className="spending-item" key={item.label}>
-              <div className="item-left">
-                <span className="item-label">{item.label}</span>
-              </div>
-              <div className="item-right">
-                <span className="item-amount">{item.amount}</span>
-                <label className="check-wrap">
-                  <input type="checkbox" className="item-check"
-                    checked={!!checked[i]} onChange={() => setChecked(p => ({ ...p, [i]: !p[i] }))} />
-                  <span className="check-custom" />
-                </label>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </main>
-
-      <div className="share-wrap">
-        <button className="share-btn" onClick={() => setOverlay(true)}>소비 공유하기</button>
+      <div className="add-share-area">
+        <button className="add-share-btn" onClick={() => setOverlay(true)}>소비 공유하기</button>
       </div>
-      <div className="home-indicator" />
 
-      {/* 공유 오버레이 */}
       {overlay && (
-        <div className="overlay open">
-          <div className="overlay-backdrop" id="overlayBackdrop" onClick={() => setOverlay(false)} />
-          <div className="overlay-modal">
-            <button className="modal-close" onClick={() => setOverlay(false)}>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                stroke="#555" strokeWidth="2.2" strokeLinecap="round">
-                <line x1="2" y1="2" x2="16" y2="16"/>
-                <line x1="16" y1="2" x2="2" y2="16"/>
+        <div className="add-overlay open">
+          <div className="add-overlay-bg" onClick={() => setOverlay(false)} />
+          <div className="add-overlay-modal">
+            <button className="add-modal-close" onClick={() => setOverlay(false)}>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round">
+                <line x1="2" y1="2" x2="14" y2="14"/><line x1="14" y1="2" x2="2" y2="14"/>
               </svg>
             </button>
-            <h2 className="modal-title">공유할 채팅방</h2>
-            <div className="modal-search">
-              <svg className="search-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="#686868" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <p className="add-modal-title">공유할 채팅방</p>
+            <div className="add-modal-search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#686868" strokeWidth="2" strokeLinecap="round">
                 <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
-              <input type="text" className="search-input" placeholder="공유하고 싶은 친구, 채팅방 검색" />
+              <input type="text" className="add-modal-input" placeholder="채팅방 검색" />
             </div>
-            <div className="modal-tabs">
+            <div className="add-modal-tabs">
               {['전체', '친구', '최근 공유'].map((t, i) => (
-                <button key={t} className={`modal-tab${modalTab === i ? ' active' : ''}`}
-                  onClick={() => setModalTab(i)}>{t}</button>
+                <button key={t} className={`add-modal-tab${modalTab === i ? ' active' : ''}`} onClick={() => setModalTab(i)}>{t}</button>
               ))}
             </div>
-            <ul className="chatroom-list">
+            <ul className="add-room-list">
               {rooms.map(r => (
-                <li className="chatroom-item" key={r.name}>
-                  <div className="room-avatar"><img src={r.avatar} alt={r.name} /></div>
-                  <div className="room-info">
-                    <div className="room-name-row">
-                      {r.fire && <img src="/img/icon_fire.png" className="room-fire" alt="" />}
-                      <span className="room-name">{r.name}</span>
+                <li className="add-room-item" key={r.name}>
+                  <div className="add-room-avatar"><img src={r.avatar} alt="" /></div>
+                  <div className="add-room-info">
+                    <div className="add-room-name-row">
+                      {r.fire && <img src="/img/icon_fire.png" width="14" alt="" />}
+                      <span className="add-room-name">{r.name}</span>
                     </div>
-                    <div className="room-count">
-                      <img src="/img/person_01.png" className="room-person" alt="" />
-                      <span>{r.count}</span>
+                    <div className="add-room-count">
+                      <img src="/img/person_01.png" width="11" alt="" /> {r.count}
                     </div>
                   </div>
-                  <div className="room-check" />
+                  <div className="add-room-check" />
                 </li>
               ))}
             </ul>
-            <button className="send-btn" onClick={() => setOverlay(false)}>보내기</button>
+            <button className="add-modal-send" onClick={() => setOverlay(false)}>보내기</button>
           </div>
         </div>
       )}

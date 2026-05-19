@@ -1,8 +1,8 @@
 import BottomNav from '../components/BottomNav'
 import '../styles/global.css'
-import '../../css/my.css'
+import '../styles/pages.css'
 
-const menuItems = [
+const menu = [
   { icon: '/img/my_01.JPG', label: '나의 프로필' },
   { icon: '/img/my_02.JPG', label: '소비 리스트' },
   { icon: '/img/my_03.JPG', label: '친구 관리' },
@@ -10,71 +10,64 @@ const menuItems = [
   { icon: '/img/my_05.JPG', label: '알림 설정' },
 ]
 
-const ChevronSVG = () => (
-  <svg className="chevron" viewBox="0 0 7 14" fill="none"
-    stroke="#959595" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="1 1 6 7 1 13"/>
-  </svg>
-)
-
 export default function MyPage() {
   return (
     <div className="phone">
       <div className="top-frame">
         <div className="status-bar" />
+        <div className="pg-header">
+          <h1 className="pg-title">마이페이지</h1>
+        </div>
       </div>
 
-      <main className="main-scroll">
-        <div className="page-title-wrap">
-          <h1 className="page-title">마이페이지</h1>
-        </div>
-
-        <div className="profile-wrap">
-          <div className="profile-avatar">
+      <div className="main-scroll my-scroll">
+        <div className="my-profile">
+          <div className="my-avatar">
             <img src="/img/my_cat.png" alt="프로필" />
           </div>
         </div>
 
-        <div className="savings-stat-card">
-          <div className="stat-item">
-            <p className="stat-num">54,300<span className="stat-unit">원</span></p>
-            <p className="stat-desc">이번 주 절약</p>
+        <div className="my-stat-card">
+          <div className="my-stat-item">
+            <p className="my-stat-num">54,300<span className="my-stat-unit">원</span></p>
+            <p className="my-stat-desc">이번 주 절약</p>
           </div>
-          <div className="stat-divider" />
-          <div className="stat-item">
-            <p className="stat-num">3<span className="stat-unit">개</span></p>
-            <p className="stat-desc">참여 챌린지</p>
+          <div className="my-stat-div" />
+          <div className="my-stat-item">
+            <p className="my-stat-num">3<span className="my-stat-unit">개</span></p>
+            <p className="my-stat-desc">참여 챌린지</p>
           </div>
-          <div className="stat-divider" />
-          <div className="stat-item">
-            <p className="stat-num">7<span className="stat-unit">일</span></p>
-            <p className="stat-desc">절약 연속일</p>
+          <div className="my-stat-div" />
+          <div className="my-stat-item">
+            <p className="my-stat-num">7<span className="my-stat-unit">일</span></p>
+            <p className="my-stat-desc">절약 연속일</p>
           </div>
         </div>
 
-        <div className="menu-card">
-          {menuItems.map((m, i) => (
+        <div className="my-menu-card">
+          {menu.map((m, i) => (
             <div key={m.label}>
-              <a href="#" className="menu-item">
-                <div className="menu-left">
-                  <img className="menu-icon" src={m.icon} alt={m.label} />
-                  <span className="menu-text">{m.label}</span>
+              <a href="#" className="my-menu-item">
+                <div className="my-menu-left">
+                  <img className="my-menu-icon" src={m.icon} alt={m.label} />
+                  <span className="my-menu-text">{m.label}</span>
                 </div>
-                <ChevronSVG />
+                <svg width="7" height="13" viewBox="0 0 7 14" fill="none" stroke="#959595" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="1 1 6 7 1 13"/>
+                </svg>
               </a>
-              {i < menuItems.length - 1 && <div className="menu-divider" />}
+              {i < menu.length - 1 && <div className="my-menu-divider" />}
             </div>
           ))}
         </div>
 
-        <div className="sub-links">
-          <a href="#" className="sub-link">신고하기</a>
-          <a href="#" className="sub-link">로그아웃</a>
+        <div className="my-sub-links">
+          <a href="#" className="my-sub-link">신고하기</a>
+          <a href="#" className="my-sub-link">로그아웃</a>
         </div>
-      </main>
+      </div>
 
       <BottomNav />
-      <div className="home-indicator" />
     </div>
   )
 }

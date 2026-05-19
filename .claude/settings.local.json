@@ -20,10 +20,22 @@
       "Bash(git commit -m '공유할채팅방 피그마 재반영 + 세부 수정 *)",
       "Skill(update-config)",
       "Skill(update-config:*)",
-      "Bash(mkdir -p d:/uxui/.claude)"
+      "Bash(mkdir -p d:/uxui/.claude)",
+      "Bash(echo \"{}\" > d:\\\\uxui-react\\\\package.json && echo \"created\")",
+      "Bash(type d:\\\\uxui-react\\\\index.html 2>nul || echo \"NOT_FOUND\")",
+      "Bash(mkdir src *)",
+      "Bash(mkdir src\\\\pages)",
+      "Bash(mkdir src\\\\components)",
+      "Bash(mkdir src\\\\styles)",
+      "Bash(mkdir public *)",
+      "Bash(mklink /J public\\\\img img)",
+      "Bash(echo \"placeholder\" > d:\\\\uxui-react\\\\index.html && echo \"created\")",
+      "mcp__claude_ai_Figma__get_screenshot"
     ],
     "additionalDirectories": [
-      "d:\\uxui\\.claude"
+      "d:\\uxui\\.claude",
+      "d:\\uxui-react",
+      "D:\\uxui-react"
     ]
   }
 }
