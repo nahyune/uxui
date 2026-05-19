@@ -80,12 +80,13 @@
 .check-today-label {
   font-size: 17px; font-weight: 500; color: #000;
   letter-spacing: -0.34px; line-height: 1.5;
-  margin-bottom: -4px;
+  margin-bottom: -4px; max-width: 55%;
 }
 /* 118,830원 — 36px SemiBold, 높이 43px */
 .check-today-amount {
   font-size: 36px; font-weight: 600; color: #000;
   letter-spacing: -0.72px; line-height: 1.5;
+  max-width: 55%; white-space: nowrap;
 }
 /* 훌륭해요 배지 — height:36px, border-radius:10px, 14px */
 .check-today-badge {
@@ -94,7 +95,7 @@
   padding: 7px 10px; height: 36px; box-sizing: border-box;
   font-size: 14px; font-weight: 500; color: #E16500;
   letter-spacing: -0.28px; width: fit-content;
-  margin-top: 19px;
+  margin-top: 19px; max-width: 58%;
 }
 /* 고양이 — 피그마 116×103px, right:25px top:41px */
 .check-today-cat {
