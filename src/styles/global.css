@@ -127,6 +127,7 @@ body {
     height: 100% !important;
     overflow: hidden !important;
     background: #ffffff !important;
+    touch-action: none !important;
   }
   /* 모든 phone 컨테이너를 뷰포트 전체로 고정 */
   .phone,
@@ -145,8 +146,23 @@ body {
     border-radius: 0 !important;
     box-shadow: none !important;
     max-width: 100% !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
+    overflow: hidden !important;
+  }
+  /* 내부 스크롤 영역만 터치 허용 */
+  .main-scroll,
+  .home-scroll,
+  .home-main-scroll,
+  .chat-list,
+  .messages,
+  .scroll-body,
+  .detail-scroll,
+  .cafe-scroll,
+  .ranking-scroll,
+  .nc-scroll,
+  .setting-scroll,
+  .noti-list {
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
   }
   .status-bar { height: env(safe-area-inset-top, 0px); }
 }
