@@ -59,7 +59,7 @@ export default function Challenge() {
       </div>
 
       <div className="main-scroll chal-scroll">
-        <h1 className="scroll-title">챌린지</h1>
+        <h1 className="scroll-title">Challenge</h1>
 
         {/* 나의 챌린지 */}
         <div className="chal-section">
@@ -72,7 +72,7 @@ export default function Challenge() {
               <Link to={c.to} className="chal-my-card" key={c.name}>
                 <div className="chal-my-left">
                   <span className="chal-dday">종료까지 {c.dday}</span>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <div className="chal-my-name-block">
                     <p className="chal-my-name">{c.name}</p>
                     <div className="chal-my-meta">
                       <p className="chal-meta-row">🔥 {c.count}명 참여 중</p>
