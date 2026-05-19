@@ -555,7 +555,7 @@
 /* 파이어+이름 그룹 — gap:5px */
 .chat-pg-name-fire { display: flex; align-items: center; gap: 5px; min-width: 0; }
 /* 이름 — 피그마 15px SemiBold black */
-.chat-pg-name { font-size: 15px; font-weight: 600; color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -0.3px; }
+.chat-pg-name { font-size: 16px; font-weight: 600; color: #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -0.32px; }
 /* 인원수 — 피그마 14px Medium #AFAFAF, gap:3px */
 .chat-pg-count { font-size: 14px; font-weight: 500; color: #AFAFAF; white-space: nowrap; flex-shrink: 0; display: flex; align-items: center; gap: 3px; letter-spacing: -0.28px; }
 /* 시간 — 피그마 14px Medium #AFAFAF */
@@ -563,7 +563,7 @@
 /* 하단 행 */
 .chat-pg-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 /* 메세지 — 피그마 14px Medium #959595, max-width:151px */
-.chat-pg-msg { font-size: 14px; font-weight: 500; color: #959595; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 151px; letter-spacing: -0.28px; flex-shrink: 0; }
+.chat-pg-msg { font-size: 15px; font-weight: 500; color: #959595; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 151px; letter-spacing: -0.3px; flex-shrink: 0; }
 /* 안읽음 뱃지 — 피그마 19px 원형, 오렌지 #F69A21, 13px */
 .chat-pg-unread { width: 19px; height: 19px; border-radius: 50%; background: #F69A21; color: #fff; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; letter-spacing: -0.26px; flex-shrink: 0; }
 .chat-pg-unread.green { background: #90D50F; }
