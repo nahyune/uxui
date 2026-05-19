@@ -49,11 +49,11 @@ export default function AddSpending() {
 
       <ul className="main-scroll add-list">
         {items.map((item, i) => (
-          <li className="add-item" key={item.label}>
+          <li className={`add-item${checked[i] ? ' add-item-checked' : ''}`} key={item.label} onClick={() => setChecked(p => ({ ...p, [i]: !p[i] }))}>
             <span className="add-item-label">{item.label}</span>
             <div className="add-item-right">
               <span className="add-item-amount">{item.amount}</span>
-              <label className="add-check-wrap">
+              <label className="add-check-wrap" onClick={e => e.stopPropagation()}>
                 <input type="checkbox" className="add-check-input" checked={!!checked[i]} onChange={() => setChecked(p => ({ ...p, [i]: !p[i] }))} />
                 <span className="add-check-box" />
               </label>
