@@ -485,7 +485,7 @@
 /* Sub — 13px Medium gray40(#959595) */
 .chal-mini-sub  { font-size: 13px; font-weight: 500; color: #959595; letter-spacing: -0.26px; line-height: 1.5; }
 /* Name — 17px Medium black */
-.chal-mini-name { font-size: 17px; font-weight: 500; color: #000; letter-spacing: -0.34px; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chal-mini-name { font-size: 16px; font-weight: 500; color: #000; letter-spacing: -0.32px; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 /* 메타 그룹 — gap:1px */
 .chal-mini-meta { display: flex; flex-direction: column; gap: 1px; }
 /* Count — 14px Medium gray50(#686868) */
