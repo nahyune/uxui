@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import BottomNav from '../components/BottomNav'
 import '../styles/global.css'
@@ -6,21 +6,26 @@ import '../styles/pages.css'
 
 function useDragScroll() {
   const ref = useRef(null)
-  const drag = useRef({ active: false, startX: 0, scrollLeft: 0 })
-  const onMouseDown = useCallback(e => {
-    drag.current = { active: true, startX: e.pageX, scrollLeft: ref.current.scrollLeft }
-    ref.current.style.cursor = 'grabbing'
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const drag = { active: false, startX: 0, scrollLeft: 0 }
+    const down  = e => { drag.active = true; drag.startX = e.pageX; drag.scrollLeft = el.scrollLeft; el.style.cursor = 'grabbing'; el.style.userSelect = 'none' }
+    const up    = ()  => { drag.active = false; el.style.cursor = 'grab'; el.style.userSelect = '' }
+    const move  = e => { if (!drag.active) return; e.preventDefault(); el.scrollLeft = drag.scrollLeft - (e.pageX - drag.startX) }
+    el.addEventListener('mousedown', down)
+    el.addEventListener('mouseup', up)
+    el.addEventListener('mouseleave', up)
+    el.addEventListener('mousemove', move, { passive: false })
+    el.style.cursor = 'grab'
+    return () => {
+      el.removeEventListener('mousedown', down)
+      el.removeEventListener('mouseup', up)
+      el.removeEventListener('mouseleave', up)
+      el.removeEventListener('mousemove', move)
+    }
   }, [])
-  const onMouseUp = useCallback(() => {
-    drag.current.active = false
-    if (ref.current) ref.current.style.cursor = 'grab'
-  }, [])
-  const onMouseMove = useCallback(e => {
-    if (!drag.current.active) return
-    e.preventDefault()
-    ref.current.scrollLeft = drag.current.scrollLeft - (e.pageX - drag.current.startX)
-  }, [])
-  return { ref, onMouseDown, onMouseUp, onMouseMove, onMouseLeave: onMouseUp }
+  return ref
 }
 
 const CalImg = () => <img src="/img/calendar.png" alt="" style={{ width: '11px', height: '12px', flexShrink: 0, objectFit: 'contain' }} />
@@ -62,9 +67,9 @@ const slideData = [
 
 export default function Challenge() {
   const [dot, setDot] = useState(0)
-  const comingRef = useRef(null)
-  const myDrag = useDragScroll()
-  const joinDrag = useDragScroll()
+  const myRef         = useDragScroll()
+  const joinRef       = useDragScroll()
+  const comingRef     = useDragScroll()
 
   const goSlide = (i) => {
     if (!comingRef.current) return
@@ -88,7 +93,7 @@ export default function Challenge() {
             <h2 className="pg-section-title">나의 챌린지</h2>
             <a href="#" className="pg-more-link">모두보기 <ChevRight /></a>
           </div>
-          <div className="chal-hscroll" ref={myDrag.ref} onMouseDown={myDrag.onMouseDown} onMouseUp={myDrag.onMouseUp} onMouseMove={myDrag.onMouseMove} onMouseLeave={myDrag.onMouseLeave} style={{ cursor: 'grab' }}>
+          <div className="chal-hscroll" ref={myRef}>
             {myCards.map(c => (
               <Link to={c.to} className="chal-my-card" key={c.name}>
                 <div className="chal-my-left">
@@ -119,7 +124,7 @@ export default function Challenge() {
             <h2 className="pg-section-title">지금 참여하세요 🔥</h2>
             <a href="#" className="pg-more-link">모두보기 <ChevRight /></a>
           </div>
-          <div className="chal-hscroll" ref={joinDrag.ref} onMouseDown={joinDrag.onMouseDown} onMouseUp={joinDrag.onMouseUp} onMouseMove={joinDrag.onMouseMove} onMouseLeave={joinDrag.onMouseLeave} style={{ cursor: 'grab' }}>
+          <div className="chal-hscroll" ref={joinRef}>
             {joinCards.map(c => (
               <Link to={c.to} className="chal-join-card" key={c.name}>
                 {/* 이미지 영역 — 피그마 193px */}
