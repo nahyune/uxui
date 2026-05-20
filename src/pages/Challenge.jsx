@@ -21,11 +21,14 @@ function useDragScroll() {
       startX = e.pageX
       scrollLeft = el.scrollLeft
       el.style.cursor = 'grabbing'
+      el.style.userSelect = 'none'
+      e.preventDefault() // 이미지 네이티브 드래그 방지
     }
 
     const onMouseUp = () => {
       isDown = false
       el.style.cursor = 'grab'
+      el.style.userSelect = ''
     }
 
     const onMouseMove = e => {

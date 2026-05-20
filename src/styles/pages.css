@@ -401,6 +401,13 @@
   -webkit-overflow-scrolling: touch;
 }
 .chal-hscroll::-webkit-scrollbar { display: none; }
+/* 내부 이미지 네이티브 드래그 완전 차단 */
+.chal-hscroll img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+  draggable: false;
+}
 
 /* 나의 챌린지 카드 */
 .chal-my-card {
