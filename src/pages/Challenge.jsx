@@ -65,8 +65,8 @@ function useDragScroll() {
   return ref
 }
 
-const CalImg = () => <img src="/img/calendar.png" alt="" style={{ width: '11px', height: '12px', flexShrink: 0, objectFit: 'contain' }} />
-const TimeImg = () => <img src="/img/time.png" alt="" style={{ width: '12px', height: '12px', flexShrink: 0, objectFit: 'contain' }} />
+const CalImg  = () => <span style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', width:16, flexShrink:0 }}><img src="/img/calendar.png" alt="" style={{ width:11, height:12, objectFit:'contain' }} /></span>
+const TimeImg = () => <span style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', width:16, flexShrink:0 }}><img src="/img/time.png" alt="" style={{ width:12, height:12, objectFit:'contain' }} /></span>
 const ChevRight = () => (
   <svg width="5" height="9" viewBox="0 0 5 9" fill="none" stroke="#AFAFAF" strokeWidth="1.5" strokeLinecap="round"><polyline points="1 1 4 4.5 1 8"/></svg>
 )
