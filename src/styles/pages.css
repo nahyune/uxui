@@ -419,7 +419,7 @@
 /* 이름 — 피그마 18px Medium */
 .chal-my-name { font-size: 18px; font-weight: 500; color: #000; letter-spacing: -0.36px; line-height: 1.5; }
 /* 정보 행 묶음 — gap:2px (참여중↔날짜) */
-.chal-my-meta { display: flex; flex-direction: column; gap: 2px; }
+.chal-my-meta { display: flex; flex-direction: column; gap: 3px; }
 /* 메타 — 피그마 14px Medium #686868 */
 .chal-meta-row { display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 500; color: #686868; white-space: nowrap; letter-spacing: -0.28px; }
 /* 썸네일 — 피그마 right:15px, top:23px, 115×115px, radius:10px */
