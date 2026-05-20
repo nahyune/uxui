@@ -9,6 +9,13 @@ const avatarColors = {
   '찬희': '#FFD54F',
 }
 
+const EMOJI = {
+  sad:   '/img/chatting-unsmile.png',
+  heart: '/img/chatting-heart.png',
+  thumb: '/img/chatting-thumb.png',
+  fire:  '/img/chatting-fire.png',
+}
+
 const msgs = [
   { id:1, side:'left',  sender:'주은', time:'오후 5:16',
     text:'월급 들어오자마자 왜 이렇게 쓰고 싶을까…' },
@@ -20,18 +27,18 @@ const msgs = [
     text:'월급 생존 챌린지 웃기다ㅋㅋㅋ' },
   { id:5, side:'left',  sender:'찬희', time:'오후 5:19',
     text:'오늘 카페 갈 사람?',
-    reactions:[{ emoji:'😢', count:2 }] },
+    reactions:[{ img: EMOJI.sad, count:2 }] },
   { id:6, side:'left',  sender:'수지', time:'오후 5:39',
     text:'안 돼. 우리 방 이름 다시 보고 와' },
   { id:7, side:'left',  sender:'주은', time:'오후 5:40',
     text:'아메리카노 하나는 괜찮지 않나…?',
-    reactions:[{ emoji:'❤️' }] },
+    reactions:[{ img: EMOJI.heart }] },
   { id:8, side:'left',  sender:'미주', time:'오후 6:05',
     text:'월급 3일차 통장 잔액 지키기 시작.', read:1,
-    reactions:[{ emoji:'👍', count:2 }, { emoji:'❤️', count:2 }] },
+    reactions:[{ img: EMOJI.thumb, count:2 }, { img: EMOJI.heart, count:2 }] },
   { id:9, side:'right', time:'오후 6:15',
     text:'이번 달도 다 같이 살아남아보자 🔥', read:1,
-    reactions:[{ emoji:'🔥', count:3 }, { emoji:'❤️', count:2 }] },
+    reactions:[{ img: EMOJI.fire, count:3 }, { img: EMOJI.heart, count:2 }] },
 ]
 
 const CalSVG = () => (
@@ -48,7 +55,7 @@ const Reactions = ({ reactions, right }) => (
     <span className="ct-reaction-badge">
       {reactions.map((r, i) => (
         <span key={i} className="ct-reaction-item">
-          <span>{r.emoji}</span>
+          <img src={r.img} alt="" style={{ width:16, height:16, objectFit:'contain', flexShrink:0 }} />
           {r.count && <span>{r.count}</span>}
         </span>
       ))}
