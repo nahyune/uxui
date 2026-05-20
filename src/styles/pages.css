@@ -483,8 +483,8 @@
 /* 이미지 — 비율 유지, radius:15px, bg:#E2E2E2 */
 .chal-mini-thumb { width: 100%; aspect-ratio: 177 / 109; background: #E2E2E2; border-radius: 15px; overflow: hidden; flex-shrink: 0; }
 .chal-mini-thumb img { width: 100%; height: 100%; object-fit: cover; }
-/* 텍스트 블록 — gap:12px between name-group and meta-group */
-.chal-mini-text { display: flex; flex-direction: column; gap: 12px; }
+/* 텍스트 블록 — gap:10px between name-group and meta-group */
+.chal-mini-text { display: flex; flex-direction: column; gap: 10px; }
 /* 이름 그룹: sub + name (no gap) */
 .chal-mini-name-group { display: flex; flex-direction: column; }
 /* Sub — 13px Medium gray40(#959595) */
