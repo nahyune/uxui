@@ -178,7 +178,7 @@ export default function Challenge() {
                   <div className="chal-join-top">
                     <p className="chal-join-name">{c.name}</p>
                     <span className="chal-p-badge">
-                      <img src="/img/person_02.png" width="15" alt="" />
+                      <img src="/img/person_02.png" width="13" height="13" alt="" />
                       {c.count}명이 함께하고 있어요!
                     </span>
                   </div>
