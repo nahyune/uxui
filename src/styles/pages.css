@@ -413,13 +413,13 @@
 /* 좌측 콘텐츠 — 피그마 left:22.86px, top:16.47px, width:159px */
 .chal-my-left { position: absolute; left: 23px; top: 16px; width: 159px; display: flex; flex-direction: column; gap: 6px; }
 /* D-Day 배지 — 피그마 14px SemiBold, bg:#FFF5E7, #E16500 */
-.chal-dday { display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 5px; background: #FFF5E7; color: #E16500; font-size: 14px; font-weight: 500; letter-spacing: -0.28px; width: fit-content; }
-/* 이름+메타 블록 — 피그마 gap:16px (이름↔정보) */
-.chal-my-name-block { display: flex; flex-direction: column; gap: 16px; }
+.chal-dday { display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 5px; background: #FFF5E7; color: #E16500; font-size: 13px; font-weight: 500; letter-spacing: -0.26px; width: fit-content; }
+/* 이름+메타 블록 — gap:14px (이름↔참여중) */
+.chal-my-name-block { display: flex; flex-direction: column; gap: 14px; }
 /* 이름 — 피그마 18px Medium */
 .chal-my-name { font-size: 18px; font-weight: 500; color: #000; letter-spacing: -0.36px; line-height: 1.5; }
-/* 정보 행 묶음 — 피그마 gap:1px (참여중↔날짜) */
-.chal-my-meta { display: flex; flex-direction: column; gap: 1px; }
+/* 정보 행 묶음 — gap:2px (참여중↔날짜) */
+.chal-my-meta { display: flex; flex-direction: column; gap: 2px; }
 /* 메타 — 피그마 14px Medium #686868 */
 .chal-meta-row { display: flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 500; color: #686868; white-space: nowrap; letter-spacing: -0.28px; }
 /* 썸네일 — 피그마 right:15px, top:23px, 115×115px, radius:10px */
