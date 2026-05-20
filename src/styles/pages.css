@@ -442,7 +442,7 @@
 
 /* 지금 참여하세요 카드 */
 .chal-join-card {
-  flex-shrink: 0; width: 321px; height: 434px;
+  flex-shrink: 0; width: 321px; height: 420px;
   background: #fff; border: 1px solid #E0E0E0;
   border-radius: 15px; overflow: hidden; display: flex; flex-direction: column;
   cursor: pointer; text-decoration: none; color: inherit;
