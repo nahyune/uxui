@@ -461,6 +461,8 @@
 .chal-join-btn { margin-top: auto; display: flex; align-items: center; justify-content: center; height: 47px; border-radius: 10px; font-size: 18px; font-weight: 600; letter-spacing: -0.36px; background: #90D50F; color: #fff; }
 .chal-join-btn.done { background: #F6F6F6; border: 1px solid #E0E0E0; color: #959595; }
 
+.chal-fire { font-size: 12px; }
+
 /* 곧 시작해요 슬라이드 — 모바일 반응형 너비 */
 .chal-coming-slide { flex-shrink: 0; width: min(396px, calc(100vw - 56px)); background: #F6F6F6; border-radius: 10px; padding: 25px 11px; scroll-snap-align: start; }
 /* 2행 flex-col, 행간 30px */

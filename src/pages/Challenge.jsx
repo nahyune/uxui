@@ -101,7 +101,7 @@ export default function Challenge() {
                   <div className="chal-my-name-block">
                     <p className="chal-my-name">{c.name}</p>
                     <div className="chal-my-meta">
-                      <p className="chal-meta-row">🔥 {c.count}명 참여 중</p>
+                      <p className="chal-meta-row"><span className="chal-fire">🔥</span> {c.count}명 참여 중</p>
                       <p className="chal-meta-row"><CalImg />{c.date}</p>
                     </div>
                   </div>
@@ -121,7 +121,7 @@ export default function Challenge() {
         {/* 지금 참여하세요 */}
         <div className="chal-section">
           <div className="pg-section-header">
-            <h2 className="pg-section-title">지금 참여하세요 🔥</h2>
+            <h2 className="pg-section-title">지금 참여하세요 <span className="chal-fire">🔥</span></h2>
             <a href="#" className="pg-more-link">모두보기 <ChevRight /></a>
           </div>
           <div className="chal-hscroll" ref={joinRef}>
@@ -184,7 +184,7 @@ export default function Challenge() {
                               <p className="chal-mini-name">{m.name}</p>
                             </div>
                             <div className="chal-mini-meta">
-                              <p className="chal-mini-count">🔥 {m.count}명 참여 중</p>
+                              <p className="chal-mini-count"><span className="chal-fire">🔥</span> {m.count}명 참여 중</p>
                               <p className="chal-mini-dur"><TimeImg />{m.dur} 챌린지</p>
                             </div>
                           </div>
