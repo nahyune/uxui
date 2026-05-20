@@ -433,7 +433,7 @@
 .chal-my-thumb { position: absolute; right: 12px; top: 16px; width: 105px; height: 105px; border-radius: 10px; overflow: hidden; }
 .chal-my-thumb img { width: 100%; height: 100%; object-fit: cover; }
 /* 프로그레스 영역 */
-.chal-my-progress-area { position: absolute; left: 23px; right: 14px; bottom: 15px; }
+.chal-my-progress-area { position: absolute; left: 23px; right: 14px; bottom: 22px; }
 /* 바 + % 같은 줄 */
 .chal-my-progress-row { display: flex; align-items: center; gap: 8px; }
 /* 트랙 — height:8px, flex:1 */
