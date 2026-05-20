@@ -419,7 +419,7 @@
 /* 좌측 콘텐츠 — 피그마 left:22.86px, top:16.47px, width:159px */
 .chal-my-left { position: absolute; left: 23px; top: 16px; width: 159px; display: flex; flex-direction: column; gap: 8px; }
 /* D-Day 배지 — 피그마 14px SemiBold, bg:#FFF5E7, #E16500 */
-.chal-dday { display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 5px; background: #FFF5E7; color: #E16500; font-size: 14px; font-weight: 600; letter-spacing: -0.28px; width: fit-content; }
+.chal-dday { display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 5px; background: #FFF5E7; color: #E16500; font-size: 14px; font-weight: 500; letter-spacing: -0.28px; width: fit-content; }
 /* 이름+메타 블록 — 피그마 gap:16px (이름↔정보) */
 .chal-my-name-block { display: flex; flex-direction: column; gap: 16px; }
 /* 이름 — 피그마 18px Medium */
