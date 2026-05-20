@@ -482,16 +482,16 @@
 .chal-mini-text { display: flex; flex-direction: column; gap: 12px; }
 /* 이름 그룹: sub + name (no gap) */
 .chal-mini-name-group { display: flex; flex-direction: column; }
-/* Sub — 피그마 14px Medium #686868 */
-.chal-mini-sub  { font-size: 14px; font-weight: 500; color: #686868; letter-spacing: -0.28px; line-height: 1.5; }
-/* Name — 피그마 18px Medium black */
-.chal-mini-name { font-size: 18px; font-weight: 500; color: #000; letter-spacing: -0.36px; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Sub — 13px Medium gray40(#959595) */
+.chal-mini-sub  { font-size: 13px; font-weight: 500; color: #959595; letter-spacing: -0.26px; line-height: 1.5; }
+/* Name — 17px Medium black */
+.chal-mini-name { font-size: 17px; font-weight: 500; color: #000; letter-spacing: -0.34px; line-height: 1.5; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 /* 메타 그룹 — gap:1px */
 .chal-mini-meta { display: flex; flex-direction: column; gap: 1px; }
-/* Count — 피그마 14px Medium black */
-.chal-mini-count { font-size: 14px; font-weight: 500; color: #000; letter-spacing: -0.28px; line-height: 1.5; }
-/* Duration — 피그마 14px Medium black + clock */
-.chal-mini-dur  { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 500; color: #000; letter-spacing: -0.28px; line-height: 1.5; }
+/* Count — 14px Medium gray50(#686868) */
+.chal-mini-count { font-size: 14px; font-weight: 500; color: #686868; letter-spacing: -0.28px; line-height: 1.5; }
+/* Duration — 14px Medium gray50(#686868) + clock */
+.chal-mini-dur  { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 500; color: #686868; letter-spacing: -0.28px; line-height: 1.5; }
 
 /* 슬라이드 인디케이터 */
 .chal-dots { display: flex; justify-content: center; gap: 6px; padding: 12px 0 8px; }
