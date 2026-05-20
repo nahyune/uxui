@@ -145,9 +145,11 @@ export default function Challenge() {
                 </div>
                 <div className="chal-my-thumb"><img src={c.img} alt={c.name} /></div>
                 <div className="chal-my-progress-area">
-                  <span className="chal-my-progress-pct">{c.pct}%</span>
-                  <div className="chal-my-progress-track">
-                    <div className="chal-my-progress-fill" style={{ width: `${c.pct}%` }} />
+                  <div className="chal-my-progress-row">
+                    <div className="chal-my-progress-track">
+                      <div className="chal-my-progress-fill" style={{ width: `${c.pct}%` }} />
+                    </div>
+                    <span className="chal-my-progress-pct">{c.pct}%</span>
                   </div>
                 </div>
               </Link>
