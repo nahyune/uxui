@@ -9,20 +9,54 @@ function useDragScroll() {
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    const drag = { active: false, startX: 0, scrollLeft: 0 }
-    const down  = e => { drag.active = true; drag.startX = e.pageX; drag.scrollLeft = el.scrollLeft; el.style.cursor = 'grabbing'; el.style.userSelect = 'none' }
-    const up    = ()  => { drag.active = false; el.style.cursor = 'grab'; el.style.userSelect = '' }
-    const move  = e => { if (!drag.active) return; e.preventDefault(); el.scrollLeft = drag.scrollLeft - (e.pageX - drag.startX) }
-    el.addEventListener('mousedown', down)
-    el.addEventListener('mouseup', up)
-    el.addEventListener('mouseleave', up)
-    el.addEventListener('mousemove', move, { passive: false })
+
+    let isDown = false
+    let startX = 0
+    let scrollLeft = 0
+    let hasDragged = false
+
+    const onMouseDown = e => {
+      isDown = true
+      hasDragged = false
+      startX = e.pageX
+      scrollLeft = el.scrollLeft
+      el.style.cursor = 'grabbing'
+    }
+
+    const onMouseUp = () => {
+      isDown = false
+      el.style.cursor = 'grab'
+    }
+
+    const onMouseMove = e => {
+      if (!isDown) return
+      e.preventDefault()
+      const dx = e.pageX - startX
+      if (Math.abs(dx) > 3) hasDragged = true
+      el.scrollLeft = scrollLeft - dx
+    }
+
+    // 드래그 중 Link 클릭 방지 (capture phase)
+    const onClick = e => {
+      if (hasDragged) {
+        e.preventDefault()
+        e.stopPropagation()
+        hasDragged = false
+      }
+    }
+
+    el.addEventListener('mousedown', onMouseDown)
+    el.addEventListener('click', onClick, true)
+    // document에 붙여야 요소 밖으로 나가도 드래그 유지
+    document.addEventListener('mouseup', onMouseUp)
+    document.addEventListener('mousemove', onMouseMove, { passive: false })
     el.style.cursor = 'grab'
+
     return () => {
-      el.removeEventListener('mousedown', down)
-      el.removeEventListener('mouseup', up)
-      el.removeEventListener('mouseleave', up)
-      el.removeEventListener('mousemove', move)
+      el.removeEventListener('mousedown', onMouseDown)
+      el.removeEventListener('click', onClick, true)
+      document.removeEventListener('mouseup', onMouseUp)
+      document.removeEventListener('mousemove', onMouseMove)
     }
   }, [])
   return ref
