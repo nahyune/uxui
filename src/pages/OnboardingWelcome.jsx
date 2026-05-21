@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import '../styles/ob-welcome.css'
 
 export default function OnboardingWelcome() {
+  useEffect(() => {
+    document.body.style.background = '#fff'
+    return () => { document.body.style.background = '' }
+  }, [])
   return (
     <div className="ob-welcome-phone">
 

@@ -1,9 +1,14 @@
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import '../styles/ob1-figma.css'
 import '../styles/ob2-figma.css'
 
 export default function Onboarding02() {
   const navigate = useNavigate()
+  useEffect(() => {
+    document.body.style.background = '#fff'
+    return () => { document.body.style.background = '' }
+  }, [])
 
   return (
     <div className="ob1-phone" onClick={() => navigate('/onboarding/3')}>
