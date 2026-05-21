@@ -4,7 +4,7 @@
 
 .home-phone {
   width: 430px; height: 932px;
-  background: #fff;
+  background: #90D50F;
   overflow: hidden;
   box-shadow: none;
   display: flex; flex-direction: column;
@@ -32,7 +32,7 @@
 }
 
 /* ── 헤더 ── */
-.home-top { padding: 16px 16.5px 0; background: transparent; }
+.home-top { padding: calc(env(safe-area-inset-top, 0px) + 16px) 16.5px 0; background: transparent; }
 
 .home-app-row {
   display: flex; align-items: center; justify-content: space-between;

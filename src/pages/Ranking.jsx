@@ -44,16 +44,15 @@ export default function Ranking() {
     <div className="phone rk-phone">
 
       {/* 헤더 */}
-      <div className="rk-header">
-        <div className="rk-status-bar">
-          <span className="rk-time">9:35</span>
-          <img src="/img/bell-off.png" alt="" width="17" height="17" style={{ objectFit:'contain' }} />
-        </div>
-        <div className="rk-header-nav">
-          <Link to="/chatting-challenge" className="pg-back">
-            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 1 1 9 9 17"/></svg>
-          </Link>
-          <span className="rk-title">랭킹</span>
+      <div className="ct-header">
+        <div className="status-bar" />
+        <div className="ct-header-nav">
+          <div className="ct-header-left">
+            <Link to="/chatting-challenge" className="pg-back">
+              <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 1 1 9 9 17"/></svg>
+            </Link>
+            <span className="rk-title">랭킹</span>
+          </div>
         </div>
       </div>
 

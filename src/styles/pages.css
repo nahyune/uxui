@@ -514,7 +514,7 @@
 .cd-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; }
 .cd-scroll::-webkit-scrollbar { display: none; }
 /* 히어로 블록 — 고유 배경색, 스크롤과 함께 이동 */
-.cd-hero-block { display: flex; flex-direction: column; padding-top: env(safe-area-inset-top, 0px); }
+.cd-hero-block { display: flex; flex-direction: column; }
 .cd-hero-muji { background: #CBEB8D; padding-bottom: 60px; position: relative; }
 .cd-hero-cafe { background: #F5D5B5; }
 /* 네비 — 투명, 히어로 배경이 비침 */
@@ -549,7 +549,7 @@
 .cd-tag { padding: 7px 17px; background: #F6F6F6; border-radius: 80px; font-size: 14px; font-weight: 500; color: #686868; letter-spacing: -0.28px; white-space: nowrap; }
 /* 참여도 박스 */
 .cd-participation-box { background: #fff; border-radius: 15px; height: 315px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 36px; position: relative; overflow: hidden; }
-.cd-dashed-circle { width: 140px; height: 140px; border-radius: 70px; background: #F9FAF1; border: 5px dashed #90D50F; display: flex; align-items: center; justify-content: center; }
+.cd-dashed-circle { width: 140px; height: 140px; border-radius: 70px; background: #F9FAF1; border: 2px dashed #90D50F; display: flex; align-items: center; justify-content: center; }
 .cd-dashed-text { font-size: 24px; font-weight: 700; color: #6AA105; letter-spacing: -0.48px; text-align: center; line-height: 1.5; }
 .cd-participation-msg { font-size: 16px; font-weight: 500; color: #000; letter-spacing: -0.32px; line-height: 1.5; text-align: center; margin-top: 44px; }
 .cd-highlight { color: #E16500; }
@@ -664,8 +664,8 @@
 .ct-reaction-item { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #686868; letter-spacing: -0.24px; }
 
 /* 입력창 — 피그마 height:102px */
-.ct-input-area { flex-shrink: 0; background: #fff; }
-.ct-input-row { display: flex; align-items: center; padding: 11px 16px; gap: 0; }
+.ct-input-area { flex-shrink: 0; background: #fff; padding-bottom: 40px; }
+.ct-input-row { display: flex; align-items: center; padding: 10px 16px 0; gap: 0; }
 /* Plus 버튼 */
 .ct-plus-btn { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; margin-right: 19px; }
 /* 입력 필드 — 피그마 bg:#EDEDED, radius:26px, height:52px */
@@ -737,8 +737,8 @@
 .chc-spend-item { display: flex; justify-content: space-between; font-size: 15px; font-weight: 500; color: #000; letter-spacing: -0.3px; }
 
 /* 입력창 변형 — #EDEDED 배경, #AFAFAF 전송 버튼 */
-.chc-input-field { background: #EDEDED; }
-.chc-send-btn { background: #AFAFAF; }
+.chc-input-field { background: #F6F6F6; }
+.chc-send-btn { background: #E0E0E0; }
 
 /* ══════════════════════════════════════
    채팅방 설정 (ChattingSetting)
@@ -869,11 +869,11 @@
 .noti-time-status { font-size: 18px; font-weight: 600; color: #000; line-height: 1.5; }
 .noti-pg-header { display: flex; align-items: center; }
 .noti-back-row { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; color: inherit; }
-.noti-pg-title { font-size: 24px; font-weight: 600; color: #000; letter-spacing: -0.48px; line-height: 1.5; }
+.noti-pg-title { font-size: 20px; font-weight: 600; color: #000; letter-spacing: -0.4px; line-height: 1.5; }
 .noti-list-pg { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F1F1F1; display: flex; flex-direction: column; gap: 15px; padding: 16px; }
 .noti-list-pg::-webkit-scrollbar { display: none; }
 .noti-card-pg { display: flex; align-items: flex-start; gap: 22px; padding: 13px 10px; background: #fff; border-radius: 15px; }
-.noti-dot { width: 6px; height: 6px; border-radius: 50%; background: #AFAFAF; flex-shrink: 0; margin-top: 6px; }
+.noti-dot { width: 10px; height: 10px; border-radius: 50%; background: #AFAFAF; flex-shrink: 0; margin-top: 6px; }
 .noti-dot.unread { background: #F69A21; }
 .noti-text-pg { display: flex; flex-direction: column; gap: 5px; flex: 1; }
 .noti-msg-pg { font-size: 16px; font-weight: 500; color: #000; line-height: 1.5; letter-spacing: -0.32px; margin: 0; }
@@ -922,7 +922,7 @@
 .rk-goal-text { color: #686868; }
 /* ── 랭킹 리스트 ── */
 .rk-rank-list { list-style: none; display: flex; flex-direction: column; padding: 0; margin: 0; }
-.rk-rank-row { display: flex; align-items: center; gap: 0; padding: 25px 12px; border-bottom: 1px solid #E6E6E6; }
+.rk-rank-row { display: flex; align-items: center; gap: 0; padding: 14px 12px; border-bottom: 1px solid #E6E6E6; }
 .rk-rank-row:last-child { border: none; }
 .rk-rank-left { width: 79px; flex-shrink: 0; display: flex; align-items: center; justify-content: flex-start; }
 .rk-crown { width: 58px; height: 44px; object-fit: contain; }
@@ -930,7 +930,7 @@
 .rk-rank-user { display: flex; align-items: center; gap: 14px; flex: 1; }
 .rk-avatar { width: 38px; height: 38px; border-radius: 50%; background: #E0E0E0; flex-shrink: 0; }
 .rk-me-badge { width: 20px; height: 20px; border-radius: 50%; background: #90D50F; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #fff; letter-spacing: -0.26px; flex-shrink: 0; }
-.rk-name { font-size: 17px; font-weight: 600; color: #000; letter-spacing: -0.34px; white-space: nowrap; }
+.rk-name { font-size: 15px; font-weight: 600; color: #000; letter-spacing: -0.3px; white-space: nowrap; }
 .rk-streak-badge { background: #EFF6E2; border-radius: 12px; padding: 3px 13px; font-size: 13px; font-weight: 600; color: #71A908; letter-spacing: -0.26px; white-space: nowrap; flex-shrink: 0; }
 .rk-view-all { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 17px; font-weight: 500; color: #686868; letter-spacing: -0.34px; padding: 8px 0; cursor: pointer; }
 
@@ -940,7 +940,7 @@
 /* ── 카페금지 챌린지 상세 — 피그마 486-274 정확 수치 ── */
 /* 히어로 블록 — 이미지가 카드 뒤로 깔림, 커피컵이 카드 위에 보임 */
 .cd-phone-cafe { background: #F5D5B5; }
-.cdc-hero-block { position: relative; height: 340px; overflow: hidden; flex-shrink: 0; background: #F5D5B5; padding-top: env(safe-area-inset-top, 0px); }
+.cdc-hero-block { position: relative; height: 340px; overflow: hidden; flex-shrink: 0; background: #F5D5B5; }
 /* 카드가 이미지 하단부(원두 부분)만 덮음, z-index로 카드가 이미지 앞 */
 .cdc-cards { margin-top: -50px; position: relative; z-index: 1; }
 .cdc-hero-block { z-index: 0; }
