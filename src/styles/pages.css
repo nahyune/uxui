@@ -842,7 +842,7 @@
 .my-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; }
 .my-scroll::-webkit-scrollbar { display: none; }
 .my-profile { display: flex; justify-content: center; padding: 20px 0 16px; }
-.my-avatar { width: 88px; height: 88px; border-radius: 50%; overflow: hidden; background: #E0E0E0; }
+.my-avatar { width: 108px; height: 108px; border-radius: 50%; overflow: hidden; background: #E0E0E0; }
 .my-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .my-stat-card { margin: 0 16px 14px; background: #F6F6F6; border: 1px solid #E0E0E0; border-radius: 15px; padding: 18px 0; display: flex; align-items: center; }
 .my-stat-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }

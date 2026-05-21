@@ -18,7 +18,6 @@ export default function MyPage() {
       </div>
 
       <div className="main-scroll my-scroll">
-        <h1 className="scroll-title">마이페이지</h1>
         <div className="my-profile">
           <div className="my-avatar">
             <img src="/img/my_cat.png" alt="프로필" />

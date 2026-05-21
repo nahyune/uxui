@@ -200,31 +200,4 @@ html.preview-360 .ob-welcome-phone {
   }
 }
 
-/* ── 430px 미만 — zoom으로 비율 축소 (transform과 달리 레이아웃도 줄어 클리핑 없음) ── */
-@media screen and (max-width: 429px) {
-  html, body {
-    width: 100vw;
-    height: 100dvh;
-    overflow: hidden;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #fff !important;
-    display: block !important;
-  }
-  #root {
-    width: 430px;
-    height: 932px;
-    zoom: var(--phone-scale, 1);
-    overflow: hidden;
-  }
-  .phone,
-  .home-phone,
-  .ob1-phone,
-  .ob3-phone,
-  .ob-welcome-phone,
-  .screen,
-  .noti-screen {
-    width: 430px !important;
-    height: 932px !important;
-  }
-}
+/* viewport meta(width=430)로 스케일 처리 — CSS 별도 조작 불필요 */

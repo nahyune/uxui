@@ -5,6 +5,17 @@
     <link rel="icon" type="image/png" href="/img/icon-180.png" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- 430px 미만 기기: viewport를 430으로 고정하고 브라우저가 직접 스케일 처리 -->
+    <script>
+      (function(){
+        var sw = Math.min(screen.width, screen.height);
+        if(sw < 430){
+          var s = (sw / 430).toFixed(4);
+          document.querySelector('meta[name=viewport]').content =
+            'width=430,initial-scale='+s+',viewport-fit=cover';
+        }
+      })();
+    </script>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="MOA" />
@@ -26,14 +37,14 @@
     <meta property="og:site_name" content="MOA" />
     <meta property="og:title" content="MOA" />
     <meta property="og:description" content="아끼고, 기록하고, 함께 바꾸는 소비 습관 챌린지" />
-    <meta property="og:image" content="https://moa-savings-react.vercel.app/img/og-cat.png" />
+    <meta property="og:image" content="https://moa-savings-react.vercel.app/img/og_cat.png" />
     <meta property="og:url" content="https://moa-savings-react.vercel.app" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="MOA" />
     <meta name="twitter:description" content="아끼고, 기록하고, 함께 바꾸는 소비 습관 챌린지" />
-    <meta name="twitter:image" content="https://moa-savings-react.vercel.app/img/og-cat.png" />
+    <meta name="twitter:image" content="https://moa-savings-react.vercel.app/img/og_cat.png" />
   </head>
   <body>
     <div id="root"></div>

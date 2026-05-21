@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 
 function applyPhoneScale() {
-  const scale = window.innerWidth <= 429
-    ? Math.min(window.innerWidth / 430, window.innerHeight / 932)
-    : 1
-  document.documentElement.style.setProperty('--phone-scale', scale)
+  const sw = Math.min(screen.width, screen.height)
+  const viewport = document.querySelector('meta[name=viewport]')
+  if (sw < 430) {
+    const scale = (sw / 430).toFixed(4)
+    viewport.content = `width=430,initial-scale=${scale},viewport-fit=cover`
+    document.documentElement.style.setProperty('--phone-scale', scale)
+  } else {
+    viewport.content = 'width=device-width,initial-scale=1.0,viewport-fit=cover'
+    document.documentElement.style.setProperty('--phone-scale', 1)
+  }
 }
 
 applyPhoneScale()
