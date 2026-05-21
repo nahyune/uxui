@@ -200,7 +200,7 @@ html.preview-360 .ob-welcome-phone {
   }
 }
 
-/* ── 430px 미만 — root 비율 스케일 (768px 이후에 와야 오버라이드 적용됨) ── */
+/* ── 430px 미만 — zoom으로 비율 축소 (transform과 달리 레이아웃도 줄어 클리핑 없음) ── */
 @media screen and (max-width: 429px) {
   html, body {
     width: 100vw;
@@ -214,11 +214,9 @@ html.preview-360 .ob-welcome-phone {
   #root {
     width: 430px;
     height: 932px;
-    transform: scale(var(--phone-scale, 1));
-    transform-origin: top left;
+    zoom: var(--phone-scale, 1);
     overflow: hidden;
   }
-  /* 768px의 100vw를 430px로 되돌려야 스케일이 올바르게 동작 */
   .phone,
   .home-phone,
   .ob1-phone,
