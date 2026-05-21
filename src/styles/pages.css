@@ -541,10 +541,10 @@
 .cd-p-badge { display: inline-flex; align-items: center; gap: 1px; padding: 5px 10px; background: #EFF6E2; border-radius: 5px; font-size: 14px; font-weight: 600; color: #649900; letter-spacing: -0.28px; width: fit-content; }
 /* 소개/참여도 섹션 */
 .cd-section { display: flex; flex-direction: column; gap: 16px; padding: 0 16px; background: #F2F2F2; }
-.cd-section-title { font-size: 18px; font-weight: 500; color: #000; letter-spacing: -0.36px; line-height: 1.5; margin: 0; }
+.cd-section-title { font-size: 19px; font-weight: 500; color: #000; letter-spacing: -0.38px; line-height: 1.5; margin: 0; }
 /* 소개 박스 */
 .cd-intro-box { background: #fff; border-radius: 15px; padding: 45px 15px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
-.cd-intro-text { font-size: 15px; font-weight: 400; color: #000; line-height: 1.5; letter-spacing: -0.3px; text-align: center; width: 297px; margin: 0; }
+.cd-intro-text { font-size: 18px; font-weight: 400; color: #000; line-height: 1.5; letter-spacing: -0.36px; text-align: center; width: 297px; margin: 0; }
 .cd-tags { display: flex; gap: 11px; align-items: center; flex-wrap: wrap; justify-content: center; }
 .cd-tag { padding: 7px 17px; background: #F6F6F6; border-radius: 80px; font-size: 14px; font-weight: 500; color: #686868; letter-spacing: -0.28px; white-space: nowrap; }
 /* 참여도 박스 */
@@ -949,7 +949,7 @@
 .cdc-hero-nav { position: absolute; top: 62px; left: 17.5px; right: 17.5px; display: flex; align-items: center; justify-content: space-between; }
 /* 소개 박스 — px 15, py 45 */
 .cdc-intro-box { background: #fff; border-radius: 15px; padding: 45px 15px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
-.cdc-intro-text { font-size: 15px; font-weight: 400; color: #000; line-height: 1.5; letter-spacing: -0.3px; text-align: center; width: 297px; margin: 0; }
+.cdc-intro-text { font-size: 18px; font-weight: 400; color: #000; line-height: 1.5; letter-spacing: -0.36px; text-align: center; width: 297px; margin: 0; }
 .cdc-tag-row { display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap; }
 /* 참여도 박스 — h 446px, 내부 absolute */
 .cdc-part-box { background: #fff; border-radius: 16px; height: 446px; position: relative; overflow: hidden; width: 100%; }
