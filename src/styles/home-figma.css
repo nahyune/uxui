@@ -4,7 +4,7 @@
 
 .home-phone {
   width: 430px; height: 932px;
-  background: #90D50F;
+  background: #F2F2F2;
   overflow: hidden;
   box-shadow: none;
   display: flex; flex-direction: column;
@@ -12,7 +12,7 @@
 }
 
 /* 스크롤 */
-.home-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; position: relative; }
+.home-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; position: relative; background: #F2F2F2; }
 .home-scroll::-webkit-scrollbar { display: none; }
 
 /* 초록 배경 데코 — rounded-bl/br 75px */
