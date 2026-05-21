@@ -97,7 +97,7 @@ export default function ChattingSetting() {
         <div className="css-card">
           <div className="css-card-header">
             <div className="css-card-header-left">
-              <img src="/img/setting_bookmark.png" alt="" width="18" height="22" style={{ objectFit:'contain' }} />
+              <img src="/img/setting_bookmark.png" alt="" width="14" height="17" style={{ objectFit:'contain' }} />
               <span className="css-card-title">나의 소비 기록</span>
             </div>
             <a href="#" className="css-card-more">전체보기 <ChevRight /></a>

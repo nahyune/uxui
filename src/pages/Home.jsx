@@ -64,18 +64,21 @@ export default function Home() {
 
           {/* 챌린지 랭킹 카드 */}
           <div className="home-rank-card">
+            {/* 트로피: left15 top12 */}
             <img src="/img/home_raking.png" alt="" className="home-rank-trophy" />
+            {/* 텍스트: left98 top21 */}
             <div className="home-rank-info">
               <p className="home-rank-title">소비 기록 챌린지</p>
               <p className="home-rank-sub">
                 내 순위 <span className="home-rank-highlight">10등</span> / 16명 중
               </p>
-              <div className="home-rank-bar-wrap">
-                <div className="home-rank-bar-track">
-                  <div className="home-rank-bar-fill" style={{ width: '66%' }} />
-                </div>
-                <span className="home-rank-pct">77%</span>
+            </div>
+            {/* 진행바: left98 top68 — 카드 직속 자식으로 배치해야 카드 기준 절대좌표 적용 */}
+            <div className="home-rank-bar-wrap">
+              <div className="home-rank-bar-track">
+                <div className="home-rank-bar-fill" style={{ width: '77%' }} />
               </div>
+              <span className="home-rank-pct">77%</span>
             </div>
           </div>
 

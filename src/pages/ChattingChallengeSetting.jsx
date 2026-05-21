@@ -35,13 +35,14 @@ const spendCards = [
 ]
 
 const avatarColors = {
-  '하나':            '#FFD54F',
-  '텀블러쓰기3일차': '#FFB74D',
-  '민지':            '#F48FB1',
+  '지은':            '#B39DDB',
   '라떼말고물':      '#A8D8A8',
+  '민지':            '#F48FB1',
+  '텀블러쓰기3일차': '#FFB74D',
+  '하나':            '#FFD54F',
 }
 const members = [
-  { name:'하나', isMe:false }, { name:'텀블러쓰기3일차' }, { name:'민지' }, { name:'라떼말고물' },
+  { name:'지은', isMe:true }, { name:'라떼말고물' }, { name:'민지' }, { name:'텀블러쓰기3일차' }, { name:'하나' },
 ]
 
 const ChevRight = () => (
@@ -87,8 +88,8 @@ export default function ChattingChallengeSetting() {
           </div>
           <span className="css-room-name">카페 금지 챌린지 ☕</span>
           <Link to="/new-challenge" className="css-cta-btn">
-            <img src="/img/chat_start.png" alt="" width="25" height="25" style={{ objectFit:'contain' }} />
-            챌린지를 시작해볼까요?
+            <img src="/img/check_plus.png" alt="" width="36" height="36" style={{ objectFit:'contain' }} />
+            챌린지 추가하기
           </Link>
         </div>
 
@@ -96,7 +97,7 @@ export default function ChattingChallengeSetting() {
         <div className="css-card">
           <div className="css-card-header">
             <div className="css-card-header-left">
-              <img src="/img/setting_bookmark.png" alt="" width="18" height="22" style={{ objectFit:'contain' }} />
+              <img src="/img/setting_bookmark.png" alt="" width="14" height="17" style={{ objectFit:'contain' }} />
               <span className="css-card-title">나의 소비 기록</span>
             </div>
             <a href="#" className="css-card-more">전체보기 <ChevRight /></a>
@@ -130,7 +131,7 @@ export default function ChattingChallengeSetting() {
             <div className="css-card-header-left">
               <img src="/img/setting_person.png" alt="" width="17" height="21" style={{ objectFit:'contain' }} />
               <span className="css-card-title">대화 상대</span>
-              <span className="css-member-count">{members.length}</span>
+              <span className="css-member-count">83</span>
             </div>
           </div>
           <ul className="css-member-list">
@@ -143,15 +144,13 @@ export default function ChattingChallengeSetting() {
                 </div>
               </li>
             ))}
-            <li className="css-member-item">
-              <div className="css-invite-avatar">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" strokeWidth="2.5" strokeLinecap="round">
-                  <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-                </svg>
-              </div>
-              <span className="css-invite-text">초대하기</span>
-            </li>
           </ul>
+          <div className="css-member-more-row">
+            <svg width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="#686868" strokeWidth="1.5" strokeLinecap="round">
+              <polyline points="1 1 5 6 9 1"/>
+            </svg>
+            <span className="css-member-more-text">더보기</span>
+          </div>
         </div>
 
         {/* 채팅방 나가기 */}
