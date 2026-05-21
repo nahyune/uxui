@@ -1,6 +1,12 @@
 /* ══════════════════════════════════════
    디자인 토큰
 ══════════════════════════════════════ */
+/* 브라우저 폰트 자동 확대 방지 */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 :root {
   --primary:        #90D50F;
   --primary-light:  #EFF6E2;
@@ -96,6 +102,78 @@ body {
    모바일 전체화면 대응
    - position:fixed 대신 자연스러운 뷰포트 채우기
 ══════════════════════════════════════ */
+/* ── 사이즈 토글 버튼 (데스크탑 전용) ── */
+.size-toggle {
+  position: fixed;
+  top: 50%;
+  left: calc(50% + 230px);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 9999;
+}
+.size-btn {
+  width: 52px;
+  height: 32px;
+  border-radius: 8px;
+  background: #d0d0d0;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.size-btn.active {
+  background: #333;
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .size-toggle { display: none; }
+}
+
+/* ── 360 프리뷰 모드 ── */
+html.preview-360 .phone,
+html.preview-360 .home-phone,
+html.preview-360 .ob1-phone,
+html.preview-360 .ob3-phone,
+html.preview-360 .ob-welcome-phone {
+  transform: scale(0.8372);
+  transform-origin: top center;
+}
+
+/* 430px 미만 뷰포트 — root 전체 비율 스케일 */
+@media screen and (max-width: 429px) {
+  html, body {
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    display: block !important;
+  }
+  #root {
+    width: 430px;
+    height: 932px;
+    transform: scale(var(--phone-scale, 1));
+    transform-origin: top left;
+    overflow: hidden;
+  }
+  /* 768px 쿼리의 100vw 덮어쓰기 방지 — 스케일 기준 유지 */
+  .phone,
+  .home-phone,
+  .ob1-phone,
+  .ob3-phone,
+  .ob-welcome-phone,
+  .screen,
+  .noti-screen {
+    width: 430px !important;
+    height: 932px !important;
+  }
+}
+
 @media screen and (max-width: 768px) {
   html {
     height: 100%;

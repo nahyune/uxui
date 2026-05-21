@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import SizeToggle from './components/SizeToggle'
 import Onboarding01 from './pages/Onboarding01'
 import Onboarding02 from './pages/Onboarding02'
 import Onboarding03 from './pages/Onboarding03'
@@ -22,6 +23,7 @@ import MyPage from './pages/MyPage'
 export default function App() {
   return (
     <BrowserRouter>
+      <SizeToggle />
       <Routes>
         <Route path="/" element={<Navigate to="/onboarding/1" replace />} />
         <Route path="/onboarding/1" element={<Onboarding01 />} />
