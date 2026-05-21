@@ -30,19 +30,18 @@ function useDragScroll() {
 
 const spendCards = [
   { count: 6,  items: [{ l:'☕ 스타벅스', a:'6,100원' }, { l:'🍲 용가훠궈', a:'18,900원' }, { l:'💳 넷플릭스', a:'6,750원' }] },
-  { count: 8,  items: [{ l:'🎤 노래방',   a:'10,000원' }, { l:'🍿 CGV',     a:'15,000원' }, { l:'📦 쿠팡',    a:'9,800원' }] },
-  { count: 10, items: [{ l:'🛍 무신사',   a:'62,280원' }, { l:'🎧 애플뮤직',a:'8,900원'  }, { l:'☕ 메가커피', a:'3,500원' }] },
+  { count: 4,  items: [{ l:'💊 약국',     a:'3,500원' }, { l:'🎧 애플뮤직', a:'8,900원' },  { l:'🧺 다이소',  a:'1,000원' }] },
+  { count: 7,  items: [{ l:'🍿 CGV',      a:'15,000원'}, { l:'📦 쿠팡',    a:'9,800원' },   { l:'☕ 메가커피', a:'3,500원' }] },
 ]
 
 const avatarColors = {
-  '지은': '#B39DDB',
-  '미주': '#F48FB1',
-  '수지': '#90CAF9',
-  '주은': '#A5D6A7',
-  '찬희': '#FFD54F',
+  '하나':            '#FFD54F',
+  '텀블러쓰기3일차': '#FFB74D',
+  '민지':            '#F48FB1',
+  '라떼말고물':      '#A8D8A8',
 }
 const members = [
-  { name:'지은', isMe:true }, { name:'미주' }, { name:'수지' }, { name:'주은' }, { name:'찬희' },
+  { name:'하나', isMe:false }, { name:'텀블러쓰기3일차' }, { name:'민지' }, { name:'라떼말고물' },
 ]
 
 const ChevRight = () => (
@@ -51,7 +50,7 @@ const ChevRight = () => (
   </svg>
 )
 
-export default function ChattingSetting() {
+export default function ChattingChallengeSetting() {
   const navigate = useNavigate()
   const sliderRef = useDragScroll()
 
@@ -63,7 +62,7 @@ export default function ChattingSetting() {
         <div className="status-bar" />
         <div className="ct-header-nav">
           <div className="ct-header-left">
-            <Link to="/chatting" className="pg-back">
+            <Link to="/chatting-challenge" className="pg-back">
               <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 1 1 9 9 17"/></svg>
             </Link>
             <span className="css-title">설정</span>
@@ -84,9 +83,9 @@ export default function ChattingSetting() {
         {/* 프로필 섹션 */}
         <div className="css-profile-section">
           <div className="css-room-avatar">
-            <img src="/img/chat_wallet.png" alt="통장 지키기 모임" />
+            <img src="/img/chat_coffee.png" alt="카페 금지 챌린지" />
           </div>
-          <span className="css-room-name">통장 지키기 모임</span>
+          <span className="css-room-name">카페 금지 챌린지 ☕</span>
           <Link to="/new-challenge" className="css-cta-btn">
             <img src="/img/chat_start.png" alt="" width="25" height="25" style={{ objectFit:'contain' }} />
             챌린지를 시작해볼까요?

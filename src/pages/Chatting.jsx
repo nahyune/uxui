@@ -3,9 +3,9 @@ import '../styles/global.css'
 import '../styles/pages.css'
 
 const avatarColors = {
-  '주은': '#A8D8A8',
+  '주은': '#A5D6A7',
   '수지': '#90CAF9',
-  '미주': '#F48FB1',
+  '미주': '#EF9A9A',
   '찬희': '#FFD54F',
 }
 
@@ -55,7 +55,7 @@ const Reactions = ({ reactions, right }) => (
     <span className="ct-reaction-badge">
       {reactions.map((r, i) => (
         <span key={i} className="ct-reaction-item">
-          <img src={r.img} alt="" style={{ width:16, height:16, objectFit:'contain', flexShrink:0 }} />
+          <img src={r.img} alt="" style={{ width:15, height:15, objectFit:'contain', flexShrink:0 }} />
           {r.count && <span>{r.count}</span>}
         </span>
       ))}
@@ -77,10 +77,7 @@ export default function Chatting() {
             <div className="ct-room-info">
               <span className="ct-room-title">통장 지키기 모임</span>
               <div className="ct-room-meta">
-                <svg width="10" height="11" viewBox="0 0 10 12" fill="none" stroke="#AFAFAF" strokeWidth="1.5" strokeLinecap="round">
-                  <path d="M5 6.5c2.2 0 4 .9 4 2v1H1v-1c0-1.1 1.8-2 4-2z"/>
-                  <circle cx="5" cy="3" r="2"/>
-                </svg>
+                <img src="/img/person_01.png" alt="" width="10" height="11" style={{ objectFit: 'contain', flexShrink: 0 }} />
                 5
               </div>
             </div>
@@ -143,7 +140,7 @@ export default function Chatting() {
       <div className="ct-input-area">
         <div className="ct-input-row">
           <button className="ct-plus-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#686868" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div className="ct-input-field">
             <input type="text" className="ct-msg-input" placeholder="메시지를 입력해주세요" />

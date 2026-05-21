@@ -30,8 +30,10 @@
       "Bash(mkdir public *)",
       "Bash(mklink /J public\\\\img img)",
       "Bash(echo \"placeholder\" > d:\\\\uxui-react\\\\index.html && echo \"created\")",
-      "mcp__claude_ai_Figma__get_screenshot"
+      "mcp__claude_ai_Figma__get_screenshot",
+      "Bash(vercel --prod)"
     ],
+    "defaultMode": "bypassPermissions",
     "additionalDirectories": [
       "d:\\uxui\\.claude",
       "d:\\uxui-react",

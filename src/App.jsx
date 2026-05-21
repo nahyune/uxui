@@ -13,6 +13,7 @@ import Chat from './pages/Chat'
 import Chatting from './pages/Chatting'
 import ChattingChallenge from './pages/ChattingChallenge'
 import ChattingSetting from './pages/ChattingSetting'
+import ChattingChallengeSetting from './pages/ChattingChallengeSetting'
 import Notification from './pages/Notification'
 import Ranking from './pages/Ranking'
 import NewChallenge from './pages/NewChallenge'
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/chatting" element={<Chatting />} />
         <Route path="/chatting-challenge" element={<ChattingChallenge />} />
         <Route path="/chatting-setting" element={<ChattingSetting />} />
+        <Route path="/chatting-challenge-setting" element={<ChattingChallengeSetting />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/new-challenge" element={<NewChallenge />} />

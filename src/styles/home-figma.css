@@ -1,241 +1,193 @@
 /* ══════════════════════════════════════
-   홈 화면 — Figma 기준
+   홈 — 피그마 479-935 기준
 ══════════════════════════════════════ */
 
-/* ── 폰 컨테이너 ── */
 .home-phone {
-  width: 430px;
-  height: 932px;
-  background: #ffffff;
-  border-radius: 0;
+  width: 430px; height: 932px;
+  background: #fff;
   overflow: hidden;
   box-shadow: 0 32px 80px rgba(0,0,0,0.28);
-  display: flex;
-  flex-direction: column;
+  display: flex; flex-direction: column;
   position: relative;
 }
 
-/* ── 스크롤 영역 (로고 포함 전체 스크롤) ── */
-.home-scroll {
-  flex: 1;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scrollbar-width: none;
-  position: relative;
-}
+/* 스크롤 */
+.home-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; position: relative; }
 .home-scroll::-webkit-scrollbar { display: none; }
 
-/* 초록 배경 데코 — 로고도 스크롤 안에 있으므로 전체 261px */
+/* 초록 배경 데코 — rounded-bl/br 75px */
 .home-green-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 430px;
-  height: 261px;
+  position: absolute; top: 0; left: 0;
+  width: 430px; height: 271px;
   background: #90D50F;
-  border-radius: 0 0 85px 85px;
+  border-radius: 0 0 75px 75px;
   z-index: 0;
 }
 
-/* 콘텐츠 래퍼 */
+/* 콘텐츠 */
 .home-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column;
   padding-bottom: 40px;
 }
 
-/* ── 로고 헤더 (스크롤과 함께 올라감) ── */
+/* ── 헤더 ── */
+.home-top { padding: 16px 16.5px 0; }
+
 .home-app-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 78px;
-  padding: 8px 16px;
-  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 62px;
 }
-
-.home-logo { width: 145px; height: 62px; object-fit: contain; display: block; }
-
-.home-alert-btn {
-  display: flex; align-items: center; justify-content: center;
-  width: 24px; height: 27px; cursor: pointer; text-decoration: none;
-}
-.home-alert-img { width: 24px; height: 27px; object-fit: contain; display: block; }
+.home-logo { width: 145px; height: 55px; object-fit: contain; }
+.home-alert-btn { display: flex; align-items: center; background: none; border: none; cursor: pointer; }
+.home-alert-img { width: 24px; height: 24px; object-fit: contain; }
 
 /* ── 히어로 카드 ── */
 .home-hero-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.06);
+  margin: 24px 16px 0;
+  height: 211px;
   position: relative;
-  width: 398px;
-  height: 297px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
   overflow: hidden;
-  margin: 16px 16px 0;   /* 로고 바로 아래에서 시작 */
   flex-shrink: 0;
 }
 
-/* 상단 회색 태그 */
-.hero-badge-gray {
-  position: absolute;
-  left: 24px; top: 59px;
-  background: #eff6e2;
-  border-radius: 7px;
-  padding: 8px 10px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #686868;
-  letter-spacing: -0.32px;
-  line-height: 1.5;
-  white-space: nowrap;
+.home-hero-top-badge {
+  position: absolute; top: 28px; left: 232px;
+  display: flex; align-items: center; gap: 4px;
+  background: #FFF5E7;
+  border-radius: 19px;
+  padding: 7px 16px;
+  font-size: 14px; font-weight: 500; color: #DD7520;
+  letter-spacing: -0.28px; white-space: nowrap;
 }
 
-/* 고양이 이미지 */
-.hero-cat-wrap {
-  position: absolute;
-  left: 10px; top: 116px;
-  width: 131px; height: 166px;
-  display: flex; align-items: center; justify-content: center;
+.home-hero-left {
+  position: absolute; top: 39px; left: 25px; width: 204px;
+  display: flex; flex-direction: column; gap: 13px;
 }
-.hero-cat-img {
-  width: 100%; height: 100%;
-  object-fit: contain;
-  transform: scaleX(-1);
-}
-
-/* 절약 금액 */
-.hero-savings {
-  position: absolute;
-  left: 208px; top: 149px;
-  right: 0;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.hero-savings-label {
+.home-savings-label {
   font-size: 17px; font-weight: 500; color: #649900;
-  letter-spacing: -0.34px; line-height: 1.5;
-  margin-bottom: -5px; width: 100%; text-align: right;
+  letter-spacing: -0.34px; line-height: 1.5; margin: 0;
 }
-.hero-savings-amount {
-  font-size: 36px; font-weight: 600; color: #000000;
-  letter-spacing: -0.72px; line-height: 1.5;
-  text-align: right; width: 100%;
+.home-savings-amount {
+  font-size: 36px; font-weight: 600; color: #000;
+  letter-spacing: -0.72px; line-height: 1.5; margin: -2px 0 0;
 }
-
-/* 하단 초록 태그 */
-.hero-badge-green {
-  position: absolute;
-  left: 176px; top: 224px;
-  background: #eff6e2;
-  border-radius: 7px;
+.home-savings-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #EFF6E2; border-radius: 7px;
   padding: 8px 10px;
-  font-size: 16px; font-weight: 500; color: #649900;
-  letter-spacing: -0.32px; line-height: 1.5;
-  white-space: nowrap;
+  font-size: 14px; font-weight: 500; color: #649900;
+  letter-spacing: -0.28px; white-space: nowrap;
 }
 
-/* ── 소비 체크 필 ── */
-.home-check-pill {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 226px;
-  height: 103px;
-  background: #eff6e2;
-  border-radius: 0 57.5px 57.5px 0;
-  padding: 0 20px;
-  margin-top: 126px;
-  text-decoration: none;
-  flex-shrink: 0;
+.home-hero-cat {
+  position: absolute; top: 70px; left: 232px;
+  width: 135px; height: 130px; object-fit: contain;
 }
-.home-check-pill-title { font-size: 18px; font-weight: 500; color: #000000; letter-spacing: -0.36px; line-height: 1.5; }
-.home-check-pill-sub   { font-size: 18px; font-weight: 500; color: #649900;  letter-spacing: -0.36px; line-height: 1.5; }
 
-/* ── CTA 버튼 ── */
-.home-cta-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  height: 70px;
-  background: #90D50F;
+/* ── 소비 체크 카드 ── */
+.home-check-card {
+  background: #EFF6E2;
   border-radius: 10px;
-  margin: 16px 17px 0 15px;
-  font-size: 22px; font-weight: 600; color: #ffffff;
-  letter-spacing: -0.44px;
-  text-decoration: none;
+  margin: 16px 17px 0;
+  padding: 26px 21px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0; gap: 12px;
+}
+.home-check-left { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+.home-check-img { width: 65px; height: 55px; object-fit: contain; flex-shrink: 0; }
+.home-check-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.home-check-title { font-size: 16px; font-weight: 500; color: #000; letter-spacing: -0.32px; line-height: 1.5; margin: 0; white-space: nowrap; }
+.home-check-sub { font-size: 16px; font-weight: 500; color: #649900; letter-spacing: -0.32px; line-height: 1.5; margin: 0; white-space: nowrap; }
+.home-check-btn {
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  background: #90D50F; border-radius: 5px;
+  padding: 0 12px; height: 40px;
+  font-size: 16px; font-weight: 600; color: #fff;
+  letter-spacing: -0.32px; white-space: nowrap;
+  text-decoration: none; flex-shrink: 0;
+}
+
+/* ── 챌린지 랭킹 카드 — 피그마 절대좌표 기준 ── */
+.home-rank-card {
+  background: #FEFBF4;
+  border: 1px solid #FFF0DD;
+  border-radius: 10px;
+  margin: 11px 17px 0;
+  height: 107px;
+  position: relative;
+  overflow: hidden;
   flex-shrink: 0;
 }
-.home-cta-plus { width: 29px; height: 29px; object-fit: contain; display: block; }
+/* 트로피: left15 top12 75×80 */
+.home-rank-trophy {
+  position: absolute; left: 15px; top: 12px;
+  width: 75px; height: 80px; object-fit: contain;
+}
+/* 텍스트: left98 top21 */
+.home-rank-info {
+  position: absolute; left: 98px; top: 21px;
+  display: flex; flex-direction: column;
+}
+.home-rank-title { font-size: 16px; font-weight: 500; color: #000; letter-spacing: -0.32px; line-height: 1.5; margin: 0; }
+.home-rank-sub { font-size: 14px; font-weight: 500; color: #7E7E7E; letter-spacing: -0.28px; line-height: 1.5; margin: 0; }
+.home-rank-highlight { color: #E16500; }
+/* 진행바: left98 top68 */
+.home-rank-bar-wrap {
+  position: absolute; left: 98px; top: 68px;
+  display: flex; align-items: center; gap: 13px;
+}
+.home-rank-bar-track { width: 232px; height: 8px; background: #EFE5D2; border-radius: 50px; position: relative; overflow: hidden; }
+.home-rank-bar-fill { position: absolute; top: 0; left: 0; height: 8px; background: #F69921; border-radius: 50px; }
+.home-rank-pct { font-size: 14px; font-weight: 500; color: #E16500; letter-spacing: -0.28px; white-space: nowrap; }
 
-/* ── 챌린지 섹션 ── */
+/* ── 지금 인기 챌린지 ── */
 .home-challenge-section { margin-top: 64px; }
-
-.home-section-title-wrap {
-  display: flex; align-items: center;
-  padding: 0 16px; margin-bottom: 16px;
-}
 .home-section-title {
-  font-size: 20px; font-weight: 600; color: #000000;
+  font-size: 20px; font-weight: 600; color: #000;
   letter-spacing: -0.4px; line-height: 1.5;
+  padding: 0 16px; margin: 0 0 16px;
 }
-
-.home-challenge-list { display: flex; flex-direction: column; gap: 11px; }
+.home-challenge-list { display: flex; flex-direction: column; }
 
 .home-challenge-card {
-  display: flex; gap: 16px; align-items: center;
-  padding: 0 16px; background: #ffffff;
+  display: flex; align-items: center; gap: 16px;
+  padding: 0 16px;
+  background: #fff;
+  min-height: 212px;
 }
-
 .home-thumb {
   width: 130px; height: 180px;
-  background: #9e9e9e;
   border-radius: 10px;
-  flex-shrink: 0; overflow: hidden;
+  background: #9E9E9E;
+  overflow: hidden; flex-shrink: 0;
 }
-.home-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.home-info {
-  flex: 1; display: flex; flex-direction: column;
-  gap: 7px; min-width: 0;
-}
-.home-challenge-name {
-  font-size: 18px; font-weight: 500; color: #000000;
-  letter-spacing: -0.36px; line-height: 1.5;
-}
-
-.home-challenge-inner { display: flex; flex-direction: column; gap: 13px; height: 104px; }
+.home-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.home-info { display: flex; flex-direction: column; gap: 7px; flex: 1; }
+.home-challenge-name { font-size: 18px; font-weight: 500; color: #000; letter-spacing: -0.36px; line-height: 1.5; margin: 0; }
 
 .home-p-badge {
   display: inline-flex; align-items: center; gap: 2px;
-  background: #fff5e7; border-radius: 5px;
-  padding: 4px 10px; width: fit-content;
+  background: #FFF5E7; border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 13px; font-weight: 500; color: #E16500;
+  letter-spacing: -0.26px; white-space: nowrap;
+  align-self: flex-start;
 }
-.home-p-badge-person { width: 10px; height: 9px; object-fit: contain; flex-shrink: 0; }
-.home-p-badge-text {
-  font-size: 13px; font-weight: 500; color: #e16500;
-  letter-spacing: -0.26px; line-height: 1.5; white-space: nowrap;
-}
-
-.home-meta-list { display: flex; flex-direction: column; gap: 1px; }
+.home-meta-list { display: flex; flex-direction: column; gap: 3px; }
 .home-meta {
   display: flex; align-items: center; gap: 6px;
   font-size: 14px; font-weight: 500; color: #686868;
-  letter-spacing: -0.28px; line-height: 1.5; white-space: nowrap;
+  letter-spacing: -0.28px;
 }
-.home-meta-icon { width: 15px; height: 15px; object-fit: contain; flex-shrink: 0; }
+.home-divider { height: 1px; background: #F0F0F0; margin: 0 16px; }
 
-.home-divider { height: 1px; background: #F6F6F6; margin: 0 16px; flex-shrink: 0; }
-
-/* ── 반응형 ── */
-@media (max-width: 430px) {
-  html { overflow: hidden; height: 100%; }
-  body { overflow: hidden; height: 100%; padding: 0; background: #90D50F; }
-  .home-phone {
-    width: 100%; height: 100dvh;
-    border-radius: 0; box-shadow: none;
-  }
+/* 모바일 */
+@media (max-width: 768px) {
+  .home-phone { width: 100vw; height: 100dvh; box-shadow: none; }
+  .home-green-bg { width: 100%; }
 }

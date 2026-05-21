@@ -535,11 +535,11 @@
 .chat-pg-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: #fff; display: flex; flex-direction: column; }
 .chat-pg-scroll::-webkit-scrollbar { display: none; }
 /* 채팅 헤더 — 피그마 "Chatting" 24px SemiBold, 아이콘 gap:25px */
-.chat-pg-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 16px 12px; flex-shrink: 0; }
-.chat-pg-title { font-size: 24px; font-weight: 600; color: #000; letter-spacing: -0.48px; line-height: 1.5; }
-.chat-pg-icons { display: flex; align-items: center; gap: 25px; }
+.chat-pg-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 16px 24px; flex-shrink: 0; }
+.chat-pg-title { font-size: 26px; font-weight: 600; color: #000; letter-spacing: -0.52px; line-height: 1.5; }
+.chat-pg-icons { display: flex; align-items: center; gap: 16px; }
 /* 탭 — 피그마 px:17px, radius:52px, border:1.3px */
-.chat-pg-tabs { display: flex; gap: 8px; padding: 0 18px 12px; flex-shrink: 0; }
+.chat-pg-tabs { display: flex; gap: 8px; padding: 0 18px 28px; flex-shrink: 0; }
 .chat-pg-tab { padding: 7px 17px; border-radius: 52px; font-size: 14px; font-weight: 500; color: #686868; background: #fff; border: 1.3px solid #E0E0E0; cursor: pointer; letter-spacing: -0.28px; white-space: nowrap; }
 .chat-pg-tab.active { background: #000; color: #fff; border-color: #000; }
 
@@ -570,8 +570,8 @@
 /* 메세지 — 피그마 14px Medium #959595, max-width:151px */
 .chat-pg-msg { font-size: 15px; font-weight: 500; color: #959595; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 151px; letter-spacing: -0.3px; flex-shrink: 0; }
 /* 안읽음 뱃지 — 피그마 19px 원형, 오렌지 #F69A21, 13px */
-.chat-pg-unread { width: 19px; height: 19px; border-radius: 50%; background: #F69A21; color: #fff; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; letter-spacing: -0.26px; flex-shrink: 0; }
-.chat-pg-unread.green { background: #90D50F; }
+.chat-pg-unread { width: 19px; height: 19px; border-radius: 50%; background: #90D50F; color: #fff; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; letter-spacing: -0.26px; flex-shrink: 0; }
+.chat-pg-avatar.fill img { transform: scale(1.35); transform-origin: center; }
 
 /* ══════════════════════════════════════
    채팅방 공통 (Chatting / ChattingChallenge)
@@ -589,7 +589,7 @@
 .ct-room-meta { display: flex; align-items: center; gap: 4px; font-size: 15px; font-weight: 500; color: #AFAFAF; letter-spacing: -0.3px; }
 
 /* 메세지 영역 — 피그마 bg:#F2F2F2 */
-.ct-messages { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.ct-messages { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; padding: 14px 16px; display: flex; flex-direction: column; gap: 20px; }
 .ct-messages::-webkit-scrollbar { display: none; }
 
 /* 날짜 구분 — 피그마 bg:#DDD, px:10px py:2px, radius:50px, 15px #959595 */
@@ -632,7 +632,7 @@
 /* 피그마: 하나의 pill에 모든 반응 — bg:#E8E8E8, border:#E0E0E0, radius:50px */
 .ct-reaction-badge { display: inline-flex; align-items: center; gap: 13px; padding: 3px 10px; background: #E8E8E8; border: 1px solid #E0E0E0; border-radius: 50px; }
 /* 각 반응 아이템 — emoji + count */
-.ct-reaction-item { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: #686868; letter-spacing: -0.26px; }
+.ct-reaction-item { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #686868; letter-spacing: -0.24px; }
 
 /* 입력창 — 피그마 height:102px */
 .ct-input-area { flex-shrink: 0; background: #fff; }
@@ -661,6 +661,55 @@
 .ct-spend-divider.dark { border-color: rgba(0,0,0,0.1); }
 .ct-spend-items { padding: 8px 14px 12px; display: flex; flex-direction: column; gap: 4px; }
 .ct-spend-item { display: flex; justify-content: space-between; font-size: 12px; font-weight: 500; }
+
+/* ══════════════════════════════════════
+   챌린지 채팅 (ChattingChallenge) — chc-
+══════════════════════════════════════ */
+/* 헤더 — 하단 라운드 18px */
+.chc-header { border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+
+/* 랭킹 배너 — 헤더 안 카드 */
+.chc-rank-banner { display: flex; align-items: center; justify-content: space-between; margin: 4px 16px 16px; padding: 8px 14px 8px 8px; background: #FEFBF1; border: 1px solid #F8E1C3; border-radius: 10px; text-decoration: none; }
+.chc-rank-left { display: flex; align-items: center; gap: 20px; padding-left: 5px; }
+.chc-rank-img { width: 67px; height: 47px; object-fit: contain; flex-shrink: 0; }
+.chc-rank-texts { display: flex; flex-direction: column; }
+.chc-rank-line1 { font-size: 15px; font-weight: 600; color: #000; letter-spacing: -0.3px; line-height: 1.5; margin: 0; }
+.chc-rank-winner { color: #546e24; font-weight: 600; }
+.chc-rank-line2 { font-size: 14px; font-weight: 500; color: #000; letter-spacing: -0.28px; line-height: 1.5; margin: 0; }
+.chc-rank-pos { color: #d5841a; font-weight: 500; }
+
+/* 아바타 38px */
+.chc-avatar { width: 38px; height: 38px; }
+
+/* 발신자 17px SemiBold */
+.chc-sender { font-size: 15px; font-weight: 500; letter-spacing: -0.3px; }
+
+/* 버블 — 통장지키기모임과 동일 */
+.chc-bubble { font-size: 15px; font-weight: 500; letter-spacing: -0.3px; }
+
+/* 읽음/시간 — 통장지키기모임과 동일 */
+.chc-read { font-size: 14px; letter-spacing: -0.28px; }
+.chc-time { font-size: 13px; letter-spacing: -0.26px; }
+
+/* 날짜 알약 — #DDD 배경 */
+.chc-date-pill { background: #DDD; font-size: 15px; font-weight: 500; color: #959595; }
+
+/* 소비 카드 */
+.chc-spend-card { width: 248px; height: 178px; border-radius: 15px; display: flex; flex-direction: column; box-sizing: border-box; flex-shrink: 0; }
+.chc-spend-card.green  { background: #FBFFF3; border: 1.5px solid #90D50F; }
+.chc-spend-card.orange { background: #FFFBF6; border: 1.5px solid #F69A21; }
+.chc-spend-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 8px; }
+.chc-spend-title-row { display: flex; align-items: center; gap: 5px; }
+.chc-spend-title { font-size: 15px; font-weight: 500; color: #000; letter-spacing: -0.3px; }
+.chc-spend-count { font-size: 14px; font-weight: 500; color: #AFAFAF; letter-spacing: -0.28px; }
+.chc-spend-more { font-size: 14px; font-weight: 600; color: #AFAFAF; letter-spacing: -0.28px; text-decoration: none; }
+.chc-spend-divider { height: 1px; background: #E8E8E8; margin: 0 16px; }
+.chc-spend-items { padding: 8px 16px 0; display: flex; flex-direction: column; flex: 1; justify-content: space-around; }
+.chc-spend-item { display: flex; justify-content: space-between; font-size: 15px; font-weight: 500; color: #000; letter-spacing: -0.3px; }
+
+/* 입력창 변형 — #EDEDED 배경, #AFAFAF 전송 버튼 */
+.chc-input-field { background: #EDEDED; }
+.chc-send-btn { background: #AFAFAF; }
 
 /* ══════════════════════════════════════
    채팅방 설정 (ChattingSetting)
@@ -702,7 +751,7 @@
    채팅방 설정2 — 피그마 기준 (css- prefix)
 ══════════════════════════════════════ */
 /* 설정 타이틀 — 피그마 24px SemiBold */
-.css-title { font-size: 24px; font-weight: 600; color: #000; letter-spacing: -0.48px; line-height: 1.5; }
+.css-title { font-size: 18px; font-weight: 600; color: #000; letter-spacing: -0.36px; line-height: 1.5; }
 /* 스크롤 영역 — bg:#F2F2F2, gap:16px */
 .css-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; padding: 27px 16px 40px; display: flex; flex-direction: column; gap: 16px; }
 .css-scroll::-webkit-scrollbar { display: none; }
@@ -712,54 +761,49 @@
 .css-room-avatar { width: 85px; height: 85px; border-radius: 24px; background: #9E9E9E; overflow: hidden; flex-shrink: 0; }
 .css-room-avatar img { width: 100%; height: 100%; object-fit: cover; }
 /* 방 이름 — 피그마 20px SemiBold */
-.css-room-name { font-size: 20px; font-weight: 600; color: #000; letter-spacing: -0.4px; line-height: 1.5; }
+.css-room-name { font-size: 18px; font-weight: 600; color: #000; letter-spacing: -0.36px; line-height: 1.5; }
 /* CTA 버튼 — 피그마 height:70px, 24px SemiBold white, gap:10px */
-.css-cta-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 70px; background: #90D50F; color: #fff; border-radius: 10px; font-size: 24px; font-weight: 600; letter-spacing: -0.48px; cursor: pointer; text-decoration: none; }
+.css-cta-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 70px; background: #90D50F; color: #fff; border-radius: 10px; font-size: 20px; font-weight: 600; letter-spacing: -0.4px; cursor: pointer; text-decoration: none; }
 /* 공통 카드 — 피그마 white, radius:15px */
-.css-card { background: #fff; border-radius: 15px; overflow: hidden; }
+.css-card { background: #fff; border-radius: 15px; flex-shrink: 0; }
 /* 카드 헤더 — 피그마 padding:19px 14px */
 .css-card-header { display: flex; align-items: center; justify-content: space-between; padding: 19px 14px 14px; }
 .css-card-header-left { display: flex; align-items: center; gap: 10px; }
 /* 카드 타이틀 — 피그마 20px Medium */
-.css-card-title { font-size: 20px; font-weight: 500; color: #000; letter-spacing: -0.4px; line-height: 1.5; }
-/* 전체보기/더보기 — 피그마 16px Medium #AFAFAF */
-.css-card-more { font-size: 16px; font-weight: 500; color: #AFAFAF; letter-spacing: -0.32px; text-decoration: none; }
+.css-card-title { font-size: 18px; font-weight: 500; color: #000; letter-spacing: -0.36px; line-height: 1.5; }
+/* 전체보기/더보기 */
+.css-card-more { font-size: 14px; font-weight: 500; color: #AFAFAF; letter-spacing: -0.28px; text-decoration: none; }
 /* 소비 기록 가로 스크롤 */
 .css-spend-slider { display: flex; gap: 15px; overflow-x: auto; scrollbar-width: none; padding: 0 18px 20px; -webkit-overflow-scrolling: touch; }
 .css-spend-slider::-webkit-scrollbar { display: none; }
 /* 소비 카드 — 피그마 279×212px, bg:#FBFFF3, border:#90D50F */
-.css-spend-card { flex-shrink: 0; width: 279px; height: 212px; background: #FBFFF3; border: 1px solid #90D50F; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; }
+.css-spend-card { flex-shrink: 0; width: 248px; height: 178px; background: #FBFFF3; border: 1.5px solid #90D50F; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; }
 /* 카드 헤더 행 */
-.css-sc-header { display: flex; align-items: center; justify-content: space-between; padding: 21px 23px 10px; flex-shrink: 0; }
+.css-sc-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 8px; flex-shrink: 0; }
 .css-sc-title-row { display: flex; align-items: center; gap: 10px; }
 /* 소비기록 타이틀 — 피그마 20px Medium */
-.css-sc-title { font-size: 20px; font-weight: 500; color: #000; letter-spacing: -0.4px; }
-/* 카운트 — 피그마 16px Medium #AFAFAF */
-.css-sc-count { font-size: 16px; font-weight: 500; color: #AFAFAF; letter-spacing: -0.32px; }
-/* 더보기 — 피그마 16px SemiBold #AFAFAF */
-.css-sc-more { font-size: 16px; font-weight: 600; color: #AFAFAF; letter-spacing: -0.32px; text-decoration: none; }
+.css-sc-title { font-size: 15px; font-weight: 500; color: #000; letter-spacing: -0.3px; }
+.css-sc-count { font-size: 14px; font-weight: 600; color: #AFAFAF; letter-spacing: -0.28px; }
+.css-sc-more { font-size: 14px; font-weight: 600; color: #AFAFAF; letter-spacing: -0.28px; text-decoration: none; }
 /* 구분선 */
-.css-sc-divider { border: none; border-top: 1px solid #90D50F; margin: 0 23px; opacity: 0.4; }
-/* 아이템 목록 — 피그마 gap:15px, 17px Medium */
-.css-sc-items { padding: 12px 23px 0; display: flex; flex-direction: column; gap: 15px; flex: 1; }
-.css-sc-item { display: flex; justify-content: space-between; font-size: 17px; font-weight: 500; color: #000; letter-spacing: -0.34px; }
-/* 대화 상대 인원수 */
-.css-member-count { font-size: 20px; font-weight: 500; color: #686868; letter-spacing: -0.4px; }
+.css-sc-divider { border: none; border-top: 1px solid #E8E8E8; margin: 0 16px; }
+.css-sc-items { padding: 8px 16px 0; display: flex; flex-direction: column; flex: 1; justify-content: space-around; }
+.css-sc-item { display: flex; justify-content: space-between; font-size: 15px; font-weight: 500; color: #000; letter-spacing: -0.3px; }
+.css-member-count { font-size: 15px; font-weight: 500; color: #686868; letter-spacing: -0.3px; }
 /* 멤버 목록 */
 .css-member-list { list-style: none; padding: 0 18px 16px; display: flex; flex-direction: column; }
 .css-member-item { display: flex; align-items: center; gap: 14px; padding: 8px 0; }
 /* 멤버 아바타 — 피그마 38×38px */
-.css-member-avatar { width: 38px; height: 38px; border-radius: 50%; background: #E0E0E0; flex-shrink: 0; }
+.css-member-avatar { width: 35px; height: 35px; border-radius: 50%; background: #E0E0E0; flex-shrink: 0; }
 .css-member-name-wrap { display: flex; align-items: center; gap: 5px; }
 /* "나" 뱃지 — 피그마 orange */
-.css-me-badge { width: 20px; height: 20px; border-radius: 50%; background: #F69A21; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #fff; letter-spacing: -0.26px; flex-shrink: 0; }
+.css-me-badge { width: 20px; height: 20px; border-radius: 50%; background: #90D50F; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #fff; letter-spacing: -0.26px; flex-shrink: 0; }
 /* 멤버 이름 — 피그마 17px SemiBold */
-.css-member-name { font-size: 17px; font-weight: 600; color: #000; letter-spacing: -0.34px; }
-/* 초대하기 */
-.css-invite-avatar { width: 38px; height: 38px; border-radius: 50%; background: #E8E8E8; border: 1.5px solid #E0E0E0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.css-invite-text { font-size: 17px; font-weight: 600; color: #F69A21; letter-spacing: -0.34px; }
+.css-member-name { font-size: 15px; font-weight: 600; color: #000; letter-spacing: -0.3px; }
+.css-invite-avatar { width: 35px; height: 35px; border-radius: 50%; background: #E8E8E8; border: 1.5px solid #E0E0E0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.css-invite-text { font-size: 15px; font-weight: 600; color: #F69A21; letter-spacing: -0.3px; }
 /* 채팅방 나가기 — 피그마 20px Medium #D32424 */
-.css-leave-btn { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: none; font-size: 20px; font-weight: 500; color: #D32424; letter-spacing: -0.4px; cursor: pointer; }
+.css-leave-btn { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: none; font-size: 15px; font-weight: 500; color: #D32424; letter-spacing: -0.3px; cursor: pointer; }
 
 /* ══════════════════════════════════════
    마이페이지 (MyPage)
