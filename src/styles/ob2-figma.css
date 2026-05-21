@@ -1,26 +1,26 @@
 /* ══════════════════════════════════════
-   온보딩 02 — Figma 기준
-   고양이 top:332px, 211×278px
-   (ob1-figma.css 공통 스타일 재사용)
+   온보딩 02 — Figma 기준 (430×932)
+   고양이 left:10px top:307px width:400px
 ══════════════════════════════════════ */
 
-/* 고양이 이미지 — 피그마 211×278px, 남은 공간 중앙 */
+/* 고양이 이미지 — 피그마 left:9.58 top:306.55 w:400px */
 .ob2-cat {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 24px;
+  position: absolute;
+  left: 10px;
+  top: 307px;
+  width: 400px;
 }
 .ob2-cat img {
-  width: 211px;
+  width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
 }
 
 @media screen and (max-width: 768px) {
-  .ob2-cat img {
-    width: clamp(160px, 48vw, 211px);
+  .ob2-cat {
+    left: 2vw;
+    top: 33vh;
+    width: 93vw;
   }
 }

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import '../styles/ob1-figma.css'
 import '../styles/ob3-figma.css'
 
 export default function Onboarding03() {
@@ -7,7 +8,7 @@ export default function Onboarding03() {
 
       {/* MOA 로고 */}
       <div className="ob3-logo-wrap">
-        <img src="/img/image 216.png" className="ob3-logo" alt="MOA" />
+        <img src="/img/logo_black.png" className="ob3-logo" alt="MOA" />
       </div>
 
       {/* 헤드라인 */}
@@ -43,6 +44,9 @@ export default function Onboarding03() {
       <div className="ob3-login-area">
         <button className="ob3-login-help">로그인에 어려움이 있나요?</button>
       </div>
+
+      {/* 홈 인디케이터 */}
+      <div className="ob1-indicator" />
 
     </div>
   )

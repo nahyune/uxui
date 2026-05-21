@@ -7,7 +7,7 @@ export default function Onboarding01() {
   return (
     <div className="ob1-phone" onClick={() => navigate('/onboarding/2')}>
 
-      {/* 헤드라인 — "무심코 나가는 소비," + "생각보다 많지 않나요?" */}
+      {/* 헤드라인 */}
       <div className="ob1-text">
         <p>
           <span>무심코 나가는 </span>

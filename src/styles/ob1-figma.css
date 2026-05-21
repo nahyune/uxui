@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════
-   온보딩 01 — Figma 기준 (flexbox 반응형)
-   텍스트 top:100px, 고양이 top:315px
+   온보딩 01 — Figma 기준 (430×932)
+   텍스트 top:100px / 고양이 top:309px left:46px w:328px
 ══════════════════════════════════════ */
 
 .ob1-phone {
@@ -11,17 +11,29 @@
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.28);
   position: relative;
   cursor: pointer;
-  color: inherit;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
   box-sizing: border-box;
+}
+
+/* 상태바 */
+.ob1-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 17px 16px 0;
+}
+.ob1-time {
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  line-height: 1.5;
 }
 
 /* 헤드라인 — 피그마 top:100px, left:15.58px */
 .ob1-text {
-  flex-shrink: 0;
-  padding: 100px 0 0 16px;
+  position: absolute;
+  top: 100px;
+  left: 16px;
   font-family: 'Pretendard', -apple-system, sans-serif;
   font-weight: 600;
   font-size: 30px;
@@ -31,19 +43,17 @@
   white-space: nowrap;
 }
 .ob1-text p { margin: 0; }
-
 .ob1-accent { color: #f69a21; }
 
-/* 고양이 — 남은 공간 중앙 배치 (OB01: 199px) */
+/* 고양이 — 피그마 left:46px top:275px w:340px */
 .ob1-cat {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 24px;
+  position: absolute;
+  left: 46px;
+  top: 275px;
+  width: 340px;
 }
 .ob1-cat img {
-  width: 199px;
+  width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
@@ -69,11 +79,13 @@
     box-shadow: none;
   }
   .ob1-text {
-    padding-top: 10.7vh;
-    padding-left: 4vw;
+    top: 10.7vh;
+    left: 4vw;
     font-size: 30px;
   }
-  .ob1-cat img {
-    width: clamp(150px, 46vw, 199px);
+  .ob1-cat {
+    left: 10vw;
+    top: 29.5vh;
+    width: 79vw;
   }
 }
