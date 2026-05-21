@@ -143,37 +143,7 @@ html.preview-360 .ob-welcome-phone {
   transform-origin: top center;
 }
 
-/* 430px 미만 뷰포트 — root 전체 비율 스케일 */
-@media screen and (max-width: 429px) {
-  html, body {
-    width: 100vw;
-    height: 100dvh;
-    overflow: hidden;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #fff !important;
-    display: block !important;
-  }
-  #root {
-    width: 430px;
-    height: 932px;
-    transform: scale(var(--phone-scale, 1));
-    transform-origin: top left;
-    overflow: hidden;
-  }
-  /* 768px 쿼리의 100vw 덮어쓰기 방지 — 스케일 기준 유지 */
-  .phone,
-  .home-phone,
-  .ob1-phone,
-  .ob3-phone,
-  .ob-welcome-phone,
-  .screen,
-  .noti-screen {
-    width: 430px !important;
-    height: 932px !important;
-  }
-}
-
+/* ── 모바일 전체화면 (768px 이하) ── */
 @media screen and (max-width: 768px) {
   html {
     height: 100%;
@@ -197,7 +167,6 @@ html.preview-360 .ob-welcome-phone {
   .screen,
   .noti-screen {
     width: 100vw !important;
-    height: 100vh !important;
     height: 100dvh !important;
     border-radius: 0 !important;
     box-shadow: none !important;
@@ -228,5 +197,36 @@ html.preview-360 .ob-welcome-phone {
     height: calc(65px + env(safe-area-inset-bottom, 0px));
     padding-top: 12px;
     padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* ── 430px 미만 — root 비율 스케일 (768px 이후에 와야 오버라이드 적용됨) ── */
+@media screen and (max-width: 429px) {
+  html, body {
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    display: block !important;
+  }
+  #root {
+    width: 430px;
+    height: 932px;
+    transform: scale(var(--phone-scale, 1));
+    transform-origin: top left;
+    overflow: hidden;
+  }
+  /* 768px의 100vw를 430px로 되돌려야 스케일이 올바르게 동작 */
+  .phone,
+  .home-phone,
+  .ob1-phone,
+  .ob3-phone,
+  .ob-welcome-phone,
+  .screen,
+  .noti-screen {
+    width: 430px !important;
+    height: 932px !important;
   }
 }
