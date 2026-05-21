@@ -32,7 +32,7 @@
 }
 
 /* ── 헤더 ── */
-.home-top { padding: 16px 16.5px 0; }
+.home-top { padding: 16px 16.5px 0; background: transparent; }
 
 .home-app-row {
   display: flex; align-items: center; justify-content: space-between;
@@ -68,6 +68,7 @@
   position: absolute; top: 39px; left: 25px; width: 204px;
   display: flex; flex-direction: column; gap: 13px;
 }
+.home-savings-text { display: flex; flex-direction: column; }
 .home-savings-label {
   font-size: 17px; font-weight: 500; color: #649900;
   letter-spacing: -0.34px; line-height: 1.5; margin: 0;
@@ -99,7 +100,10 @@
   flex-shrink: 0; gap: 12px;
 }
 .home-check-left { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
-.home-check-img { width: 65px; height: 55px; object-fit: contain; flex-shrink: 0; }
+/* 공책 아이콘 뒤 원형 배경 — 피그마 73×73px, left:-5px top:-8px */
+.home-check-icon-wrap { position: relative; width: 65px; height: 55px; flex-shrink: 0; }
+.home-check-circle { position: absolute; width: 73px; height: 73px; border-radius: 50%; background: #F5FFEA; left: -5px; top: -8px; z-index: 0; }
+.home-check-img { position: relative; z-index: 1; width: 65px; height: 55px; object-fit: contain; }
 .home-check-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .home-check-title { font-size: 16px; font-weight: 500; color: #000; letter-spacing: -0.32px; line-height: 1.5; margin: 0; white-space: nowrap; }
 .home-check-sub { font-size: 16px; font-weight: 500; color: #649900; letter-spacing: -0.32px; line-height: 1.5; margin: 0; white-space: nowrap; }

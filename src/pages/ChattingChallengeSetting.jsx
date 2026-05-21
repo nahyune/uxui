@@ -35,11 +35,11 @@ const spendCards = [
 ]
 
 const avatarColors = {
-  '지은':            '#B39DDB',
-  '라떼말고물':      '#A8D8A8',
-  '민지':            '#F48FB1',
-  '텀블러쓰기3일차': '#FFB74D',
-  '하나':            '#FFD54F',
+  '지은':            '#DFC9F3',
+  '라떼말고물':      '#A6F6CC',
+  '민지':            '#FFC892',
+  '텀블러쓰기3일차': '#FFA7A7',
+  '하나':            '#A9BDFF',
 }
 const members = [
   { name:'지은', isMe:true }, { name:'라떼말고물' }, { name:'민지' }, { name:'텀블러쓰기3일차' }, { name:'하나' },

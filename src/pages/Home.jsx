@@ -34,8 +34,10 @@ export default function Home() {
           <div className="home-hero-card">
             {/* 좌측 텍스트: top39 left25 */}
             <div className="home-hero-left">
-              <p className="home-savings-label">이번 주 절약 금액</p>
-              <p className="home-savings-amount">54,300원</p>
+              <div className="home-savings-text">
+                <p className="home-savings-label">이번 주 절약 금액</p>
+                <p className="home-savings-amount">54,300원</p>
+              </div>
               <div className="home-savings-badge">저번 주보다 12% 더 아꼈어요!</div>
             </div>
             {/* 우상단 배지: top28 left232 */}
@@ -50,14 +52,17 @@ export default function Home() {
           {/* 소비 체크 카드 */}
           <div className="home-check-card">
             <div className="home-check-left">
-              <img src="/img/home_book.png" alt="" className="home-check-img" />
+              <div className="home-check-icon-wrap">
+                <div className="home-check-circle" />
+                <img src="/img/home_book.png" alt="" className="home-check-img" />
+              </div>
               <div className="home-check-text">
                 <p className="home-check-title">오늘 지출은 어땠나요?</p>
                 <p className="home-check-sub">소비 체크하러 가기!</p>
               </div>
             </div>
             <Link to="/add-spending" className="home-check-btn">
-              <img src="/img/Group 2398.png" alt="" width="20" height="20" style={{ objectFit:'contain', filter:'brightness(0) invert(1)' }} />
+              <img src="/img/check_plus.png" alt="" width="20" height="20" style={{ objectFit:'contain' }} />
               <span>체크하기</span>
             </Link>
           </div>

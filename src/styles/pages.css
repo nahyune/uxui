@@ -124,7 +124,7 @@
 }
 .check-card-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 41px; }
 /* 소비 통계 — 22px Medium */
-.check-card-title { font-size: 22px; font-weight: 500; color: #000; letter-spacing: -0.44px; line-height: 1.5; }
+.check-card-title { font-size: 20px; font-weight: 500; color: #000; letter-spacing: -0.4px; line-height: 1.5; }
 
 /* 통계 행 — 피그마 gap:31px */
 .check-stat-rows { display: flex; flex-direction: column; gap: 31px; }
@@ -142,11 +142,11 @@
 /* 주간 리포트 — 피그마 height:379px, gap:85px */
 .check-weekly-card {
   background: #fff; border: 1px solid #E0E0E0;
-  border-radius: 10px; padding: 24px; flex-shrink: 0;
+  border-radius: 10px; padding: 18px 20px; flex-shrink: 0;
 }
-.check-weekly-header { margin-bottom: 85px; }
-/* 주간 리포트 — 22px Medium */
-.check-weekly-title { font-size: 22px; font-weight: 500; color: #000; letter-spacing: -0.44px; line-height: 1.5; }
+.check-weekly-header { margin-bottom: 70px; }
+/* 주간 리포트 — 20px Medium */
+.check-weekly-title { font-size: 20px; font-weight: 500; color: #000; letter-spacing: -0.4px; line-height: 1.5; }
 .check-weekly-sub   { font-size: 15px; font-weight: 500; color: #686868; letter-spacing: -0.3px; line-height: 1.5; }
 
 /* 차트 — 피그마 gap:16px, bar-width:32px, 자연높이(토 208px 기준) */
@@ -509,12 +509,12 @@
 /* ══════════════════════════════════════
    챌린지 상세 공통 (cd-)
 ══════════════════════════════════════ */
-.cd-phone { background: #F2F2F2; }
+.cd-phone { background: #CBEB8D; }
 /* 스크롤 — 배경 회색, 히어로 블록이 컨텐츠와 함께 스크롤 */
 .cd-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; }
 .cd-scroll::-webkit-scrollbar { display: none; }
 /* 히어로 블록 — 고유 배경색, 스크롤과 함께 이동 */
-.cd-hero-block { display: flex; flex-direction: column; }
+.cd-hero-block { display: flex; flex-direction: column; padding-top: env(safe-area-inset-top, 0px); }
 .cd-hero-muji { background: #CBEB8D; padding-bottom: 60px; position: relative; }
 .cd-hero-cafe { background: #F5D5B5; }
 /* 네비 — 투명, 히어로 배경이 비침 */
@@ -609,7 +609,7 @@
 /* 헤더 — 피그마 height:125px, 흰배경 */
 .ct-header { flex-shrink: 0; background: #fff; }
 .ct-header-nav { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px 14px; }
-.ct-header-left { display: flex; align-items: center; gap: 2px; }
+.ct-header-left { display: flex; align-items: center; gap: 0; }
 .ct-header-right { display: flex; align-items: center; gap: 20px; }
 .ct-room-info { display: flex; flex-direction: column; gap: 2px; }
 /* 방 이름 — 피그마 20px SemiBold */
@@ -780,7 +780,7 @@
    채팅방 설정2 — 피그마 기준 (css- prefix)
 ══════════════════════════════════════ */
 /* 설정 타이틀 — 피그마 24px SemiBold */
-.css-title { font-size: 19px; font-weight: 600; color: #000; letter-spacing: -0.38px; line-height: 1.5; }
+.css-title { font-size: 20px; font-weight: 600; color: #000; letter-spacing: -0.4px; line-height: 1.5; }
 /* 스크롤 영역 — bg:#F2F2F2, gap:16px */
 .css-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; padding: 27px 16px 40px; display: flex; flex-direction: column; gap: 16px; }
 .css-scroll::-webkit-scrollbar { display: none; }
@@ -829,7 +829,7 @@
 .css-me-badge { width: 20px; height: 20px; border-radius: 50%; background: #90D50F; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #fff; letter-spacing: -0.26px; flex-shrink: 0; }
 /* 멤버 이름 — 피그마 17px SemiBold */
 .css-member-name { font-size: 15px; font-weight: 600; color: #000; letter-spacing: -0.3px; }
-.css-invite-avatar { width: 35px; height: 35px; border-radius: 50%; background: #E8E8E8; border: 1.5px solid #E0E0E0; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.css-invite-avatar { width: 35px; height: 35px; border-radius: 50%; background: #F69A21; border: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .css-invite-text { font-size: 15px; font-weight: 600; color: #F69A21; letter-spacing: -0.3px; }
 /* 채팅방 나가기 — 피그마 20px Medium #D32424 */
 .css-member-more-row { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 0; border-top: 1px solid #F0F0F0; margin: 0 18px; }
@@ -841,20 +841,20 @@
 ══════════════════════════════════════ */
 .my-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; }
 .my-scroll::-webkit-scrollbar { display: none; }
-.my-profile { display: flex; justify-content: center; padding: 20px 0 16px; }
+.my-profile { display: flex; justify-content: center; padding: 100px 0 16px; }
 .my-avatar { width: 108px; height: 108px; border-radius: 50%; overflow: hidden; background: #E0E0E0; }
 .my-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .my-stat-card { margin: 0 16px 14px; background: #F6F6F6; border: 1px solid #E0E0E0; border-radius: 15px; padding: 18px 0; display: flex; align-items: center; }
 .my-stat-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
-.my-stat-num { font-size: 20px; font-weight: 700; color: #000; }
-.my-stat-unit { font-size: 13px; font-weight: 500; }
-.my-stat-desc { font-size: 12px; font-weight: 500; color: #686868; }
+.my-stat-num { font-size: 14px; font-weight: 700; color: #000; }
+.my-stat-unit { font-size: 14px; font-weight: 500; }
+.my-stat-desc { font-size: 14px; font-weight: 500; color: #686868; }
 .my-stat-div { width: 1px; height: 36px; background: #E0E0E0; }
 .my-menu-card { margin: 0 16px 14px; background: #fff; border: 1px solid #E0E0E0; border-radius: 15px; overflow: hidden; }
 .my-menu-item { display: flex; align-items: center; justify-content: space-between; padding: 15px 18px; cursor: pointer; text-decoration: none; color: inherit; }
 .my-menu-left { display: flex; align-items: center; gap: 14px; }
 .my-menu-icon { width: 30px; height: 30px; border-radius: 7px; object-fit: cover; flex-shrink: 0; }
-.my-menu-text { font-size: 15px; font-weight: 500; color: #000; }
+.my-menu-text { font-size: 18px; font-weight: 500; color: #000; }
 .my-menu-divider { height: 1px; background: #F6F6F6; margin: 0 18px; }
 .my-sub-links { display: flex; justify-content: center; gap: 24px; padding: 8px 0 24px; }
 .my-sub-link { font-size: 13px; color: #AFAFAF; text-decoration: none; }
@@ -888,8 +888,8 @@
 .rk-header { flex-shrink: 0; background: #fff; display: flex; flex-direction: column; gap: 28px; padding: 17px 16px; }
 .rk-status-bar { display: flex; align-items: center; gap: 6px; }
 .rk-time { font-size: 18px; font-weight: 600; color: #000; line-height: 1.5; }
-.rk-header-nav { display: flex; align-items: center; gap: 6px; }
-.rk-title { font-size: 24px; font-weight: 600; color: #000; letter-spacing: -0.48px; line-height: 1.5; }
+.rk-header-nav { display: flex; align-items: center; gap: 0; }
+.rk-title { font-size: 20px; font-weight: 600; color: #000; letter-spacing: -0.4px; line-height: 1.5; }
 /* 스크롤 */
 .rk-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; padding: 16px; display: flex; flex-direction: column; gap: 16px; }
 .rk-scroll::-webkit-scrollbar { display: none; }
@@ -939,7 +939,8 @@
 ══════════════════════════════════════ */
 /* ── 카페금지 챌린지 상세 — 피그마 486-274 정확 수치 ── */
 /* 히어로 블록 — 이미지가 카드 뒤로 깔림, 커피컵이 카드 위에 보임 */
-.cdc-hero-block { position: relative; height: 340px; overflow: hidden; flex-shrink: 0; background: #F5D5B5; }
+.cd-phone-cafe { background: #F5D5B5; }
+.cdc-hero-block { position: relative; height: 340px; overflow: hidden; flex-shrink: 0; background: #F5D5B5; padding-top: env(safe-area-inset-top, 0px); }
 /* 카드가 이미지 하단부(원두 부분)만 덮음, z-index로 카드가 이미지 앞 */
 .cdc-cards { margin-top: -50px; position: relative; z-index: 1; }
 .cdc-hero-block { z-index: 0; }
@@ -993,7 +994,7 @@
 .nc-time { font-size: 18px; font-weight: 600; color: #000; line-height: 1.5; }
 .nc-header-nav { display: flex; align-items: center; padding: 16px 16px 0; }
 /* 스크롤 */
-.nc-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; padding: 16px 17px 16px; }
+.nc-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; padding: 24px 17px 16px; }
 .nc-scroll::-webkit-scrollbar { display: none; }
 /* 카드 */
 .nc-card { background: #fff; border-radius: 15px; padding: 21px 0 28px; display: flex; flex-direction: column; overflow: hidden; }
@@ -1016,12 +1017,12 @@
 .nc-field-label { font-size: 16px; font-weight: 500; color: #000; letter-spacing: -0.32px; line-height: 1.5; }
 .nc-field-line { border-bottom: 1px solid #EFEFEF; height: 55px; display: flex; align-items: center; margin-top: 2px; }
 .nc-field-input { flex: 1; border: none; background: none; outline: none; font-size: 20px; font-weight: 500; color: #000; letter-spacing: -0.4px; width: 100%; }
-.nc-field-input::placeholder { color: #AFAFAF; }
+.nc-field-input::placeholder { color: #AFAFAF; font-size: 17px; }
 /* 기간 행 */
 .nc-date-row { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; }
 .nc-date-field { width: 154px; border-bottom: 1px solid #EFEFEF; height: 55px; display: flex; align-items: center; justify-content: space-between; padding: 13px 0; position: relative; }
 .nc-date-input { flex: 1; border: none; background: none; outline: none; font-size: 20px; font-weight: 500; color: #000; letter-spacing: -0.4px; width: 0; }
-.nc-date-input::placeholder { color: #AFAFAF; }
+.nc-date-input::placeholder { color: #AFAFAF; font-size: 17px; }
 .nc-cal-btn { display: flex; align-items: center; flex-shrink: 0; background: none; border: none; cursor: pointer; padding: 0; }
 .nc-hidden-date { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
 /* CTA */

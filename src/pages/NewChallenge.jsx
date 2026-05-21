@@ -1,12 +1,38 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/global.css'
 import '../styles/pages.css'
 
 const cats = ['전체', '식비', '교통', '의료', '쇼핑', '카페', '여가', '생활', '기타']
 
+function useDragScroll() {
+  const ref = useRef(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    let isDown = false, startX = 0, scrollLeft = 0, hasDragged = false
+    const onMouseDown = e => { isDown = true; hasDragged = false; startX = e.pageX; scrollLeft = el.scrollLeft; el.style.cursor = 'grabbing'; e.preventDefault() }
+    const onMouseUp = () => { isDown = false; el.style.cursor = 'grab' }
+    const onMouseMove = e => { if (!isDown) return; e.preventDefault(); const dx = e.pageX - startX; if (Math.abs(dx) > 3) hasDragged = true; el.scrollLeft = scrollLeft - dx }
+    const onClick = e => { if (hasDragged) { e.preventDefault(); e.stopPropagation(); hasDragged = false } }
+    el.addEventListener('mousedown', onMouseDown)
+    el.addEventListener('click', onClick, true)
+    document.addEventListener('mouseup', onMouseUp)
+    document.addEventListener('mousemove', onMouseMove, { passive: false })
+    el.style.cursor = 'grab'
+    return () => {
+      el.removeEventListener('mousedown', onMouseDown)
+      el.removeEventListener('click', onClick, true)
+      document.removeEventListener('mouseup', onMouseUp)
+      document.removeEventListener('mousemove', onMouseMove)
+    }
+  }, [])
+  return ref
+}
+
 export default function NewChallenge() {
   const [cat, setCat]         = useState(0)
+  const catRef = useDragScroll()
   const [title, setTitle]     = useState('')
   const [amount, setAmount]   = useState('')
   const [intro, setIntro]     = useState('')
@@ -20,16 +46,15 @@ export default function NewChallenge() {
   return (
     <div className="phone nc-phone">
 
-      {/* 헤더 — white, h 125px */}
-      <div className="nc-header">
-        <div className="nc-status-bar">
-          <span className="nc-time">9:35</span>
-          <img src="/img/bell-off.png" alt="" width="17" height="17" style={{ objectFit:'contain' }} />
-        </div>
-        <div className="nc-header-nav">
-          <Link to="-1" onClick={e => { e.preventDefault(); window.history.back() }} className="pg-back">
-            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 1 1 9 9 17"/></svg>
-          </Link>
+      {/* 헤더 */}
+      <div className="ct-header">
+        <div className="status-bar" />
+        <div className="ct-header-nav">
+          <div className="ct-header-left">
+            <Link to="-1" onClick={e => { e.preventDefault(); window.history.back() }} className="pg-back">
+              <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 1 1 9 9 17"/></svg>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -46,7 +71,7 @@ export default function NewChallenge() {
           </div>
 
           {/* 카테고리 — 소비올리기와 동일 스타일 */}
-          <div className="add-cat-scroll nc-cat-override">
+          <div className="add-cat-scroll nc-cat-override" ref={catRef}>
             {cats.map((c, i) => (
               <button
                 key={c}
@@ -99,7 +124,7 @@ export default function NewChallenge() {
                     value={fmt(startDate)}
                   />
                   <button className="nc-cal-btn" onClick={() => startRef.current?.showPicker?.()}>
-                    <img src="/img/challenge_calender.png" alt="" width="24" height="24" style={{ objectFit:'contain' }} />
+                    <img src="/img/challenge_calender.png" alt="" width="15" height="15" style={{ objectFit:'contain' }} />
                   </button>
                   <input type="date" ref={startRef} className="nc-hidden-date" onChange={e => setStart(e.target.value)} />
                 </div>
@@ -112,7 +137,7 @@ export default function NewChallenge() {
                     value={fmt(endDate)}
                   />
                   <button className="nc-cal-btn" onClick={() => endRef.current?.showPicker?.()}>
-                    <img src="/img/challenge_calender.png" alt="" width="24" height="24" style={{ objectFit:'contain' }} />
+                    <img src="/img/challenge_calender.png" alt="" width="15" height="15" style={{ objectFit:'contain' }} />
                   </button>
                   <input type="date" ref={endRef} className="nc-hidden-date" onChange={e => setEnd(e.target.value)} />
                 </div>

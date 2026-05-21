@@ -35,11 +35,11 @@ const spendCards = [
 ]
 
 const avatarColors = {
-  '지은': '#B39DDB',
-  '미주': '#F48FB1',
-  '수지': '#90CAF9',
-  '주은': '#A5D6A7',
-  '찬희': '#FFD54F',
+  '지은': '#DFC9F3',
+  '미주': '#F5BED6',
+  '수지': '#B5E9F6',
+  '주은': '#C5F36E',
+  '찬희': '#F6DD84',
 }
 const members = [
   { name:'지은', isMe:true }, { name:'미주' }, { name:'수지' }, { name:'주은' }, { name:'찬희' },
@@ -146,7 +146,7 @@ export default function ChattingSetting() {
             ))}
             <li className="css-member-item">
               <div className="css-invite-avatar">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" strokeWidth="2.5" strokeLinecap="round">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round">
                   <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
                 </svg>
               </div>

@@ -7,7 +7,7 @@ const DASH = `${(CIRCUMFERENCE * 0.7).toFixed(2)} ${CIRCUMFERENCE.toFixed(2)}`
 
 export default function ChallengeDetailCafe() {
   return (
-    <div className="phone cd-phone">
+    <div className="phone cd-phone cd-phone-cafe">
       <div className="main-scroll cd-scroll">
 
         {/* ── 히어로 — 이미지가 좌우상 overflow, 피그마 489×388 / left-26 top-19 ── */}

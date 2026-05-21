@@ -11,10 +11,10 @@ const EMOJI = {
 }
 
 const avatarColors = {
-  하나:            '#90CAF9',
-  텀블러쓰기3일차: '#FFB74D',
-  민지:            '#F48FB1',
-  라떼말고물:      '#A8D8A8',
+  하나:            '#A9BDFF',
+  텀블러쓰기3일차: '#FFA7A7',
+  민지:            '#FFC892',
+  라떼말고물:      '#A6F6CC',
 }
 
 const myItems = [

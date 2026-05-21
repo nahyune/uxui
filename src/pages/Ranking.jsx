@@ -13,11 +13,11 @@ const days = [
 ]
 
 const avatarColors = {
-  '하나':            '#90CAF9',
-  '텀블러쓰기3일차': '#FFB74D',
-  '민지':            '#F48FB1',
-  '지은':            '#B39DDB',
-  '라떼말고물':      '#A8D8A8',
+  '하나':            '#A9BDFF',
+  '텀블러쓰기3일차': '#FFA7A7',
+  '민지':            '#FFC892',
+  '지은':            '#DFC9F3',
+  '라떼말고물':      '#A6F6CC',
 }
 
 const ranks = [
@@ -100,7 +100,7 @@ export default function Ranking() {
 
         {/* ── 전체 랭킹 카드 ── */}
         <div className="rk-card">
-          <h2 className="rk-card-title" style={{ marginBottom: 4 }}>전체 랭킹</h2>
+          <h2 className="rk-card-title" style={{ marginBottom: -22 }}>전체 랭킹</h2>
           <ul className="rk-rank-list">
             {ranks.map((r) => (
               <li className="rk-rank-row" key={r.rank}>

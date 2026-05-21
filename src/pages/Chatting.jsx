@@ -3,10 +3,10 @@ import '../styles/global.css'
 import '../styles/pages.css'
 
 const avatarColors = {
-  '주은': '#A5D6A7',
-  '수지': '#90CAF9',
-  '미주': '#EF9A9A',
-  '찬희': '#FFD54F',
+  '주은': '#C5F36E',
+  '수지': '#B5E9F6',
+  '미주': '#F5BED6',
+  '찬희': '#F6DD84',
 }
 
 const EMOJI = {
