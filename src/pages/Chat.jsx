@@ -30,13 +30,13 @@ export default function Chat() {
         <div className="chat-pg-header">
           <h1 className="chat-pg-title">Chat</h1>
           <div className="chat-pg-icons">
-            <button className="pg-icon-btn">
+            <button className="pg-icon-btn no-guide">
               <img src="/img/search.png" alt="검색" width="24" height="24" style={{ objectFit: 'contain' }} />
             </button>
-            <button className="pg-icon-btn">
+            <button className="pg-icon-btn no-guide">
               <img src="/img/chat_plus.png" alt="채팅추가" width="23" height="23" style={{ objectFit: 'contain' }} />
             </button>
-            <button className="pg-icon-btn">
+            <button className="pg-icon-btn no-guide">
               <img src="/img/chat_setting.png" alt="설정" width="24" height="24" style={{ objectFit: 'contain' }} />
             </button>
           </div>
@@ -45,7 +45,7 @@ export default function Chat() {
         {/* 카테고리 탭 */}
         <div className="chat-pg-tabs">
           {['전체', '안읽음', '챌린지'].map((t, i) => (
-            <button key={t} className={`chat-pg-tab${tab === i ? ' active' : ''}`} onClick={() => setTab(i)}>{t}</button>
+            <button key={t} className={`chat-pg-tab no-guide${tab === i ? ' active' : ''}`} onClick={() => setTab(i)}>{t}</button>
           ))}
         </div>
 

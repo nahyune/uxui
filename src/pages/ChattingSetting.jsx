@@ -69,10 +69,10 @@ export default function ChattingSetting() {
             <span className="css-title">설정</span>
           </div>
           <div className="ct-header-right">
-            <button className="pg-icon-btn">
+            <button className="pg-icon-btn no-guide">
               <img src="/img/setting_icon.png" alt="알림" width="21" height="23" style={{ objectFit:'contain' }} />
             </button>
-            <button className="pg-icon-btn">
+            <button className="pg-icon-btn no-guide">
               <img src="/img/chat_setting.png" alt="설정" width="24" height="24" style={{ objectFit:'contain' }} />
             </button>
           </div>
@@ -100,7 +100,7 @@ export default function ChattingSetting() {
               <img src="/img/setting_bookmark.png" alt="" width="14" height="17" style={{ objectFit:'contain' }} />
               <span className="css-card-title">나의 소비 기록</span>
             </div>
-            <a href="#" className="css-card-more">전체보기 <ChevRight /></a>
+            <a href="#" className="css-card-more no-guide">전체보기 <ChevRight /></a>
           </div>
           <div className="css-spend-slider" ref={sliderRef}>
             {spendCards.map((card, ci) => (
@@ -110,7 +110,7 @@ export default function ChattingSetting() {
                     <span className="css-sc-title">소비 기록</span>
                     <span className="css-sc-count">{card.count}</span>
                   </div>
-                  <a href="#" className="css-sc-more">더보기 <ChevRight /></a>
+                  <a href="#" className="css-sc-more no-guide">더보기 <ChevRight /></a>
                 </div>
                 <hr className="css-sc-divider" />
                 <div className="css-sc-items">
@@ -156,7 +156,7 @@ export default function ChattingSetting() {
         </div>
 
         {/* 채팅방 나가기 */}
-        <button className="css-leave-btn" onClick={() => { if(window.confirm('채팅방을 나가시겠어요?')) navigate('/chat') }}>
+        <button className="css-leave-btn no-guide" onClick={() => { if(window.confirm('채팅방을 나가시겠어요?')) navigate('/chat') }}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D32424" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
             <polyline points="16 17 21 12 16 7"/>

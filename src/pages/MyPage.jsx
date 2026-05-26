@@ -44,7 +44,7 @@ export default function MyPage() {
         <div className="my-menu-card">
           {menu.map((m, i) => (
             <div key={m.label}>
-              <a href="#" className="my-menu-item">
+              <a href="#" className="my-menu-item no-guide">
                 <div className="my-menu-left">
                   <img className="my-menu-icon" src={m.icon} alt={m.label} />
                   <span className="my-menu-text">{m.label}</span>
@@ -59,8 +59,9 @@ export default function MyPage() {
         </div>
 
         <div className="my-sub-links">
-          <a href="#" className="my-sub-link">신고하기</a>
-          <a href="#" className="my-sub-link">로그아웃</a>
+          <a href="#" className="my-sub-link no-guide">신고하기</a>
+          <span className="my-sub-divider" />
+          <a href="#" className="my-sub-link no-guide">로그아웃</a>
         </div>
       </div>
 

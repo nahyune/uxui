@@ -123,7 +123,7 @@ export default function NewChallenge() {
                     readOnly
                     value={fmt(startDate)}
                   />
-                  <button className="nc-cal-btn" onClick={() => startRef.current?.showPicker?.()}>
+                  <button className="nc-cal-btn no-guide" onClick={() => startRef.current?.showPicker?.()}>
                     <img src="/img/challenge_calender.png" alt="" width="15" height="15" style={{ objectFit:'contain' }} />
                   </button>
                   <input type="date" ref={startRef} className="nc-hidden-date" onChange={e => setStart(e.target.value)} />
@@ -136,7 +136,7 @@ export default function NewChallenge() {
                     readOnly
                     value={fmt(endDate)}
                   />
-                  <button className="nc-cal-btn" onClick={() => endRef.current?.showPicker?.()}>
+                  <button className="nc-cal-btn no-guide" onClick={() => endRef.current?.showPicker?.()}>
                     <img src="/img/challenge_calender.png" alt="" width="15" height="15" style={{ objectFit:'contain' }} />
                   </button>
                   <input type="date" ref={endRef} className="nc-hidden-date" onChange={e => setEnd(e.target.value)} />
@@ -164,7 +164,7 @@ export default function NewChallenge() {
 
       {/* CTA 버튼 */}
       <div className="nc-cta-wrap">
-        <button className="nc-cta-btn">챌린지 시작하기</button>
+        <button className="nc-cta-btn no-guide">챌린지 시작하기</button>
       </div>
 
     </div>

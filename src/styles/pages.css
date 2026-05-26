@@ -712,23 +712,29 @@
 /* 아바타 38px */
 .chc-avatar { width: 38px; height: 38px; }
 
-/* 발신자 17px SemiBold */
+/* 발신자 */
 .chc-sender { font-size: 15px; font-weight: 500; letter-spacing: -0.3px; }
 
-/* 버블 — 통장지키기모임과 동일 */
+/* 버블 */
 .chc-bubble { font-size: 15px; font-weight: 500; letter-spacing: -0.3px; }
 
-/* 읽음/시간 — 통장지키기모임과 동일 */
+/* 읽음/시간 */
 .chc-read { font-size: 14px; letter-spacing: -0.28px; }
 .chc-time { font-size: 13px; letter-spacing: -0.26px; }
+
+/* 메시지 영역 gap */
+.chc-messages { gap: 28px; }
+
+/* 오른쪽 메시지 그룹 — 버블 사이 4px 간격 */
+.ct-msg-group.right { gap: 4px; }
 
 /* 날짜 알약 — #DDD 배경 */
 .chc-date-pill { background: #DDD; font-size: 15px; font-weight: 500; color: #959595; }
 
 /* 소비 카드 */
 .chc-spend-card { width: 248px; height: 178px; border-radius: 15px; display: flex; flex-direction: column; box-sizing: border-box; flex-shrink: 0; }
-.chc-spend-card.green  { background: #FBFFF3; border: 1.5px solid #90D50F; }
-.chc-spend-card.orange { background: #FFFBF6; border: 1.5px solid #F69A21; }
+.chc-spend-card.green  { background: #FBFFF3; border: 1.5px solid rgba(144, 213, 15, 0.45); }
+.chc-spend-card.orange { background: #FFFBF6; border: 1.5px solid rgba(246, 154, 33, 0.45); }
 .chc-spend-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 8px; }
 .chc-spend-title-row { display: flex; align-items: center; gap: 5px; }
 .chc-spend-title { font-size: 15px; font-weight: 500; color: #000; letter-spacing: -0.3px; }
@@ -808,7 +814,7 @@
 .css-spend-slider { display: flex; gap: 15px; overflow-x: auto; scrollbar-width: none; padding: 0 18px 20px; -webkit-overflow-scrolling: touch; }
 .css-spend-slider::-webkit-scrollbar { display: none; }
 /* 소비 카드 — 피그마 279×212px, bg:#FBFFF3, border:#90D50F */
-.css-spend-card { flex-shrink: 0; width: 248px; height: 178px; background: #FBFFF3; border: 1.5px solid #90D50F; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; }
+.css-spend-card { flex-shrink: 0; width: 248px; height: 178px; background: #FBFFF3; border: 1.5px solid rgba(144, 213, 15, 0.45); border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; }
 /* 카드 헤더 행 */
 .css-sc-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 8px; flex-shrink: 0; }
 .css-sc-title-row { display: flex; align-items: center; gap: 10px; }
@@ -860,6 +866,7 @@
 .my-menu-divider { height: 1px; background: #F6F6F6; margin: 0 18px; }
 .my-sub-links { display: flex; justify-content: center; gap: 24px; padding: 8px 0 24px; }
 .my-sub-link { font-size: 13px; color: #AFAFAF; text-decoration: none; }
+.my-sub-divider { width: 1px; height: 12px; background: #DDDDDD; align-self: center; }
 
 /* ══════════════════════════════════════
    알림 (Notification)
@@ -1026,12 +1033,14 @@
 .nc-date-input { flex: 1; border: none; background: none; outline: none; font-size: 20px; font-weight: 500; color: #000; letter-spacing: -0.4px; width: 0; }
 .nc-date-input::placeholder { color: #AFAFAF; font-size: 17px; }
 .nc-cal-btn { display: flex; align-items: center; flex-shrink: 0; background: none; border: none; cursor: pointer; padding: 0; }
-.nc-hidden-date { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.nc-hidden-date { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; z-index: 1; }
 /* CTA */
 .nc-cta-wrap { padding: 12px 16px 20px; background: #F2F2F2; flex-shrink: 0; }
 .nc-cta-btn { display: flex; align-items: center; justify-content: center; width: 100%; height: 58px; background: #90D50F; color: #fff; border-radius: 10px; font-size: 20px; font-weight: 600; letter-spacing: -0.4px; cursor: pointer; border: none; }
 
-/* ── 챌린지 상세 모바일 safe area (black-translucent status bar 대응) ── */
+/* ── 모바일 safe area / 키보드 대응 ── */
 @media screen and (max-width: 768px) {
   .cdc-hero-nav { top: calc(env(safe-area-inset-top, 44px) + 18px); }
+  .ct-input-area { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .nc-cta-wrap { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); }
 }

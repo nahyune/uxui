@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/global.css'
 import '../styles/pages.css'
@@ -69,9 +70,24 @@ const ChevRight = () => (
   </svg>
 )
 
+function useKeyboardFit() {
+  const ref = useRef(null)
+  useEffect(() => {
+    if (!('visualViewport' in window) || window.innerWidth > 768) return
+    const vv = window.visualViewport
+    const el = ref.current
+    const update = () => { el.style.height = Math.floor(vv.height) + 'px' }
+    update()
+    vv.addEventListener('resize', update)
+    return () => vv.removeEventListener('resize', update)
+  }, [])
+  return ref
+}
+
 export default function ChattingChallenge() {
+  const phoneRef = useKeyboardFit()
   return (
-    <div className="phone">
+    <div className="phone" ref={phoneRef}>
 
       {/* 헤더 — 흰 배경, 하단 라운드, 랭킹 배너 포함 */}
       <div className="ct-header chc-header">
@@ -90,7 +106,7 @@ export default function ChattingChallenge() {
             </div>
           </div>
           <div className="ct-header-right">
-            <button className="pg-icon-btn">
+            <button className="pg-icon-btn no-guide">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </button>
             <Link to="/chatting-challenge-setting" className="pg-icon-btn">
@@ -113,12 +129,12 @@ export default function ChattingChallenge() {
       </div>
 
       {/* 메세지 영역 */}
-      <div className="ct-messages">
+      <div className="ct-messages chc-messages">
         <div className="ct-date-pill">
           2026년 04월 17일 금요일
         </div>
 
-        {/* 나 — 오른쪽: 소비카드 + 텍스트 */}
+        {/* 나 — 오른쪽: 소비카드 + 텍스트 (오후 4:30) */}
         <div className="ct-msg-group right">
           <SpendCard items={myItems} count={6} variant="green" />
           <Reactions right reactions={[
@@ -139,7 +155,22 @@ export default function ChattingChallenge() {
           <Reactions right reactions={[{ img: EMOJI.thumb, count: 5 }]} />
         </div>
 
-        {/* 하나 — 왼쪽: 소비카드 + 텍스트 */}
+        {/* 하나 — 왼쪽: 텍스트 (오후 4:31) */}
+        <div className="ct-msg-group">
+          <div className="ct-avatar-chat chc-avatar" style={{ background: avatarColors['하나'] }} />
+          <div className="ct-msg-body">
+            <span className="ct-sender chc-sender">하나</span>
+            <div className="ct-bubble-row">
+              <div className="ct-bubble left chc-bubble"><p>그래도 카페 한 번이면 잘 참으신 거 아닌가요 👍</p></div>
+              <div className="ct-time-col">
+                <span className="ct-read-count chc-read">27</span>
+                <span className="ct-msg-time chc-time">오후 4:31</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 하나 — 왼쪽: 소비카드 + 텍스트 (오후 4:33) */}
         <div className="ct-msg-group">
           <div className="ct-avatar-chat chc-avatar" style={{ background: avatarColors['하나'] }} />
           <div className="ct-msg-body">
@@ -164,7 +195,7 @@ export default function ChattingChallenge() {
           </div>
         </div>
 
-        {/* 나 — 오른쪽: 텍스트 */}
+        {/* 나 — 오른쪽: 텍스트 (오후 4:35) */}
         <div className="ct-msg-group right">
           <div className="ct-bubble-row right">
             <div className="ct-time-col right">
@@ -172,21 +203,6 @@ export default function ChattingChallenge() {
               <span className="ct-msg-time chc-time">오후 4:35</span>
             </div>
             <div className="ct-bubble right chc-bubble"><p>맞아요 오후 시간대가 진짜 힘들어요ㅠ</p></div>
-          </div>
-        </div>
-
-        {/* 하나 — 왼쪽 */}
-        <div className="ct-msg-group">
-          <div className="ct-avatar-chat chc-avatar" style={{ background: avatarColors['하나'] }} />
-          <div className="ct-msg-body">
-            <span className="ct-sender chc-sender">하나</span>
-            <div className="ct-bubble-row">
-              <div className="ct-bubble left chc-bubble"><p>그래도 카페 한 번이면 잘 참으신 거 아닌가요 👍</p></div>
-              <div className="ct-time-col">
-                <span className="ct-read-count chc-read">27</span>
-                <span className="ct-msg-time chc-time">오후 4:31</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -243,7 +259,7 @@ export default function ChattingChallenge() {
       {/* 입력창 */}
       <div className="ct-input-area">
         <div className="ct-input-row">
-          <button className="ct-plus-btn">
+          <button className="ct-plus-btn no-guide">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div className="ct-input-field chc-input-field">

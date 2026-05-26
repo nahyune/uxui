@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/global.css'
 import '../styles/pages.css'
@@ -63,9 +64,24 @@ const Reactions = ({ reactions, right }) => (
   </div>
 )
 
+function useKeyboardFit() {
+  const ref = useRef(null)
+  useEffect(() => {
+    if (!('visualViewport' in window) || window.innerWidth > 768) return
+    const vv = window.visualViewport
+    const el = ref.current
+    const update = () => { el.style.height = Math.floor(vv.height) + 'px' }
+    update()
+    vv.addEventListener('resize', update)
+    return () => vv.removeEventListener('resize', update)
+  }, [])
+  return ref
+}
+
 export default function Chatting() {
+  const phoneRef = useKeyboardFit()
   return (
-    <div className="phone">
+    <div className="phone" ref={phoneRef}>
       {/* 헤더 — 피그마 height:125px */}
       <div className="ct-header">
         <div className="status-bar" />
@@ -83,7 +99,7 @@ export default function Chatting() {
             </div>
           </div>
           <div className="ct-header-right">
-            <button className="pg-icon-btn">
+            <button className="pg-icon-btn no-guide">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </button>
             <Link to="/chatting-setting" className="pg-icon-btn">
@@ -139,7 +155,7 @@ export default function Chatting() {
       {/* 입력창 — 피그마 height:102px */}
       <div className="ct-input-area">
         <div className="ct-input-row">
-          <button className="ct-plus-btn">
+          <button className="ct-plus-btn no-guide">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div className="ct-input-field">
