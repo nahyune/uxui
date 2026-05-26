@@ -30,10 +30,13 @@ export default function Check() {
         <h1 className="scroll-title">Check</h1>
         {/* 오늘의 소비 카드 */}
         <div className="check-today-card">
-          <p className="check-today-label">오늘의 소비</p>
+          <div className="check-today-label">
+            <img src="/img/today_leaf.png" className="check-today-leaf" alt="" />
+            오늘의 소비
+          </div>
           <p className="check-today-amount">118,830원</p>
           <span className="check-today-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E16500" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#649900" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/>
               <polyline points="17 18 23 18 23 12"/>
             </svg>

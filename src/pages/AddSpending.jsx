@@ -1,7 +1,27 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/global.css'
 import '../styles/pages.css'
+
+function useDragScroll() {
+  const ref = useRef(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    let isDown = false, startX = 0, scrollLeft = 0, hasDragged = false
+    const onMouseDown = e => { isDown = true; hasDragged = false; startX = e.pageX; scrollLeft = el.scrollLeft; el.style.cursor = 'grabbing'; el.style.userSelect = 'none'; e.preventDefault() }
+    const onMouseUp = () => { isDown = false; el.style.cursor = 'grab'; el.style.userSelect = '' }
+    const onMouseMove = e => { if (!isDown) return; e.preventDefault(); const dx = e.pageX - startX; if (Math.abs(dx) > 3) hasDragged = true; el.scrollLeft = scrollLeft - dx }
+    const onClick = e => { if (hasDragged) { e.preventDefault(); e.stopPropagation(); hasDragged = false } }
+    el.addEventListener('mousedown', onMouseDown)
+    el.addEventListener('click', onClick, true)
+    document.addEventListener('mouseup', onMouseUp)
+    document.addEventListener('mousemove', onMouseMove, { passive: false })
+    el.style.cursor = 'grab'
+    return () => { el.removeEventListener('mousedown', onMouseDown); el.removeEventListener('click', onClick, true); document.removeEventListener('mouseup', onMouseUp); document.removeEventListener('mousemove', onMouseMove) }
+  }, [])
+  return ref
+}
 
 const cats = ['전체', '식비', '교통', '의료', '쇼핑', '카페', '여가', '생활', '기타']
 const items = [
@@ -28,6 +48,7 @@ export default function AddSpending() {
   const [overlay, setOverlay] = useState(false)
   const [modalTab, setModalTab] = useState(0)
   const [roomChecked, setRoomChecked] = useState({})
+  const catScrollRef = useDragScroll()
 
   return (
     <div className="phone">
@@ -41,7 +62,7 @@ export default function AddSpending() {
           </Link>
           <span className="add-header-title">소비 올리기</span>
         </div>
-        <div className="add-cat-scroll">
+        <div className="add-cat-scroll" ref={catScrollRef}>
           {cats.map((c, i) => (
             <button key={c} className={`add-cat-btn${cat === i ? ' active' : ''}`} onClick={() => setCat(i)}>{c}</button>
           ))}

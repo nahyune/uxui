@@ -132,7 +132,7 @@ export default function Challenge() {
           </div>
           <div className="chal-hscroll" ref={myRef}>
             {myCards.map(c => (
-              <Link to={c.to} className="chal-my-card" key={c.name}>
+              <Link to={c.to} className={`chal-my-card${c.to === '#' ? ' no-guide' : ''}`} key={c.name}>
                 <div className="chal-my-left">
                   <span className="chal-dday">종료까지 {c.dday}</span>
                   <div className="chal-my-name-block">
@@ -165,7 +165,7 @@ export default function Challenge() {
           </div>
           <div className="chal-hscroll" ref={joinRef}>
             {joinCards.map(c => (
-              <Link to={c.to} className="chal-join-card" key={c.name}>
+              <Link to={c.to} className={`chal-join-card${c.to === '#' ? ' no-guide' : ''}`} key={c.name}>
                 {/* 이미지 영역 — 피그마 193px */}
                 <div className="chal-join-img">
                   <img src={c.img} alt={c.name} />

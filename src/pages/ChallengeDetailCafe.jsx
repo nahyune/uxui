@@ -1,6 +1,16 @@
 import '../styles/global.css'
 import '../styles/pages.css'
 
+const handleShare = async (title) => {
+  const data = { title, text: `MOA에서 ${title}에 함께해요!`, url: window.location.href }
+  if (navigator.share) {
+    try { await navigator.share(data) } catch {}
+  } else {
+    await navigator.clipboard.writeText(window.location.href)
+    alert('링크가 복사되었습니다!')
+  }
+}
+
 const RADIUS = 90
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 const DASH = `${(CIRCUMFERENCE * 0.7).toFixed(2)} ${CIRCUMFERENCE.toFixed(2)}`
@@ -18,7 +28,7 @@ export default function ChallengeDetailCafe() {
             <button className="pg-back" onClick={() => window.history.back()}>
               <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 1 1 9 9 17"/></svg>
             </button>
-            <button className="pg-icon-btn">
+            <button className="pg-icon-btn" onClick={() => handleShare('카페 금지 챌린지')}>
               <img src="/img/share_btn.png" alt="공유" width="20" height="20" style={{ objectFit:'contain' }} />
             </button>
           </div>

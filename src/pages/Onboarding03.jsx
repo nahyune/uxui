@@ -1,13 +1,8 @@
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
 import '../styles/ob1-figma.css'
 import '../styles/ob3-figma.css'
 
 export default function Onboarding03() {
-  useEffect(() => {
-    document.body.style.background = '#fff'
-    return () => { document.body.style.background = '' }
-  }, [])
   return (
     <div className="ob3-phone">
 

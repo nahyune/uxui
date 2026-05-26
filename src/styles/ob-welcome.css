@@ -36,9 +36,15 @@
   width: 397px;
   height: 397px;
   object-fit: contain;
-  transform: rotate(3.79deg);
   transform-origin: center center;
   pointer-events: none;
+  animation: welcome-confetti 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+@keyframes welcome-confetti {
+  0%   { opacity: 0; transform: rotate(3.79deg) scale(0.3); }
+  60%  { opacity: 1; transform: rotate(3.79deg) scale(1.08); }
+  100% { opacity: 1; transform: rotate(3.79deg) scale(1); }
 }
 
 /* 고양이 — 피그마 left:77.58px top:303px w:250px h:295px */

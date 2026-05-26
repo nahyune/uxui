@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom'
 import '../styles/global.css'
 import '../styles/pages.css'
 
+const handleShare = async (title) => {
+  const data = { title, text: `MOA에서 ${title}에 함께해요!`, url: window.location.href }
+  if (navigator.share) {
+    try { await navigator.share(data) } catch {}
+  } else {
+    await navigator.clipboard.writeText(window.location.href)
+    alert('링크가 복사되었습니다!')
+  }
+}
+
 export default function ChallengeDetail() {
   const [joined, setJoined] = useState(false)
 
@@ -20,7 +30,7 @@ export default function ChallengeDetail() {
             <Link to="/challenge" className="pg-back">
               <svg width="10" height="18" viewBox="0 0 10 18" fill="none" stroke="#000" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 1 1 9 9 17"/></svg>
             </Link>
-            <button className="pg-icon-btn">
+            <button className="pg-icon-btn" onClick={() => handleShare('무지출 챌린지')}>
               <img src="/img/share_btn.png" alt="공유" width="20" height="20" style={{ objectFit:'contain' }} />
             </button>
           </div>

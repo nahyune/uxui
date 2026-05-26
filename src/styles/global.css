@@ -30,12 +30,11 @@ input  { font-family: inherit; }
 
 body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
-  background: #6b7a69;
+  background: url('/img/bg_02.png') center center / cover no-repeat fixed;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
-  padding: 36px 0;
 }
 
 /* ── 폰 컨테이너 (데스크탑) ── */
@@ -102,35 +101,173 @@ body {
    모바일 전체화면 대응
    - position:fixed 대신 자연스러운 뷰포트 채우기
 ══════════════════════════════════════ */
-/* ── 사이즈 토글 버튼 (데스크탑 전용) ── */
-.size-toggle {
-  position: fixed;
+/* ── 데스크탑 레이아웃 ── */
+.desktop-layout {
+  position: relative;
+}
+.desktop-phone-wrap {
+  /* 폰만 중앙 */
+}
+
+/* ── 사이드바 ── */
+.ds-sidebar {
+  position: absolute;
+  right: calc(100% + 44px);
   top: 50%;
-  left: calc(50% + 230px);
   transform: translateY(-50%);
+  width: 260px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  z-index: 9999;
+  gap: 22px;
+  color: #fff;
 }
-.size-btn {
-  width: 52px;
-  height: 32px;
+.ds-logo {
+  width: 200px;
+  height: auto;
+}
+.ds-headline {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.45;
+  letter-spacing: -0.5px;
+}
+.ds-highlight {
+  background: #90D50F;
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.ds-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  letter-spacing: -0.2px;
+}
+.ds-size-btns {
+  display: flex;
+  gap: 8px;
+}
+.ds-btn {
+  width: 56px;
+  height: 34px;
   border-radius: 8px;
-  background: #d0d0d0;
-  color: #555;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.6);
   font-size: 13px;
   font-weight: 600;
   border: none;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
-.size-btn.active {
-  background: #333;
+.ds-btn.active {
+  background: #90D50F;
   color: #fff;
 }
+
+.ds-guide-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: all 0.15s;
+  width: fit-content;
+}
+.ds-guide-btn.active {
+  background: rgba(220,38,38,0.2);
+  color: #ff6b6b;
+  border-color: rgba(220,38,38,0.4);
+}
+.ds-guide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── 클릭 가이드 모드 ── */
+/* add-modal-close: position:absolute 유지 위해 제외 / add-modal-tab·add-cat-btn: 점 불필요 */
+html.guide-mode .phone a:not(.pg-more-link),
+html.guide-mode .phone button:not(.add-modal-close):not(.add-modal-tab):not(.add-cat-btn):not(.add-modal-send),
+html.guide-mode .home-phone a,
+html.guide-mode .home-alert-btn,
+html.guide-mode .home-check-btn,
+html.guide-mode .ob1-phone a,
+html.guide-mode .ob1-phone button,
+html.guide-mode .ob3-phone a,
+html.guide-mode .ob3-phone button:not(.ob3-login-help),
+html.guide-mode .ob-welcome-phone a,
+html.guide-mode .ob-welcome-phone button {
+  position: relative;
+}
+
+html.guide-mode .phone a:not(.pg-more-link)::before,
+html.guide-mode .phone button:not(.add-modal-tab):not(.add-cat-btn):not(.add-modal-send)::before,
+html.guide-mode .home-phone a::before,
+html.guide-mode .home-alert-btn::before,
+html.guide-mode .home-check-btn::before,
+html.guide-mode .ob1-phone a::before,
+html.guide-mode .ob1-phone button::before,
+html.guide-mode .ob3-phone a::before,
+html.guide-mode .ob3-phone button:not(.ob3-login-help)::before,
+html.guide-mode .ob-welcome-phone a::before,
+html.guide-mode .ob-welcome-phone button::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 3px;
+  height: 3px;
+  background: #ef4444;
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.3);
+}
+
+html.guide-mode .home-alert-btn::before {
+  left: -10px;
+}
+
+/* 비활성 링크는 가이드 점 제외 */
+html.guide-mode .no-guide::before {
+  display: none !important;
+}
+
+/* 공유 모달 검색창 가이드 */
+html.guide-mode .add-modal-search { position: relative; }
+html.guide-mode .add-modal-search::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 3px;
+  height: 3px;
+  background: #ef4444;
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.3);
+}
+
+/* 공유 모달 열렸을 때 뒷 페이지 가이드 점 숨김 */
+html.guide-mode .phone:has(.add-overlay.open) > :not(.add-overlay) *::before,
+html.guide-mode .phone:has(.add-overlay.open) > :not(.add-overlay)::before {
+  display: none !important;
+}
+
 @media screen and (max-width: 768px) {
-  .size-toggle { display: none; }
+  .desktop-layout { display: contents; }
+  .desktop-phone-wrap { display: contents; }
+  .ds-sidebar { display: none; }
 }
 
 /* ── 360 프리뷰 모드 ── */
@@ -161,7 +298,6 @@ html.preview-360 .ob-welcome-phone {
   /* 모든 phone 컨테이너 → 뷰포트 전체 */
   .phone,
   .home-phone,
-  .ob1-phone,
   .ob3-phone,
   .ob-welcome-phone,
   .screen,
