@@ -847,7 +847,8 @@
 /* ══════════════════════════════════════
    마이페이지 (MyPage)
 ══════════════════════════════════════ */
-.my-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; }
+.my-top-frame { background: var(--gray-10); }
+.my-scroll { flex: 1; overflow-y: auto; scrollbar-width: none; background: var(--gray-10); }
 .my-scroll::-webkit-scrollbar { display: none; }
 .my-profile { display: flex; justify-content: center; padding: 100px 0 16px; }
 .my-avatar { width: 108px; height: 108px; border-radius: 50%; overflow: hidden; background: #E0E0E0; }

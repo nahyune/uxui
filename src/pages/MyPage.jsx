@@ -13,7 +13,7 @@ const menu = [
 export default function MyPage() {
   return (
     <div className="phone">
-      <div className="top-frame">
+      <div className="top-frame my-top-frame">
         <div className="status-bar" />
       </div>
 
