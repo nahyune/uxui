@@ -1073,4 +1073,5 @@
   .cdc-hero-nav { top: calc(env(safe-area-inset-top, 44px) + 18px); }
   .ct-input-area { padding: 6px 0 24px; }
   .nc-cta-wrap { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); }
+  .cd-cta-area { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); }
 }
