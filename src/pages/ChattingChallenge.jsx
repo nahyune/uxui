@@ -49,7 +49,7 @@ const SpendCard = ({ items, count, variant }) => (
         <span className="chc-spend-title">소비 기록</span>
         <span className="chc-spend-count">{count}</span>
       </div>
-      <a href="#" className="chc-spend-more">더보기</a>
+      <a href="#" className="chc-spend-more no-guide">더보기</a>
     </div>
     <div className="chc-spend-divider" />
     <div className="chc-spend-items">

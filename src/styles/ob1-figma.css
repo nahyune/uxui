@@ -181,7 +181,7 @@
 
 /* ── 모바일: JS scale로 처리 (ob1-phone은 항상 430×932 유지) ── */
 @media screen and (max-width: 768px) {
-  html, body { overflow: hidden; height: 100%; margin: 0; padding: 0; background: #EFF6E2; }
+  html, body { overflow: hidden; height: 100%; margin: 0; padding: 0; background: #fff; }
   .ob1-phone {
     position: fixed !important;
     width: 430px !important;
@@ -189,6 +189,5 @@
     top: 0 !important;
     transform-origin: top left !important;
     overflow: hidden !important;
-    background: #EFF6E2 !important;
   }
 }
