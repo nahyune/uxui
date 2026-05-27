@@ -20,11 +20,27 @@ const bars = [
   { h: 109, day: '일' },
 ]
 
+const LEAVES = [
+  { left: '62%', top: '8px',  delay: 0,    color: '#90D50F', size: 8 },
+  { left: '75%', top: '5px',  delay: 0.1,  color: '#649900', size: 7 },
+  { left: '53%', top: '14px', delay: 0.2,  color: '#B5E561', size: 9 },
+  { left: '84%', top: '10px', delay: 0.05, color: '#76BC0D', size: 7 },
+  { left: '68%', top: '18px', delay: 0.28, color: '#90D50F', size: 8 },
+]
+
 export default function Check() {
   const [statsAnim, setStatsAnim] = useState(false)
   const [barsAnim,  setBarsAnim]  = useState(false)
+  const [leafKey,   setLeafKey]   = useState(0)
+  const [showLeaves, setShowLeaves] = useState(false)
   const statsRef  = useRef(null)
   const weeklyRef = useRef(null)
+
+  const burstLeaves = () => {
+    setLeafKey(k => k + 1)
+    setShowLeaves(true)
+    setTimeout(() => setShowLeaves(false), 1800)
+  }
 
   useEffect(() => {
     const observe = (el, cb, threshold = 0.2) => {
@@ -63,7 +79,21 @@ export default function Check() {
             </svg>
             훌륭해요! 예산보다 5% 절약 중
           </span>
-          <img src="/img/today_cat.png" className="check-today-cat" alt="" />
+          <button className="check-today-cat-btn" onClick={burstLeaves}>
+            <img src="/img/today_cat.png" className="check-today-cat" alt="" />
+          </button>
+          {showLeaves && LEAVES.map((l, i) => (
+            <div
+              key={`${leafKey}-${i}`}
+              className="check-leaf-move"
+              style={{ left: l.left, top: l.top, animationDelay: `${l.delay}s` }}
+            >
+              <div
+                className="check-leaf-spin"
+                style={{ width: l.size, height: l.size * 1.5, background: l.color, animationDelay: `${l.delay}s` }}
+              />
+            </div>
+          ))}
         </div>
 
         {/* 소비 올리기 */}

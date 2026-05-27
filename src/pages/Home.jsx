@@ -1,9 +1,10 @@
+import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import BottomNav from '../components/BottomNav'
 import '../styles/home-figma.css'
 
 const challenges = [
-  { img: '/img/home_shopping.png', name: '쇼핑 금지 챌린지 🛍', count: '52', date: '26.04.06(월) ~ 04.27(월)' },
+  { img: '/img/home_shopping(2).png', name: '쇼핑 금지 챌린지 🛍', count: '52', date: '26.04.06(월) ~ 04.27(월)' },
   { img: '/img/home_money.png',    name: '하루 만원 챌린지 💸',  count: '63', date: '26.04.10(월) ~ 04.27(월)' },
   { img: '/img/home_rice.png',     name: '집밥 챌린지 🍳',       count: '45', date: '26.04.06(월) ~ 04.27(월)' },
   { img: '/img/home_coffee.png',   name: '카페 금지 챌린지 ☕',  count: '83', date: '26.04.10(월) ~ 04.30(월)' },
@@ -11,6 +12,33 @@ const challenges = [
 ]
 
 export default function Home() {
+  const [barAnim, setBarAnim] = useState(false)
+  const [starKey, setStarKey] = useState(0)
+  const rankRef = useRef(null)
+  const badgeRef = useRef(null)
+
+  useEffect(() => {
+    const el = rankRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setBarAnim(true); obs.disconnect() } },
+      { threshold: 0.3 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const el = badgeRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) setStarKey(k => k + 1) },
+      { threshold: 0.8 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
   return (
     <div className="home-phone">
       <div className="home-scroll">
@@ -41,8 +69,8 @@ export default function Home() {
               <div className="home-savings-badge">저번 주보다 12% 더 아꼈어요!</div>
             </div>
             {/* 우상단 배지: top28 left232 */}
-            <div className="home-hero-top-badge">
-              <img src="/img/home_star.png" alt="" width="15" height="14" style={{ objectFit:'contain' }} />
+            <div className="home-hero-top-badge" ref={badgeRef}>
+              <img key={starKey} src="/img/home_star.png" alt="" width="15" height="14" style={{ objectFit:'contain' }} />
               <span>잘하고 있어요!</span>
             </div>
             {/* 고양이: top70 left232 */}
@@ -68,7 +96,7 @@ export default function Home() {
           </div>
 
           {/* 챌린지 랭킹 카드 */}
-          <div className="home-rank-card">
+          <div className="home-rank-card" ref={rankRef}>
             {/* 트로피: left15 top12 */}
             <img src="/img/home_raking.png" alt="" className="home-rank-trophy" />
             {/* 텍스트: left98 top21 */}
@@ -81,7 +109,7 @@ export default function Home() {
             {/* 진행바: left98 top68 — 카드 직속 자식으로 배치해야 카드 기준 절대좌표 적용 */}
             <div className="home-rank-bar-wrap">
               <div className="home-rank-bar-track">
-                <div className="home-rank-bar-fill" style={{ width: '77%' }} />
+                <div className="home-rank-bar-fill" style={{ width: barAnim ? '77%' : '0%' }} />
               </div>
               <span className="home-rank-pct">77%</span>
             </div>

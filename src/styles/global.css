@@ -196,7 +196,7 @@ body {
 /* ── 클릭 가이드 모드 ── */
 /* add-modal-close: position:absolute 유지 위해 제외 / add-modal-tab·add-cat-btn: 점 불필요 */
 html.guide-mode .phone a:not(.pg-more-link),
-html.guide-mode .phone button:not(.add-modal-close):not(.add-modal-tab):not(.add-cat-btn):not(.add-modal-send),
+html.guide-mode .phone button:not(.add-modal-close):not(.add-modal-tab):not(.add-cat-btn):not(.add-modal-send):not(.check-today-cat-btn),
 html.guide-mode .home-phone a,
 html.guide-mode .home-alert-btn,
 html.guide-mode .home-check-btn,
@@ -235,6 +235,11 @@ html.guide-mode .ob-welcome-phone button::before {
 
 html.guide-mode .home-alert-btn::before {
   left: -10px;
+}
+
+/* 절대위치 버튼은 position 복원 */
+html.guide-mode .check-today-cat-btn {
+  position: absolute !important;
 }
 
 /* 비활성 링크는 가이드 점 제외 */
