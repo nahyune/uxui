@@ -675,7 +675,8 @@
 .ct-msg-input { flex: 1; border: none; background: none; outline: none; font-size: 17px; font-weight: 500; color: #000; letter-spacing: -0.34px; }
 .ct-msg-input::placeholder { color: #E0E0E0; }
 /* Send 버튼 — 피그마 bg:#E0E0E0, 32×32px, radius:16px */
-.ct-send-btn { width: 32px; height: 32px; border-radius: 16px; background: #E0E0E0; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+.ct-send-btn { width: 32px; height: 32px; border-radius: 16px; background: #E0E0E0; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+.ct-send-btn.active { background: #90D50F; }
 
 /* 챌린지 배너 */
 .ct-banner { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; background: #FFFBEE; border-bottom: 1px solid #FFE5B8; cursor: pointer; text-decoration: none; flex-shrink: 0; }
@@ -747,6 +748,7 @@
 /* 입력창 변형 — #EDEDED 배경, #AFAFAF 전송 버튼 */
 .chc-input-field { background: #F6F6F6; }
 .chc-send-btn { background: #E0E0E0; }
+.chc-send-btn.active { background: #90D50F; }
 
 /* ══════════════════════════════════════
    채팅방 설정 (ChattingSetting)

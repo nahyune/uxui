@@ -290,7 +290,7 @@ export default function ChattingChallenge() {
               onChange={e => setText(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && send()}
             />
-            <button className="ct-send-btn chc-send-btn" onClick={send}>
+            <button className={`ct-send-btn chc-send-btn${text.trim() ? ' active' : ''}`} onClick={send}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
             </button>
           </div>
