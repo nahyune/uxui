@@ -70,20 +70,6 @@ const ChevRight = () => (
   </svg>
 )
 
-function useKeyboardFit() {
-  const ref = useRef(null)
-  useEffect(() => {
-    if (!('visualViewport' in window) || window.innerWidth > 768) return
-    const vv = window.visualViewport
-    const el = ref.current
-    const update = () => { el.style.height = Math.floor(vv.height) + 'px' }
-    update()
-    vv.addEventListener('resize', update)
-    return () => vv.removeEventListener('resize', update)
-  }, [])
-  return ref
-}
-
 const nowStr = () => {
   const d = new Date()
   const h = d.getHours(), m = String(d.getMinutes()).padStart(2, '0')
@@ -91,7 +77,6 @@ const nowStr = () => {
 }
 
 export default function ChattingChallenge() {
-  const phoneRef = useKeyboardFit()
   const [newMsgs, setNewMsgs] = useState([])
   const [text, setText] = useState('')
   const msgsRef = useRef(null)
@@ -109,7 +94,7 @@ export default function ChattingChallenge() {
   }
 
   return (
-    <div className="phone" ref={phoneRef}>
+    <div className="phone">
 
       {/* 헤더 — 흰 배경, 하단 라운드, 랭킹 배너 포함 */}
       <div className="ct-header chc-header">
