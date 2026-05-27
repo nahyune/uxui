@@ -666,7 +666,7 @@
 .ct-reaction-item { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #686868; letter-spacing: -0.24px; }
 
 /* 입력창 — 피그마 height:102px */
-.ct-input-area { flex-shrink: 0; background: #fff; padding: 8px 0; }
+.ct-input-area { flex-shrink: 0; background: #fff; padding: 8px 0 24px; }
 .ct-input-row { display: flex; align-items: center; padding: 0 16px; gap: 0; }
 /* Plus 버튼 */
 .ct-plus-btn { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; margin-right: 19px; }
@@ -1042,6 +1042,6 @@
 /* ── 모바일 safe area / 키보드 대응 ── */
 @media screen and (max-width: 768px) {
   .cdc-hero-nav { top: calc(env(safe-area-inset-top, 44px) + 18px); }
-  .ct-input-area { padding: 4px 0 0; }
+  .ct-input-area { padding: 6px 0 24px; }
   .nc-cta-wrap { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); }
 }
