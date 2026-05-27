@@ -666,12 +666,12 @@
 .ct-reaction-item { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; color: #686868; letter-spacing: -0.24px; }
 
 /* 입력창 — 피그마 height:102px */
-.ct-input-area { flex-shrink: 0; background: #fff; padding-bottom: 16px; }
-.ct-input-row { display: flex; align-items: center; padding: 8px 16px; gap: 0; }
+.ct-input-area { flex-shrink: 0; background: #fff; padding-bottom: 12px; }
+.ct-input-row { display: flex; align-items: center; padding: 6px 16px; gap: 0; }
 /* Plus 버튼 */
 .ct-plus-btn { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; margin-right: 19px; }
-/* 입력 필드 — 피그마 bg:#EDEDED, radius:26px, height:52px */
-.ct-input-field { flex: 1; display: flex; align-items: center; background: #F6F6F6; border-radius: 26px; height: 52px; padding: 0 6px 0 20px; gap: 8px; }
+/* 입력 필드 — 피그마 bg:#EDEDED, radius:26px, height:44px */
+.ct-input-field { flex: 1; display: flex; align-items: center; background: #F6F6F6; border-radius: 26px; height: 44px; padding: 0 6px 0 16px; gap: 8px; }
 .ct-msg-input { flex: 1; border: none; background: none; outline: none; font-size: 17px; font-weight: 500; color: #000; letter-spacing: -0.34px; }
 .ct-msg-input::placeholder { color: #E0E0E0; }
 /* Send 버튼 — 피그마 bg:#E0E0E0, 32×32px, radius:16px */
@@ -1042,6 +1042,6 @@
 /* ── 모바일 safe area / 키보드 대응 ── */
 @media screen and (max-width: 768px) {
   .cdc-hero-nav { top: calc(env(safe-area-inset-top, 44px) + 18px); }
-  .ct-input-area { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .ct-input-area { padding-bottom: max(env(safe-area-inset-bottom, 0px), 8px); }
   .nc-cta-wrap { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); }
 }

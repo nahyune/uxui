@@ -94,10 +94,11 @@ export default function ChattingChallenge() {
   const phoneRef = useKeyboardFit()
   const [newMsgs, setNewMsgs] = useState([])
   const [text, setText] = useState('')
-  const bottomRef = useRef(null)
+  const msgsRef = useRef(null)
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    const el = msgsRef.current
+    if (el) el.scrollTop = el.scrollHeight
   }, [newMsgs])
 
   const send = () => {
@@ -150,7 +151,7 @@ export default function ChattingChallenge() {
       </div>
 
       {/* 메세지 영역 */}
-      <div className="ct-messages chc-messages">
+      <div className="ct-messages chc-messages" ref={msgsRef}>
         <div className="ct-date-pill">
           2026년 04월 17일 금요일
         </div>
@@ -287,7 +288,6 @@ export default function ChattingChallenge() {
             </div>
           </div>
         ))}
-        <div ref={bottomRef} />
       </div>
 
       {/* 입력창 */}

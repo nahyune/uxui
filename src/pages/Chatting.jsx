@@ -88,10 +88,11 @@ export default function Chatting() {
   const phoneRef = useKeyboardFit()
   const [msgs, setMsgs] = useState(initialMsgs)
   const [text, setText] = useState('')
-  const bottomRef = useRef(null)
+  const msgsRef = useRef(null)
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    const el = msgsRef.current
+    if (el) el.scrollTop = el.scrollHeight
   }, [msgs])
 
   const send = () => {
@@ -131,7 +132,7 @@ export default function Chatting() {
       </div>
 
       {/* 메세지 영역 — 피그마 bg:#F2F2F2 */}
-      <div className="ct-messages">
+      <div className="ct-messages" ref={msgsRef}>
         {/* 날짜 구분선 — 피그마 bg:#DDD, radius:50px */}
         <div className="ct-date-pill">
           <CalSVG />2026년 04월 17일 금요일
@@ -171,7 +172,6 @@ export default function Chatting() {
             )}
           </div>
         ))}
-        <div ref={bottomRef} />
       </div>
 
       {/* 입력창 — 피그마 height:102px */}
