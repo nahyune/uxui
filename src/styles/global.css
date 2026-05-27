@@ -303,11 +303,11 @@ html.preview-360 .ob-welcome-phone {
   .screen,
   .noti-screen {
     width: 100vw !important;
-    height: 100dvh !important;
+    height: 100dvh;
     border-radius: 0 !important;
     box-shadow: none !important;
     overflow: hidden !important;
-    position: relative !important;
+    position: relative;
   }
 
   /* 내부 스크롤 영역: 터치 허용 */
