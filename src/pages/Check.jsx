@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import BottomNav from '../components/BottomNav'
 import '../styles/global.css'
@@ -20,6 +21,20 @@ const bars = [
 ]
 
 export default function Check() {
+  const [animated, setAnimated] = useState(false)
+  const weeklyRef = useRef(null)
+
+  useEffect(() => {
+    const el = weeklyRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setAnimated(true); obs.disconnect() } },
+      { threshold: 0.25 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
   return (
     <div className="phone">
       <div className="top-frame">
@@ -80,15 +95,21 @@ export default function Check() {
         </div>
 
         {/* 주간 리포트 */}
-        <div className="check-weekly-card">
+        <div className="check-weekly-card" ref={weeklyRef}>
           <div className="check-weekly-header">
             <p className="check-weekly-title">주간 리포트</p>
             <p className="check-weekly-sub">최근 7일 소비 패턴</p>
           </div>
           <div className="check-chart">
-            {bars.map(b => (
+            {bars.map((b, i) => (
               <div className="check-bar-group" key={b.day}>
-                <div className={`check-bar${b.active ? ' active' : ''}`} style={{ height: `${b.h}px` }} />
+                <div
+                  className={`check-bar${b.active ? ' active' : ''}`}
+                  style={{
+                    height: animated ? `${b.h}px` : '0px',
+                    transition: `height 0.55s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.06}s`
+                  }}
+                />
                 <span className="check-day-label">{b.day}</span>
               </div>
             ))}
