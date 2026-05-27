@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/global.css'
 import '../styles/pages.css'
@@ -17,7 +17,7 @@ const EMOJI = {
   fire:  '/img/chatting-fire.png',
 }
 
-const msgs = [
+const initialMsgs = [
   { id:1, side:'left',  sender:'주은', time:'오후 5:16',
     text:'월급 들어오자마자 왜 이렇게 쓰고 싶을까…' },
   { id:2, side:'right', time:'오후 5:18',
@@ -78,8 +78,29 @@ function useKeyboardFit() {
   return ref
 }
 
+const nowStr = () => {
+  const d = new Date()
+  const h = d.getHours(), m = String(d.getMinutes()).padStart(2, '0')
+  return `${h >= 12 ? '오후' : '오전'} ${h % 12 || 12}:${m}`
+}
+
 export default function Chatting() {
   const phoneRef = useKeyboardFit()
+  const [msgs, setMsgs] = useState(initialMsgs)
+  const [text, setText] = useState('')
+  const bottomRef = useRef(null)
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [msgs])
+
+  const send = () => {
+    const t = text.trim()
+    if (!t) return
+    setMsgs(prev => [...prev, { id: Date.now(), side: 'right', time: nowStr(), text: t }])
+    setText('')
+  }
+
   return (
     <div className="phone" ref={phoneRef}>
       {/* 헤더 — 피그마 height:125px */}
@@ -150,6 +171,7 @@ export default function Chatting() {
             )}
           </div>
         ))}
+        <div ref={bottomRef} />
       </div>
 
       {/* 입력창 — 피그마 height:102px */}
@@ -159,8 +181,15 @@ export default function Chatting() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div className="ct-input-field">
-            <input type="text" className="ct-msg-input" placeholder="메시지를 입력해주세요" />
-            <button className="ct-send-btn">
+            <input
+              type="text"
+              className="ct-msg-input"
+              placeholder="메시지를 입력해주세요"
+              value={text}
+              onChange={e => setText(e.target.value)}
+              onKeyDown={e => e.key === 'Enter' && send()}
+            />
+            <button className="ct-send-btn" onClick={send}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
             </button>
           </div>

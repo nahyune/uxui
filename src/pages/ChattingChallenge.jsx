@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/global.css'
 import '../styles/pages.css'
@@ -84,8 +84,29 @@ function useKeyboardFit() {
   return ref
 }
 
+const nowStr = () => {
+  const d = new Date()
+  const h = d.getHours(), m = String(d.getMinutes()).padStart(2, '0')
+  return `${h >= 12 ? '오후' : '오전'} ${h % 12 || 12}:${m}`
+}
+
 export default function ChattingChallenge() {
   const phoneRef = useKeyboardFit()
+  const [newMsgs, setNewMsgs] = useState([])
+  const [text, setText] = useState('')
+  const bottomRef = useRef(null)
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [newMsgs])
+
+  const send = () => {
+    const t = text.trim()
+    if (!t) return
+    setNewMsgs(prev => [...prev, { id: Date.now(), time: nowStr(), text: t }])
+    setText('')
+  }
+
   return (
     <div className="phone" ref={phoneRef}>
 
@@ -254,6 +275,19 @@ export default function ChattingChallenge() {
             </div>
           </div>
         </div>
+
+        {/* 새로 입력한 메시지 */}
+        {newMsgs.map(m => (
+          <div className="ct-msg-group right" key={m.id}>
+            <div className="ct-bubble-row right">
+              <div className="ct-time-col right">
+                <span className="ct-msg-time chc-time">{m.time}</span>
+              </div>
+              <div className="ct-bubble right chc-bubble"><p>{m.text}</p></div>
+            </div>
+          </div>
+        ))}
+        <div ref={bottomRef} />
       </div>
 
       {/* 입력창 */}
@@ -263,8 +297,15 @@ export default function ChattingChallenge() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
           <div className="ct-input-field chc-input-field">
-            <input type="text" className="ct-msg-input" placeholder="메시지를 입력해주세요" />
-            <button className="ct-send-btn chc-send-btn">
+            <input
+              type="text"
+              className="ct-msg-input"
+              placeholder="메시지를 입력해주세요"
+              value={text}
+              onChange={e => setText(e.target.value)}
+              onKeyDown={e => e.key === 'Enter' && send()}
+            />
+            <button className="ct-send-btn chc-send-btn" onClick={send}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
             </button>
           </div>
