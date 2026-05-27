@@ -21,18 +21,24 @@ const bars = [
 ]
 
 export default function Check() {
-  const [animated, setAnimated] = useState(false)
+  const [statsAnim, setStatsAnim] = useState(false)
+  const [barsAnim,  setBarsAnim]  = useState(false)
+  const statsRef  = useRef(null)
   const weeklyRef = useRef(null)
 
   useEffect(() => {
-    const el = weeklyRef.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setAnimated(true); obs.disconnect() } },
-      { threshold: 0.25 }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
+    const observe = (el, cb, threshold = 0.2) => {
+      if (!el) return
+      const obs = new IntersectionObserver(
+        ([e]) => { if (e.isIntersecting) { cb(); obs.disconnect() } },
+        { threshold }
+      )
+      obs.observe(el)
+      return () => obs.disconnect()
+    }
+    const c1 = observe(statsRef.current,  () => setStatsAnim(true),  0.15)
+    const c2 = observe(weeklyRef.current, () => setBarsAnim(true),   0.25)
+    return () => { c1?.(); c2?.() }
   }, [])
 
   return (
@@ -71,13 +77,13 @@ export default function Check() {
         </Link>
 
         {/* 소비 통계 */}
-        <div className="check-stats-card">
+        <div className="check-stats-card" ref={statsRef}>
           <div className="check-card-row">
             <span className="check-card-title">소비 통계</span>
             <a href="#" className="pg-more-link">더보기 ›</a>
           </div>
           <div className="check-stat-rows">
-            {stats.map(s => (
+            {stats.map((s, i) => (
               <div className="check-stat-row" key={s.name}>
                 <img src={s.img} className="check-stat-icon" alt={s.name} />
                 <div className="check-stat-body">
@@ -86,7 +92,13 @@ export default function Check() {
                     <span className="check-stat-pct">{s.pct}%</span>
                   </div>
                   <div className="check-progress-bar">
-                    <div className="check-progress-fill" style={{ width: `${s.pct}%` }} />
+                    <div
+                      className="check-progress-fill"
+                      style={{
+                        width: statsAnim ? `${s.pct}%` : '0%',
+                        transition: `width 0.55s ease-out ${i * 0.1}s`
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -106,8 +118,8 @@ export default function Check() {
                 <div
                   className={`check-bar${b.active ? ' active' : ''}`}
                   style={{
-                    height: animated ? `${b.h}px` : '0px',
-                    transition: `height 0.55s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.06}s`
+                    height: barsAnim ? `${b.h}px` : '0px',
+                    transition: `height 0.5s ease-out ${i * 0.06}s`
                   }}
                 />
                 <span className="check-day-label">{b.day}</span>
