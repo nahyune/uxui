@@ -76,7 +76,11 @@ function useKeyboardFit() {
     if (!('visualViewport' in window) || window.innerWidth > 768) return
     const vv = window.visualViewport
     const el = ref.current
-    const update = () => { el.style.height = Math.floor(vv.height) + 'px' }
+    el.style.setProperty('position', 'fixed', 'important')
+    el.style.setProperty('top', '0', 'important')
+    el.style.setProperty('left', '0', 'important')
+    el.style.setProperty('width', '100%', 'important')
+    const update = () => { el.style.setProperty('height', Math.floor(vv.height) + 'px', 'important') }
     update()
     vv.addEventListener('resize', update)
     return () => vv.removeEventListener('resize', update)
