@@ -647,7 +647,7 @@
 .ct-room-meta { display: flex; align-items: center; gap: 4px; font-size: 15px; font-weight: 500; color: #AFAFAF; letter-spacing: -0.3px; }
 
 /* 메세지 영역 — 피그마 bg:#F2F2F2 */
-.ct-messages { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; padding: 14px 16px; display: flex; flex-direction: column; justify-content: flex-end; gap: 20px; }
+.ct-messages { flex: 1; overflow-y: auto; scrollbar-width: none; background: #F2F2F2; padding: 14px 16px; display: flex; flex-direction: column; gap: 20px; }
 .ct-messages::-webkit-scrollbar { display: none; }
 
 /* 날짜 구분 — 피그마 bg:#DDD, px:10px py:2px, radius:50px, 15px #959595 */

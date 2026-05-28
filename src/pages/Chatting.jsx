@@ -118,6 +118,7 @@ export default function Chatting() {
 
       {/* 메세지 영역 — 피그마 bg:#F2F2F2 */}
       <div className="ct-messages" ref={msgsRef}>
+        <div style={{ flex: 1 }} />
         {/* 날짜 구분선 — 피그마 bg:#DDD, radius:50px */}
         <div className="ct-date-pill">
           <CalSVG />2026년 04월 17일 금요일

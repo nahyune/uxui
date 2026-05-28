@@ -137,6 +137,7 @@ export default function ChattingChallenge() {
 
       {/* 메세지 영역 */}
       <div className="ct-messages chc-messages" ref={msgsRef}>
+        <div style={{ flex: 1 }} />
         <div className="ct-date-pill">
           2026년 04월 17일 금요일
         </div>

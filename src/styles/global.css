@@ -237,9 +237,26 @@ html.guide-mode .home-alert-btn::before {
   left: -10px;
 }
 
-/* 절대위치 버튼은 position 복원 */
+/* 절대위치 버튼은 position 복원 + 가이드 점 고양이 중앙으로 */
 html.guide-mode .check-today-cat-btn {
   position: absolute !important;
+}
+html.guide-mode .check-today-cat-btn::before {
+  top: 35px !important;
+  left: 35px !important;
+}
+
+/* 온보딩 밀어서 넘기기 가이드 점 — 화살표 앞에 flex 아이템으로 삽입 */
+html.guide-mode .ob-swipe-label::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: #ef4444;
+  border-radius: 50%;
+  flex-shrink: 0;
+  pointer-events: none;
+  box-shadow: 0 0 0 2px rgba(239,68,68,0.3);
 }
 
 /* 비활성 링크는 가이드 점 제외 */
